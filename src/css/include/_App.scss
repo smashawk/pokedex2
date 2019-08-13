@@ -1,0 +1,183 @@
+html {
+  font-size: 62.5%;
+}
+
+.App {
+  font-size: 1.6rem;
+  width: 1120px;
+  margin: 40px auto 0;
+  text-align: center;
+}
+
+.contentArea {
+  margin-top: 50px;
+
+  &--searchPokemon {
+    display: flex;
+    justify-content: center;
+  }
+
+  &--searchType {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    .inputArea {
+      width: 220px;
+      .resetType {
+        margin-top: 20px;
+      }
+    }
+    // .clickTypeText {
+    //   display: none;
+    //   margin: 0;
+    //   &.is-show {
+    //     display: block;
+    //   }
+    // }
+  }
+
+  &--searchPartner {
+
+    .inputName {
+      width: 230px;
+    }
+    .outputArea {
+      display: flex;
+      justify-content: center;
+      width: 800px;
+      margin: 30px auto 0;
+    }
+    // .nijiImg {
+    //   display: none;
+    //   width: 200px;
+    //   height: 200px;
+    //   &.is-show {
+    //     display: inline-block;
+    //   }
+    // }
+    // .partnerText {
+    //   display: none;
+    //   font-weight: bold;
+    //   font-size: 20px;
+    //   &.is-show {
+    //     display: inline-block;
+    //   }
+    // }
+    // .partnerSubText {
+    //   display: none;
+    //   &.is-show {
+    //     display: inline-block;
+    //   }
+    // }
+
+  }
+
+
+}
+
+.inputArea {
+
+  &__desc {
+    margin: 0;
+  }
+
+  &__text {
+    width: 200px;
+  }
+
+  &__errorText {
+    color: #ff0000;
+    font-size: 1.4rem;
+  }
+
+}
+
+.outputArea {
+  width: 550px;
+
+  &__list {
+    display: inline-block;
+    width: 330px;
+    height: 150px;
+    margin-bottom: 0;
+    vertical-align: middle;
+  }
+
+  &__title {
+    display: inline-block;
+    width: 150px;
+  }
+  
+  &__desc {
+    display: inline-block;
+    width: 150px;
+  }
+
+  &__type {
+    + .outputArea__type {
+      margin-left: 10px;
+    }
+  }
+
+  &__img {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    vertical-align: middle;
+    background: center / contain no-repeat;
+
+    @for $No from 0 to 10 {
+      &--imgNo#{$No} {
+        background-image: url(../images/00#{$No}_0.png);
+      }
+    }
+    @for $No from 10 to 100 {
+      &--imgNo#{$No} {
+        background-image: url(../images/0#{$No}_0.png);
+      }
+    }
+    @for $No from 100 to 803 {
+      &--imgNo#{$No} {
+        background-image: url(../images/#{$No}_0.png);
+      }
+    }
+  }
+
+}
+
+.typeIconList {
+  width: 1120px;
+
+  &__imgIcon {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+    vertical-align: middle;
+    background: center / 40px 40px no-repeat;
+    cursor: pointer;
+
+    @for $No2 from 1 to 10 {
+      &--imgNo#{$No2} {
+        background-image: url(../images/00#{$No2}_4.png);
+      }
+    }
+    @for $No3 from 10 to 100 {
+      &--imgNo#{$No3} {
+        background-image: url(../images/0#{$No3}_4.png);
+      }
+    }
+    @for $No5 from 100 to 803 {
+      &--imgNo#{$No5} {
+        background-image: url(../images/#{$No5}_4.png);
+      }
+    }
+
+    &:hover {
+      background-size: contain;
+    }
+  }
+
+}
