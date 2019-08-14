@@ -32,8 +32,8 @@ const AppComponent = (props) => {
                   render={
                     () => <SearchPokemon
                       decidePokemon={props.decidePokemon}
-                      number={props.number}
-                      errorText={props.errorText}
+                      no={props.no}
+                      errorMessage={props.errorMessage}
                     />
                   }
                 />
