@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { decidePokemon } from '../actions/index';
+import { decidePokemon } from '../actions/decidePokemon';
 import SearchPokemonComponent from '../components/pages/SearchPokemonComponent';
 
 const mapStateToProps = state => ({

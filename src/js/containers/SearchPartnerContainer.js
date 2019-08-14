@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { decidePartner } from '../actions/index';
+import { decidePartner } from '../actions/decidePartner';
 import SearchPartnerComponent from '../components/pages/SearchPartnerComponent';
 
 const mapStateToProps = state => ({

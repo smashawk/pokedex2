@@ -1,6 +1,6 @@
 const typeArray = (state = 0, action) => {
   switch (action.type) {
-    case 'TYPE':
+    case 'DECIDE_TYPE':
       return action.typeArray;
     default:
       return [];

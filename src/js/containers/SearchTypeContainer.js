@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
-import { decideType, showData } from '../actions/index';
+import { decideType } from '../actions/decideType';
+import { showData } from '../actions/showData';
 import SearchTypeComponent from '../components/pages/SearchTypeComponent';
 
 const mapStateToProps = state => ({
