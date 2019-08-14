@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter, Link, Route, Switch } from "react-router-dom";
 import IndexPage from "./pages/IndexComponent";
-import SearchPokemon from "./pages/SearchPokemonComponent";
-import SearchType from './pages/SearchTypeComponent';
-import SearchPartner from './pages/SearchPartnerComponent';
+import SearchPokemon from "../containers/SearchPokemonContainer";
+import SearchType from '../containers/SearchTypeContainer';
+import SearchPartner from '../containers/SearchPartnerContainer';
 
 const AppComponent = (props) => {
     

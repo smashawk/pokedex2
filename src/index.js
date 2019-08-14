@@ -1,9 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './css/main.css';
-import SearchPokemonContainer from './js/containers/SearchPokemonContainer';
-import SearchTypeContainer from './js/containers/SearchTypeContainer';
-import SearchPartnerContainer from './js/containers/SearchPartnerContainer';
+import AppComponent from './js/components/AppComponent'
 import { createStore } from 'redux';
 import rootReducer from './js/reducers/index';
 import {Provider} from 'react-redux';
@@ -14,12 +12,6 @@ const store = createStore(rootReducer, composeWithDevTools());
 
 ReactDOM.render(
   <Provider store={store}>
-    <div className="App">
-      <h1>ポケモン図鑑</h1>
-      <hr />
-      <SearchPokemonContainer />
-      <SearchTypeContainer />
-      <SearchPartnerContainer />
-    </div>
+    <AppComponent />
   </Provider>,
   document.getElementById('root'));
