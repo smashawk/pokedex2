@@ -301,6 +301,11 @@ html {
     justify-content: center;
     width: 800px;
     margin: 30px auto 0; }
+  .contentArea--searchPartner .partnerText {
+    font-size: 2rem; }
+  .contentArea--searchPartner .partnerSubText {
+    font-weight: bold;
+    padding: 0 0.5rem; }
 
 .inputArea__desc {
   margin: 0; }

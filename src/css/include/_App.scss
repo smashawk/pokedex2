@@ -41,28 +41,13 @@ html {
       width: 800px;
       margin: 30px auto 0;
     }
-    // .nijiImg {
-    //   display: none;
-    //   width: 200px;
-    //   height: 200px;
-    //   &.is-show {
-    //     display: inline-block;
-    //   }
-    // }
-    // .partnerText {
-    //   display: none;
-    //   font-weight: bold;
-    //   font-size: 20px;
-    //   &.is-show {
-    //     display: inline-block;
-    //   }
-    // }
-    // .partnerSubText {
-    //   display: none;
-    //   &.is-show {
-    //     display: inline-block;
-    //   }
-    // }
+    .partnerText {
+      font-size: 2rem;
+    }
+    .partnerSubText {
+      font-weight: bold;
+      padding: 0 0.5rem;
+    }
 
   }
 
