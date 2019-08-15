@@ -1,7 +1,7 @@
 {
   "name": "pokedex",
   "version": "0.1.0",
-  "homepage": "https://smashawk.github.io/pokedex/",
+  "homepage": "https://smashawk.github.io/pokedex2/",
   "private": true,
   "dependencies": {
     "@types/jest": "24.0.17",
