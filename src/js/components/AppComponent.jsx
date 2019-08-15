@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Link, Route, Switch } from "react-router-dom";
+import { HashRouter, Link, Route, Switch } from "react-router-dom";
 import IndexPage from "./pages/IndexComponent";
 import SearchPokemon from "../containers/SearchPokemonContainer";
 import SearchType from '../containers/SearchTypeContainer';
@@ -10,7 +10,7 @@ const AppComponent = (props) => {
   console.log('Apprender')
 
       return(
-        <BrowserRouter>
+        <HashRouter hashType="noslash">
           <div className="App">
             <header>
               <nav>
@@ -65,7 +65,7 @@ const AppComponent = (props) => {
 
             </main>
           </div>
-        </BrowserRouter>
+        </HashRouter>
       )
 }
 
