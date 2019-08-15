@@ -1,10 +1,32 @@
-const typeArray = (state = 0, action) => {
+const typeReducer = (
+  state = {
+    typeArray: [],
+    clickMessage: false
+  },
+  action
+) => {
+
   switch (action.type) {
+
     case 'DECIDE_TYPE':
-      return action.typeArray;
+      return {
+        ...state,
+        typeArray: action.typeArray,
+        clickMessage: true,
+      };
+
+    case 'RESET_TYPE_LIST':
+      return {
+        ...state,
+        typeArray: [],
+        clickMessage: false,
+      };
+
     default:
-      return [];
+      return state;
+
   }
+
 };
 
-export default typeArray;
+export default typeReducer;

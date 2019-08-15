@@ -45,6 +45,7 @@ const AppComponent = (props) => {
                       typeArray={props.typeArray}
                       showData={props.showData}
                       id={props.id}
+                      clickMessage={props.clickMessage}
                     />
                   }
                 />

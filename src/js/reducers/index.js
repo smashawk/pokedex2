@@ -1,12 +1,12 @@
 import {combineReducers} from 'redux';
 import numberReducer from './reducer/number'
-import typeArray from './reducer/type'
-import id from './reducer/id'
+import typeReducer from './reducer/type'
+import dataReducer from './reducer/data'
 import partnerNo from './reducer/partnerNo'
 
 export default combineReducers({
   number: numberReducer,
-  typeArray,
-  id,
+  type: typeReducer,
+  data: dataReducer,
   partnerNo,
 });

@@ -1,45 +1,8 @@
 import React from "react";
-import normalArray from '../../common/createNormalArray'
+import normalArray from '../../../common/createNormalArray'
+import TypeList from './typeList'
 
 const SearchType = (props) => {
-
-
-  // const showTypeText = () => {
-
-  //   const clickTypeText = document.getElementById('FnClickTypeText');
-  //   clickTypeText.classList.add("is-show");
-  // }
-  // const removeTypeText = () => {
-
-  //   const clickTypeText = document.getElementById('FnClickTypeText');
-  //   clickTypeText.classList.remove("is-show");
-  // }
-  // const resetType = () => {
-  //   const typeSelector1 = document.getElementById('typeSelector1');
-  //   const typeSelector2 = document.getElementById('typeSelector2');
-
-  //   typeSelector1.value = '-';
-  //   typeSelector2.value = '-';
-
-  //   decideType();
-  //   removeTypeText();
-  // }
-
-
-  // typeArrayのポケモンDOMを作っておく
-  const nodes = props.typeArray.map(value => {
-      const node = 
-      <li 
-        key={value.key}
-        id={value.number.no}
-        className={`typeIconList__imgIcon typeIconList__imgIcon--imgNo${value.number.no}`}
-        onClick={e => props.showData(e.target.id)}
-      >
-      </li>;
-
-      return node;
-  });
-
 
   return(
     
@@ -88,7 +51,7 @@ const SearchType = (props) => {
           <option>はがね</option>
           <option>フェアリー</option>
         </select>
-      {/* <button onClick={e => resetType(e)} className="resetType">タイプリセット</button> */}
+      <button onClick={e => props.resetType(e)} className="resetType">タイプリセット</button>
     </div>
 
     <div className="outputArea">
@@ -107,8 +70,13 @@ const SearchType = (props) => {
     </div>
      
      <div>
-       <p id="FnClickTypeText" className="clickTypeText">ポケモンをクリック！</p>
-       <ul className="typeIconList">{nodes}</ul>
+       {props.clickMessage && <p>ポケモンをクリック！</p>}
+       <ul className="typeIconList">
+         <TypeList
+          typeArray={props.typeArray}
+          showData={props.showData}
+         />
+       </ul>
      </div>
    </section>
 
