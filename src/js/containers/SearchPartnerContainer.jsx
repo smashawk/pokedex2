@@ -3,7 +3,7 @@ import { decidePartner } from '../actions/decidePartner';
 import SearchPartnerComponent from '../components/pages/SearchPartnerComponent';
 
 const mapStateToProps = state => ({
-  partnerNo: state.partnerNo
+  partnerNo: state.partner.partnerNo
 });
 
 
