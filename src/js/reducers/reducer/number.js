@@ -8,6 +8,13 @@ const numberReducer = (
 
   switch (action.type) {
 
+    case 'FIT_POKEMON_NAME':
+      return {
+        ...state,
+        no: action.fitNo,
+        errorMessage: false
+      }
+
     case 'NULL_FIT_POKEMON_NUMBER':
       return {
         ...state,

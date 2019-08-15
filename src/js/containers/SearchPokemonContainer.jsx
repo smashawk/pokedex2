@@ -9,7 +9,7 @@ const mapStateToProps = state => ({
 
 
 const mapDispatchToProps = dispatch => ({
-  decidePokemon: number => dispatch(decidePokemon(number)),
+  decidePokemon: text => dispatch(decidePokemon(text)),
 });
 
 

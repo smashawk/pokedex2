@@ -6,8 +6,8 @@ const SearchPokemon = (props) => {
   return(
     <section className="contentArea contentArea--searchPokemon">
       <div className="inputArea">
-        <h2>1. 図鑑ナンバー検索</h2>
-        <p className="inputArea__desc">※1〜802まで</p>
+        <h2>1. 名前or図鑑ナンバー検索</h2>
+        <p className="inputArea__desc">※カタカナ名or数字1〜802まで</p>
         <input 
           id="inputText"
           className="inputArea__text"
