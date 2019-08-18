@@ -108,17 +108,17 @@ html {
 
     @for $No from 0 to 10 {
       &--imgNo#{$No} {
-        background-image: url(../images/00#{$No}_0.png);
+        background-image: url(../../images/00#{$No}_0.png);
       }
     }
     @for $No from 10 to 100 {
       &--imgNo#{$No} {
-        background-image: url(../images/0#{$No}_0.png);
+        background-image: url(../../images/0#{$No}_0.png);
       }
     }
     @for $No from 100 to 803 {
       &--imgNo#{$No} {
-        background-image: url(../images/#{$No}_0.png);
+        background-image: url(../../images/#{$No}_0.png);
       }
     }
   }
@@ -139,17 +139,17 @@ html {
 
     @for $No2 from 1 to 10 {
       &--imgNo#{$No2} {
-        background-image: url(../images/00#{$No2}_4.png);
+        background-image: url(../../images/00#{$No2}_4.png);
       }
     }
     @for $No3 from 10 to 100 {
       &--imgNo#{$No3} {
-        background-image: url(../images/0#{$No3}_4.png);
+        background-image: url(../../images/0#{$No3}_4.png);
       }
     }
     @for $No5 from 100 to 803 {
       &--imgNo#{$No5} {
-        background-image: url(../images/#{$No5}_4.png);
+        background-image: url(../../images/#{$No5}_4.png);
       }
     }
 
