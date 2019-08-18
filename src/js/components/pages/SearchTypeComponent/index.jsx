@@ -70,7 +70,7 @@ const SearchType = (props) => {
     </div>
      
      <div>
-       {props.clickMessage && <p>ポケモンをクリック！</p>}
+       {/* {props.clickMessage && <p>ポケモンをクリック！</p>} */}
        <ul className="typeIconList">
          <TypeList
           typeArray={props.typeArray}

@@ -10,7 +10,8 @@ const typeList = props => {
       key={value.key}
       id={value.number.no}
       className={`typeIconList__imgIcon typeIconList__imgIcon--imgNo${value.number.no}`}
-      onClick={e => props.showData(e.target.id)}
+      onMouseOver={e => props.showData(e.target.id)}
+      // onClick={e => props.showData(e.target.id)}
     >
     </li>;
   
