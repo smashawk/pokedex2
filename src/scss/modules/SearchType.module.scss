@@ -1,0 +1,62 @@
+.contentArea {
+  composes: contentArea from "./common/contentArea.module.scss";
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.inputArea {
+  width: 220px;
+}
+.inputAreaDesc {
+  composes: inputAreaDesc from "./common/inputArea.module.scss";
+}
+.inputAreaText {
+  composes: inputAreaText from "./common/inputArea.module.scss";
+}
+.inputAreaErrorText {
+  composes: inputAreaErrorText from "./common/inputArea.module.scss";
+}
+.inputAreaResetType {
+  margin-top: 20px;
+}
+
+
+.outputArea {
+  composes: outputArea from "./common/outputArea.module.scss";
+}
+.outputAreaList {
+  composes: outputAreaList from "./common/outputArea.module.scss";
+}
+.outputAreaTitle {
+  composes: outputAreaTitle from "./common/outputArea.module.scss";
+}
+.outputAreaDesc {
+  composes: outputAreaDesc from "./common/outputArea.module.scss";
+}
+.outputAreaType {
+  composes: outputAreaType from "./common/outputArea.module.scss";
+  + .outputAreaType {
+    margin-left: 10px;
+  }
+}
+.outputAreaImg {
+  composes: outputAreaImg from "./common/outputArea.module.scss";
+}
+
+
+.typeIconList {
+  width: 1120px;
+}
+.typeIconListImg {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+  vertical-align: middle;
+  cursor: pointer;
+  &:hover {
+    background-size: contain;
+  }
+}
+

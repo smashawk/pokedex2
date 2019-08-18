@@ -119,37 +119,20 @@ html {
 
 // }
 
-.typeIconList {
-  width: 1120px;
-
-  &__imgIcon {
-    display: inline-block;
-    width: 50px;
-    height: 50px;
-    margin: 0 auto;
-    vertical-align: middle;
-    background: center / 40px 40px no-repeat;
-    cursor: pointer;
-
-    @for $No2 from 1 to 10 {
-      &--imgNo#{$No2} {
-        background-image: url(../../images/00#{$No2}_4.png);
-      }
-    }
-    @for $No3 from 10 to 100 {
-      &--imgNo#{$No3} {
-        background-image: url(../../images/0#{$No3}_4.png);
-      }
-    }
-    @for $No5 from 100 to 803 {
-      &--imgNo#{$No5} {
-        background-image: url(../../images/#{$No5}_4.png);
-      }
-    }
-
-    &:hover {
-      background-size: contain;
+.typeIconListImg {
+  @for $No2 from 1 to 10 {
+    &No#{$No2} {
+      background: center / 40px 40px no-repeat url(../../images/00#{$No2}_4.png);
     }
   }
-
+  @for $No3 from 10 to 100 {
+    &No#{$No3} {
+      background: center / 40px 40px no-repeat url(../../images/0#{$No3}_4.png);
+    }
+  }
+  @for $No5 from 100 to 803 {
+    &No#{$No5} {
+      background: center / 40px 40px no-repeat url(../../images/#{$No5}_4.png);
+    }
+  }
 }

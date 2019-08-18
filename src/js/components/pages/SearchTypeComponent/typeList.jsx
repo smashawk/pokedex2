@@ -1,4 +1,5 @@
 import React from "react";
+import styles from '../../../../scss/modules/SearchType.module.scss'
 
 // typeArrayのポケモンDOMを作っておく
 const typeList = props => {
@@ -9,7 +10,7 @@ const typeList = props => {
     <li 
       key={value.key}
       id={value.number.no}
-      className={`typeIconList__imgIcon typeIconList__imgIcon--imgNo${value.number.no}`}
+      className={`${styles.typeIconListImg} typeIconListImgNo${value.number.no}`}
       onMouseOver={e => props.showData(e.target.id)}
       // onClick={e => props.showData(e.target.id)}
     >

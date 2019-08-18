@@ -1,13 +1,14 @@
 import React from "react";
+import styles from '../../../../scss/modules/SearchType.module.scss'
 import normalArray from '../../../common/createNormalArray'
 import TypeList from './typeList'
 
 const SearchType = (props) => {
-
+console.log(props)
   return(
     
-    <section className="contentArea contentArea--searchType">
-      <div className="inputArea">
+    <section className={styles.contentArea}>
+      <div className={styles.inputArea}>
         <h2>2. タイプ検索</h2>
         <select id="typeSelector1" onChange={e => props.decideType(e)}>
           <option>-</option>
@@ -51,27 +52,27 @@ const SearchType = (props) => {
           <option>はがね</option>
           <option>フェアリー</option>
         </select>
-      <button onClick={e => props.resetType(e)} className="resetType">タイプリセット</button>
+      <button onClick={e => props.resetType(e)} className={styles.inputAreaResetType}>タイプリセット</button>
     </div>
 
-    <div className="outputArea">
-      <dl className="outputArea__list">
-        <dt className="outputArea__title">図鑑番号</dt>
-        <dd className="outputArea__desc">{normalArray[props.id].no}</dd>
-        <dt className="outputArea__title">名前</dt>
-        <dd className="outputArea__desc">{normalArray[props.id].name}</dd>
-        <dt className="outputArea__title">タイプ</dt>
-        <dd className="outputArea__desc">
-          <span className="outputArea__type">{normalArray[props.id].types[0]}</span>
-          <span className="outputArea__type">{normalArray[props.id].types[1]}</span>
-        </dd>
-      </dl>
-      <div className={`outputArea__img outputArea__img--imgNo${props.id}`}></div>
-    </div>
+    <div className={styles.outputArea}>
+        <dl className={styles.outputAreaList}>
+          <dt className={styles.outputAreaTitle}>図鑑番号</dt>
+          <dd className={styles.outputAreaDesc}>{props.id}</dd>
+          <dt className={styles.outputAreaTitle}>名前</dt>
+          <dd className={styles.outputAreaDesc}>{normalArray[props.id].name}</dd>
+          <dt className={styles.outputAreaTitle}>タイプ</dt>
+          <dd className={styles.outputAreaDesc}>
+            <span className={styles.outputAreaType}>{normalArray[props.id].types[0]}</span>
+            <span className={styles.outputAreaType}>{normalArray[props.id].types[1]}</span>
+          </dd>
+        </dl>
+        <div className={`${styles.outputAreaImg} outputAreaImgNo${props.id}`}></div>
+      </div>
      
      <div>
        {/* {props.clickMessage && <p>ポケモンをクリック！</p>} */}
-       <ul className="typeIconList">
+       <ul className={styles.typeIconList}>
          <TypeList
           typeArray={props.typeArray}
           showData={props.showData}
