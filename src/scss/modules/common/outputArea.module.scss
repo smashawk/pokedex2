@@ -1,0 +1,30 @@
+.outputArea {
+  width: 550px;
+}
+.outputAreaList {
+  display: inline-block;
+  width: 330px;
+  height: 150px;
+  margin-bottom: 0;
+  vertical-align: middle;
+}
+.outputAreaTitle {
+  display: inline-block;
+  width: 150px;
+}
+.outputAreaDesc {
+  display: inline-block;
+  width: 150px;
+}
+.outputAreaType {
+  + .outputAreaType {
+    margin-left: 10px;
+  }
+}
+.outputAreaImg {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  vertical-align: middle;
+}

@@ -1,0 +1,39 @@
+.contentArea {
+  composes: contentArea from "./common/contentArea.module.scss";
+  display: flex;
+  justify-content: center;
+}
+
+
+.inputAreaDesc {
+  composes: inputAreaDesc from "./common/inputArea.module.scss";
+}
+.inputAreaText {
+  composes: inputAreaText from "./common/inputArea.module.scss";
+}
+.inputAreaErrorText {
+  composes: inputAreaErrorText from "./common/inputArea.module.scss";
+}
+
+
+.outputArea {
+  composes: outputArea from "./common/outputArea.module.scss";
+}
+.outputAreaList {
+  composes: outputAreaList from "./common/outputArea.module.scss";
+}
+.outputAreaTitle {
+  composes: outputAreaTitle from "./common/outputArea.module.scss";
+}
+.outputAreaDesc {
+  composes: outputAreaDesc from "./common/outputArea.module.scss";
+}
+.outputAreaType {
+  composes: outputAreaType from "./common/outputArea.module.scss";
+  + .outputAreaType {
+    margin-left: 10px;
+  }
+}
+.outputAreaImg {
+  composes: outputAreaImg from "./common/outputArea.module.scss";
+}
