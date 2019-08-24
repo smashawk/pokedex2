@@ -9,130 +9,41 @@ html {
   text-align: center;
 }
 
-// .contentArea {
-//   margin-top: 50px;
 
-//   &--searchPokemon {
-//     display: flex;
-//     justify-content: center;
-//   }
+// .outputAreaImg {
 
-//   &--searchType {
-//     display: flex;
-//     justify-content: center;
-//     flex-wrap: wrap;
-
-//     .inputArea {
-//       width: 220px;
-//       .resetType {
-//         margin-top: 20px;
+//     @for $No from 0 to 10 {
+//       &No#{$No} {
+//         background: center / contain no-repeat url(../../images/00#{$No}_0.png);
+//       }
+//     }
+//     @for $No from 10 to 100 {
+//       &No#{$No} {
+//         background: center / contain no-repeat url(../../images/0#{$No}_0.png);
+//       }
+//     }
+//     @for $No from 100 to 803 {
+//       &No#{$No} {
+//         background: center / contain no-repeat url(../../images/#{$No}_0.png);
 //       }
 //     }
 //   }
 
-//   &--searchPartner {
 
-//     .inputName {
-//       width: 230px;
+// .typeIconListImg {
+//   @for $No2 from 1 to 10 {
+//     &No#{$No2} {
+//       background: center / 40px 40px no-repeat url(../../images/00#{$No2}_4.png);
 //     }
-//     .outputArea {
-//       display: flex;
-//       justify-content: center;
-//       width: 800px;
-//       margin: 30px auto 0;
-//     }
-//     .partnerText {
-//       font-size: 2rem;
-//     }
-//     .partnerSubText {
-//       font-weight: bold;
-//       padding: 0 0.5rem;
-//     }
-
 //   }
-
-
+//   @for $No3 from 10 to 100 {
+//     &No#{$No3} {
+//       background: center / 40px 40px no-repeat url(../../images/0#{$No3}_4.png);
+//     }
+//   }
+//   @for $No5 from 100 to 803 {
+//     &No#{$No5} {
+//       background: center / 40px 40px no-repeat url(../../images/#{$No5}_4.png);
+//     }
+//   }
 // }
-
-// .inputArea {
-
-//   &__desc {
-//     margin: 0;
-//   }
-
-//   &__text {
-//     width: 200px;
-//   }
-
-//   &__errorText {
-//     color: #ff0000;
-//     font-size: 1.4rem;
-//   }
-
-// }
-
-// .outputArea {
-//   width: 550px;
-
-//   &__list {
-//     display: inline-block;
-//     width: 330px;
-//     height: 150px;
-//     margin-bottom: 0;
-//     vertical-align: middle;
-//   }
-
-//   &__title {
-//     display: inline-block;
-//     width: 150px;
-//   }
-  
-//   &__desc {
-//     display: inline-block;
-//     width: 150px;
-//   }
-
-//   &__type {
-//     + .outputArea__type {
-//       margin-left: 10px;
-//     }
-//   }
-
-.outputAreaImg {
-
-    @for $No from 0 to 10 {
-      &No#{$No} {
-        background: center / contain no-repeat url(../../images/00#{$No}_0.png);
-      }
-    }
-    @for $No from 10 to 100 {
-      &No#{$No} {
-        background: center / contain no-repeat url(../../images/0#{$No}_0.png);
-      }
-    }
-    @for $No from 100 to 803 {
-      &No#{$No} {
-        background: center / contain no-repeat url(../../images/#{$No}_0.png);
-      }
-    }
-  }
-
-// }
-
-.typeIconListImg {
-  @for $No2 from 1 to 10 {
-    &No#{$No2} {
-      background: center / 40px 40px no-repeat url(../../images/00#{$No2}_4.png);
-    }
-  }
-  @for $No3 from 10 to 100 {
-    &No#{$No3} {
-      background: center / 40px 40px no-repeat url(../../images/0#{$No3}_4.png);
-    }
-  }
-  @for $No5 from 100 to 803 {
-    &No#{$No5} {
-      background: center / 40px 40px no-repeat url(../../images/#{$No5}_4.png);
-    }
-  }
-}

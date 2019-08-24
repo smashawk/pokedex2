@@ -7,8 +7,6 @@ import SearchPartner from '../containers/SearchPartnerContainer';
 
 const AppComponent = (props) => {
     
-  console.log('Apprender')
-
       return(
         <HashRouter hashType="noslash">
           <div className="App">

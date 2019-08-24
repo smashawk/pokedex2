@@ -1,6 +1,32 @@
 import React from "react";
 import styles from '../../../scss/modules/SearchPokemon.module.scss'
+import styled from 'styled-components';
 import normalArray from '../../common/createNormalArray'
+
+
+const OutputAreaImg = styled.div`
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  vertical-align: middle;
+  ${props => {
+    if(props.no < 10) {
+      return`
+        background: center / contain no-repeat url(./images/00${props.no}_0.png);
+      `
+    } else if(9 < props.no && props.no < 100) {
+      return`
+        background: center / contain no-repeat url(./images/0${props.no}_0.png);
+      `
+    } else if(props.no < 1000) {
+      return`
+        background: center / contain no-repeat url(./images/${props.no}_0.png);
+      `
+    }
+  }}
+`;
+
 
 const SearchPokemon = (props) => {
 
@@ -30,7 +56,7 @@ const SearchPokemon = (props) => {
             <span className={styles.outputAreaType}>{normalArray[props.no].types[1]}</span>
           </dd>
         </dl>
-        <div className={`${styles.outputAreaImg} outputAreaImgNo${props.no}`}></div>
+        <OutputAreaImg no={props.no}/>
       </div>
     </section>
 

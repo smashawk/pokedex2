@@ -4,7 +4,7 @@ import normalArray from '../../../common/createNormalArray'
 import TypeList from './typeList'
 
 const SearchType = (props) => {
-console.log(props)
+  
   return(
     
     <section className={styles.contentArea}>
