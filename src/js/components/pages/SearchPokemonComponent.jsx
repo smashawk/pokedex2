@@ -1,15 +1,33 @@
 import React from "react";
-import styles from '../../../scss/modules/SearchPokemon.module.scss'
 import styled from 'styled-components';
-import normalArray from '../../common/createNormalArray'
+import * as styles from '../../../scss/mixin/common';
+import normalArray from '../../common/createNormalArray';
 
 
-const OutputAreaImg = styled.div`
-  display: inline-block;
-  width: 100px;
-  height: 100px;
-  margin: 0 auto;
-  vertical-align: middle;
+const ContentArea = styled(styles.BaseContentArea)`
+  display: flex;
+  justify-content: center;
+`;
+
+const InputArea = styled.div``;
+
+const InputAreaDesc = styled(styles.BaseInputAreaDesc)``;
+
+const InputAreaText = styled(styles.BaseInputAreaText)``;
+
+const InputAreaErrorText = styled(styles.BaseInputAreaErrorText)``;
+
+const OutputArea = styled(styles.BaseOutputArea)``;
+
+const OutputAreaList = styled(styles.BaseOutputAreaList)``;
+
+const OutputAreaTitle = styled(styles.BaseOutputAreaTitle)``;
+
+const OutputAreaDesc = styled(styles.BaseOutputAreaDesc)``;
+
+const OutputAreaType = styled(styles.BaseOutputAreaType)``;
+
+const OutputAreaImg = styled(styles.BaseOutputAreaImg)`
   ${props => {
     if(props.no < 10) {
       return`
@@ -31,34 +49,36 @@ const OutputAreaImg = styled.div`
 const SearchPokemon = (props) => {
 
   return(
-    <section className={styles.contentArea}>
-      <div className={styles.inputArea}>
+    <ContentArea>
+
+      <InputArea>
         <h2>1. 名前or図鑑ナンバー検索</h2>
-        <p className={styles.inputAreaDesc}>※カタカナ名or数字1〜802まで</p>
-        <input 
+        <InputAreaDesc>※カタカナ名or数字1〜802まで</InputAreaDesc>
+        <InputAreaText 
           id="inputText"
-          className={styles.inputAreaText}
           type="text"
           onChange={e => props.decidePokemon(e.target.value)}
           placeholder="図鑑ナンバーを入力"
-          />
-          {props.errorMessage && <p className={styles.inputAreaErrorText}>適切な数字を入力してください。</p>}
-      </div>
-      <div className={styles.outputArea}>
-        <dl className={styles.outputAreaList}>
-          <dt className={styles.outputAreaTitle}>図鑑番号</dt>
-          <dd className={styles.outputAreaDesc}>{props.no}</dd>
-          <dt className={styles.outputAreaTitle}>名前</dt>
-          <dd className={styles.outputAreaDesc}>{normalArray[props.no].name}</dd>
-          <dt className={styles.outputAreaTitle}>タイプ</dt>
-          <dd className={styles.outputAreaDesc}>
-            <span className={styles.outputAreaType}>{normalArray[props.no].types[0]}</span>
-            <span className={styles.outputAreaType}>{normalArray[props.no].types[1]}</span>
-          </dd>
-        </dl>
+        />
+        {props.errorMessage && <InputAreaErrorText>適切な数字を入力してください。</InputAreaErrorText>}
+      </InputArea>
+
+      <OutputArea>
+        <OutputAreaList>
+          <OutputAreaTitle>図鑑番号</OutputAreaTitle>
+          <OutputAreaDesc>{props.no}</OutputAreaDesc>
+          <OutputAreaTitle>名前</OutputAreaTitle>
+          <OutputAreaDesc>{normalArray[props.no].name}</OutputAreaDesc>
+          <OutputAreaTitle>タイプ</OutputAreaTitle>
+          <OutputAreaDesc>
+            <span>{normalArray[props.no].types[0]}</span>
+            <OutputAreaType>{normalArray[props.no].types[1]}</OutputAreaType>
+          </OutputAreaDesc>
+        </OutputAreaList>
         <OutputAreaImg no={props.no}/>
-      </div>
-    </section>
+      </OutputArea>
+
+    </ContentArea>
 
   )
 }
