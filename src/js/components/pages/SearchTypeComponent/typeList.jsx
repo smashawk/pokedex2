@@ -39,8 +39,8 @@ const typeList = props => {
     <TypeIconListImg 
       key={value.key}
       id={value.number.no}
-      // onMouseOver={e => props.showData(e.target.id)}
-      onClick={e => props.showData(e.target.id)}
+      onMouseOver={e => props.showData(e.target.id)}
+      // onClick={e => props.showData(e.target.id)}
     />;
   
     return node;

@@ -1,10 +1,10 @@
 import React from "react";
 import styled from 'styled-components';
+import {BaseContentArea, BaseOutputArea, BaseOutputAreaList, BaseOutputAreaTitle, BaseOutputAreaDesc, BaseOutputAreaType, BaseOutputAreaImg} from '../../../../scss/mixin/common';
 import normalArray from '../../../common/createNormalArray'
 import TypeList from './typeList'
 
-const ContentArea = styled.section`
-  margin-top: 50px;
+const ContentArea = styled(BaseContentArea)`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -19,37 +19,17 @@ const InputAreaResetType = styled.button`
   margin-top: 20px;
 `;
 
-const OutputArea = styled.div`
-  width: 550px;
-`;
+const OutputArea = styled(BaseOutputArea)``;
 
-const OutputAreaList = styled.dl`
-  display: inline-block;
-  width: 330px;
-  margin-bottom: 0;
-  vertical-align: middle;
-`;
+const OutputAreaList = styled(BaseOutputAreaList)``;
 
-const OutputAreaTitle = styled.dt`
-  display: inline-block;
-  width: 150px;
-`;
+const OutputAreaTitle = styled(BaseOutputAreaTitle)``;
 
-const OutputAreaDesc = styled.dd`
-  display: inline-block;
-  width: 150px;
-`;
+const OutputAreaDesc = styled(BaseOutputAreaDesc)``;
 
-const OutputAreaType = styled.span`
-  margin-left: 10px;
-`;
+const OutputAreaType = styled(BaseOutputAreaType)``;
 
-const OutputAreaImg = styled.div`
-  display: inline-block;
-  width: 100px;
-  height: 100px;
-  margin: 0 auto;
-  vertical-align: middle;
+const OutputAreaImg = styled(BaseOutputAreaImg)`
   ${props => {
     if(props.id < 10) {
       return`
