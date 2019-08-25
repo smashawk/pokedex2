@@ -16,6 +16,21 @@ const OutputAreaType = styled(styles.BaseOutputAreaType)``;
 
 const OutputAreaImg = styled(styles.BaseOutputAreaImg)`
   ${props => {
+
+    if(props.shinyId < 10 && props.shinyId === props.id) {
+      return`
+        background: center / contain no-repeat url(./images/00${props.shinyId}_2.png);
+      `
+    } else if(9 < props.shinyId && props.shinyId < 100 && props.shinyId === props.id) {
+      return`
+        background: center / contain no-repeat url(./images/0${props.shinyId}_2.png);
+      `
+    } else if(props.shinyId < 1000 && props.shinyId === props.id) {
+      return`
+        background: center / contain no-repeat url(./images/${props.shinyId}_2.png);
+      `
+    }
+
     if(props.id < 10) {
       return`
         background: center / contain no-repeat url(./images/00${props.id}_0.png);
@@ -29,6 +44,8 @@ const OutputAreaImg = styled(styles.BaseOutputAreaImg)`
         background: center / contain no-repeat url(./images/${props.id}_0.png);
       `
     }
+
+
   }}
 `;
 
@@ -49,7 +66,7 @@ const OutputArea = (props) => {
           <OutputAreaType>{normalArray[props.id].types[1]}</OutputAreaType>
         </OutputAreaDesc>
       </OutputAreaList>
-      <OutputAreaImg id={props.id} />
+      <OutputAreaImg id={props.id} shinyId={props.shinyId} />
     </OutputAreaWrap>
 
   )

@@ -26,11 +26,13 @@ const SearchType = (props) => {
 
       <OutputArea 
         id={props.id}
+        shinyId={props.shinyId}
       />
      
       <IconListArea
         typeArray={props.typeArray}
         showData={props.showData}
+        showShinyPokemon={props.showShinyPokemon}
         clickMessage={props.clickMessage}
       />
 

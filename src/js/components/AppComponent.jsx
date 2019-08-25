@@ -52,7 +52,9 @@ const AppComponent = (props) => {
                       decideType={props.decideType}
                       typeArray={props.typeArray}
                       showData={props.showData}
+                      showShinyPokemon={props.showShinyPokemon}
                       id={props.id}
+                      shinyId={props.shinyId}
                       clickMessage={props.clickMessage}
                     />
                   }

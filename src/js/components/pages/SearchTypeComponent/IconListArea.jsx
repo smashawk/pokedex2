@@ -4,9 +4,12 @@ import styled from 'styled-components';
 
 const IconListAreaWrap = styled.div``;
 
+const IconListText = styled.p`
+  margin-top: 30px;
+`;
+
 const IconList = styled.ul`
   width: 1120px;
-  margin-top: 30px;
 `;
 
 const IconListImg = styled.li`
@@ -48,7 +51,7 @@ const IconListArea = props => {
       key={value.key}
       id={value.number.no}
       onMouseOver={e => props.showData(e.target.id)}
-      // onClick={e => props.showData(e.target.id)}
+      onClick={e => props.showShinyPokemon(e.target.id)}
     />;
   
     return node;
@@ -56,7 +59,7 @@ const IconListArea = props => {
 
   return (
     <IconListAreaWrap>
-      {/* {props.clickMessage && <p>ポケモンをクリック！</p>} */}
+      {props.clickMessage && <IconListText>ポケモンをクリックしてみよう！</IconListText>}
       <IconList>
         {nodes}
       </IconList>
