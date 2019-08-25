@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './scss/main.scss';
+import './styles/main.scss';
 import AppComponent from './js/components/AppComponent'
 import { createStore } from 'redux';
 import rootReducer from './js/reducers/index';

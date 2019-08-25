@@ -1,6 +1,6 @@
 import React from "react";
 import styled from 'styled-components';
-import * as styles from '../../../../scss/mixin/common';
+import * as styles from '../../../../styles/mixin/common';
 import normalArray from '../../../common/createNormalArray'
 import TypeList from './typeList'
 
