@@ -1,10 +1,10 @@
 import React from "react";
 import styled from 'styled-components';
-import {BaseContentArea, BaseOutputArea, BaseOutputAreaList, BaseOutputAreaTitle, BaseOutputAreaDesc, BaseOutputAreaType, BaseOutputAreaImg} from '../../../../scss/mixin/common';
+import * as styles from '../../../../scss/mixin/common';
 import normalArray from '../../../common/createNormalArray'
 import TypeList from './typeList'
 
-const ContentArea = styled(BaseContentArea)`
+const ContentArea = styled(styles.BaseContentArea)`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -19,17 +19,17 @@ const InputAreaResetType = styled.button`
   margin-top: 20px;
 `;
 
-const OutputArea = styled(BaseOutputArea)``;
+const OutputArea = styled(styles.BaseOutputArea)``;
 
-const OutputAreaList = styled(BaseOutputAreaList)``;
+const OutputAreaList = styled(styles.BaseOutputAreaList)``;
 
-const OutputAreaTitle = styled(BaseOutputAreaTitle)``;
+const OutputAreaTitle = styled(styles.BaseOutputAreaTitle)``;
 
-const OutputAreaDesc = styled(BaseOutputAreaDesc)``;
+const OutputAreaDesc = styled(styles.BaseOutputAreaDesc)``;
 
-const OutputAreaType = styled(BaseOutputAreaType)``;
+const OutputAreaType = styled(styles.BaseOutputAreaType)``;
 
-const OutputAreaImg = styled(BaseOutputAreaImg)`
+const OutputAreaImg = styled(styles.BaseOutputAreaImg)`
   ${props => {
     if(props.id < 10) {
       return`

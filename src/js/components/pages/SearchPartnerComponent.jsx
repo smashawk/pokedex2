@@ -1,52 +1,100 @@
 import React from "react";
-import styles from '../../../scss/modules/SearchPartner.module.scss'
+import styled from 'styled-components';
+import * as styles from '../../../scss/mixin/common';
 // import axios from 'axios';
 import normalArray from '../../common/createNormalArray'
 
+const ContentArea = styled(styles.BaseContentArea)``;
+
+const InputArea = styled.div``;
+
+const InputAreaDesc = styled(styles.BaseInputAreaDesc)``;
+
+const InputAreaText = styled(styles.BaseInputAreaText)``;
+
+const OutputArea = styled(styles.BaseOutputArea)`
+  margin: 30px auto 0;
+`;
+
+const OutputAreaList = styled(styles.BaseOutputAreaList)``;
+
+const OutputAreaTitle = styled(styles.BaseOutputAreaTitle)``;
+
+const OutputAreaDesc = styled(styles.BaseOutputAreaDesc)``;
+
+const OutputAreaType = styled(styles.BaseOutputAreaType)``;
+
+const OutputAreaImg = styled(styles.BaseOutputAreaImg)`
+  ${props => {
+    if(props.partnerNo < 10) {
+      return`
+        background: center / contain no-repeat url(./images/00${props.partnerNo}_0.png);
+      `
+    } else if(9 < props.partnerNo && props.partnerNo < 100) {
+      return`
+        background: center / contain no-repeat url(./images/0${props.partnerNo}_0.png);
+      `
+    } else if(props.partnerNo < 1000) {
+      return`
+        background: center / contain no-repeat url(./images/${props.partnerNo}_0.png);
+      `
+    }
+  }}
+`;
+
+const PartnerText = styled.p`
+  font-size: 2rem;
+`;
+
+const PartnerSubText = styled.span`
+  font-weight: bold;
+  padding: 0 0.5rem;
+`;
 
 
 const SearchPartner = (props) => {
 
+  return(
+    
+    <ContentArea>
 
-    return(
-      
-      <section className={styles.contentArea}>
-        <div className={styles.inputArea}>
+      <InputArea>
         <h2>3. あなたの相棒ポケモン検索</h2>
-          <p className={styles.inputAreaDesc}>※ひらがな入力必須/フルネーム推奨</p>
-          <input
+          <InputAreaDesc>※ひらがな入力必須/フルネーム推奨</InputAreaDesc>
+          <InputAreaText 
             id="inputName"
-            className={styles.inputAreaName}
             type="text"
             placeholder="ひらがなで名前を入力しよう"
-            />
-          <button onClick={e => props.decidePartner(e)}>決定</button>
-        </div>
-        {props.isDecision && 
-          <div className={styles.outputArea}>
-            <div>
-              <p className={styles.partnerText}><span className={styles.partnerSubText}>{props.inputName}</span>は<span className={styles.partnerSubText}>{normalArray[props.partnerNo].name}</span>にきめた！</p>
-              <div>
-                <dl className={styles.outputAreaList}>
-                  <dt className={styles.outputAreaTitle}>図鑑番号</dt>
-                  <dd className={styles.outputAreaDesc}>{normalArray[props.partnerNo].no}</dd>
-                  <dt className={styles.outputAreaTitle}>名前</dt>
-                  <dd className={styles.outputAreaDesc}>{normalArray[props.partnerNo].name}</dd>
-                  <dt className={styles.outputAreaTitle}>タイプ</dt>
-                  <dd className={styles.outputAreaDesc}>
-                    <span className={styles.outputAreaType}>{normalArray[props.partnerNo].types[0]}</span>
-                    <span className={styles.outputAreaType}>{normalArray[props.partnerNo].types[1]}</span>
-                  </dd>
-                </dl>
-                <div className={`${styles.outputAreaImg} outputAreaImgNo${props.partnerNo}`}></div>
-              </div>
-            </div>
+          />
+          <button onClick={e => props.decidePartner(e)}>決定</button>      
+      </InputArea>
+
+      {props.isDecision && 
+        <OutputArea>
+          <div>
+            <PartnerText>
+              <PartnerSubText>{props.inputName}</PartnerSubText>は
+              <PartnerSubText>{normalArray[props.partnerNo].name}</PartnerSubText>にきめた！
+            </PartnerText>
+              <OutputAreaList>
+                <OutputAreaTitle>図鑑番号</OutputAreaTitle>
+                <OutputAreaDesc>{normalArray[props.partnerNo].no}</OutputAreaDesc>
+                <OutputAreaTitle>名前</OutputAreaTitle>
+                <OutputAreaDesc>{normalArray[props.partnerNo].name}</OutputAreaDesc>
+                <OutputAreaTitle>タイプ</OutputAreaTitle>
+                <OutputAreaDesc>
+                  <span>{normalArray[props.partnerNo].types[0]}</span>
+                  <OutputAreaType>{normalArray[props.partnerNo].types[1]}</OutputAreaType>
+                </OutputAreaDesc>
+              </OutputAreaList>
+              <OutputAreaImg partnerNo={props.partnerNo}/>
           </div>
-        }
+          
+        </OutputArea>
+      }
+    </ContentArea>
 
-      </section>
-
-    )
+  )
 
 }
 
