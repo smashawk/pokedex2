@@ -2,7 +2,14 @@ import React from "react";
 import styled from 'styled-components';
 
 
-const TypeIconListImg = styled.li`
+const IconListAreaWrap = styled.div``;
+
+const IconList = styled.ul`
+  width: 1120px;
+  margin-top: 30px;
+`;
+
+const IconListImg = styled.li`
   display: inline-block;
   width: 50px;
   height: 50px;
@@ -30,13 +37,14 @@ const TypeIconListImg = styled.li`
   }
 `;
 
-// typeArrayのポケモンDOMを作っておく
-const typeList = props => {
 
+const IconListArea = props => {
+  
+  // typeArrayのポケモンDOMを作っておく
   const nodes = props.typeArray.map(value => {
 
     const node = 
-    <TypeIconListImg 
+    <IconListImg 
       key={value.key}
       id={value.number.no}
       onMouseOver={e => props.showData(e.target.id)}
@@ -46,9 +54,16 @@ const typeList = props => {
     return node;
   });
 
-  return nodes;
+  return (
+    <IconListAreaWrap>
+      {/* {props.clickMessage && <p>ポケモンをクリック！</p>} */}
+      <IconList>
+        {nodes}
+      </IconList>
+    </IconListAreaWrap>
+  )
 
 }
  
 
-export default typeList;
+export default IconListArea;
