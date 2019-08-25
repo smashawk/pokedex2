@@ -23,7 +23,7 @@ export const BaseInputAreaErrorText = styled.p`
 
 
 // OutputArea
-export const BaseOutputArea = styled.div`
+export const BaseOutputAreaWrap = styled.div`
   width: 550px;
 `;
 

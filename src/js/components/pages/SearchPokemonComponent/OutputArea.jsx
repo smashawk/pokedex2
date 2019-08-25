@@ -1,10 +1,10 @@
 import React from "react";
 import styled from 'styled-components';
-import * as styles from '../../../../styles/mixin/common';
+import * as styles from '../../../../styles/baseStyle';
 import normalArray from '../../../common/createNormalArray';
 
 
-const OutputAreaWrap = styled(styles.BaseOutputArea)``;
+const OutputAreaWrap = styled(styles.BaseOutputAreaWrap)``;
 
 const OutputAreaList = styled(styles.BaseOutputAreaList)``;
 

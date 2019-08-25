@@ -1,6 +1,6 @@
 import React from "react";
 import styled from 'styled-components';
-import * as styles from '../../../../styles/mixin/common';
+import * as styles from '../../../../styles/baseStyle';
 
 
 const InputAreaWrap = styled.div``;

@@ -1,15 +1,25 @@
 import React from 'react';
 import { HashRouter, Link, Route, Switch } from "react-router-dom";
+import styled from 'styled-components';
 import IndexPage from "./pages/IndexComponent";
 import SearchPokemon from "../containers/SearchPokemonContainer";
 import SearchType from '../containers/SearchTypeContainer';
 import SearchPartner from '../containers/SearchPartnerContainer';
 
+
+const App = styled.div`
+  font-size: 1.6rem;
+  width: 1120px;
+  margin: 40px auto 0;
+  text-align: center;
+`;
+
+
 const AppComponent = (props) => {
     
       return(
         <HashRouter hashType="noslash">
-          <div className="App">
+          <App>
             <header>
               <nav>
                 <Link to="/">TOP</Link>/
@@ -62,7 +72,7 @@ const AppComponent = (props) => {
               </Switch>
 
             </main>
-          </div>
+          </App>
         </HashRouter>
       )
 }
