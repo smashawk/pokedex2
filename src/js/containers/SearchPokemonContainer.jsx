@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { decidePokemon } from '../actions/decidePokemon';
-import SearchPokemonComponent from '../components/pages/SearchPokemonComponent/index';
+import SearchPokemonComponent from '../components/pages/SearchPokemonComponent';
 
 const mapStateToProps = state => ({
   no: state.number.no,
