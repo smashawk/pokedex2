@@ -14,10 +14,13 @@ const SearchPartner = (props) => {
   return(
     
     <ContentArea>
+      
+      <Login
+        login={props.login}
+        isLogin={props.isLogin}
+      />
 
-    <Login />
-
-      <InputArea 
+      <InputArea
         decidePartner={props.decidePartner}
       />
 
