@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import * as styles from '../../../../styles/baseStyle';
 import InputArea from './InputArea';
 import OutputArea from './OutputArea';
-// import axios from 'axios';
+import Login from './Login';
 
 
 const ContentArea = styled(styles.BaseContentArea)``;
@@ -14,6 +14,8 @@ const SearchPartner = (props) => {
   return(
     
     <ContentArea>
+
+    <Login />
 
       <InputArea 
         decidePartner={props.decidePartner}
