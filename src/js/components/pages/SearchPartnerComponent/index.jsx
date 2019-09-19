@@ -21,13 +21,16 @@ const SearchPartner = (props) => {
       />
 
       <InputArea
+        fetchData={props.fetchData}
         decidePartner={props.decidePartner}
+        result={props.result}
       />
 
       {props.isDecision && 
         <OutputArea
           partnerNo={props.partnerNo}
           inputName={props.inputName}
+          result={props.result}
         />
       }
 

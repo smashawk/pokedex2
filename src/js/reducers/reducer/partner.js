@@ -2,7 +2,7 @@ const partnerReducer = (
   state = {
     partnerNo: 0,
     inputName: '',
-    isDecision: false
+    isDecision: false,
   },
   action
 ) => {

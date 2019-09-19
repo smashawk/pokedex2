@@ -5,7 +5,10 @@ import normalArray from '../../../common/createNormalArray'
 
 
 const OutputAreaWrap = styled(styles.BaseOutputAreaWrap)`
+  display: flex;
+  justify-content: center;
   margin: 30px auto 0;
+  width: 960px;
 `;
 
 const OutputAreaList = styled(styles.BaseOutputAreaList)``;
@@ -43,12 +46,21 @@ const PartnerSubText = styled.span`
   padding: 0 0.5rem;
 `;
 
+const OutputAreaNijiImg = styled.img`
+  width: 200px;
+  height: 200px;
+`;
+
 
 const OutputArea = (props) => {
 
   return(
 
     <OutputAreaWrap>
+
+    {props.result && <OutputAreaNijiImg src={props.result.photo_url} />}
+
+    <div>
 
       <PartnerText>
         <PartnerSubText>{props.inputName}</PartnerSubText>は
@@ -68,6 +80,9 @@ const OutputArea = (props) => {
       </OutputAreaList>
 
       <OutputAreaImg partnerNo={props.partnerNo}/>
+
+    </div>
+
 
     </OutputAreaWrap>
   )
