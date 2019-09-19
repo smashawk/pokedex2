@@ -1,6 +1,5 @@
 import { connect } from 'react-redux';
-import { decidePartner } from '../actions/decidePartner';
-import { fetchData } from '../actions/fetchData'
+import { fetchData } from '../actions/decidePartner';
 import { login } from '../actions/login';
 import SearchPartnerComponent from '../components/pages/SearchPartnerComponent';
 
@@ -9,13 +8,12 @@ const mapStateToProps = state => ({
   inputName: state.partner.inputName,
   isDecision: state.partner.isDecision,
   isLogin: state.login.isLogin,
-  result: state.nijiData.result,
+  result: state.partner.result,
 });
 
 
 const mapDispatchToProps = dispatch => ({
-  decidePartner: (e) => dispatch(decidePartner(e)),
-  fetchData: (e) => dispatch(fetchData(e)),
+  decidePartner: (e) => dispatch(fetchData(e)),
   login: () => dispatch(login()),
 });
 

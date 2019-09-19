@@ -1,5 +1,6 @@
-const partnerReducer = (
+const nijiDataReducer = (
   state = {
+    result: '',
     partnerNo: 0,
     inputName: '',
     isDecision: false,
@@ -9,9 +10,10 @@ const partnerReducer = (
 
   switch (action.type) {
 
-    case 'DECIDE_PARTNER_POKEMON':
+    case 'FETCH_SUCCEEDED':
       return {
         ...state,
+        result: action.result,
         partnerNo: action.partnerNo,
         inputName: action.inputName,
         isDecision: true,
@@ -19,7 +21,9 @@ const partnerReducer = (
 
     default:
       return state;
+
   }
+
 };
 
-export default partnerReducer;
+export default nijiDataReducer;

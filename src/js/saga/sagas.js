@@ -1,6 +1,6 @@
 
 import { call, put, takeEvery } from "redux-saga/effects";
-import { fetchFailed, fetchSucceeded } from "../actions/fetchData";
+import { fetchFailed, fetchSucceeded } from "../actions/decidePartner";
 import axios from 'axios';
 
 

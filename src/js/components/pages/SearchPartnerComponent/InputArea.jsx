@@ -23,7 +23,6 @@ const InputArea = (props) => {
           id="inputName"
           type="text"
           placeholder="名前を入力しよう"
-          onChange={e => props.fetchData(e)}
         />
         <button onClick={e => props.decidePartner(e)}>決定</button>
     </InputAreaWrap>

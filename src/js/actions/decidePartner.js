@@ -1,17 +1,23 @@
 import decidePartnerNo from '../common/decidePartnerNo'
 
+export const fetchData = () => ({
+  type: "FETCH_DATA",
+});
 
-export const DECIDE_PARTNER_POKEMON = 'DECIDE_PARTNER_POKEMON';
-
-export const decidePartner = () => {
+export const fetchSucceeded = result => {
 
   const partnerNo = decidePartnerNo();
   const inputName = document.getElementById('inputName').value;
-  return(
-    {
-      type: DECIDE_PARTNER_POKEMON,
-      partnerNo,
-      inputName,
-    }
-  )
+
+  return({
+    type: "FETCH_SUCCEEDED",
+    result,
+    partnerNo,
+    inputName,
+  })
 };
+
+export const fetchFailed = result => ({
+  type: "FETCH_FAILED",
+  result
+});
