@@ -1,4 +1,3 @@
-import hiraganaArray from '../../data/hiragana.json';
 
   const decidePartnerNo = () => {
 
@@ -7,22 +6,15 @@ import hiraganaArray from '../../data/hiragana.json';
     // 入力された名前を一文字ずつ配列に入れる
     var inputNameArray = inputName.value.split('');
 
-
-    // ひらがなナンバーを含む配列をつくる
-    var hiraganaNoArray = inputNameArray.map(nameValue => 
-      hiraganaArray.filter(hiraganaValue => nameValue === hiraganaValue.char)
-    )
-
+    // 名前の配列をASCiiコードの配列に変換
+    var charNumArray = inputNameArray.map(nameValue => nameValue.charCodeAt(0));
   
     // 計算
-    let partnerNo = 1;
-    for (let i = 0; i < hiraganaNoArray.length; i++) {
-      partnerNo *= hiraganaNoArray[i][0].number;
-    }
-  
+    let partnerNo = 0;
+    charNumArray.forEach(value => partnerNo += value)
 
     // ここで相棒ポケモン決定（全ポケモンの数で割った余り）
-    partnerNo = (partnerNo + hiraganaNoArray.length) % 802
+    partnerNo = partnerNo % 802
 
     return partnerNo;
 

@@ -15,7 +15,7 @@ export const decidePartner = () => {
   });
   httpClient.get('/who/search?query=' + inputName)
   .then((result)=>{
-    console.log('result', result.data.data.item_list[0])
+    // console.log('result', result.data.data.item_list[0])
   })
 
   return(
