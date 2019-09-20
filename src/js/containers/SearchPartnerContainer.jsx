@@ -5,7 +5,7 @@ import SearchPartnerComponent from '../components/pages/SearchPartnerComponent';
 
 const mapStateToProps = state => ({
   partnerNo: state.partner.partnerNo,
-  inputName: state.partner.inputName,
+  inputNameValue: state.partner.inputNameValue,
   isDecision: state.partner.isDecision,
   isLogin: state.login.isLogin,
   result: state.partner.result,

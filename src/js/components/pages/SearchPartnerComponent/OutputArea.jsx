@@ -63,7 +63,7 @@ const OutputArea = (props) => {
     <div>
 
       <PartnerText>
-        <PartnerSubText>{props.inputName}</PartnerSubText>は
+        <PartnerSubText>{props.inputNameValue}</PartnerSubText>は
         <PartnerSubText>{normalArray[props.partnerNo].name}</PartnerSubText>にきめた！
       </PartnerText>
 

@@ -5,7 +5,7 @@ export const NULL_POKEMON_NUMBER = 'NULL_FIT_POKEMON_NUMBER';
 export const FIT_POKEMON_NUMBER = 'FIT_POKEMON_NUMBER';
 export const NOT_FIT_POKEMON_NUMBER = 'NOT_FIT_POKEMON_NUMBER';
 
-export const decidePokemon = (text) => {
+export const decidePokemon = (text:any) => {
 
   let type;
   let fitNo;

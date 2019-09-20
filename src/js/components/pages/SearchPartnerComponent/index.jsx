@@ -29,7 +29,7 @@ const SearchPartner = (props) => {
       {props.isDecision && 
         <OutputArea
           partnerNo={props.partnerNo}
-          inputName={props.inputName}
+          inputNameValue={props.inputNameValue}
           result={props.result}
         />
       }

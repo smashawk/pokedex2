@@ -65,7 +65,7 @@ const AppComponent = (props) => {
                     () => <SearchPartner
                       decidePartner={props.decidePartner}
                       partnerNo={props.partnerNo}
-                      inputName={props.inputName}
+                      inputNameValue={props.inputNameValue}
                       isDecision={props.isDecision}
                       fetchData={props.fetchData}
                       result={props.result}

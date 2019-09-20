@@ -2,7 +2,7 @@ const nijiDataReducer = (
   state = {
     result: '',
     partnerNo: 0,
-    inputName: '',
+    inputNameValue: '',
     isDecision: false,
   },
   action
@@ -15,7 +15,7 @@ const nijiDataReducer = (
         ...state,
         result: action.result,
         partnerNo: action.partnerNo,
-        inputName: action.inputName,
+        inputNameValue: action.inputNameValue,
         isDecision: true,
       };
 
