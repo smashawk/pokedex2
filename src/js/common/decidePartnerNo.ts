@@ -1,7 +1,7 @@
 
   const decidePartnerNo = () => {
 
-    const inputName = document.getElementById('inputName');
+    const inputName:HTMLInputElement = document.getElementById('inputName') as HTMLInputElement;
 
     // 入力された名前を一文字ずつ配列に入れる
     var inputNameArray = inputName.value.split('');

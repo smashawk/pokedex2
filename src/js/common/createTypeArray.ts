@@ -1,10 +1,12 @@
-import normalArray from '../common/createNormalArray'
+import normalArray from './createNormalArray'
 
 // タイプ検索で選ばれたタイプを持つポケモンデータが入った配列をつくる
 const createTypeArray = () => {
 
-  const typeSelector1Value = document.getElementById('typeSelector1').value;
-  const typeSelector2Value = document.getElementById('typeSelector2').value;
+  const typeSelector1:HTMLSelectElement = document.getElementById('typeSelector1') as HTMLSelectElement;
+  const typeSelector2:HTMLSelectElement = document.getElementById('typeSelector2') as HTMLSelectElement;
+  const typeSelector1Value:string = typeSelector1.value;
+  const typeSelector2Value:string = typeSelector2.value;
   let typeArray = [];
   let subTypeArray = [];
 
