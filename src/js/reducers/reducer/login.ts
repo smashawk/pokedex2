@@ -1,8 +1,13 @@
+interface actionData {
+  type:string,
+  isLogin:boolean
+}
+
 const loginReducer = (
   state = {
     isLogin: false
   },
-  action
+  action:actionData
 ) => {
 
   switch (action.type) {

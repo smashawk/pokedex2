@@ -1,9 +1,16 @@
+interface actionData {
+  type: string,
+  no: number,
+  fitNo: number,
+  errorMessage: boolean
+}
+
 const numberReducer = (
   state = {
     no: 0,
     errorMessage: false
   },
-  action
+  action:actionData
 ) => {
 
   switch (action.type) {

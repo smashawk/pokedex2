@@ -1,3 +1,11 @@
+interface actionData {
+  type: string,
+  result:any,
+  partnerNo: number,
+  inputNameValue: string,
+  isDecision: boolean
+}
+
 const nijiDataReducer = (
   state = {
     result: '',
@@ -5,7 +13,7 @@ const nijiDataReducer = (
     inputNameValue: '',
     isDecision: false,
   },
-  action
+  action:actionData
 ) => {
 
   switch (action.type) {

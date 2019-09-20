@@ -1,8 +1,13 @@
+interface actionData {
+  type:string,
+  id:number
+}
+
 const dataReducer = (
   state = {
     id: 0
   },
-  action
+  action:actionData
 ) => {
 
   switch (action.type) {

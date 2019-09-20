@@ -1,14 +1,21 @@
+interface actionData {
+  type: string,
+  typeArray: [],
+  clickMessage: boolean
+}
+
 const typeReducer = (
   state = {
     typeArray: [],
     clickMessage: false
   },
-  action
+  action:actionData
 ) => {
 
   switch (action.type) {
 
     case 'DECIDE_TYPE':
+      console.log(action.typeArray)
       return {
         ...state,
         typeArray: action.typeArray,

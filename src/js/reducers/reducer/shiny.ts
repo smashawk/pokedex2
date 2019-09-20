@@ -1,8 +1,13 @@
+interface actionData {
+  type:string,
+  shinyId:number
+}
+
 const shinyReducer = (
   state = {
     shinyId: 0,
   },
-  action
+  action:actionData
 ) => {
 
   switch (action.type) {
