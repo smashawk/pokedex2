@@ -25,11 +25,11 @@ const AppComponent = (props) => {
                 <Link to="/">TOP</Link>/
                 <Link to="/pokemon">図鑑ナンバー検索</Link>/
                 <Link to="/type">タイプ検索</Link>/
-                <Link to="/partner">相棒ポケモン検索</Link>
+                <Link to="/partner">相棒ポ○モン検索</Link>
               </nav>
             </header>
             <main>
-            <h1>ポケモン図鑑</h1>
+            <h1>○ケモン図鑑</h1>
             <hr />
 
               <Switch>

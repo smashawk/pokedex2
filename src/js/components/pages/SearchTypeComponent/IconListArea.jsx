@@ -59,7 +59,7 @@ const IconListArea = props => {
 
   return (
     <IconListAreaWrap>
-      {props.clickMessage && <IconListText>ポケモンをクリックしてみよう！</IconListText>}
+      {props.clickMessage && <IconListText>ポケモ○をクリックしてみよう！</IconListText>}
       <IconList>
         {nodes}
       </IconList>

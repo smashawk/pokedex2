@@ -17,7 +17,7 @@ const InputArea = (props) => {
   return(
 
     <InputAreaWrap>
-      <h2>3. あなたの相棒ポケモン検索</h2>
+      <h2>3. あなたの相棒ポケ○ン検索</h2>
         <InputAreaDesc>※フルネーム推奨ですが、何入力してもいいです</InputAreaDesc>
         <InputAreaText 
           id="inputName"
