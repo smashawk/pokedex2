@@ -14,7 +14,7 @@
     charNumArray.forEach(value => partnerNo += value)
 
     // ここで相棒ポケモン決定（全ポケモンの数で割った余り）
-    partnerNo = partnerNo % 802
+    partnerNo = partnerNo % 802 ? partnerNo % 802 : 1;
 
     return partnerNo;
 
