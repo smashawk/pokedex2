@@ -1,21 +1,9 @@
 import decidePartnerNo from '../common/decidePartnerNo';
-
+import { userInfo } from '../types/commonTypes'
 
 export const FETCH_DATA = 'FETCH_DATA';
 export const FETCH_SUCCEEDED = 'FETCH_SUCCEEDED';
 export const FETCH_FAILED = 'FETCH_FAILED';
-
-
-interface userInfo {
-  user_id: string,
-  user_name: string,
-  nickname: string,
-  mail: string,
-  department_id: string,
-  department_name: string,
-  department_division_name: string
-  photo_url: string
-}
 
 
 export const fetchData = () => ({

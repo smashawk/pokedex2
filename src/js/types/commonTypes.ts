@@ -1,4 +1,4 @@
-export interface pokeData {
+export type pokeData = {
   "no": number,
   "name": string,
   "form": string,
@@ -15,4 +15,15 @@ export interface pokeData {
     "spDefence": number,
     "speed": number
   }
+}
+
+export type userInfo = {
+  user_id: string,
+  user_name: string,
+  nickname: string,
+  mail: string,
+  department_id: string,
+  department_name: string,
+  department_division_name: string
+  photo_url: string
 }

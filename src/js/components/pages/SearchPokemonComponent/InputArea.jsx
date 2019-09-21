@@ -24,7 +24,7 @@ const InputArea = (props) => {
         onChange={e => props.decidePokemon(e.target.value)}
         placeholder="図鑑ナンバーを入力"
       />
-      {props.errorMessage && <InputAreaErrorText>適切な数字を入力してください。</InputAreaErrorText>}
+      {props.errorMessage && <InputAreaErrorText>適切な名前or数字を入力してください。</InputAreaErrorText>}
     </InputAreaWrap>
   )
 }

@@ -1,36 +1,43 @@
 import normalArray from '../common/createNormalArray'
+import { DecidePokemonActionTypes, SEARCH_POKEMON_DATA } from '../types/decidePokemonTypes'
 
-export const FIT_POKEMON_NAME = 'FIT_POKEMON_NAME';
-export const NULL_INPUT_DATA = 'NULL_INPUT_DATA';
-export const FIT_POKEMON_NUMBER = 'FIT_POKEMON_NUMBER';
-export const NOT_FIT_POKEMON_NUMBER = 'NOT_FIT_POKEMON_NUMBER';
 
-export const decidePokemon = (text:any) => {
+export const decidePokemon = (text:number | string):DecidePokemonActionTypes => {
 
-  let type;
-  let fitNo;
+  let no;
+  let errorMessage;
 
+  // 何も入力されていない場合 → No.0のおばけ画像を表示
   if(!text) {
-    type = NULL_INPUT_DATA;
+    no = 0;
+    errorMessage = false;
   
+  // 範囲内の数字が入力されている場合
   } else if(text < 803 && 0 < text) {
-    type = FIT_POKEMON_NUMBER;
+    no = text as number;
+    errorMessage = false;
 
+  // 範囲外の数字、及びその他無関係な文字列が入力されている場合
   } else {
-    type = NOT_FIT_POKEMON_NUMBER;
+    no = 0;
+    errorMessage = true
   }
 
+  // ポケモンの名前が入力されている場合
   for(let i = 0; i<normalArray.length; i++) {
     if(text === normalArray[i].name) {
-      type = FIT_POKEMON_NAME;
-      fitNo = i;
+      no = i;
+      errorMessage = false;
       break;
     }
   }
 
   return {
-    type,
-    no: text,
-    fitNo: fitNo ? fitNo : 0
+    type: SEARCH_POKEMON_DATA,
+    payload: {
+      no,
+      errorMessage
+    }
   }
+
 };

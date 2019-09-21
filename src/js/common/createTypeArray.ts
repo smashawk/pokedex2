@@ -1,5 +1,6 @@
 import normalArray from './createNormalArray'
 
+
 // タイプ検索で選ばれたタイプを持つポケモンデータが入った配列をつくる
 const createTypeArray = () => {
 

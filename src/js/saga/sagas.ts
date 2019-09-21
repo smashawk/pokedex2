@@ -29,7 +29,7 @@ function* fetchNijiData() {
 }
 
 /**
- * FETCH_REQUESTED Action が送出されるたびに fetchJsonDataを起動します。
+ * FETCH_DATA Action が送出されるたびに fetchNijiDataを起動する
  */
 function* sagas() {
   yield takeEvery("FETCH_DATA", fetchNijiData);

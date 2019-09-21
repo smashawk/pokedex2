@@ -1,49 +1,25 @@
-import { FIT_POKEMON_NAME, NULL_INPUT_DATA, FIT_POKEMON_NUMBER, NOT_FIT_POKEMON_NUMBER } from '../../actions/decidePokemon'
+import { DecidePokemonActionTypes, SEARCH_POKEMON_DATA } from '../../types/decidePokemonTypes'
 
 
-type actionData = {
-  type: string,
-  no: number,
-  fitNo: number,
-  errorMessage: boolean
+type initialStateTypes = {
+  no:number,
+  errorMessage:boolean
 }
 
 const numberReducer = (
-  state = {
+  state:initialStateTypes = {
     no: 0,
     errorMessage: false
   },
-  action:actionData
+  action:DecidePokemonActionTypes
 ) => {
 
   switch (action.type) {
 
-    case FIT_POKEMON_NAME:
+    case SEARCH_POKEMON_DATA:
       return {
         ...state,
-        no: action.fitNo,
-        errorMessage: false
-      }
-
-    case NULL_INPUT_DATA:
-      return {
-        ...state,
-        no: 0,
-        errorMessage: false
-      }
-
-    case FIT_POKEMON_NUMBER:
-      return {
-        ...state,
-        no: action.no,
-        errorMessage: false
-      };
-
-    case NOT_FIT_POKEMON_NUMBER:
-      return {
-        ...state,
-        no: 0,
-        errorMessage: true
+        ...action.payload,
       }
 
     default:

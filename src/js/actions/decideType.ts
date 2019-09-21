@@ -1,7 +1,7 @@
 import createTypeArray from '../common/createTypeArray';
 
-
 export const DECIDE_TYPE = 'DECIDE_TYPE'
+
 
 export const decideType = () => {
 
