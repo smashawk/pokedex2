@@ -1,5 +1,6 @@
 import React from "react";
 import styled from 'styled-components';
+import createTypeArray from '../../../common/createTypeArray'
 
 
 const IconListAreaWrap = styled.div``;
@@ -43,8 +44,11 @@ const IconListImg = styled.li`
 
 const IconListArea = props => {
   
+  // 選択されたタイプを持つポケモンの配列を作成
+  const typeArray = createTypeArray(props.pokeType1, props.pokeType2);
+
   // typeArrayのポケモンDOMを作っておく
-  const nodes = props.typeArray.map(value => {
+  const nodes = typeArray.map(value => {
 
     const node = 
     <IconListImg 

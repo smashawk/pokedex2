@@ -1,4 +1,4 @@
-const resetType = () => {
+const resetSelectOption = () => {
   const typeSelector1:HTMLSelectElement = document.getElementById('typeSelector1') as HTMLSelectElement;
   const typeSelector2:HTMLSelectElement = document.getElementById('typeSelector2') as HTMLSelectElement;
 
@@ -7,4 +7,4 @@ const resetType = () => {
 
 }
 
-export default resetType;
+export default resetSelectOption;

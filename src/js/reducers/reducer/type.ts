@@ -1,19 +1,19 @@
-import { DECIDE_TYPE } from '../../actions/decideType'
-import { RESET_TYPE_LIST } from '../../actions/resetType'
+import { DecideTypeActionTypes, DECIDE_TYPE, RESET_TYPE_LIST } from '../../types/decideTypeTypes'
 
 
-type actionData = {
-  type: string,
-  typeArray: [],
-  clickMessage: boolean
+type initialStateTypes = {
+  pokeType1:string,
+  pokeType2:string,
+  clickMessage:boolean
 }
 
 const typeReducer = (
-  state = {
-    typeArray: [],
+  state:initialStateTypes = {
+    pokeType1: '-',
+    pokeType2: '-',
     clickMessage: false
   },
-  action:actionData
+  action:DecideTypeActionTypes
 ) => {
 
   switch (action.type) {
@@ -21,15 +21,15 @@ const typeReducer = (
     case DECIDE_TYPE:
       return {
         ...state,
-        typeArray: action.typeArray,
-        clickMessage: true,
+        ...action.payload
       };
 
     case RESET_TYPE_LIST:
       return {
         ...state,
-        typeArray: [],
-        clickMessage: false,
+        ...action.payload,
+        pokeType1: '-',
+        pokeType2: '-',
       };
 
     default:

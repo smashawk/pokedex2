@@ -1,5 +1,5 @@
 import { SHOW_POKEMON_DATA } from '../../actions/showData'
-import { RESET_TYPE_LIST } from '../../actions/resetType'
+import { RESET_TYPE_LIST } from '../../types/decideTypeTypes'
 
 
 type actionData = {

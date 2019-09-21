@@ -49,8 +49,10 @@ const AppComponent = (props) => {
                 <Route path="/type"
                   render={
                     () => <SearchType
-                      decideType={props.decideType}
-                      typeArray={props.typeArray}
+                      decideType1={props.decideType1}
+                      decideType2={props.decideType2}
+                      pokeType1={props.pokeType1}
+                      pokeType2={props.pokeType2}
                       showData={props.showData}
                       showShinyPokemon={props.showShinyPokemon}
                       id={props.id}
