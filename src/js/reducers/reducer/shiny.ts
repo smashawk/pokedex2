@@ -1,4 +1,7 @@
-interface actionData {
+import { SHOW_SHINY_POKEMON } from '../../actions/showShinyPokemon'
+
+
+type actionData = {
   type:string,
   shinyId:number
 }
@@ -12,7 +15,7 @@ const shinyReducer = (
 
   switch (action.type) {
 
-    case 'SHOW_SHINY_POKEMON':
+    case SHOW_SHINY_POKEMON:
       return {
         ...state,
         shinyId: action.shinyId,

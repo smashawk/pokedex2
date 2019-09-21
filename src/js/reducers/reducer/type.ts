@@ -1,4 +1,8 @@
-interface actionData {
+import { DECIDE_TYPE } from '../../actions/decideType'
+import { RESET_TYPE_LIST } from '../../actions/resetType'
+
+
+type actionData = {
   type: string,
   typeArray: [],
   clickMessage: boolean
@@ -14,15 +18,14 @@ const typeReducer = (
 
   switch (action.type) {
 
-    case 'DECIDE_TYPE':
-      console.log(action.typeArray)
+    case DECIDE_TYPE:
       return {
         ...state,
         typeArray: action.typeArray,
         clickMessage: true,
       };
 
-    case 'RESET_TYPE_LIST':
+    case RESET_TYPE_LIST:
       return {
         ...state,
         typeArray: [],

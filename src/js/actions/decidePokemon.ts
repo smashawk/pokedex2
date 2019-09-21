@@ -1,7 +1,7 @@
 import normalArray from '../common/createNormalArray'
 
 export const FIT_POKEMON_NAME = 'FIT_POKEMON_NAME';
-export const NULL_POKEMON_NUMBER = 'NULL_FIT_POKEMON_NUMBER';
+export const NULL_INPUT_DATA = 'NULL_INPUT_DATA';
 export const FIT_POKEMON_NUMBER = 'FIT_POKEMON_NUMBER';
 export const NOT_FIT_POKEMON_NUMBER = 'NOT_FIT_POKEMON_NUMBER';
 
@@ -11,7 +11,7 @@ export const decidePokemon = (text:any) => {
   let fitNo;
 
   if(!text) {
-    type = NULL_POKEMON_NUMBER;
+    type = NULL_INPUT_DATA;
   
   } else if(text < 803 && 0 < text) {
     type = FIT_POKEMON_NUMBER;

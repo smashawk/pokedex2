@@ -1,4 +1,7 @@
-interface actionData {
+import { LOGIN } from '../../actions/login'
+
+
+type actionData = {
   type:string,
   isLogin:boolean
 }
@@ -12,7 +15,7 @@ const loginReducer = (
 
   switch (action.type) {
 
-    case 'LOGIN':
+    case LOGIN:
       return {
         ...state,
         isLogin: true

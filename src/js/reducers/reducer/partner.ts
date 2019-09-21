@@ -1,4 +1,7 @@
-interface actionData {
+import { FETCH_SUCCEEDED } from '../../actions/decidePartner'
+
+
+type actionData = {
   type: string,
   result:any,
   partnerNo: number,
@@ -18,7 +21,7 @@ const nijiDataReducer = (
 
   switch (action.type) {
 
-    case 'FETCH_SUCCEEDED':
+    case FETCH_SUCCEEDED:
       return {
         ...state,
         result: action.result,

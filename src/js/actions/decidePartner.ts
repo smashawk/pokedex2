@@ -1,8 +1,10 @@
-import decidePartnerNo from '../common/decidePartnerNo'
+import decidePartnerNo from '../common/decidePartnerNo';
 
-export const fetchData = () => ({
-  type: "FETCH_DATA",
-});
+
+export const FETCH_DATA = 'FETCH_DATA';
+export const FETCH_SUCCEEDED = 'FETCH_SUCCEEDED';
+export const FETCH_FAILED = 'FETCH_FAILED';
+
 
 interface userInfo {
   user_id: string,
@@ -14,6 +16,11 @@ interface userInfo {
   department_division_name: string
   photo_url: string
 }
+
+
+export const fetchData = () => ({
+  type: FETCH_DATA,
+});
 
 export const fetchSucceeded = (result:userInfo) => {
 
