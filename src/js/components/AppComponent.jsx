@@ -15,8 +15,8 @@ const App = styled.div`
 `;
 
 
-const AppComponent = (props) => {
-    
+const AppComponent = () => {
+
   return(
     <HashRouter hashType="noslash">
       <App>
@@ -31,52 +31,12 @@ const AppComponent = (props) => {
         <main>
         <h1>○ケモン図鑑</h1>
         <hr />
-
           <Switch>
-
             <Route exact path="/" component={IndexPage} />
-
-            <Route path="/pokemon"
-              render={
-                () => <SearchPoke
-                  decidePoke={props.decidePoke}
-                  no={props.no}
-                  errorMessage={props.errorMessage}
-                />
-              }
-            />
-
-            <Route path="/type"
-              render={
-                () => <SearchType
-                  decidePokeType1={props.decidePokeType1}
-                  decidePokeType2={props.decidePokeType2}
-                  pokeType1={props.pokeType1}
-                  pokeType2={props.pokeType2}
-                  showData={props.showData}
-                  showShinyPoke={props.showShinyPoke}
-                  id={props.id}
-                  shinyId={props.shinyId}
-                  clickMessage={props.clickMessage}
-                />
-              }
-            />
-
-            <Route path="/partner"
-              render={
-                () => <SearchPartner
-                  fetchData={props.fetchData}
-                  decidePartner={props.decidePartner}
-                  inputName={props.inputName}
-                  nijiData={props.nijiData}
-                  partnerNo={props.partnerNo}
-                  isDecision={props.isDecision}
-                />
-              }
-            />
-
+            <Route path="/pokemon" component={SearchPoke} />
+            <Route path="/type" component={SearchType} />
+            <Route path="/partner" component={SearchPartner} />
           </Switch>
-
         </main>
       </App>
     </HashRouter>
