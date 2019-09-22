@@ -10,7 +10,7 @@ const mapStateToProps = state => ({
 
 
 const mapDispatchToProps = dispatch => ({
-  decidePoke: text => dispatch(decidePoke(text)),
+  decidePoke: inputText => dispatch(decidePoke(inputText)),
 });
 
 
