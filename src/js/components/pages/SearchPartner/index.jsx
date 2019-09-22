@@ -23,14 +23,14 @@ const SearchPartner = (props) => {
       <InputArea
         fetchData={props.fetchData}
         decidePartner={props.decidePartner}
-        result={props.result}
+        nijiData={props.nijiData}
       />
 
       {props.isDecision && 
         <OutputArea
+          inputName={props.inputName}
+          nijiData={props.nijiData}
           partnerNo={props.partnerNo}
-          inputNameValue={props.inputNameValue}
-          result={props.result}
         />
       }
 

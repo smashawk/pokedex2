@@ -58,12 +58,12 @@ const OutputArea = (props) => {
 
     <OutputAreaWrap>
 
-    {props.result && <OutputAreaNijiImg src={props.result.photo_url} />}
+    {props.nijiData && <OutputAreaNijiImg src={props.nijiData.photo_url} />}
 
     <div>
 
       <PartnerText>
-        <PartnerSubText>{props.inputNameValue}</PartnerSubText>は
+        <PartnerSubText>{props.inputName}</PartnerSubText>は
         <PartnerSubText>{normalArray[props.partnerNo].name}</PartnerSubText>にきめた！
       </PartnerText>
 

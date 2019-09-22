@@ -13,22 +13,27 @@ const InputAreaText = styled(styles.BaseInputAreaText)`
 
 
 const InputArea = (props) => {
-  
+
+  let inputName;
+
   return(
 
     <InputAreaWrap>
       <h2>3. あなたの相棒ポケ○ン検索</h2>
         <InputAreaDesc>※フルネーム推奨ですが、何入力してもいいです</InputAreaDesc>
-        <InputAreaText 
-          id="inputName"
-          type="text"
-          placeholder="名前を入力しよう"
-        />
-        <button onClick={e => props.decidePartner(e)}>決定</button>
+        <form onSubmit={() => props.decidePartner(inputName.value)}>
+          <InputAreaText 
+            id="inputName"
+            type="text"
+            placeholder="名前を入力しよう"
+            ref={node => inputName = node}
+          />
+          <button type="submit">決定</button>
+        </form>
     </InputAreaWrap>
 
   )
-}
+};
 
 
 export default InputArea;

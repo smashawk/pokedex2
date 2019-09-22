@@ -22,7 +22,7 @@ class Login extends Component {
     ;
   }
   loadAuth(){
-    return this.httpClient.get('/auth' , {params:{callback:'http://localhost:3000'}})
+    return this.httpClient.get('/auth' , {params:{callback:'https://smashawk.github.io/pokedex2/'}})
     .then(this.commonResponseHandling)
     .then((result)=>{
       if(result.is_login){

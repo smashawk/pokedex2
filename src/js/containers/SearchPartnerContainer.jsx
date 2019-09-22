@@ -3,17 +3,18 @@ import { fetchData } from '../actions/SearchPartner/decidePartner';
 import { login } from '../actions/SearchPartner/login';
 import SearchPartnerComponent from '../components/pages/SearchPartner';
 
+
 const mapStateToProps = state => ({
+  inputName: state.partner.inputName,
+  nijiData: state.partner.nijiData,
   partnerNo: state.partner.partnerNo,
-  inputNameValue: state.partner.inputNameValue,
   isDecision: state.partner.isDecision,
   isLogin: state.login.isLogin,
-  result: state.partner.result,
 });
 
 
 const mapDispatchToProps = dispatch => ({
-  decidePartner: (e) => dispatch(fetchData(e)),
+  decidePartner: (inputName) => dispatch(fetchData(inputName)),
   login: () => dispatch(login()),
 });
 

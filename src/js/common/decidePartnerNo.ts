@@ -1,9 +1,7 @@
-const decidePartnerNo = () => {
-
-  const inputName:HTMLInputElement = document.getElementById('inputName') as HTMLInputElement;
+const decidePartnerNo = (inputName:string) => {
 
   // 入力された名前を一文字ずつ配列に入れる
-  var inputNameArray = inputName.value.split('');
+  var inputNameArray = inputName.split('');
 
   // 名前の配列をASCiiコードの配列に変換
   var charNumArray = inputNameArray.map(nameValue => nameValue.charCodeAt(0));

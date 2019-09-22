@@ -17,70 +17,71 @@ const App = styled.div`
 
 const AppComponent = (props) => {
     
-      return(
-        <HashRouter hashType="noslash">
-          <App>
-            <header>
-              <nav>
-                <Link to="/">TOP</Link>/
-                <Link to="/pokemon">図鑑ナンバー検索</Link>/
-                <Link to="/type">タイプ検索</Link>/
-                <Link to="/partner">相棒ポ○モン検索</Link>
-              </nav>
-            </header>
-            <main>
-            <h1>○ケモン図鑑</h1>
-            <hr />
+  return(
+    <HashRouter hashType="noslash">
+      <App>
+        <header>
+          <nav>
+            <Link to="/">TOP</Link>/
+            <Link to="/pokemon">図鑑ナンバー検索</Link>/
+            <Link to="/type">タイプ検索</Link>/
+            <Link to="/partner">相棒ポ○モン検索</Link>
+          </nav>
+        </header>
+        <main>
+        <h1>○ケモン図鑑</h1>
+        <hr />
 
-              <Switch>
+          <Switch>
 
-                <Route exact path="/" component={IndexPage} />
+            <Route exact path="/" component={IndexPage} />
 
-                <Route path="/pokemon"
-                  render={
-                    () => <SearchPoke
-                      decidePoke={props.decidePoke}
-                      no={props.no}
-                      errorMessage={props.errorMessage}
-                    />
-                  }
+            <Route path="/pokemon"
+              render={
+                () => <SearchPoke
+                  decidePoke={props.decidePoke}
+                  no={props.no}
+                  errorMessage={props.errorMessage}
                 />
+              }
+            />
 
-                <Route path="/type"
-                  render={
-                    () => <SearchType
-                      decidePokeType1={props.decidePokeType1}
-                      decidePokeType2={props.decidePokeType2}
-                      pokeType1={props.pokeType1}
-                      pokeType2={props.pokeType2}
-                      showData={props.showData}
-                      showShinyPoke={props.showShinyPoke}
-                      id={props.id}
-                      shinyId={props.shinyId}
-                      clickMessage={props.clickMessage}
-                    />
-                  }
+            <Route path="/type"
+              render={
+                () => <SearchType
+                  decidePokeType1={props.decidePokeType1}
+                  decidePokeType2={props.decidePokeType2}
+                  pokeType1={props.pokeType1}
+                  pokeType2={props.pokeType2}
+                  showData={props.showData}
+                  showShinyPoke={props.showShinyPoke}
+                  id={props.id}
+                  shinyId={props.shinyId}
+                  clickMessage={props.clickMessage}
                 />
+              }
+            />
 
-                <Route path="/partner"
-                  render={
-                    () => <SearchPartner
-                      decidePartner={props.decidePartner}
-                      partnerNo={props.partnerNo}
-                      inputNameValue={props.inputNameValue}
-                      isDecision={props.isDecision}
-                      fetchData={props.fetchData}
-                      result={props.result}
-                    />
-                  }
+            <Route path="/partner"
+              render={
+                () => <SearchPartner
+                  fetchData={props.fetchData}
+                  decidePartner={props.decidePartner}
+                  inputName={props.inputName}
+                  nijiData={props.nijiData}
+                  partnerNo={props.partnerNo}
+                  isDecision={props.isDecision}
                 />
+              }
+            />
 
-              </Switch>
+          </Switch>
 
-            </main>
-          </App>
-        </HashRouter>
-      )
+        </main>
+      </App>
+    </HashRouter>
+  )
+
 }
 
 export default AppComponent;

@@ -1,30 +1,31 @@
-import decidePartnerNo from '../../common/decidePartnerNo';
 import { userInfo } from '../../types/commonTypes'
-
-export const FETCH_DATA = 'FETCH_DATA';
-export const FETCH_SUCCEEDED = 'FETCH_SUCCEEDED';
-export const FETCH_FAILED = 'FETCH_FAILED';
+import { DecidePartnerActionTypes, FETCH_DATA, FETCH_SUCCEEDED, FETCH_FAILED} from '../../types/SearchPartner/decidePartnerTypes'
 
 
-export const fetchData = () => ({
+// 社員データを取得しにいく
+export const fetchData = (inputName:string):DecidePartnerActionTypes => ({
+
   type: FETCH_DATA,
+  payload: {
+    inputName
+  }
+
 });
 
-export const fetchSucceeded = (result:userInfo) => {
 
-  const partnerNo = decidePartnerNo();
-  const inputName:HTMLInputElement = document.getElementById('inputName') as HTMLInputElement;
-  const inputNameValue = inputName.value;
+// 社員データ取得のプロセスが成功した場合（データの有無は未関係）
+export const fetchSucceeded = (inputName:string, nijiData:userInfo):DecidePartnerActionTypes => ({
 
-  return({
-    type: "FETCH_SUCCEEDED",
-    result,
-    partnerNo,
-    inputNameValue,
-  })
-};
+  type: FETCH_SUCCEEDED,
+  payload: {
+    inputName,
+    nijiData,
+  }
 
-export const fetchFailed = (result:userInfo) => ({
-  type: "FETCH_FAILED",
-  result
+});
+
+
+// 社員データ取得のプロセスが失敗した場合
+export const fetchFailed = () => ({
+  type: FETCH_FAILED,
 });

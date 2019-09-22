@@ -1,33 +1,40 @@
-import { FETCH_SUCCEEDED } from '../../actions/SearchPartner/decidePartner'
+import { DecidePartnerActionTypes, FETCH_SUCCEEDED, FETCH_FAILED} from '../../types/SearchPartner/decidePartnerTypes'
+import decidePartnerNo from '../../common/decidePartnerNo';
 
-
-type actionData = {
-  type: string,
-  result:any,
+type initialStateTypes = {
+  inputName: string,
+  nijiData:any,
   partnerNo: number,
-  inputNameValue: string,
   isDecision: boolean
 }
 
 const nijiDataReducer = (
-  state = {
-    result: '',
+  state:initialStateTypes = {
+    inputName: '',
+    nijiData: '',
     partnerNo: 0,
-    inputNameValue: '',
     isDecision: false,
   },
-  action:actionData
+  action:DecidePartnerActionTypes
 ) => {
 
   switch (action.type) {
 
     case FETCH_SUCCEEDED:
+
+      // 相棒ポケモンを決定する
+      const partnerNo = decidePartnerNo(action.payload.inputName);
+
       return {
         ...state,
-        result: action.result,
-        partnerNo: action.partnerNo,
-        inputNameValue: action.inputNameValue,
+        ...action.payload,
+        partnerNo,
         isDecision: true,
+      };
+
+    case FETCH_FAILED:
+      return {
+        ...state,
       };
 
     default:

@@ -1,0 +1,24 @@
+import { userInfo } from '../../types/commonTypes'
+
+export const FETCH_DATA = 'FETCH_DATA';
+export const FETCH_SUCCEEDED = 'FETCH_SUCCEEDED';
+export const FETCH_FAILED = 'FETCH_FAILED';
+
+
+interface FetchNijiDataAction {
+  type: typeof FETCH_DATA
+  payload:{
+    inputName:string
+  }
+}
+
+interface DecidePartnerAction {
+  type: typeof FETCH_SUCCEEDED | typeof FETCH_FAILED
+  payload:{
+    inputName:string
+    nijiData:userInfo
+  }
+}
+
+
+export type DecidePartnerActionTypes = FetchNijiDataAction | DecidePartnerAction;
