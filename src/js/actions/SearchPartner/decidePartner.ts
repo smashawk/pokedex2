@@ -1,5 +1,5 @@
-import decidePartnerNo from '../common/decidePartnerNo';
-import { userInfo } from '../types/commonTypes'
+import decidePartnerNo from '../../common/decidePartnerNo';
+import { userInfo } from '../../types/commonTypes'
 
 export const FETCH_DATA = 'FETCH_DATA';
 export const FETCH_SUCCEEDED = 'FETCH_SUCCEEDED';

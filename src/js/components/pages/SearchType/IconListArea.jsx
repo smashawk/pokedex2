@@ -42,7 +42,7 @@ const IconListImg = styled.li`
 `;
 
 
-const IconListArea = props => {
+const IconListArea = (props) => {
   
   // 選択されたタイプを持つポケモンの配列を作成
   const typeArray = createTypeArray(props.pokeType1, props.pokeType2);
@@ -55,7 +55,7 @@ const IconListArea = props => {
       key={value.key}
       id={value.number.no}
       onMouseOver={e => props.showData(e.target.id)}
-      onClick={e => props.showShinyPokemon(e.target.id)}
+      onClick={e => props.showShinyPoke(e.target.id)}
     />;
   
     return node;

@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
-import { decideType1, decideType2, resetType } from '../actions/decideType';
-import { showData } from '../actions/showData';
-import { showShinyPokemon } from '../actions/showShinyPokemon';
-import SearchTypeComponent from '../components/pages/SearchTypeComponent';
+import { decidePokeType1, decidePokeType2, resetType } from '../actions/SearchType/decidePokeType';
+import { showData } from '../actions/SearchType/showData';
+import { showShinyPoke } from '../actions/SearchType/showShinyPoke';
+import SearchTypeComponent from '../components/pages/SearchType';
 
 
 const mapStateToProps = state => ({
@@ -15,11 +15,11 @@ const mapStateToProps = state => ({
 
 
 const mapDispatchToProps = dispatch => ({
-  decideType1: value => dispatch(decideType1(value)),
-  decideType2: value => dispatch(decideType2(value)),
+  decidePokeType1: value => dispatch(decidePokeType1(value)),
+  decidePokeType2: value => dispatch(decidePokeType2(value)),
   resetType: () => dispatch(resetType()),
   showData: id => dispatch(showData(id)),
-  showShinyPokemon: shinyId => dispatch(showShinyPokemon(shinyId)),
+  showShinyPoke: shinyId => dispatch(showShinyPoke(shinyId)),
 });
 
 

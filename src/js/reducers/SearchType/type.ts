@@ -1,4 +1,4 @@
-import { DecideTypeActionTypes, DECIDE_TYPE, RESET_TYPE_LIST } from '../../types/decideTypeTypes'
+import { decidePokeTypeActionTypes, DECIDE_POKE_TYPE, RESET_POKE_TYPE_LIST } from '../../types/SearchType/decidePokeTypeTypes'
 
 
 type initialStateTypes = {
@@ -13,18 +13,18 @@ const typeReducer = (
     pokeType2: '-',
     clickMessage: false
   },
-  action:DecideTypeActionTypes
+  action:decidePokeTypeActionTypes
 ) => {
 
   switch (action.type) {
 
-    case DECIDE_TYPE:
+    case DECIDE_POKE_TYPE:
       return {
         ...state,
         ...action.payload
       };
 
-    case RESET_TYPE_LIST:
+    case RESET_POKE_TYPE_LIST:
       return {
         ...state,
         ...action.payload,

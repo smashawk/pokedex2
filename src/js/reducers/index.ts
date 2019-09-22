@@ -1,10 +1,10 @@
 import {combineReducers} from 'redux';
-import numberReducer from './reducer/number'
-import typeReducer from './reducer/type'
-import dataReducer from './reducer/data'
-import shinyReducer from './reducer/shiny'
-import partnerReducer from './reducer/partner'
-import loginReducer from './reducer/login'
+import numberReducer from './SearchPoke/number'
+import typeReducer from './SearchType/type'
+import dataReducer from './SearchType/data'
+import shinyReducer from './SearchType/shiny'
+import partnerReducer from './SearchPartner/partner'
+import loginReducer from './SearchPartner/login'
 
 export default combineReducers({
   number: numberReducer,

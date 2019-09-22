@@ -2,7 +2,7 @@ import React from 'react';
 import { HashRouter, Link, Route, Switch } from "react-router-dom";
 import styled from 'styled-components';
 import IndexPage from "./pages/IndexComponent";
-import SearchPokemon from "../containers/SearchPokemonContainer";
+import SearchPoke from "../containers/SearchPokeContainer";
 import SearchType from '../containers/SearchTypeContainer';
 import SearchPartner from '../containers/SearchPartnerContainer';
 
@@ -38,8 +38,8 @@ const AppComponent = (props) => {
 
                 <Route path="/pokemon"
                   render={
-                    () => <SearchPokemon
-                      decidePokemon={props.decidePokemon}
+                    () => <SearchPoke
+                      decidePoke={props.decidePoke}
                       no={props.no}
                       errorMessage={props.errorMessage}
                     />
@@ -49,12 +49,12 @@ const AppComponent = (props) => {
                 <Route path="/type"
                   render={
                     () => <SearchType
-                      decideType1={props.decideType1}
-                      decideType2={props.decideType2}
+                      decidePokeType1={props.decidePokeType1}
+                      decidePokeType2={props.decidePokeType2}
                       pokeType1={props.pokeType1}
                       pokeType2={props.pokeType2}
                       showData={props.showData}
-                      showShinyPokemon={props.showShinyPokemon}
+                      showShinyPoke={props.showShinyPoke}
                       id={props.id}
                       shinyId={props.shinyId}
                       clickMessage={props.clickMessage}

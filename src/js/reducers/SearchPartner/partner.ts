@@ -1,4 +1,4 @@
-import { FETCH_SUCCEEDED } from '../../actions/decidePartner'
+import { FETCH_SUCCEEDED } from '../../actions/SearchPartner/decidePartner'
 
 
 type actionData = {

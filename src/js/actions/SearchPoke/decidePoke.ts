@@ -1,8 +1,8 @@
-import normalArray from '../common/createNormalArray'
-import { DecidePokemonActionTypes, SEARCH_POKEMON_DATA } from '../types/decidePokemonTypes'
+import normalArray from '../../common/createNormalArray'
+import { DecidePokeActionTypes, SEARCH_POKE_DATA } from '../../types/SearchPoke/decidePokeTypes'
 
 
-export const decidePokemon = (text:number | string):DecidePokemonActionTypes => {
+export const decidePoke = (text:number | string):DecidePokeActionTypes => {
 
   let no;
   let errorMessage;
@@ -33,7 +33,7 @@ export const decidePokemon = (text:number | string):DecidePokemonActionTypes => 
   }
 
   return {
-    type: SEARCH_POKEMON_DATA,
+    type: SEARCH_POKE_DATA,
     payload: {
       no,
       errorMessage

@@ -22,11 +22,11 @@ const InputArea = (props) => {
   return(
     <InputAreaWrap>
       <h2>2. タイプ検索</h2>
-      <select id="typeSelector1" value={props.pokeType1} onChange={e => props.decideType1(e.target.value)}>
+      <select id="typeSelector1" value={props.pokeType1} onChange={e => props.decidePokeType1(e.target.value)}>
         <option value='-'>-</option>
         {options}
       </select>
-      <select id="typeSelector2" onChange={e => props.decideType2(e.target.value)}>
+      <select id="typeSelector2" onChange={e => props.decidePokeType2(e.target.value)}>
         <option value='-'>-</option>
         {options}
       </select>

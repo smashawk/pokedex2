@@ -1,4 +1,4 @@
-import { LOGIN } from '../../actions/login'
+import { LOGIN } from '../../actions/SearchPartner/login'
 
 
 type actionData = {

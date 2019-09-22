@@ -11,13 +11,13 @@ const ContentArea = styled(styles.BaseContentArea)`
 `;
 
 
-const SearchPokemon = (props) => {
+const SearchPoke = (props) => {
 
   return(
     <ContentArea>
 
       <InputArea 
-        decidePokemon={props.decidePokemon}
+        decidePoke={props.decidePoke}
         errorMessage={props.errorMessage}
       />
 
@@ -30,4 +30,4 @@ const SearchPokemon = (props) => {
   )
 }
 
-export default SearchPokemon;
+export default SearchPoke;

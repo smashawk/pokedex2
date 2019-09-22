@@ -1,4 +1,4 @@
-import { DecidePokemonActionTypes, SEARCH_POKEMON_DATA } from '../../types/decidePokemonTypes'
+import { DecidePokeActionTypes, SEARCH_POKE_DATA } from '../../types/SearchPoke/decidePokeTypes'
 
 
 type initialStateTypes = {
@@ -11,12 +11,12 @@ const numberReducer = (
     no: 0,
     errorMessage: false
   },
-  action:DecidePokemonActionTypes
+  action:DecidePokeActionTypes
 ) => {
 
   switch (action.type) {
 
-    case SEARCH_POKEMON_DATA:
+    case SEARCH_POKE_DATA:
       return {
         ...state,
         ...action.payload,

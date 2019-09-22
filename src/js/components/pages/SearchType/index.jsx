@@ -20,8 +20,8 @@ const SearchType = (props) => {
     <ContentArea>
 
       <InputArea 
-        decideType1={props.decideType1}
-        decideType2={props.decideType2}
+        decidePokeType1={props.decidePokeType1}
+        decidePokeType2={props.decidePokeType2}
         resetType={props.resetType}
       />
 
@@ -34,7 +34,7 @@ const SearchType = (props) => {
         pokeType1={props.pokeType1}
         pokeType2={props.pokeType2}
         showData={props.showData}
-        showShinyPokemon={props.showShinyPokemon}
+        showShinyPoke={props.showShinyPoke}
         clickMessage={props.clickMessage}
       />
 
