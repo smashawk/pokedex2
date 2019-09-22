@@ -1,4 +1,4 @@
-export const LOGIN = 'LOGIN'
+import { LoginActionTypes, LOGIN } from '../../types/SearchPartner/loginTypes'
 
 
-export const login = () => ({type: LOGIN});
+export const login = ():LoginActionTypes => ({type: LOGIN});

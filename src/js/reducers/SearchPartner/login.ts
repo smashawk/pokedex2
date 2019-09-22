@@ -1,16 +1,15 @@
-import { LOGIN } from '../../actions/SearchPartner/login'
+import { LoginActionTypes, LOGIN } from '../../types/SearchPartner/loginTypes'
 
 
-type actionData = {
-  type:string,
+type initialStateTypes = {
   isLogin:boolean
 }
 
 const loginReducer = (
-  state = {
+  state:initialStateTypes = {
     isLogin: false
   },
-  action:actionData
+  action:LoginActionTypes
 ) => {
 
   switch (action.type) {
