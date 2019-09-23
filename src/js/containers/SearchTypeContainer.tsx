@@ -14,7 +14,7 @@ const mapStateToProps = (state:AppState) => ({
   pokeType1: state.type.pokeType1,
   pokeType2: state.type.pokeType2,
   clickMessage: state.type.clickMessage,
-  id: state.data.id,
+  pokeId: state.data.pokeId,
   shinyId: state.shiny.shinyId,
 });
 
@@ -23,7 +23,7 @@ const mapDispatchToProps = (dispatch:Dispatch<decidePokeTypeActionTypes | ShowDa
   decidePokeType1: (value:string) => dispatch(decidePokeType1(value)),
   decidePokeType2: (value:string) => dispatch(decidePokeType2(value)),
   resetType: () => dispatch(resetType()),
-  showData: (id:number) => dispatch(showData(id)),
+  showData: (pokeId:number) => dispatch(showData(pokeId)),
   showShinyPoke: (shinyId:number) => dispatch(showShinyPoke(shinyId)),
 });
 

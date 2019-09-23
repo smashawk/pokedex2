@@ -1,6 +1,13 @@
 import React from "react";
 import styled from 'styled-components';
 import * as styles from '../../../../styles/baseStyle';
+import { decidePoke } from '../../../actions/SearchPoke/decidePoke'
+
+
+interface InputAreaProps {
+  decidePoke: typeof decidePoke
+  errorMessage:boolean
+}
 
 
 const InputAreaWrap = styled.div``;
@@ -12,7 +19,7 @@ const InputAreaText = styled(styles.BaseInputAreaText)``;
 const InputAreaErrorText = styled(styles.BaseInputAreaErrorText)``;
 
 
-const InputArea = (props) => {
+const InputArea = (props:InputAreaProps) => {
 
   return(
     <InputAreaWrap>

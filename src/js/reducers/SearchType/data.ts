@@ -3,12 +3,12 @@ import { RESET_POKE_TYPE_LIST } from '../../types/SearchType/decidePokeTypeTypes
 
 
 type initialStateTypes = {
-  id:number
+  pokeId:number
 }
 
 const dataReducer = (
   state:initialStateTypes = {
-    id: 0
+    pokeId: 0
   },
   action:ShowDataActionTypes
 ) => {
@@ -24,7 +24,7 @@ const dataReducer = (
     case RESET_POKE_TYPE_LIST:
       return {
         ...state,
-        id: 0
+        pokeId: 0
       };
 
     default:

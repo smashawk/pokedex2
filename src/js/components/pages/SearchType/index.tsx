@@ -4,6 +4,23 @@ import * as styles from '../../../../styles/baseStyle';
 import InputArea from './InputArea'
 import OutputArea from './OutputArea'
 import IconListArea from './IconListArea'
+import { decidePokeType1, decidePokeType2, resetType } from '../../../actions/SearchType/decidePokeType'
+import { showData } from '../../../actions/SearchType/showData'
+import { showShinyPoke } from '../../../actions/SearchType/showShinyPoke'
+
+
+interface SearchTypeProps {
+  decidePokeType1: typeof decidePokeType1
+  decidePokeType2: typeof decidePokeType2
+  resetType: typeof resetType
+  showData: typeof showData
+  showShinyPoke: typeof showShinyPoke
+  pokeType1:string
+  pokeType2:string
+  clickMessage:boolean
+  pokeId:number
+  shinyId:number
+}
 
 
 const ContentArea = styled(styles.BaseContentArea)`
@@ -13,7 +30,7 @@ const ContentArea = styled(styles.BaseContentArea)`
 `;
 
 
-const SearchType = (props) => {
+const SearchType = (props:SearchTypeProps) => {
 
   return(
     
@@ -26,7 +43,7 @@ const SearchType = (props) => {
       />
 
       <OutputArea 
-        id={props.id}
+        pokeId={props.pokeId}
         shinyId={props.shinyId}
       />
      
@@ -36,6 +53,7 @@ const SearchType = (props) => {
         showData={props.showData}
         showShinyPoke={props.showShinyPoke}
         clickMessage={props.clickMessage}
+        pokeId={props.pokeId}
       />
 
     </ContentArea>

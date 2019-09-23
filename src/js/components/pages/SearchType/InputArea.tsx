@@ -1,6 +1,14 @@
 import React from "react"
 import styled from 'styled-components'
 import typeData from '../../../../data/type_data.json'
+import { decidePokeType1, decidePokeType2, resetType } from '../../../actions/SearchType/decidePokeType'
+
+
+interface InputAreaProps {
+  decidePokeType1: typeof decidePokeType1
+  decidePokeType2: typeof decidePokeType2
+  resetType: typeof resetType
+}
 
 
 const InputAreaWrap = styled.div`
@@ -13,7 +21,7 @@ const InputAreaResetType = styled.button`
 `;
 
 
-const InputArea = (props) => {
+const InputArea = (props:InputAreaProps) => {
 
   const options = typeData.map((v, i) => {
     return <option value={v} key={i}>{v}</option>
@@ -22,7 +30,7 @@ const InputArea = (props) => {
   return(
     <InputAreaWrap>
       <h2>2. タイプ検索</h2>
-      <select id="typeSelector1" value={props.pokeType1} onChange={e => props.decidePokeType1(e.target.value)}>
+      <select id="typeSelector1" onChange={e => props.decidePokeType1(e.target.value)}>
         <option value='-'>-</option>
         {options}
       </select>
@@ -30,7 +38,7 @@ const InputArea = (props) => {
         <option value='-'>-</option>
         {options}
       </select>
-      <InputAreaResetType onClick={e => props.resetType(e)}>タイプリセット</InputAreaResetType>
+      <InputAreaResetType onClick={() => props.resetType()}>タイプリセット</InputAreaResetType>
     </InputAreaWrap>
   )
 }

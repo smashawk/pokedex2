@@ -6,7 +6,7 @@ export const SHOW_POKE_DATA = 'SHOW_POKE_DATA';
 interface ShowDataAction {
   type: typeof SHOW_POKE_DATA | typeof RESET_POKE_TYPE_LIST
   payload: {
-    id:number
+    pokeId:number
   }
 }
 

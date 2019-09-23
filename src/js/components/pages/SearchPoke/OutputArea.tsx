@@ -4,6 +4,11 @@ import * as styles from '../../../../styles/baseStyle';
 import normalArray from '../../../common/createNormalArray';
 
 
+interface OutputAreaProps {
+  no:number
+}
+
+
 const OutputAreaWrap = styled(styles.BaseOutputAreaWrap)``;
 
 const OutputAreaList = styled(styles.BaseOutputAreaList)``;
@@ -15,7 +20,7 @@ const OutputAreaDesc = styled(styles.BaseOutputAreaDesc)``;
 const OutputAreaType = styled(styles.BaseOutputAreaType)``;
 
 const OutputAreaImg = styled(styles.BaseOutputAreaImg)`
-  ${props => {
+  ${(props:OutputAreaProps) => {
     if(props.no < 10) {
       return`
         background: center / contain no-repeat url(./images/00${props.no}_0.png);
@@ -33,7 +38,7 @@ const OutputAreaImg = styled(styles.BaseOutputAreaImg)`
 `;
 
 
-const OutputArea = (props) => {
+const OutputArea = (props:OutputAreaProps) => {
 
   return(
     <OutputAreaWrap>
