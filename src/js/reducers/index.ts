@@ -6,7 +6,7 @@ import shinyReducer from './SearchType/shiny'
 import partnerReducer from './SearchPartner/partner'
 import loginReducer from './SearchPartner/login'
 
-export default combineReducers({
+const rootReducer = combineReducers({
   number: numberReducer,
   type: typeReducer,
   data: dataReducer,
@@ -14,3 +14,9 @@ export default combineReducers({
   partner: partnerReducer,
   login: loginReducer,
 });
+
+export default rootReducer;
+
+
+// rootReducerの返り値（ジェネリクス）を型に持つAppStateを作る
+export type AppState = ReturnType<typeof rootReducer>
