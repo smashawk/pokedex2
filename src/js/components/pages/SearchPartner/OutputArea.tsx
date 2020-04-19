@@ -4,6 +4,13 @@ import * as styles from '../../../../styles/baseStyle';
 import normalArray from '../../../common/createNormalArray'
 
 
+interface OutputAreaProps {
+  inputName:string
+  nijiData:any
+  partnerNo:number
+}
+
+
 const OutputAreaWrap = styled(styles.BaseOutputAreaWrap)`
   display: flex;
   justify-content: center;
@@ -20,7 +27,7 @@ const OutputAreaDesc = styled(styles.BaseOutputAreaDesc)``;
 const OutputAreaType = styled(styles.BaseOutputAreaType)``;
 
 const OutputAreaImg = styled(styles.BaseOutputAreaImg)`
-  ${props => {
+  ${(props: {[key: string]: number}) => {
     if(props.partnerNo < 10) {
       return`
         background: center / contain no-repeat url(./images/00${props.partnerNo}_0.png);
@@ -52,7 +59,7 @@ const OutputAreaNijiImg = styled.img`
 `;
 
 
-const OutputArea = (props) => {
+const OutputArea = (props:OutputAreaProps) => {
 
   return(
 

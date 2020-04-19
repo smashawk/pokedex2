@@ -1,6 +1,13 @@
 import React from "react";
 import styled from 'styled-components';
 import * as styles from '../../../../styles/baseStyle';
+import { fetchData } from '../../../actions/SearchPartner/decidePartner';
+
+
+interface InputAreaProps {
+  decidePartner: typeof fetchData
+  nijiData:any
+}
 
 
 const InputAreaWrap = styled.div``;
@@ -12,9 +19,9 @@ const InputAreaText = styled(styles.BaseInputAreaText)`
 `;
 
 
-const InputArea = (props) => {
+const InputArea = (props :InputAreaProps) => {
 
-  let inputName;
+  let inputName :any;
 
   return(
 
