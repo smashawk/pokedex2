@@ -6,7 +6,10 @@ export const FETCH_FAILED = 'FETCH_FAILED';
 
 
 interface FetchNijiDataAction {
-  type: typeof FETCH_DATA
+
+  // NIJIBOX_社員APIを使用する場合はFETCH_DATAのみ
+  // type: typeof FETCH_DATA
+  type: typeof FETCH_DATA | typeof FETCH_SUCCEEDED
   payload:{
     inputName:string
   }

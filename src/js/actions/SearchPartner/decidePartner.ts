@@ -2,10 +2,20 @@ import { userInfo } from '../../types/commonTypes'
 import { DecidePartnerActionTypes, FETCH_DATA, FETCH_SUCCEEDED, FETCH_FAILED} from '../../types/SearchPartner/decidePartnerTypes'
 
 
-// 社員データを取得しにいく
+// 社員データを取得しにいく（NIJIBOX_社員APIを使用する場合はこちら）
+// export const fetchData = (inputName:string):DecidePartnerActionTypes => ({
+
+//   type: FETCH_DATA,
+//   payload: {
+//     inputName
+//   }
+
+// });
+
+// 社員データを取得しにいく（NIJIBOX_社員APIを使用しない場合はこちら）
 export const fetchData = (inputName:string):DecidePartnerActionTypes => ({
 
-  type: FETCH_DATA,
+  type: FETCH_SUCCEEDED,
   payload: {
     inputName
   }

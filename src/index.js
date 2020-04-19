@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from "react"
 import ReactDOM from 'react-dom';
 import './styles/reset.css';
 import AppComponent from './js/components/AppComponent'
@@ -19,8 +19,8 @@ const store = createStore(
   composeWithDevTools(applyMiddleware(sagaMiddleware))
 );
 
-// Saga を起動する
-sagaMiddleware.run(sagas);
+// Saga を起動する（NIJBOX_社員APIを使用する場合
+// sagaMiddleware.run(sagas);
 
 ReactDOM.render(
   <Provider store={store}>

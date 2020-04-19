@@ -29,10 +29,11 @@ const SearchPartner = (props:SearchPartner) => {
     
     <ContentArea>
       
-      <Login
+      {/* NIJIBOX_社員APIを使用しない場合はLoginコンポーネントをコメントアウト */}
+      {/* <Login
         login={props.login}
         isLogin={props.isLogin}
-      />
+      /> */}
 
       <InputArea
         decidePartner={props.decidePartner}
