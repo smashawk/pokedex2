@@ -1,4 +1,4 @@
-import { decidePokeTypeActionTypes, DECIDE_POKE_TYPE, RESET_POKE_TYPE_LIST } from '../../types/SearchType/decidePokeTypeTypes'
+import { decidePokeTypeActionTypes, DECIDE_POKE_TYPE, RESET_POKE_TYPE_LIST } from '@js/types/SearchType/decidePokeTypeTypes'
 
 
 type initialStateTypes = {

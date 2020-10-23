@@ -1,12 +1,12 @@
 import React from "react";
 import styled from 'styled-components';
-import * as styles from '../../../../styles/baseStyle';
+import * as styles from '@styles/baseStyle';
 import InputArea from './InputArea';
 import OutputArea from './OutputArea';
 import Login from './Login';
-import { fetchData } from '../../../actions/SearchPartner/decidePartner'
-import { login } from '../../../actions/SearchPartner/login'
-import { userInfo } from '../../../types/commonTypes'
+import { fetchData } from '@js/actions/SearchPartner/decidePartner'
+import { login } from '@js/actions/SearchPartner/login'
+import { userInfo } from '@js/types/commonTypes'
 
 
 interface SearchPartner {

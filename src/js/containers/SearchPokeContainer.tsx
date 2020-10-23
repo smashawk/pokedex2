@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
-import { decidePoke } from '../actions/SearchPoke/decidePoke';
-import SearchPokeComponent from '../components/pages/SearchPoke';
-import { AppState } from '../reducers/index'
+import { decidePoke } from '@js/actions/SearchPoke/decidePoke';
+import SearchPokeComponent from '@js/components/pages/SearchPoke';
+import { AppState } from '@js/reducers/index'
 import { Dispatch } from 'redux';
-import { DecidePokeActionTypes } from '../types/SearchPoke/decidePokeTypes'
+import { DecidePokeActionTypes } from '@js/types/SearchPoke/decidePokeTypes'
 
 
 const mapStateToProps = (state:AppState) => ({

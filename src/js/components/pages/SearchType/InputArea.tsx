@@ -1,7 +1,7 @@
 import React from "react"
 import styled from 'styled-components'
-import typeData from '../../../../data/type_data.json'
-import { decidePokeType1, decidePokeType2, resetType } from '../../../actions/SearchType/decidePokeType'
+import typeData from '@data/type_data.json'
+import { decidePokeType1, decidePokeType2, resetType } from '@js/actions/SearchType/decidePokeType'
 
 
 interface InputAreaProps {

@@ -1,4 +1,4 @@
-import { ShowShinyPokeActionTypes, SHOW_SHINY_POKE} from '../../types/SearchType/showShinyPokeTypes'
+import { ShowShinyPokeActionTypes, SHOW_SHINY_POKE} from '@js/types/SearchType/showShinyPokeTypes'
 
 
 type initialStateTypes = {

@@ -1,5 +1,5 @@
-import { userInfo } from '../../types/commonTypes'
-import { DecidePartnerActionTypes, FETCH_DATA, FETCH_SUCCEEDED, FETCH_FAILED} from '../../types/SearchPartner/decidePartnerTypes'
+import { userInfo } from '@js/types/commonTypes'
+import { DecidePartnerActionTypes, FETCH_DATA, FETCH_SUCCEEDED, FETCH_FAILED} from '@js/types/SearchPartner/decidePartnerTypes'
 
 
 // 社員データを取得しにいく（NIJIBOX_社員APIを使用する場合はこちら）

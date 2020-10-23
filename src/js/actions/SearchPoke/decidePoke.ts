@@ -1,5 +1,5 @@
-import normalArray from '../../common/createNormalArray'
-import { DecidePokeActionTypes, SEARCH_POKE_DATA } from '../../types/SearchPoke/decidePokeTypes'
+import normalArray from '@js/common/createNormalArray'
+import { DecidePokeActionTypes, SEARCH_POKE_DATA } from '@js/types/SearchPoke/decidePokeTypes'
 
 
 export const decidePoke = (inputText:number | string):DecidePokeActionTypes => {

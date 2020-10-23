@@ -1,7 +1,7 @@
 import React from "react";
 import styled from 'styled-components';
-import * as styles from '../../../../styles/baseStyle';
-import normalArray from '../../../common/createNormalArray'
+import * as styles from '@styles/baseStyle';
+import normalArray from '@js/common/createNormalArray'
 
 
 interface OutputAreaProps {

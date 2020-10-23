@@ -1,12 +1,12 @@
 import React from "react";
 import styled from 'styled-components';
-import * as styles from '../../../../styles/baseStyle';
+import * as styles from '@styles/baseStyle';
 import InputArea from './InputArea'
 import OutputArea from './OutputArea'
 import IconListArea from './IconListArea'
-import { decidePokeType1, decidePokeType2, resetType } from '../../../actions/SearchType/decidePokeType'
-import { showData } from '../../../actions/SearchType/showData'
-import { showShinyPoke } from '../../../actions/SearchType/showShinyPoke'
+import { decidePokeType1, decidePokeType2, resetType } from '@js/actions/SearchType/decidePokeType'
+import { showData } from '@js/actions/SearchType/showData'
+import { showShinyPoke } from '@js/actions/SearchType/showShinyPoke'
 
 
 interface SearchTypeProps {

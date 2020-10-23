@@ -1,5 +1,5 @@
-import { DecidePartnerActionTypes, FETCH_SUCCEEDED, FETCH_FAILED} from '../../types/SearchPartner/decidePartnerTypes'
-import decidePartnerNo from '../../common/decidePartnerNo';
+import { DecidePartnerActionTypes, FETCH_SUCCEEDED, FETCH_FAILED} from '@js/types/SearchPartner/decidePartnerTypes'
+import decidePartnerNo from '@js/common/decidePartnerNo';
 
 type initialStateTypes = {
   inputName: string,

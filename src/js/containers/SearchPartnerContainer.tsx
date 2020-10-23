@@ -1,11 +1,11 @@
 import { connect } from 'react-redux';
-import { fetchData } from '../actions/SearchPartner/decidePartner';
-import { login } from '../actions/SearchPartner/login';
-import SearchPartnerComponent from '../components/pages/SearchPartner';
-import { AppState } from '../reducers/index'
+import { fetchData } from '@js/actions/SearchPartner/decidePartner';
+import { login } from '@js/actions/SearchPartner/login';
+import SearchPartnerComponent from '@js/components/pages/SearchPartner';
+import { AppState } from '@js/reducers/index'
 import { Dispatch } from 'redux';
-import { DecidePartnerActionTypes } from '../types/SearchPartner/decidePartnerTypes'
-import { LoginActionTypes } from '../types/SearchPartner/loginTypes'
+import { DecidePartnerActionTypes } from '@js/types/SearchPartner/decidePartnerTypes'
+import { LoginActionTypes } from '@js/types/SearchPartner/loginTypes'
 
 
 const mapStateToProps = (state:AppState) => ({

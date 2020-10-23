@@ -1,4 +1,4 @@
-import { LoginActionTypes, LOGIN } from '../../types/SearchPartner/loginTypes'
+import { LoginActionTypes, LOGIN } from '@js/types/SearchPartner/loginTypes'
 
 
 type initialStateTypes = {

@@ -2,9 +2,9 @@ import React from 'react';
 import { HashRouter, Link, Route, Switch } from "react-router-dom";
 import styled from 'styled-components';
 import IndexPage from "./pages/IndexComponent";
-import SearchPoke from "../containers/SearchPokeContainer";
-import SearchType from '../containers/SearchTypeContainer';
-import SearchPartner from '../containers/SearchPartnerContainer';
+import SearchPoke from "@js/containers/SearchPokeContainer";
+import SearchType from '@js/containers/SearchTypeContainer';
+import SearchPartner from '@js/containers/SearchPartnerContainer';
 
 
 const App = styled.div`

@@ -1,5 +1,5 @@
-import data from '../../data/pokemon_data.json';
-import { pokeData } from '../types/commonTypes'
+import data from '@data/pokemon_data.json';
+import { pokeData } from '@js/types/commonTypes'
 
 
 let normalArray:pokeData[] =[];

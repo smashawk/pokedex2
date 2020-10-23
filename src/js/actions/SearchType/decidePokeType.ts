@@ -1,5 +1,5 @@
-import { decidePokeTypeActionTypes, DECIDE_POKE_TYPE, RESET_POKE_TYPE_LIST } from '../../types/SearchType/decidePokeTypeTypes'
-import resetSelectOption from '../../common/resetSelectOption';
+import { decidePokeTypeActionTypes, DECIDE_POKE_TYPE, RESET_POKE_TYPE_LIST } from '@js/types/SearchType/decidePokeTypeTypes'
+import resetSelectOption from '@js/common/resetSelectOption';
 
 
 export const decidePokeType1 = (value:string):decidePokeTypeActionTypes => {

@@ -1,4 +1,4 @@
-import { DecidePokeActionTypes, SEARCH_POKE_DATA } from '../../types/SearchPoke/decidePokeTypes'
+import { DecidePokeActionTypes, SEARCH_POKE_DATA } from '@js/types/SearchPoke/decidePokeTypes'
 
 
 type initialStateTypes = {

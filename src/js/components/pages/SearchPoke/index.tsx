@@ -1,9 +1,9 @@
 import React from "react";
 import styled from 'styled-components';
-import * as styles from '../../../../styles/baseStyle';
+import * as styles from '@styles/baseStyle';
 import InputArea from './InputArea';
 import OutputArea from './OutputArea';
-import { decidePoke } from '../../../actions/SearchPoke/decidePoke'
+import { decidePoke } from '@js/actions/SearchPoke/decidePoke'
 
 
 interface SearchPokeProps {

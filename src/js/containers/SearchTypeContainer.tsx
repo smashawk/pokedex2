@@ -1,13 +1,13 @@
 import { connect } from 'react-redux';
-import { decidePokeType1, decidePokeType2, resetType } from '../actions/SearchType/decidePokeType';
-import { showData } from '../actions/SearchType/showData';
-import { showShinyPoke } from '../actions/SearchType/showShinyPoke';
-import SearchTypeComponent from '../components/pages/SearchType';
-import { AppState } from '../reducers/index'
+import { decidePokeType1, decidePokeType2, resetType } from '@js/actions/SearchType/decidePokeType';
+import { showData } from '@js/actions/SearchType/showData';
+import { showShinyPoke } from '@js/actions/SearchType/showShinyPoke';
+import SearchTypeComponent from '@js/components/pages/SearchType';
+import { AppState } from '@js/reducers/index'
 import { Dispatch } from 'redux';
-import { decidePokeTypeActionTypes } from '../types/SearchType/decidePokeTypeTypes'
-import { ShowDataActionTypes } from '../types/SearchType/showDataTypes'
-import { ShowShinyPokeActionTypes } from '../types/SearchType/showShinyPokeTypes'
+import { decidePokeTypeActionTypes } from '@js/types/SearchType/decidePokeTypeTypes'
+import { ShowDataActionTypes } from '@js/types/SearchType/showDataTypes'
+import { ShowShinyPokeActionTypes } from '@js/types/SearchType/showShinyPokeTypes'
 
 
 const mapStateToProps = (state:AppState) => ({

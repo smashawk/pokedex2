@@ -1,7 +1,7 @@
 import React from "react";
 import styled from 'styled-components';
-import * as styles from '../../../../styles/baseStyle';
-import { decidePoke } from '../../../actions/SearchPoke/decidePoke'
+import * as styles from '@styles/baseStyle';
+import { decidePoke } from '@js/actions/SearchPoke/decidePoke'
 
 
 interface InputAreaProps {

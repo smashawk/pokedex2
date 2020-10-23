@@ -1,7 +1,7 @@
 
-import { DecidePartnerActionTypes, FETCH_DATA } from '../types/SearchPartner/decidePartnerTypes'
+import { DecidePartnerActionTypes, FETCH_DATA } from '@js/types/SearchPartner/decidePartnerTypes'
 import { call, put, takeEvery } from "redux-saga/effects";
-import { fetchFailed, fetchSucceeded } from "../actions/SearchPartner/decidePartner";
+import { fetchFailed, fetchSucceeded } from "@js/actions/SearchPartner/decidePartner";
 import axios from 'axios';
 
 
