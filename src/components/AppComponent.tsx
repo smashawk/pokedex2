@@ -1,8 +1,8 @@
 import React from "react";
 import { HashRouter, Link, Route, Switch } from "react-router-dom";
 import styled from "styled-components";
-import SearchType from "@js/containers/SearchTypeContainer";
-import SearchPartner from "@js/containers/SearchPartnerContainer";
+import SearchPartner from "./pages/SearchPartner";
+import SearchType from "./pages/SearchType";
 import IndexPage from "./pages/IndexComponent";
 import SearchPoke from "./pages/SearchPoke";
 
@@ -19,9 +19,7 @@ const AppComponent = () => {
 			<App>
 				<header>
 					<nav>
-						<Link to="/">TOP</Link>
-						/<Link to="/pokemon">図鑑ナンバー検索</Link>
-						/
+						<Link to="/">TOP</Link>/<Link to="/pokemon">図鑑ナンバー検索</Link>/
 						<Link to="/type">タイプ検索</Link>/
 						<Link to="/partner">相棒ポ○モン検索</Link>
 					</nav>
