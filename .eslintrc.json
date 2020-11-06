@@ -14,7 +14,6 @@
 		"ecmaFeatures": {
 			"jsx": true
 		},
-		"ecmaVersion": 12,
 		"sourceType": "module"
 	},
 	"plugins": [
@@ -29,6 +28,7 @@
 		}
 	},
 	"rules": {
+		"@typescript-eslint/explicit-function-return-type": ["warn"],
 		"@typescript-eslint/indent": ["error", "tab"],
 		"@typescript-eslint/prefer-interface": "off",
 		"import/extensions": ["error", "never"],
