@@ -33,6 +33,7 @@
 		"@typescript-eslint/prefer-interface": "off",
 		"import/extensions": ["error", "never"],
 		"import/no-unresolved": "off",
+		"import/prefer-default-export": ["off"],
 		"react/destructuring-assignment": ["error", "never"],
 		"react/jsx-filename-extension": [
 			"error",
@@ -41,6 +42,7 @@
 		"react/jsx-indent": [2, "tab"],
 		"react/jsx-indent-props": [2, "tab"],
 		"react/prop-types": "off",
+		"no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
 		"spaced-comment": ["error", "always", { "markers": ["/ <reference"] }]
 	}
 }

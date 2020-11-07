@@ -1,10 +1,10 @@
 import React from "react";
 import { connect } from "react-redux";
-import { AppState } from "src/store/index";
+import { AppState } from "@store/index";
 import { Dispatch } from "redux";
 import styled from "styled-components";
 import * as styles from "@styles/baseStyle";
-import { decidePoke } from "@js/actions/SearchPoke/decidePoke";
+import { decidePoke } from "@store/SearchPoke/decidePoke/actions";
 import InputArea from "./InputArea";
 import OutputArea from "./OutputArea";
 

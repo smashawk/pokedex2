@@ -2,6 +2,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
+			"@store/*": ["./src/store/*"],
 			"@js/*": ["./src/js/*"],
       "@data/*": ["./src/data/*"],
       "@styles/*": ["./src/styles/*"],

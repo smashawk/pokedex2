@@ -2,7 +2,7 @@ import {
 	DecidePokeState,
 	DecidePokeActionTypes,
 	SEARCH_POKE_DATA
-} from "@js/types/SearchPoke/decidePokeTypes";
+} from "@store/SearchPoke/decidePoke/types";
 
 const initialState: DecidePokeState = {
 	no: 0,

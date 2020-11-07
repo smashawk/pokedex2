@@ -1,10 +1,10 @@
 import { combineReducers } from "redux";
-import numberReducer from "./SearchPoke/number/reducer";
-import typeReducer from "./SearchType/type/reducer";
-import dataReducer from "./SearchType/data/reducer";
-import shinyReducer from "./SearchType/shiny/reducer";
-import partnerReducer from "./SearchPartner/partner/reducer";
-import loginReducer from "./SearchPartner/login/reducer";
+import numberReducer from "@store/SearchPoke/decidePoke/reducer";
+import typeReducer from "@store/SearchType/type/reducer";
+import dataReducer from "@store/SearchType/data/reducer";
+import shinyReducer from "@store/SearchType/shiny/reducer";
+import partnerReducer from "@store/SearchPartner/partner/reducer";
+import loginReducer from "@store/SearchPartner/login/reducer";
 
 const rootReducer = combineReducers({
 	number: numberReducer,
