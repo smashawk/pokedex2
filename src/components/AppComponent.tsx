@@ -13,14 +13,18 @@ const App = styled.div`
 	text-align: center;
 `;
 
-const AppComponent = () => {
+const AppComponent = (): JSX.Element => {
 	return (
 		<HashRouter hashType="noslash">
 			<App>
 				<header>
 					<nav>
-						<Link to="/">TOP</Link>/<Link to="/pokemon">図鑑ナンバー検索</Link>/
-						<Link to="/type">タイプ検索</Link>/
+						<Link to="/">TOP</Link>
+						<span>|</span>
+						<Link to="/pokemon">図鑑ナンバー検索</Link>
+						<span>|</span>
+						<Link to="/type">タイプ検索</Link>
+						<span>|</span>
 						<Link to="/partner">相棒ポ○モン検索</Link>
 					</nav>
 				</header>

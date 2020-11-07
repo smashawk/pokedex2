@@ -11,6 +11,8 @@ import InputArea from "./InputArea";
 import OutputArea from "./OutputArea";
 import Login from "./Login";
 
+const ContentArea = styled(styles.BaseContentArea)``;
+
 type StateProps = {
 	inputName: string;
 	nijiData: userInfo;
@@ -25,8 +27,6 @@ type DispatchProps = {
 };
 
 type Props = StateProps & DispatchProps;
-
-const ContentArea = styled(styles.BaseContentArea)``;
 
 const SearchPartner = (props: Props): JSX.Element => {
 	return (
@@ -53,6 +53,7 @@ const SearchPartner = (props: Props): JSX.Element => {
 	);
 };
 
+// container
 const mapStateToProps = (state: AppState): StateProps => ({
 	inputName: state.partner.inputName,
 	nijiData: state.partner.nijiData,

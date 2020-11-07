@@ -15,6 +15,12 @@ import InputArea from "./InputArea";
 import OutputArea from "./OutputArea";
 import IconListArea from "./IconListArea";
 
+const ContentArea = styled(styles.BaseContentArea)`
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+`;
+
 type StateProps = {
 	pokeType1: string;
 	pokeType2: string;
@@ -32,12 +38,6 @@ type DispatchProps = {
 };
 
 type Props = StateProps & DispatchProps;
-
-const ContentArea = styled(styles.BaseContentArea)`
-	display: flex;
-	justify-content: center;
-	flex-wrap: wrap;
-`;
 
 const SearchType = (props: Props): JSX.Element => {
 	return (
@@ -62,6 +62,7 @@ const SearchType = (props: Props): JSX.Element => {
 	);
 };
 
+// container
 const mapStateToProps = (state: AppState): StateProps => ({
 	pokeType1: state.type.pokeType1,
 	pokeType2: state.type.pokeType2,

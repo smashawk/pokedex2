@@ -8,6 +8,11 @@ import { decidePoke } from "@js/actions/SearchPoke/decidePoke";
 import InputArea from "./InputArea";
 import OutputArea from "./OutputArea";
 
+const ContentArea = styled(styles.BaseContentArea)`
+	display: flex;
+	justify-content: center;
+`;
+
 type StateProps = {
 	no: number;
 	errorMessage: boolean;
@@ -18,11 +23,6 @@ type DispatchProps = {
 };
 
 type Props = StateProps & DispatchProps;
-
-const ContentArea = styled(styles.BaseContentArea)`
-	display: flex;
-	justify-content: center;
-`;
 
 const SearchPoke = (props: Props): JSX.Element => {
 	return (
@@ -36,6 +36,7 @@ const SearchPoke = (props: Props): JSX.Element => {
 	);
 };
 
+// container
 const mapStateToProps = (state: AppState): StateProps => ({
 	no: state.number.no,
 	errorMessage: state.number.errorMessage
