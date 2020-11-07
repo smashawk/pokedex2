@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { AppState } from "@js/reducers/index";
+import { AppState } from "src/store/index";
 import { Dispatch } from "redux";
 import styled from "styled-components";
 import * as styles from "@styles/baseStyle";

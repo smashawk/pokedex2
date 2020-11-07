@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import styled from "styled-components";
 import * as styles from "@styles/baseStyle";
-import { AppState } from "@js/reducers/index";
+import { AppState } from "src/store/index";
 import { Dispatch } from "redux";
 import { fetchData } from "@js/actions/SearchPartner/decidePartner";
 import { login } from "@js/actions/SearchPartner/login";

@@ -2,11 +2,11 @@ import * as React from "react";
 import ReactDOM from "react-dom";
 import "@styles/reset.css";
 import { applyMiddleware, createStore } from "redux";
-import rootReducer from "@js/reducers/index";
 import { Provider } from "react-redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import createSagaMiddleware from "redux-saga";
 import sagas from "@js/saga/sagas";
+import rootReducer from "./store/index";
 import AppComponent from "./components/AppComponent";
 
 // Saga ミドルウェアを作成する
