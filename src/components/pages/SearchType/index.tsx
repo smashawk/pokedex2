@@ -8,9 +8,9 @@ import {
 	decidePokeType1,
 	decidePokeType2,
 	resetType
-} from "@js/actions/SearchType/decidePokeType";
-import { showData } from "@js/actions/SearchType/showData";
-import { showShinyPoke } from "@js/actions/SearchType/showShinyPoke";
+} from "@store/SearchType/decidePokeType/actions";
+import { showData } from "@store/SearchType/showData/actions";
+import { showShinyPoke } from "@store/SearchType/showShinyPoke/actions";
 import InputArea from "./InputArea";
 import OutputArea from "./OutputArea";
 import IconListArea from "./IconListArea";

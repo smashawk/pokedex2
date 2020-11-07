@@ -1,4 +1,4 @@
-import { RESET_POKE_TYPE_LIST } from "./decidePokeTypeTypes";
+import { RESET_POKE_TYPE_LIST } from "../decidePokeType/types";
 
 export const SHOW_POKE_DATA = "SHOW_POKE_DATA";
 

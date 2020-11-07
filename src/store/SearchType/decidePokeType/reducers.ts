@@ -3,7 +3,7 @@ import {
 	decidePokeTypeActionTypes,
 	DECIDE_POKE_TYPE,
 	RESET_POKE_TYPE_LIST
-} from "@js/types/SearchType/decidePokeTypeTypes";
+} from "@store/SearchType/decidePokeType/types";
 
 const initialState: decidePokeTypeState = {
 	pokeType1: "-",

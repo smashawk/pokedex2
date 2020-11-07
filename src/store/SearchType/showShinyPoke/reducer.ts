@@ -2,7 +2,7 @@ import {
 	ShowShinyPokeState,
 	ShowShinyPokeActionTypes,
 	SHOW_SHINY_POKE
-} from "@js/types/SearchType/showShinyPokeTypes";
+} from "@store/SearchType/showShinyPoke/types";
 
 const initialState: ShowShinyPokeState = {
 	shinyId: 0

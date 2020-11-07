@@ -2,8 +2,8 @@ import {
 	ShowDataState,
 	ShowDataActionTypes,
 	SHOW_POKE_DATA
-} from "@js/types/SearchType/showDataTypes";
-import { RESET_POKE_TYPE_LIST } from "@js/types/SearchType/decidePokeTypeTypes";
+} from "@store/SearchType/showData/types";
+import { RESET_POKE_TYPE_LIST } from "@store/SearchType/decidePokeType/types";
 
 const initialState: ShowDataState = {
 	pokeId: 0

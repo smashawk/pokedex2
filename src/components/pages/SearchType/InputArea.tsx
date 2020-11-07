@@ -5,7 +5,7 @@ import {
 	decidePokeType1,
 	decidePokeType2,
 	resetType
-} from "@js/actions/SearchType/decidePokeType";
+} from "@store/SearchType/decidePokeType/actions";
 
 const InputAreaWrap = styled.div`
 	margin: 0;

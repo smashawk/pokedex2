@@ -2,7 +2,7 @@ import {
 	decidePokeTypeActionTypes,
 	DECIDE_POKE_TYPE,
 	RESET_POKE_TYPE_LIST
-} from "@js/types/SearchType/decidePokeTypeTypes";
+} from "@store/SearchType/decidePokeType/types";
 import resetSelectOption from "@store/utils/resetSelectOption";
 
 export const decidePokeType1 = (value: string): decidePokeTypeActionTypes => {
