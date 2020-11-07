@@ -2,7 +2,7 @@ import {
 	LoginState,
 	LoginActionTypes,
 	LOGIN
-} from "@js/types/SearchPartner/loginTypes";
+} from "@store/SearchPartner/login/types";
 
 const initialState: LoginState = {
 	isLogin: false

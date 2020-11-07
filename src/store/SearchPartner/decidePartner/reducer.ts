@@ -3,7 +3,7 @@ import {
 	DecidePartnerActionTypes,
 	FETCH_SUCCEEDED,
 	FETCH_FAILED
-} from "@js/types/SearchPartner/decidePartnerTypes";
+} from "@store/SearchPartner/decidePartner/types";
 import decidePartnerNo from "@store/utils/decidePartnerNo";
 
 const initialState: DecidePartnerState = {

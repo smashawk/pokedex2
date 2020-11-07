@@ -3,7 +3,7 @@ import numberReducer from "@store/SearchPoke/decidePoke/reducer";
 import typeReducer from "@store/SearchType/decidePokeType/reducers";
 import dataReducer from "@store/SearchType/showData/reducer";
 import shinyReducer from "@store/SearchType/showShinyPoke/reducer";
-import partnerReducer from "@store/SearchPartner/partner/reducer";
+import partnerReducer from "@store/SearchPartner/decidePartner/reducer";
 import loginReducer from "@store/SearchPartner/login/reducer";
 
 const rootReducer = combineReducers({

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import * as styles from "@styles/baseStyle";
-import { fetchData } from "@js/actions/SearchPartner/decidePartner";
+import { fetchData } from "@store/SearchPartner/decidePartner/actions";
 
 const InputAreaWrap = styled.div``;
 
