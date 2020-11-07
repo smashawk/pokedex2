@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import * as styles from "@styles/baseStyle";
-import normalArray from "@js/common/createNormalArray";
+import normalArray from "@store/utils/createNormalArray";
 
 interface OutputAreaProps {
 	no: number;

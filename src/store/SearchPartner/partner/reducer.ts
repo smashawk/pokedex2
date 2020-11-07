@@ -4,7 +4,7 @@ import {
 	FETCH_SUCCEEDED,
 	FETCH_FAILED
 } from "@js/types/SearchPartner/decidePartnerTypes";
-import decidePartnerNo from "@js/common/decidePartnerNo";
+import decidePartnerNo from "@store/utils/decidePartnerNo";
 
 const initialState: DecidePartnerState = {
 	inputName: "",

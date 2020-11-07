@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import createTypeArray from "@js/common/createTypeArray";
+import createTypeArray from "@store/utils/createTypeArray";
 
 const IconListAreaWrap = styled.div``;
 
