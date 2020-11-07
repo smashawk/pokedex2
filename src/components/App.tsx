@@ -1,22 +1,22 @@
 import React from "react";
 import { HashRouter, Link, Route, Switch } from "react-router-dom";
 import styled from "styled-components";
-import SearchPartner from "./pages/SearchPartner";
-import SearchType from "./pages/SearchType";
-import IndexPage from "./pages/IndexComponent";
-import SearchPoke from "./pages/SearchPoke";
+import { Index } from "@components/pages/Index";
+import { SearchPartner } from "@components/pages/SearchPartner";
+import { SearchType } from "@components/pages/SearchType";
+import { SearchPoke } from "@components/pages/SearchPoke";
 
-const App = styled.div`
+const Wrapper = styled.div`
 	font-size: 1.6rem;
 	width: 1120px;
 	margin: 40px auto 0;
 	text-align: center;
 `;
 
-const AppComponent = (): JSX.Element => {
+export const App = (): JSX.Element => {
 	return (
 		<HashRouter hashType="noslash">
-			<App>
+			<Wrapper>
 				<header>
 					<nav>
 						<Link to="/">TOP</Link>
@@ -32,15 +32,13 @@ const AppComponent = (): JSX.Element => {
 					<h1>○ケモン図鑑</h1>
 					<hr />
 					<Switch>
-						<Route exact path="/" component={IndexPage} />
+						<Route exact path="/" component={Index} />
 						<Route path="/pokemon" component={SearchPoke} />
 						<Route path="/type" component={SearchType} />
 						<Route path="/partner" component={SearchPartner} />
 					</Switch>
 				</main>
-			</App>
+			</Wrapper>
 		</HashRouter>
 	);
 };
-
-export default AppComponent;

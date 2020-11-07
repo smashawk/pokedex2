@@ -39,7 +39,7 @@ type DispatchProps = {
 
 type Props = StateProps & DispatchProps;
 
-const SearchType = (props: Props): JSX.Element => {
+const SearchTypeComponent = (props: Props): JSX.Element => {
 	return (
 		<ContentArea>
 			<InputArea
@@ -79,4 +79,7 @@ const mapDispatchToProps = (dispatch: Dispatch): DispatchProps => ({
 	showShinyPoke: (shinyId: number) => dispatch(showShinyPoke(shinyId))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(SearchType);
+export const SearchType = connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(SearchTypeComponent);

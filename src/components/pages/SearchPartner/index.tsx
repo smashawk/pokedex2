@@ -28,7 +28,7 @@ type DispatchProps = {
 
 type Props = StateProps & DispatchProps;
 
-const SearchPartner = (props: Props): JSX.Element => {
+const SearchPartnerComponent = (props: Props): JSX.Element => {
 	return (
 		<ContentArea>
 			{/* NIJIBOX_社員APIを使用しない場合はLoginコンポーネントをコメントアウト */}
@@ -67,4 +67,7 @@ const mapDispatchToProps = (dispatch: Dispatch): DispatchProps => ({
 	// login: () => dispatch(login())
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(SearchPartner);
+export const SearchPartner = connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(SearchPartnerComponent);

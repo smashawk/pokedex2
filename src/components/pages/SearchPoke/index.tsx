@@ -24,7 +24,7 @@ type DispatchProps = {
 
 type Props = StateProps & DispatchProps;
 
-const SearchPoke = (props: Props): JSX.Element => {
+const SearchPokeComponent = (props: Props): JSX.Element => {
 	return (
 		<ContentArea>
 			<InputArea
@@ -46,4 +46,7 @@ const mapDispatchToProps = (dispatch: Dispatch): DispatchProps => ({
 	decidePoke: (inputText: number | string) => dispatch(decidePoke(inputText))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(SearchPoke);
+export const SearchPoke = connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(SearchPokeComponent);

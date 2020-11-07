@@ -20,7 +20,7 @@ const UpDateList = styled.ul`
 /**
  * トップページです。
  */
-const IndexPage = (): JSX.Element => (
+export const Index = (): JSX.Element => (
 	<div>
 		<Heading2>Topページです</Heading2>
 		<a
@@ -44,5 +44,3 @@ const IndexPage = (): JSX.Element => (
 		</UpDateList>
 	</div>
 );
-
-export default IndexPage;

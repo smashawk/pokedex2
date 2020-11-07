@@ -2,9 +2,10 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-			"@store/*": ["./src/store/*"],
-			"@saga/*": ["./src/saga/*"],
+			"@components/*": ["./src/components/*"],
       "@data/*": ["./src/data/*"],
+			"@saga/*": ["./src/saga/*"],
+			"@store/*": ["./src/store/*"],
       "@styles/*": ["./src/styles/*"],
     }
   }
