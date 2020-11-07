@@ -1,4 +1,4 @@
-import { userInfo } from "@js/types/commonTypes";
+import { userInfo } from "@store/types/commonTypes";
 import {
 	DecidePartnerActionTypes,
 	FETCH_DATA,

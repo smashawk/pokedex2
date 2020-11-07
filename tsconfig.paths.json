@@ -3,7 +3,7 @@
     "baseUrl": ".",
     "paths": {
 			"@store/*": ["./src/store/*"],
-			"@js/*": ["./src/js/*"],
+			"@saga/*": ["./src/saga/*"],
       "@data/*": ["./src/data/*"],
       "@styles/*": ["./src/styles/*"],
     }

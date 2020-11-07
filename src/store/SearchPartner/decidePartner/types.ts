@@ -1,4 +1,4 @@
-import { userInfo } from "@js/types/commonTypes";
+import { userInfo } from "@store/types/commonTypes";
 
 export const FETCH_DATA = "FETCH_DATA";
 export const FETCH_SUCCEEDED = "FETCH_SUCCEEDED";
