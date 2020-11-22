@@ -4,6 +4,7 @@
   "homepage": "https://smashawk.github.io/pokedex2/",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.11.0",
     "@types/jest": "24.0.17",
     "@types/node": "12.7.1",
     "@types/react": "16.9.1",
