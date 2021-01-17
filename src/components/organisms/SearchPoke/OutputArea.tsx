@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import * as styles from "@styles/baseStyle";
 import normalArray from "@store/utils/createNormalArray";
+import { AppState } from "@store/index";
+import { connect } from "react-redux";
 
 interface OutputAreaProps {
 	no: number;
@@ -43,23 +45,28 @@ type StateProps = {
 
 type Props = StateProps;
 
-const OutputArea = (props: Props): JSX.Element => {
+const OutputArea = ({ no }: Props): JSX.Element => {
 	return (
 		<OutputAreaWrap>
 			<OutputAreaList>
 				<OutputAreaTitle>図鑑番号</OutputAreaTitle>
-				<OutputAreaDesc>{props.no}</OutputAreaDesc>
+				<OutputAreaDesc>{no}</OutputAreaDesc>
 				<OutputAreaTitle>名前</OutputAreaTitle>
-				<OutputAreaDesc>{normalArray[props.no].name}</OutputAreaDesc>
+				<OutputAreaDesc>{normalArray[no].name}</OutputAreaDesc>
 				<OutputAreaTitle>タイプ</OutputAreaTitle>
 				<OutputAreaDesc>
-					<span>{normalArray[props.no].types[0]}</span>
-					<OutputAreaType>{normalArray[props.no].types[1]}</OutputAreaType>
+					<span>{normalArray[no].types[0]}</span>
+					<OutputAreaType>{normalArray[no].types[1]}</OutputAreaType>
 				</OutputAreaDesc>
 			</OutputAreaList>
-			<OutputAreaImg no={props.no} />
+			<OutputAreaImg no={no} />
 		</OutputAreaWrap>
 	);
 };
 
-export default OutputArea;
+// container
+const mapStateToProps = (state: AppState): StateProps => ({
+	no: state.number.no
+});
+
+export const OutputAreaComp = connect(mapStateToProps)(OutputArea);
