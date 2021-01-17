@@ -15,10 +15,9 @@ import { SearchPartner } from "@components/pages/SearchPartner";
 import { SearchType } from "@components/pages/SearchType";
 import { SearchPokeComponent } from "@components/pages/SearchPoke";
 
-const theme = createMuiTheme({
+export const theme = createMuiTheme({
 	typography: {
-		htmlFontSize: 10,
-		fontSize: 10
+		htmlFontSize: 10
 	}
 });
 
@@ -34,7 +33,6 @@ const useStyles = makeStyles((theme: Theme) => ({
 
 export const App = (): JSX.Element => {
 	const classes = useStyles();
-
 	return (
 		<HashRouter hashType="noslash">
 			<ThemeProvider theme={theme}>

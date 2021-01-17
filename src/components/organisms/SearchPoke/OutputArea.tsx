@@ -1,6 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import * as styles from "@styles/baseStyle";
+import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
+import Container from "@material-ui/core/Container";
+import Typography from "@material-ui/core/Typography";
 import normalArray from "@store/utils/createNormalArray";
 import { AppState } from "@store/index";
 import { connect } from "react-redux";
@@ -8,8 +11,6 @@ import { connect } from "react-redux";
 interface OutputAreaProps {
 	no: number;
 }
-
-const OutputAreaWrap = styled(styles.BaseOutputAreaWrap)``;
 
 const OutputAreaList = styled(styles.BaseOutputAreaList)``;
 
@@ -47,7 +48,7 @@ type Props = StateProps;
 
 const OutputArea = ({ no }: Props): JSX.Element => {
 	return (
-		<OutputAreaWrap>
+		<Container>
 			<OutputAreaList>
 				<OutputAreaTitle>図鑑番号</OutputAreaTitle>
 				<OutputAreaDesc>{no}</OutputAreaDesc>
@@ -60,7 +61,7 @@ const OutputArea = ({ no }: Props): JSX.Element => {
 				</OutputAreaDesc>
 			</OutputAreaList>
 			<OutputAreaImg no={no} />
-		</OutputAreaWrap>
+		</Container>
 	);
 };
 

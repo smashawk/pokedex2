@@ -1,28 +1,30 @@
 import React from "react";
 import { connect } from "react-redux";
-import { AppState } from "@store/index";
 import { Dispatch } from "redux";
-import styled from "styled-components";
-import * as styles from "@styles/baseStyle";
-import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
+
 import { InputTextField } from "@components/atoms/InputTextField";
+
+import { AppState } from "@store/index";
 import { decidePoke } from "@store/SearchPoke/decidePoke/actions";
-import normalArray from "@store/utils/createNormalArray";
 import { DecidePokeActionTypes } from "@store/SearchPoke/decidePoke/types";
+import normalArray from "@store/utils/createNormalArray";
 
-const InputAreaWrap = styled.div``;
-
-const InputAreaDesc = styled(styles.BaseInputAreaDesc)``;
-
-const InputAreaErrorText = styled(styles.BaseInputAreaErrorText)``;
+import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
+import Container from "@material-ui/core/Container";
+import Typography from "@material-ui/core/Typography";
 
 const useStyles = makeStyles((theme: Theme) =>
 	createStyles({
-		root: {
-			"& .MuiTextField-root": {
-				margin: theme.spacing(1),
-				width: "25ch"
-			}
+		heading2: {
+			fontSize: 24,
+			fontWeight: 700
+		},
+		text: {
+			fontSize: 20
+		},
+		errorMessage: {
+			color: theme.palette.primary.main,
+			fontSize: 16
 		}
 	})
 );
@@ -43,7 +45,7 @@ const InputArea = (props: Props): JSX.Element => {
 	const searchPoke = (event: React.ChangeEvent<HTMLInputElement>): void => {
 		const { value } = event.target;
 		let no = 0;
-		let errorMessage = false;
+		let errorMessage = true;
 
 		// 何も入力されていない場合 → No.0のおばけ画像を表示
 		if (!value) {
@@ -55,18 +57,9 @@ const InputArea = (props: Props): JSX.Element => {
 
 		// 範囲内の数字が入力されている場合
 		const numValue = Number(value);
-
 		if (numValue < 803 && numValue > 0) {
 			no = numValue;
 			errorMessage = false;
-			props.decidePoke(no, errorMessage);
-			return;
-		}
-
-		// 範囲外の数字、及びその他無関係な文字列が入力されている場合
-		if (numValue >= 803 && numValue < 0) {
-			no = 0;
-			errorMessage = true;
 			props.decidePoke(no, errorMessage);
 			return;
 		}
@@ -80,12 +73,19 @@ const InputArea = (props: Props): JSX.Element => {
 				break;
 			}
 		}
+
+		// 上記に当てはまらない場合
+		props.decidePoke(no, errorMessage);
 	};
 
 	return (
-		<InputAreaWrap className={classes.root}>
-			<h2>1. 名前or図鑑ナンバー検索</h2>
-			<InputAreaDesc>※カタカナ名or数字1〜802まで</InputAreaDesc>
+		<Container>
+			<Typography className={classes.heading2} variant="h2">
+				1. 名前or図鑑ナンバー検索
+			</Typography>
+			<Typography className={classes.text}>
+				※カタカナ名or数字1〜802まで
+			</Typography>
 			<InputTextField
 				type="text"
 				label="図鑑ナンバーを入力"
@@ -93,11 +93,11 @@ const InputArea = (props: Props): JSX.Element => {
 				onChange={searchPoke}
 			/>
 			{props.errorMessage && (
-				<InputAreaErrorText>
+				<Typography className={classes.errorMessage}>
 					適切な名前or数字を入力してください。
-				</InputAreaErrorText>
+				</Typography>
 			)}
-		</InputAreaWrap>
+		</Container>
 	);
 };
 
