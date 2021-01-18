@@ -1,44 +1,10 @@
 import React from "react";
-import styled from "styled-components";
-import * as styles from "@styles/baseStyle";
-import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-import Typography from "@material-ui/core/Typography";
 import normalArray from "@store/utils/createNormalArray";
 import { AppState } from "@store/index";
 import { connect } from "react-redux";
-
-interface OutputAreaProps {
-	no: number;
-}
-
-const OutputAreaList = styled(styles.BaseOutputAreaList)``;
-
-const OutputAreaTitle = styled(styles.BaseOutputAreaTitle)``;
-
-const OutputAreaDesc = styled(styles.BaseOutputAreaDesc)``;
-
-const OutputAreaType = styled(styles.BaseOutputAreaType)``;
-
-const OutputAreaImg = styled(styles.BaseOutputAreaImg)`
-	${(props: OutputAreaProps) => {
-		if (props.no < 10) {
-			return `
-        background: center / contain no-repeat url(./images/00${props.no}_0.png);
-      `;
-		}
-		if (props.no > 9 && props.no < 100) {
-			return `
-        background: center / contain no-repeat url(./images/0${props.no}_0.png);
-      `;
-		}
-		if (props.no < 1000) {
-			return `
-        background: center / contain no-repeat url(./images/${props.no}_0.png);
-      `;
-		}
-	}}
-`;
+import { DescriptionList } from "@components/atoms/DescriptionList";
+import { PokeImg } from "@components/atoms/PokeImg";
 
 type StateProps = {
 	no: number;
@@ -47,20 +13,29 @@ type StateProps = {
 type Props = StateProps;
 
 const OutputArea = ({ no }: Props): JSX.Element => {
+	const data = [
+		{
+			term: "No",
+			description: no
+		},
+		{
+			term: "Name",
+			description: normalArray[no].name
+		},
+		{
+			term: "Type1",
+			description: normalArray[no].types[0]
+		},
+		{
+			term: "Type2",
+			description: normalArray[no].types[1]
+		}
+	];
+
 	return (
 		<Container>
-			<OutputAreaList>
-				<OutputAreaTitle>図鑑番号</OutputAreaTitle>
-				<OutputAreaDesc>{no}</OutputAreaDesc>
-				<OutputAreaTitle>名前</OutputAreaTitle>
-				<OutputAreaDesc>{normalArray[no].name}</OutputAreaDesc>
-				<OutputAreaTitle>タイプ</OutputAreaTitle>
-				<OutputAreaDesc>
-					<span>{normalArray[no].types[0]}</span>
-					<OutputAreaType>{normalArray[no].types[1]}</OutputAreaType>
-				</OutputAreaDesc>
-			</OutputAreaList>
-			<OutputAreaImg no={no} />
+			<DescriptionList data={data} />
+			<PokeImg no={no} />
 		</Container>
 	);
 };
