@@ -5,7 +5,7 @@ type OwnProps = {
 	label: string;
 	type: TextFieldProps["type"];
 	variant?: TextFieldProps["variant"];
-	onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+	onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
 type Props = OwnProps;

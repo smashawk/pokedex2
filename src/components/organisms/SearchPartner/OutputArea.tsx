@@ -47,14 +47,8 @@ const PartnerSubText = styled.span`
 	padding: 0 0.5rem;
 `;
 
-const OutputAreaNijiImg = styled.img`
-	width: 200px;
-	height: 200px;
-`;
-
 type StateProps = {
 	inputName: string;
-	nijiData: any;
 	partnerNo: number;
 };
 
@@ -63,8 +57,6 @@ type Props = StateProps;
 const OutputArea = (props: Props): JSX.Element => {
 	return (
 		<OutputAreaWrap>
-			{props.nijiData && <OutputAreaNijiImg src={props.nijiData.photo_url} />}
-
 			<div>
 				<PartnerText>
 					<PartnerSubText>{props.inputName}</PartnerSubText>

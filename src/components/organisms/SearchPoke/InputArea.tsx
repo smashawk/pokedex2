@@ -15,13 +15,6 @@ import Typography from "@material-ui/core/Typography";
 
 const useStyles = makeStyles((theme: Theme) =>
 	createStyles({
-		heading2: {
-			fontSize: 24,
-			fontWeight: 700
-		},
-		text: {
-			fontSize: 20
-		},
 		errorMessage: {
 			color: theme.palette.primary.main,
 			fontSize: 16
@@ -80,16 +73,12 @@ const InputArea = (props: Props): JSX.Element => {
 
 	return (
 		<Container>
-			<Typography className={classes.heading2} variant="h2">
-				1. 名前or図鑑ナンバー検索
-			</Typography>
-			<Typography className={classes.text}>
-				※カタカナ名or数字1〜802まで
-			</Typography>
+			<Typography variant="h2">1. 名前or図鑑ナンバー検索</Typography>
+			<Typography>※カタカナ名or数字1〜802まで</Typography>
 			<InputTextField
 				type="text"
 				label="図鑑ナンバーを入力"
-				variant="standard"
+				variant="filled"
 				onChange={searchPoke}
 			/>
 			{props.errorMessage && (

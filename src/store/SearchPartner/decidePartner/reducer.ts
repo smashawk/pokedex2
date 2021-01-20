@@ -1,14 +1,12 @@
 import {
 	DecidePartnerState,
 	DecidePartnerActionTypes,
-	FETCH_SUCCEEDED,
-	FETCH_FAILED
+	FETCH_SUCCEEDED
 } from "@store/SearchPartner/decidePartner/types";
 import decidePartnerNo from "@store/utils/decidePartnerNo";
 
 const initialState: DecidePartnerState = {
 	inputName: "",
-	nijiData: "",
 	partnerNo: 0,
 	isDecision: false
 };
@@ -27,11 +25,6 @@ const nijiDataReducer = (
 				...action.payload,
 				partnerNo,
 				isDecision: true
-			};
-
-		case FETCH_FAILED:
-			return {
-				...state
 			};
 
 		default:

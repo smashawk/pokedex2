@@ -17,7 +17,14 @@ import { SearchPokeComponent } from "@components/pages/SearchPoke";
 
 export const theme = createMuiTheme({
 	typography: {
-		htmlFontSize: 10
+		htmlFontSize: 10,
+		h2: {
+			fontSize: 24,
+			fontWeight: 700
+		},
+		body1: {
+			fontSize: 20
+		}
 	}
 });
 
