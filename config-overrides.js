@@ -9,7 +9,8 @@ module.exports = (config) => {
 			"@components": path.resolve(__dirname, "./src/components"),
 			"@data": path.resolve(__dirname, "./src/data"),
 			"@store": path.resolve(__dirname, "./src/store"),
-			"@styles": path.resolve(__dirname, "./src/styles")
+			"@styles": path.resolve(__dirname, "./src/styles"),
+			"@utils": path.resolve(__dirname, "./src/utils")
 		}
 	};
 
