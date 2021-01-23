@@ -12,8 +12,13 @@ const useStyles = makeStyles((theme: Theme) =>
 			backgroundPosition: "center",
 			backgroundRepeat: "no-repeat"
 		},
+		pokeImg0: (no) => ({
+			// backgroundImage: `url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${no}.gif)`
+			backgroundImage: `url(https://www.cpokemon.com/pokes/animated/3ds/${no}.gif)`
+		}),
 		pokeImg1: (no) => ({
 			backgroundImage: `url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${no}.gif)`
+			// backgroundImage: `url(https://www.cpokemon.com/pokes/animated/3ds/${no}.gif)`
 		}),
 		pokeImg2: (no) => ({
 			backgroundImage: `url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/ultra-sun-ultra-moon/${no}.png)`
@@ -26,14 +31,17 @@ const useStyles = makeStyles((theme: Theme) =>
 
 type OwnProps = {
 	no: number;
+	img?: string;
 };
 
 type Props = OwnProps;
 
-export const PokeImg = ({ no }: Props): JSX.Element => {
+export const PokeImg = ({ no, img }: Props): JSX.Element => {
 	const classes = useStyles(no);
 
-	return (
+	return img === "animated" ? (
+		<Box className={`${classes.pokeImg} ${classes.pokeImg0}`} />
+	) : (
 		<>
 			{no < 650 && <Box className={`${classes.pokeImg} ${classes.pokeImg1}`} />}
 			{no > 649 && no < 803 && (

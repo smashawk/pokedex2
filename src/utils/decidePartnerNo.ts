@@ -15,7 +15,7 @@ export const decidePartnerNo = (inputName: string): number => {
 	});
 
 	// ここで相棒ポケモン決定（全ポケモンの数で割った余り）
-	partnerNo = partnerNo % 649 ? partnerNo % 649 : 1;
+	partnerNo = partnerNo % 807 ? partnerNo % 807 : 1;
 
 	return partnerNo;
 };

@@ -42,7 +42,7 @@ const OutputArea = ({ pokeData }: Props): JSX.Element | null => {
 				{`${pokeData.inputName}は${pokeData.name}にきめた！`}
 			</Typography>
 			<DescriptionList data={data} />
-			<PokeImg no={pokeData.id} />
+			<PokeImg no={pokeData.id} img="animated" />
 		</Container>
 	) : null;
 };
