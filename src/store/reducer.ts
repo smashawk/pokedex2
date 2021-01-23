@@ -1,14 +1,16 @@
 import { combineReducers } from "redux";
-import typeReducer from "@store/SearchType/decidePokeType/reducers";
-import dataReducer from "@store/SearchType/showData/reducer";
 import { decidePokeReducer } from "@store/searchPoke/decidePoke/reducer";
+import { decidePokeTypeReducer } from "@store/searchType/decidePokeType/reducers";
+import { showDataReducer } from "@store/searchType/showData/reducer";
 import { getPokeReducer } from "@store/common/getPokeData/reducers";
 
 const rootReducer = combineReducers({
-	type: typeReducer,
-	data: dataReducer,
 	searchPoke: combineReducers({
 		decidePoke: decidePokeReducer
+	}),
+	searchType: combineReducers({
+		decidePokeType: decidePokeTypeReducer,
+		showData: showDataReducer
 	}),
 	pokeAPI: combineReducers({
 		pokeData: getPokeReducer

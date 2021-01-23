@@ -1,32 +1,27 @@
 import React from "react";
-import styled from "styled-components";
-import typeData from "@data/type_data.json";
-import {
-	decidePokeType1,
-	decidePokeType2,
-	resetType
-} from "@store/SearchType/decidePokeType/actions";
 import { Dispatch } from "redux";
 import { connect } from "react-redux";
 
-const InputAreaWrap = styled.div`
-	margin: 0;
-	width: 220px;
-`;
+import { FixButton } from "@components/atoms/FixButton";
+import { dispatches } from "@store/dispatches";
+import typeData from "@data/type_data.json";
 
-const InputAreaResetType = styled.button`
-	margin-top: 20px;
-`;
+import Container from "@material-ui/core/Container";
+import Typography from "@material-ui/core/Typography";
 
 type DispatchProps = {
-	decidePokeType1: typeof decidePokeType1;
-	decidePokeType2: typeof decidePokeType2;
-	resetType: typeof resetType;
+	decidePokeType1: (value: string) => void;
+	decidePokeType2: (value: string) => void;
+	resetType: () => void;
 };
 
 type Props = DispatchProps;
 
-const InputArea = (props: Props): JSX.Element => {
+const InputArea = ({
+	decidePokeType1,
+	decidePokeType2,
+	resetType
+}: Props): JSX.Element => {
 	const options = typeData.map((v, i) => {
 		const key = `index_${i}`;
 		return (
@@ -36,36 +31,54 @@ const InputArea = (props: Props): JSX.Element => {
 		);
 	});
 
+	const decidePokeType1Func = (event: any): void => {
+		const { value } = event.target;
+		decidePokeType1(value);
+	};
+	const decidePokeType2Func = (event: any): void => {
+		const { value } = event.target;
+		decidePokeType2(value);
+	};
+	const resetTypeFunc = (): void => {
+		resetType();
+	};
+
 	return (
-		<InputAreaWrap>
-			<h2>2. タイプ検索</h2>
-			<select
-				id="typeSelector1"
-				onChange={(e) => props.decidePokeType1(e.target.value)}
-			>
+		<Container>
+			<Typography variant="h2">2. タイプ検索</Typography>
+			<select id="typeSelector1" onChange={decidePokeType1Func}>
 				<option value="-">-</option>
 				{options}
 			</select>
-			<select
-				id="typeSelector2"
-				onChange={(e) => props.decidePokeType2(e.target.value)}
-			>
+			<select id="typeSelector2" onChange={decidePokeType2Func}>
 				<option value="-">-</option>
 				{options}
 			</select>
-			<InputAreaResetType onClick={() => props.resetType()}>
-				タイプリセット
-			</InputAreaResetType>
-		</InputAreaWrap>
+			<FixButton
+				color="primary"
+				text="タイプリセット"
+				variant="contained"
+				onClick={resetTypeFunc}
+			/>
+		</Container>
 	);
 };
 
 // container
+const mapDispatchToProps = (dispatch: Dispatch): DispatchProps => {
+	const { searchType } = dispatches;
 
-const mapDispatchToProps = (dispatch: Dispatch): DispatchProps => ({
-	decidePokeType1: (value: string) => dispatch(decidePokeType1(value)),
-	decidePokeType2: (value: string) => dispatch(decidePokeType2(value)),
-	resetType: () => dispatch(resetType())
-});
+	return {
+		decidePokeType1: (value: string): void => {
+			searchType.decidePokeType1Dispatcher(dispatch)(value);
+		},
+		decidePokeType2: (value: string): void => {
+			searchType.decidePokeType2Dispatcher(dispatch)(value);
+		},
+		resetType: (): void => {
+			searchType.resetTypeDispatcher(dispatch);
+		}
+	};
+};
 
 export const InputAreaComp = connect(null, mapDispatchToProps)(InputArea);

@@ -21,12 +21,19 @@ const useStyles = makeStyles((theme: Theme) =>
 
 type OwnProps = {
 	item: any;
-	// onMouseOver: any;
+	onMouseOver: any;
 };
 
 type Props = OwnProps;
 
-export const PokeIconList = ({ item }: Props): JSX.Element => {
+export const PokeIconList = ({ item, onMouseOver }: Props): JSX.Element => {
 	const classes = useStyles(item.number.no);
-	return <li className={classes.pokeIcon} />;
+	return (
+		<li
+			id={item.number.no}
+			className={classes.pokeIcon}
+			onMouseOver={onMouseOver}
+			onFocus={onMouseOver}
+		/>
+	);
 };

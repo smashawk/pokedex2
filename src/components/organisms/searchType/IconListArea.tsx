@@ -1,8 +1,12 @@
 import React from "react";
-import createTypeArray from "@utils/createTypeArray";
-import { AppState } from "@store/reducer";
+import { Dispatch } from "redux";
 import { connect } from "react-redux";
+
 import { PokeIconList } from "@components/atoms/PokeIconList";
+import { AppState } from "@store/reducer";
+import { dispatches } from "@store/dispatches";
+import createTypeArray from "@utils/createTypeArray";
+
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -20,14 +24,32 @@ type StateProps = {
 	pokeType2: string;
 };
 
-type Props = StateProps;
+type DispatchProps = {
+	showData: any;
+};
 
-const IconListArea = ({ pokeType1, pokeType2 }: Props): JSX.Element => {
+type Props = StateProps & DispatchProps;
+
+const IconListArea = ({
+	pokeType1,
+	pokeType2,
+	showData
+}: Props): JSX.Element => {
 	const classes = useStyles();
 	// 選択されたタイプを持つポケモンの配列を作成
 	const typeArray = createTypeArray(pokeType1, pokeType2);
+	const showPokeData = (event: any) => {
+		const { id } = event.target;
+		showData(Number(id));
+	};
 	const nodes = typeArray.map((item: any) => {
-		return <PokeIconList item={item} />;
+		return (
+			<PokeIconList
+				key={item.number.no}
+				item={item}
+				onMouseOver={showPokeData}
+			/>
+		);
 	});
 
 	return <ul className={classes.pokeList}>{nodes}</ul>;
@@ -35,8 +57,21 @@ const IconListArea = ({ pokeType1, pokeType2 }: Props): JSX.Element => {
 
 // container
 const mapStateToProps = (state: AppState): StateProps => ({
-	pokeType1: state.type.pokeType1,
-	pokeType2: state.type.pokeType2
+	pokeType1: state.searchType.decidePokeType.pokeType1,
+	pokeType2: state.searchType.decidePokeType.pokeType2
 });
 
-export const IconListAreaComp = connect(mapStateToProps, null)(IconListArea);
+const mapDispatchToProps = (dispatch: Dispatch): DispatchProps => {
+	const { searchType } = dispatches;
+
+	return {
+		showData: (no: number): void => {
+			searchType.showDataDispatcher(dispatch)(no);
+		}
+	};
+};
+
+export const IconListAreaComp = connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(IconListArea);

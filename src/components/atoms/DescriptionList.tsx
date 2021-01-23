@@ -14,11 +14,11 @@ type Props = OwnProps;
 export const DescriptionList = ({ data }: Props): JSX.Element => {
 	return (
 		<dl>
-			{data.map((item: dataObject) => (
-				<>
+			{data.map((item: dataObject, index) => (
+				<React.Fragment key={index}>
 					<dt>{item.term}</dt>
 					<dd>{item.description}</dd>
-				</>
+				</React.Fragment>
 			))}
 		</dl>
 	);

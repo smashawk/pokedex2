@@ -2,15 +2,15 @@ import {
 	ShowDataState,
 	ShowDataActionTypes,
 	SHOW_POKE_DATA
-} from "@store/SearchType/showData/types";
-import { RESET_POKE_TYPE_LIST } from "@store/SearchType/decidePokeType/types";
+} from "@store/searchType/showData/types";
+import { RESET_POKE_TYPE_LIST } from "@store/searchType/decidePokeType/types";
 
 const initialState: ShowDataState = {
 	pokeId: 0
 };
 
-const dataReducer = (
-	state = initialState,
+export const showDataReducer = (
+	state: ShowDataState = initialState,
 	action: ShowDataActionTypes
 ): ShowDataState => {
 	switch (action.type) {
@@ -30,5 +30,3 @@ const dataReducer = (
 			return state;
 	}
 };
-
-export default dataReducer;

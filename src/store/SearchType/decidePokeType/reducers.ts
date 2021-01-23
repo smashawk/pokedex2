@@ -3,16 +3,15 @@ import {
 	decidePokeTypeActionTypes,
 	DECIDE_POKE_TYPE,
 	RESET_POKE_TYPE_LIST
-} from "@store/SearchType/decidePokeType/types";
+} from "@store/searchType/decidePokeType/types";
 
 const initialState: decidePokeTypeState = {
 	pokeType1: "-",
-	pokeType2: "-",
-	clickMessage: false
+	pokeType2: "-"
 };
 
-const typeReducer = (
-	state = initialState,
+export const decidePokeTypeReducer = (
+	state: decidePokeTypeState = initialState,
 	action: decidePokeTypeActionTypes
 ): decidePokeTypeState => {
 	switch (action.type) {
@@ -25,7 +24,6 @@ const typeReducer = (
 		case RESET_POKE_TYPE_LIST:
 			return {
 				...state,
-				...action.payload,
 				pokeType1: "-",
 				pokeType2: "-"
 			};
@@ -34,5 +32,3 @@ const typeReducer = (
 			return state;
 	}
 };
-
-export default typeReducer;

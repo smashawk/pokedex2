@@ -28,15 +28,17 @@ export const theme = createMuiTheme({
 	}
 });
 
-const useStyles = makeStyles((theme: Theme) => ({
-	mainWrapper: {
-		textAlign: "center"
-		// margin: theme.spacing(10, "auto")
-	},
-	toolBar: {
-		justifyContent: "center"
-	}
-}));
+const useStyles = makeStyles((theme: Theme) =>
+	createStyles({
+		mainWrapper: {
+			textAlign: "center"
+			// margin: theme.spacing(10, "auto")
+		},
+		toolBar: {
+			justifyContent: "center"
+		}
+	})
+);
 
 export const App = (): JSX.Element => {
 	const classes = useStyles();

@@ -12,9 +12,6 @@ const useStyles = makeStyles((theme: Theme) =>
 			backgroundPosition: "center",
 			backgroundRepeat: "no-repeat"
 		},
-		// pokeImg1: (no) => ({
-		// 	backgroundImage: `url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/${no}.gif)`
-		// }),
 		pokeImg1: (no) => ({
 			backgroundImage: `url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${no}.gif)`
 		}),
