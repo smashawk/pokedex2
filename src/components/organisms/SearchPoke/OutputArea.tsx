@@ -1,10 +1,12 @@
 import React from "react";
-import Container from "@material-ui/core/Container";
-import normalArray from "@store/utils/createNormalArray";
-import { AppState } from "@store/index";
 import { connect } from "react-redux";
+
 import { DescriptionList } from "@components/atoms/DescriptionList";
 import { PokeImg } from "@components/atoms/PokeImg";
+import { AppState } from "@store/reducer";
+import normalArray from "@utils/createNormalArray";
+
+import Container from "@material-ui/core/Container";
 
 type StateProps = {
 	no: number;
@@ -42,7 +44,7 @@ const OutputArea = ({ no }: Props): JSX.Element => {
 
 // container
 const mapStateToProps = (state: AppState): StateProps => ({
-	no: state.number.no
+	no: state.searchPoke.decidePoke.no
 });
 
 export const OutputAreaComp = connect(mapStateToProps)(OutputArea);

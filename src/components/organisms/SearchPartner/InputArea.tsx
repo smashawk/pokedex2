@@ -51,14 +51,14 @@ const InputArea = ({ fetchPartnerPoke }: Props): JSX.Element => {
 };
 
 const mapDispatchToProps = (dispatch: Dispatch): DispatchProps => {
-	const { PokeAPI } = dispatches;
+	const { pokeAPI } = dispatches;
 
 	return {
 		fetchPartnerPoke: async (
 			partnerNo: number,
 			inputName: string
 		): Promise<void> => {
-			await PokeAPI.getPokeDispatcher(dispatch)(partnerNo, inputName);
+			await pokeAPI.getPokeDispatcher(dispatch)(partnerNo, inputName);
 		}
 	};
 };

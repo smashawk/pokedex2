@@ -13,7 +13,7 @@ import Toolbar from "@material-ui/core/Toolbar";
 import { Index } from "@components/pages/Index";
 import { SearchPartnerComp } from "@components/pages/SearchPartner";
 import { SearchType } from "@components/pages/SearchType";
-import { SearchPokeComponent } from "@components/pages/SearchPoke";
+import { SearchPokeComp } from "@components/pages/SearchPoke";
 
 export const theme = createMuiTheme({
 	typography: {
@@ -58,7 +58,7 @@ export const App = (): JSX.Element => {
 						<hr />
 						<Switch>
 							<Route exact path="/" component={Index} />
-							<Route path="/pokemon" component={SearchPokeComponent} />
+							<Route path="/pokemon" component={SearchPokeComp} />
 							<Route path="/type" component={SearchType} />
 							<Route path="/partner" component={SearchPartnerComp} />
 						</Switch>

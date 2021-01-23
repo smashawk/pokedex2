@@ -1,7 +1,7 @@
 import {
 	DecidePokeActionTypes,
 	SEARCH_POKE_DATA
-} from "@store/SearchPoke/decidePoke/types";
+} from "@store/searchPoke/decidePoke/types";
 
 export const decidePoke = (
 	no: number,

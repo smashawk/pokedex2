@@ -1,19 +1,13 @@
 import React from "react";
-import styled from "styled-components";
-import * as styles from "@styles/baseStyle";
-import { InputAreaComp } from "@components/organisms/SearchPoke/InputArea";
-import { OutputAreaComp } from "@components/organisms/SearchPoke/OutputArea";
+import Container from "@material-ui/core/Container";
+import { InputAreaComp } from "@components/organisms/searchPoke/InputArea";
+import { OutputAreaComp } from "@components/organisms/searchPoke/OutputArea";
 
-const ContentArea = styled(styles.BaseContentArea)`
-	display: flex;
-	justify-content: center;
-`;
-
-export const SearchPokeComponent = (): JSX.Element => {
+export const SearchPokeComp = (): JSX.Element => {
 	return (
-		<ContentArea>
+		<Container>
 			<InputAreaComp />
 			<OutputAreaComp />
-		</ContentArea>
+		</Container>
 	);
 };

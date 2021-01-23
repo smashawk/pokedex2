@@ -2,15 +2,15 @@ import {
 	DecidePokeState,
 	DecidePokeActionTypes,
 	SEARCH_POKE_DATA
-} from "@store/SearchPoke/decidePoke/types";
+} from "@store/searchPoke/decidePoke/types";
 
 const initialState: DecidePokeState = {
 	no: 0,
 	errorMessage: false
 };
 
-const numberReducer = (
-	state = initialState,
+export const decidePokeReducer = (
+	state: DecidePokeState = initialState,
 	action: DecidePokeActionTypes
 ): DecidePokeState => {
 	switch (action.type) {
@@ -24,5 +24,3 @@ const numberReducer = (
 			return state;
 	}
 };
-
-export default numberReducer;

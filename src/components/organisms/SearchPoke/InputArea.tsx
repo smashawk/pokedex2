@@ -4,10 +4,9 @@ import { Dispatch } from "redux";
 
 import { InputTextField } from "@components/atoms/InputTextField";
 
-import { AppState } from "@store/index";
-import { decidePoke } from "@store/SearchPoke/decidePoke/actions";
-import { DecidePokeActionTypes } from "@store/SearchPoke/decidePoke/types";
-import normalArray from "@store/utils/createNormalArray";
+import { AppState } from "@store/reducer";
+import { dispatches } from "@store/dispatches";
+import normalArray from "@utils/createNormalArray";
 
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
@@ -27,7 +26,7 @@ type StateProps = {
 };
 
 type DispatchProps = {
-	decidePoke: typeof decidePoke;
+	decidePoke: (no: number, errorMessage: boolean) => void;
 };
 
 type Props = StateProps & DispatchProps;
@@ -92,13 +91,18 @@ const InputArea = (props: Props): JSX.Element => {
 
 // container
 const mapStateToProps = (state: AppState): StateProps => ({
-	errorMessage: state.number.errorMessage
+	errorMessage: state.searchPoke.decidePoke.errorMessage
 });
 
-const mapDispatchToProps = (dispatch: Dispatch): DispatchProps => ({
-	decidePoke: (no, errorMessage): DecidePokeActionTypes =>
-		dispatch(decidePoke(no, errorMessage))
-});
+const mapDispatchToProps = (dispatch: Dispatch): DispatchProps => {
+	const { searchPoke } = dispatches;
+
+	return {
+		decidePoke: (no: number, errorMessage: boolean): void => {
+			searchPoke.decidePokeDispatcher(dispatch)(no, errorMessage);
+		}
+	};
+};
 
 export const InputAreaComp = connect(
 	mapStateToProps,
