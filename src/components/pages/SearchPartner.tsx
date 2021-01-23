@@ -1,38 +1,13 @@
 import React from "react";
-import { connect } from "react-redux";
-import styled from "styled-components";
-import * as styles from "@styles/baseStyle";
-import { AppState } from "@store/index";
+import Container from "@material-ui/core/Container";
 import { InputAreaComp } from "../organisms/SearchPartner/InputArea";
-import OutputArea from "../organisms/SearchPartner/OutputArea";
+import { OutputAreaComp } from "../organisms/SearchPartner/OutputArea";
 
-const ContentArea = styled(styles.BaseContentArea)``;
-
-type StateProps = {
-	inputName: string;
-	partnerNo: number;
-	isDecision: boolean;
-};
-
-type Props = StateProps;
-
-const SearchPartnerComponent = (props: Props): JSX.Element => {
+export const SearchPartnerComp = (): JSX.Element => {
 	return (
-		<ContentArea>
+		<Container>
 			<InputAreaComp />
-
-			{props.isDecision && (
-				<OutputArea inputName={props.inputName} partnerNo={props.partnerNo} />
-			)}
-		</ContentArea>
+			<OutputAreaComp />
+		</Container>
 	);
 };
-
-// container
-const mapStateToProps = (state: AppState): StateProps => ({
-	inputName: state.partner.inputName,
-	partnerNo: state.partner.partnerNo,
-	isDecision: state.partner.isDecision
-});
-
-export const SearchPartner = connect(mapStateToProps)(SearchPartnerComponent);

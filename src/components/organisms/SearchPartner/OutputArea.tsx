@@ -1,88 +1,55 @@
 import React from "react";
-import styled from "styled-components";
-import * as styles from "@styles/baseStyle";
-import normalArray from "@store/utils/createNormalArray";
+import { AppState } from "@store/reducer";
+import { connect } from "react-redux";
 
-const OutputAreaWrap = styled(styles.BaseOutputAreaWrap)`
-	display: flex;
-	justify-content: center;
-	margin: 30px auto 0;
-	width: 960px;
-`;
+import { PokeImg } from "@components/atoms/PokeImg";
+import { DescriptionList } from "@components/atoms/DescriptionList";
+import { formattedPokeDataType } from "@store/common/getPokeData/reducers";
 
-const OutputAreaList = styled(styles.BaseOutputAreaList)``;
-
-const OutputAreaTitle = styled(styles.BaseOutputAreaTitle)``;
-
-const OutputAreaDesc = styled(styles.BaseOutputAreaDesc)``;
-
-const OutputAreaType = styled(styles.BaseOutputAreaType)``;
-
-const OutputAreaImg = styled(styles.BaseOutputAreaImg)`
-	${(props: { [key: string]: number }) => {
-		if (props.partnerNo < 10) {
-			return `
-        background: center / contain no-repeat url(./images/00${props.partnerNo}_0.png);
-      `;
-		}
-		if (props.partnerNo > 9 && props.partnerNo < 100) {
-			return `
-        background: center / contain no-repeat url(./images/0${props.partnerNo}_0.png);
-      `;
-		}
-		if (props.partnerNo < 1000) {
-			return `
-        background: center / contain no-repeat url(./images/${props.partnerNo}_0.png);
-      `;
-		}
-	}}
-`;
-
-const PartnerText = styled.p`
-	font-size: 2rem;
-`;
-
-const PartnerSubText = styled.span`
-	font-weight: bold;
-	padding: 0 0.5rem;
-`;
+import Container from "@material-ui/core/Container";
+import Typography from "@material-ui/core/Typography";
 
 type StateProps = {
-	inputName: string;
-	partnerNo: number;
+	pokeData: formattedPokeDataType;
 };
 
 type Props = StateProps;
 
-const OutputArea = (props: Props): JSX.Element => {
-	return (
-		<OutputAreaWrap>
-			<div>
-				<PartnerText>
-					<PartnerSubText>{props.inputName}</PartnerSubText>
-					<span>は</span>
-					<PartnerSubText>{normalArray[props.partnerNo].name}</PartnerSubText>
-					にきめた！
-				</PartnerText>
+const OutputArea = ({ pokeData }: Props): JSX.Element | null => {
+	const data = [
+		{
+			term: "No",
+			description: pokeData.id
+		},
+		{
+			term: "Name",
+			description: pokeData.name
+		},
+		{
+			term: "Type1",
+			description: pokeData.types[0].type.name
+		},
+		{
+			term: "Type2",
+			description:
+				pokeData.types.length === 2 ? pokeData.types[1].type.name : ""
+		}
+	];
 
-				<OutputAreaList>
-					<OutputAreaTitle>図鑑番号</OutputAreaTitle>
-					<OutputAreaDesc>{normalArray[props.partnerNo].no}</OutputAreaDesc>
-					<OutputAreaTitle>名前</OutputAreaTitle>
-					<OutputAreaDesc>{normalArray[props.partnerNo].name}</OutputAreaDesc>
-					<OutputAreaTitle>タイプ</OutputAreaTitle>
-					<OutputAreaDesc>
-						<span>{normalArray[props.partnerNo].types[0]}</span>
-						<OutputAreaType>
-							{normalArray[props.partnerNo].types[1]}
-						</OutputAreaType>
-					</OutputAreaDesc>
-				</OutputAreaList>
-
-				<OutputAreaImg partnerNo={props.partnerNo} />
-			</div>
-		</OutputAreaWrap>
-	);
+	return pokeData.id ? (
+		<Container>
+			<Typography>
+				{`${pokeData.inputName}は${pokeData.name}にきめた！`}
+			</Typography>
+			<DescriptionList data={data} />
+			<PokeImg no={pokeData.id} />
+		</Container>
+	) : null;
 };
 
-export default OutputArea;
+// container
+const mapStateToProps = (state: AppState): StateProps => ({
+	pokeData: state.PokeAPI.PokeData
+});
+
+export const OutputAreaComp = connect(mapStateToProps)(OutputArea);

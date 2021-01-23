@@ -2,7 +2,7 @@ import { applyMiddleware, createStore } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import createSagaMiddleware from "redux-saga";
 // import sagas from "@saga/sagas";
-import rootReducer from "@store/index";
+import rootReducer from "@store/reducer";
 
 // Saga ミドルウェアを作成する
 const sagaMiddleware = createSagaMiddleware();

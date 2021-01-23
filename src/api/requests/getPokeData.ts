@@ -1,7 +1,7 @@
 import { AxiosResponse } from "axios";
 import { getRequest } from "@api/index";
 
-export type PokeData = {
+export type PokeDataType = {
 	abilities: [];
 	base_experience: number;
 	forms: [];
@@ -17,13 +17,13 @@ export type PokeData = {
 	species: Record<string, unknown>;
 	sprites: Record<string, unknown>;
 	stats: [];
-	types: [];
+	types: { type: { name: string } }[];
 	weight: number;
 };
 
 export const getPokeData = async (
-	no: string
-): Promise<AxiosResponse<PokeData>> => {
+	no: number
+): Promise<AxiosResponse<PokeDataType>> => {
 	const url = `https://pokeapi.co/api/v2/pokemon/${no}`;
-	return getRequest<PokeData>(url);
+	return getRequest<PokeDataType>(url);
 };

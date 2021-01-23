@@ -11,7 +11,7 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import Container from "@material-ui/core/Container";
 import Toolbar from "@material-ui/core/Toolbar";
 import { Index } from "@components/pages/Index";
-import { SearchPartner } from "@components/pages/SearchPartner";
+import { SearchPartnerComp } from "@components/pages/SearchPartner";
 import { SearchType } from "@components/pages/SearchType";
 import { SearchPokeComponent } from "@components/pages/SearchPoke";
 
@@ -60,7 +60,7 @@ export const App = (): JSX.Element => {
 							<Route exact path="/" component={Index} />
 							<Route path="/pokemon" component={SearchPokeComponent} />
 							<Route path="/type" component={SearchType} />
-							<Route path="/partner" component={SearchPartner} />
+							<Route path="/partner" component={SearchPartnerComp} />
 						</Switch>
 					</main>
 				</Container>

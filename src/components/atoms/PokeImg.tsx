@@ -12,15 +12,18 @@ const useStyles = makeStyles((theme: Theme) =>
 			backgroundPosition: "center",
 			backgroundRepeat: "no-repeat"
 		},
+		// pokeImg1: (no) => ({
+		// 	backgroundImage: `url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/${no}.gif)`
+		// }),
 		pokeImg1: (no) => ({
-			backgroundImage: `url(./images/00${no}_0.png)`
+			backgroundImage: `url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${no}.gif)`
 		}),
 		pokeImg2: (no) => ({
-			backgroundImage: `url(./images/0${no}_0.png)`
-		}),
-		pokeImg3: (no) => ({
-			backgroundImage: `url(./images/${no}_0.png)`
+			backgroundImage: `url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/ultra-sun-ultra-moon/${no}.png)`
 		})
+		// pokeImg3: (no) => ({
+		// 	backgroundImage: `url(./images/${no}_0.png)`
+		// })
 	})
 );
 
@@ -35,11 +38,11 @@ export const PokeImg = ({ no }: Props): JSX.Element => {
 
 	return (
 		<>
-			{no < 10 && <Box className={`${classes.pokeImg} ${classes.pokeImg1}`} />}
-			{no > 9 && no < 100 && (
+			{no < 650 && <Box className={`${classes.pokeImg} ${classes.pokeImg1}`} />}
+			{no > 649 && no < 803 && (
 				<Box className={`${classes.pokeImg} ${classes.pokeImg2}`} />
 			)}
-			{no < 803 && <Box className={`${classes.pokeImg} ${classes.pokeImg3}`} />}
+			{/*{no < 803 && <Box className={`${classes.pokeImg} ${classes.pokeImg3}`} />}*/}
 		</>
 	);
 };
