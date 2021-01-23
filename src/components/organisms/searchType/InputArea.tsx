@@ -6,6 +6,8 @@ import {
 	decidePokeType2,
 	resetType
 } from "@store/SearchType/decidePokeType/actions";
+import { Dispatch } from "redux";
+import { connect } from "react-redux";
 
 const InputAreaWrap = styled.div`
 	margin: 0;
@@ -58,4 +60,12 @@ const InputArea = (props: Props): JSX.Element => {
 	);
 };
 
-export default InputArea;
+// container
+
+const mapDispatchToProps = (dispatch: Dispatch): DispatchProps => ({
+	decidePokeType1: (value: string) => dispatch(decidePokeType1(value)),
+	decidePokeType2: (value: string) => dispatch(decidePokeType2(value)),
+	resetType: () => dispatch(resetType())
+});
+
+export const InputAreaComp = connect(null, mapDispatchToProps)(InputArea);

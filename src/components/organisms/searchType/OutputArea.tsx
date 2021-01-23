@@ -1,7 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import * as styles from "@styles/baseStyle";
-import normalArray from "@store/utils/createNormalArray";
+import normalArray from "@utils/createNormalArray";
+import { AppState } from "@store/reducer";
+import { connect } from "react-redux";
 
 const OutputAreaWrap = styled(styles.BaseOutputAreaWrap)``;
 
@@ -15,33 +17,12 @@ const OutputAreaType = styled(styles.BaseOutputAreaType)``;
 
 type StateProps = {
 	pokeId: number;
-	shinyId: number;
 };
 
 type Props = StateProps;
 
 const OutputAreaImg = styled(styles.BaseOutputAreaImg)`
 	${(props: Props) => {
-		if (props.shinyId < 10 && props.shinyId === props.pokeId) {
-			return `
-        background: center / contain no-repeat url(./images/00${props.shinyId}_2.png);
-      `;
-		}
-		if (
-			props.shinyId > 9 &&
-			props.shinyId < 100 &&
-			props.shinyId === props.pokeId
-		) {
-			return `
-        background: center / contain no-repeat url(./images/0${props.shinyId}_2.png);
-      `;
-		}
-		if (props.shinyId < 1000 && props.shinyId === props.pokeId) {
-			return `
-        background: center / contain no-repeat url(./images/${props.shinyId}_2.png);
-      `;
-		}
-
 		if (props.pokeId < 10) {
 			return `
         background: center / contain no-repeat url(./images/00${props.pokeId}_0.png);
@@ -74,9 +55,14 @@ const OutputArea = (props: Props): JSX.Element => {
 					<OutputAreaType>{normalArray[props.pokeId].types[1]}</OutputAreaType>
 				</OutputAreaDesc>
 			</OutputAreaList>
-			<OutputAreaImg pokeId={props.pokeId} shinyId={props.shinyId} />
+			<OutputAreaImg pokeId={props.pokeId} />
 		</OutputAreaWrap>
 	);
 };
 
-export default OutputArea;
+// container
+const mapStateToProps = (state: AppState): StateProps => ({
+	pokeId: state.data.pokeId
+});
+
+export const OutputAreaComp = connect(mapStateToProps, null)(OutputArea);
