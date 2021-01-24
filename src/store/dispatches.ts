@@ -1,4 +1,5 @@
-import { getPokeDispatcher } from "@store/common/getPokeData/dispatcher";
+import { getPokeDataDispatcher } from "@store/common/getPokeData/dispatcher";
+import { getPokeSpeciesDispatcher } from "@store/common/getPokeSpecies/dispatcher";
 import { decidePokeDispatcher } from "@store/searchPoke/decidePoke/dispatcher";
 import {
 	decidePokeType1Dispatcher,
@@ -18,6 +19,7 @@ export const dispatches = {
 		showDataDispatcher
 	},
 	pokeAPI: {
-		getPokeDispatcher
+		getPokeDataDispatcher,
+		getPokeSpeciesDispatcher
 	}
 };

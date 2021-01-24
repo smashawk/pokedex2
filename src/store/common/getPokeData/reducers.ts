@@ -3,7 +3,7 @@ import * as types from "./types";
 import * as actions from "./actions";
 
 type inputNameType = {
-	inputName: string;
+	text: string;
 };
 
 export type formattedPokeDataType = PokeDataType & inputNameType;
@@ -33,10 +33,10 @@ const initialState: formattedPokeDataType = {
 	],
 	types: [{ type: { name: "" } }, { type: { name: "" } }],
 	weight: 0,
-	inputName: ""
+	text: ""
 };
 
-export const getPokeReducer = (
+export const getPokeDataReducer = (
 	state: formattedPokeDataType = initialState,
 	action: actions.ActionTypes
 ): formattedPokeDataType => {

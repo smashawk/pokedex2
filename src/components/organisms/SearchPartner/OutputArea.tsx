@@ -9,14 +9,16 @@ import { formattedPokeDataType } from "@store/common/getPokeData/reducers";
 
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
+import { PokeSpeciesType } from "@api/requests/getPokeSpecies";
 
 type StateProps = {
 	pokeData: formattedPokeDataType;
+	pokeSpecies: PokeSpeciesType;
 };
 
 type Props = StateProps;
 
-const OutputArea = ({ pokeData }: Props): JSX.Element | null => {
+const OutputArea = ({ pokeData, pokeSpecies }: Props): JSX.Element | null => {
 	const dataArray = [
 		{
 			term: "No",
@@ -24,7 +26,7 @@ const OutputArea = ({ pokeData }: Props): JSX.Element | null => {
 		},
 		{
 			term: "Name",
-			description: pokeData.name
+			description: pokeSpecies.names[0].name
 		},
 		{
 			term: "Type1",
@@ -46,9 +48,7 @@ const OutputArea = ({ pokeData }: Props): JSX.Element | null => {
 		<Container>
 			<PokeImg no={pokeData.id} img="animated" />
 			<StatsRadarChart data={statsArray} />
-			<Typography>
-				{`${pokeData.inputName}は${pokeData.name}にきめた！`}
-			</Typography>
+			<Typography>{`${pokeData.text}は${pokeSpecies.names[0].name}にきめた！`}</Typography>
 			<DescriptionList data={dataArray} />
 		</Container>
 	) : null;
@@ -56,7 +56,8 @@ const OutputArea = ({ pokeData }: Props): JSX.Element | null => {
 
 // container
 const mapStateToProps = (state: AppState): StateProps => ({
-	pokeData: state.pokeAPI.pokeData
+	pokeData: state.pokeAPI.pokeData,
+	pokeSpecies: state.pokeAPI.pokeSpecies
 });
 
 export const OutputAreaComp = connect(mapStateToProps)(OutputArea);

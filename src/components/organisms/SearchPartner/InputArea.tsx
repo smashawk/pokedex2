@@ -11,12 +11,16 @@ import TextField from "@material-ui/core/TextField";
 import Typography from "@material-ui/core/Typography";
 
 type DispatchProps = {
-	fetchPartnerPoke: (partnerNo: number, inputName: string) => void;
+	fetchPartnerPokeData: (partnerNo: number, inputName: string) => void;
+	fetchPartnerPokeSpecies: (partnerNo: number) => void;
 };
 
 type Props = DispatchProps;
 
-const InputArea = ({ fetchPartnerPoke }: Props): JSX.Element => {
+const InputArea = ({
+	fetchPartnerPokeData,
+	fetchPartnerPokeSpecies
+}: Props): JSX.Element => {
 	// テキストフィールドのDOMを取得
 	let textRef: HTMLInputElement;
 	const refFnc = (element: HTMLInputElement): HTMLInputElement => {
@@ -26,7 +30,8 @@ const InputArea = ({ fetchPartnerPoke }: Props): JSX.Element => {
 
 	const SearchPartner = (): void => {
 		const partnerNo = decidePartnerNo(textRef.value);
-		fetchPartnerPoke(partnerNo, textRef.value);
+		fetchPartnerPokeData(partnerNo, textRef.value);
+		fetchPartnerPokeSpecies(partnerNo);
 	};
 
 	return (
@@ -54,11 +59,14 @@ const mapDispatchToProps = (dispatch: Dispatch): DispatchProps => {
 	const { pokeAPI } = dispatches;
 
 	return {
-		fetchPartnerPoke: async (
+		fetchPartnerPokeData: async (
 			partnerNo: number,
 			inputName: string
 		): Promise<void> => {
-			await pokeAPI.getPokeDispatcher(dispatch)(partnerNo, inputName);
+			await pokeAPI.getPokeDataDispatcher(dispatch)(partnerNo, inputName);
+		},
+		fetchPartnerPokeSpecies: async (partnerNo: number): Promise<void> => {
+			await pokeAPI.getPokeSpeciesDispatcher(dispatch)(partnerNo);
 		}
 	};
 };
