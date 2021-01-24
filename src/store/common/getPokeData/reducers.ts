@@ -23,7 +23,14 @@ const initialState: formattedPokeDataType = {
 	order: 0,
 	species: {},
 	sprites: {},
-	stats: [],
+	stats: [
+		{ base_stat: 0 },
+		{ base_stat: 0 },
+		{ base_stat: 0 },
+		{ base_stat: 0 },
+		{ base_stat: 0 },
+		{ base_stat: 0 }
+	],
 	types: [{ type: { name: "" } }, { type: { name: "" } }],
 	weight: 0,
 	inputName: ""

@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 
 import { PokeImg } from "@components/atoms/PokeImg";
 import { DescriptionList } from "@components/atoms/DescriptionList";
+import { StatsRadarChart } from "@components/atoms/StatsRadarChart";
 import { formattedPokeDataType } from "@store/common/getPokeData/reducers";
 
 import Container from "@material-ui/core/Container";
@@ -16,7 +17,7 @@ type StateProps = {
 type Props = StateProps;
 
 const OutputArea = ({ pokeData }: Props): JSX.Element | null => {
-	const data = [
+	const dataArray = [
 		{
 			term: "No",
 			description: pokeData.id
@@ -36,13 +37,19 @@ const OutputArea = ({ pokeData }: Props): JSX.Element | null => {
 		}
 	];
 
+	// 種族値の配列を作る
+	const statsArray = [...Array(6).keys()].map(
+		(num) => pokeData.stats[num].base_stat
+	);
+
 	return pokeData.id ? (
 		<Container>
+			<PokeImg no={pokeData.id} img="animated" />
+			<StatsRadarChart data={statsArray} />
 			<Typography>
 				{`${pokeData.inputName}は${pokeData.name}にきめた！`}
 			</Typography>
-			<DescriptionList data={data} />
-			<PokeImg no={pokeData.id} img="animated" />
+			<DescriptionList data={dataArray} />
 		</Container>
 	) : null;
 };

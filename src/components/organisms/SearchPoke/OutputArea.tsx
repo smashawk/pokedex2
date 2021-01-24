@@ -7,6 +7,7 @@ import { AppState } from "@store/reducer";
 import normalArray from "@utils/createNormalArray";
 
 import Container from "@material-ui/core/Container";
+import { StatsRadarChart } from "@components/atoms/StatsRadarChart";
 
 type StateProps = {
 	no: number;
@@ -34,10 +35,21 @@ const OutputArea = ({ no }: Props): JSX.Element => {
 		}
 	];
 
+	// 種族値の配列を作る
+	const stats = [
+		normalArray[no].stats.hp,
+		normalArray[no].stats.attack,
+		normalArray[no].stats.defence,
+		normalArray[no].stats.spAttack,
+		normalArray[no].stats.spDefence,
+		normalArray[no].stats.speed
+	];
+
 	return (
 		<Container>
-			<DescriptionList data={data} />
+			<StatsRadarChart data={stats} />
 			<PokeImg no={no} />
+			<DescriptionList data={data} />
 		</Container>
 	);
 };

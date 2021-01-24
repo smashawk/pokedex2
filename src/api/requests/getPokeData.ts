@@ -16,7 +16,7 @@ export type PokeDataType = {
 	order: number;
 	species: Record<string, unknown>;
 	sprites: Record<string, unknown>;
-	stats: [];
+	stats: { base_stat: number }[];
 	types: { type: { name: string } }[];
 	weight: number;
 };
