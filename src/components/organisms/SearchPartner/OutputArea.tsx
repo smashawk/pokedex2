@@ -30,12 +30,11 @@ const OutputArea = ({ pokeData, pokeSpecies }: Props): JSX.Element | null => {
 		},
 		{
 			term: "Type1",
-			description: pokeData.types[0].type.name
+			description: pokeData.types[0].ja
 		},
 		{
 			term: "Type2",
-			description:
-				pokeData.types.length === 2 ? pokeData.types[1].type.name : ""
+			description: pokeData.types.length === 2 ? pokeData.types[1].ja : ""
 		}
 	];
 

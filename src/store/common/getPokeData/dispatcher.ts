@@ -1,5 +1,6 @@
 import { Dispatch } from "react";
 import { getPokeData } from "@api/requests/getPokeData";
+import { normalizePokeData } from "@store/common/getPokeData/normalizer";
 import * as actions from "./actions";
 
 // anyの許容：https://github.com/DefinitelyTyped/DefinitelyTyped/issues/9611
@@ -11,7 +12,8 @@ export const getPokeDataDispatcher = (dispatch: Dispatch<any>) => async (
 	dispatch(actions.fetchStarted());
 	await getPokeData(no)
 		.then((res) => {
-			dispatch(actions.fetchSuccess({ ...res.data, text }));
+			const formattedPokeData = normalizePokeData(res.data, text);
+			dispatch(actions.fetchSuccess(formattedPokeData));
 		})
 		.catch((e) => {
 			dispatch(actions.fetchFailed({ error: e.response }));

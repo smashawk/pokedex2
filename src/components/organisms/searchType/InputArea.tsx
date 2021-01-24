@@ -22,11 +22,12 @@ const InputArea = ({
 	decidePokeType2,
 	resetType
 }: Props): JSX.Element => {
-	const options = typeData.map((v, i) => {
-		const key = `index_${i}`;
+	const options = typeData.map((value, index) => {
+		const key = `index_${index}`;
+		const JaType = value.ja;
 		return (
-			<option value={v} key={key}>
-				{v}
+			<option value={JaType} key={key}>
+				{JaType}
 			</option>
 		);
 	});
