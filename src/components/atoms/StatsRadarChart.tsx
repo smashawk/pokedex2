@@ -23,8 +23,8 @@ export const StatsRadarChart = ({ data }: Props): JSX.Element => {
 			{
 				data,
 				label: ["base_stats"],
-				backgroundColor: "rgba(63, 81, 181, .3)",
-				borderColor: "rgba(63, 81, 181, .3)"
+				backgroundColor: "rgba(63, 81, 181, .5)",
+				borderColor: "rgba(63, 81, 181, .5)"
 			}
 		]
 	};
@@ -32,16 +32,27 @@ export const StatsRadarChart = ({ data }: Props): JSX.Element => {
 	const graphOptions = {
 		title: {
 			display: true,
-			text: "Base_Stats"
+			text: "Base_Stats",
+			fontColor: "#FFFFFF"
 		},
 		legend: {
 			display: false
 		},
 		scale: {
 			ticks: {
+				fontColor: "#000000",
 				stepSize: 30,
 				max: 120,
 				min: 0
+			},
+			gridLines: {
+				color: "#444444"
+			},
+			angleLines: {
+				color: "#444444"
+			},
+			pointLabels: {
+				fontColor: "#FFFFFF"
 			}
 		},
 		tooltips: {
@@ -56,5 +67,5 @@ export const StatsRadarChart = ({ data }: Props): JSX.Element => {
 		}
 	};
 
-	return <Radar data={graphData} options={graphOptions} />;
+	return <Radar data={graphData} options={graphOptions} width={300} />;
 };

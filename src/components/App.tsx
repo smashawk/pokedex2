@@ -16,6 +16,11 @@ import { SearchTypeComp } from "@components/pages/SearchType";
 import { SearchPokeComp } from "@components/pages/SearchPoke";
 
 export const theme = createMuiTheme({
+	palette: {
+		text: {
+			primary: "#FFFFFF"
+		}
+	},
 	typography: {
 		htmlFontSize: 10,
 		h2: {
