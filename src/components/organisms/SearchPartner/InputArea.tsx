@@ -37,7 +37,6 @@ const InputArea = ({
 	return (
 		<Container>
 			<Typography variant="h2">3. あなたの相棒ポケ○ン検索</Typography>
-			<Typography>※フルネーム推奨ですが、何入力してもいいです</Typography>
 			<TextField
 				id="inputName"
 				type="text"

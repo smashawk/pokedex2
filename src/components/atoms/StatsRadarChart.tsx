@@ -1,5 +1,17 @@
 import React from "react";
 import { Radar } from "react-chartjs-2";
+import Container from "@material-ui/core/Container";
+import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
+
+const useStyles = makeStyles((theme: Theme) =>
+	createStyles({
+		container: {
+			width: "250px",
+			margin: 0,
+			padding: 0
+		}
+	})
+);
 
 type OwnProps = {
 	data: number[];
@@ -17,6 +29,7 @@ type tooltipItemTypes = {
 type Props = OwnProps;
 
 export const StatsRadarChart = ({ data }: Props): JSX.Element => {
+	const classes = useStyles();
 	const graphData = {
 		labels: ["HP", "AT", "DF", "SA", "SD", "SP"],
 		datasets: [
@@ -67,5 +80,9 @@ export const StatsRadarChart = ({ data }: Props): JSX.Element => {
 		}
 	};
 
-	return <Radar data={graphData} options={graphOptions} width={300} />;
+	return (
+		<Container className={classes.container}>
+			<Radar data={graphData} options={graphOptions} width={100} />
+		</Container>
+	);
 };

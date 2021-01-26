@@ -2,6 +2,7 @@ import React from "react";
 import { AppState } from "@store/reducer";
 import { connect } from "react-redux";
 
+import { PokeSpeciesType } from "@api/requests/getPokeSpecies";
 import { PokeImg } from "@components/atoms/PokeImg";
 import { DescriptionList } from "@components/atoms/DescriptionList";
 import { StatsRadarChart } from "@components/atoms/StatsRadarChart";
@@ -9,7 +10,26 @@ import { formattedPokeDataType } from "@store/common/getPokeData/reducers";
 
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
-import { PokeSpeciesType } from "@api/requests/getPokeSpecies";
+import { Paper } from "@material-ui/core";
+import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
+
+const useStyles = makeStyles((theme: Theme) =>
+	createStyles({
+		container: {
+			// display: "flex"
+		},
+		paper: {
+			backgroundImage: "url(./images/bg_black.png)",
+			backgroundRepeat: "repeat",
+			margin: "auto",
+			padding: "20px 100px",
+			width: 800
+		},
+		dataContainer: {
+			display: "flex"
+		}
+	})
+);
 
 type StateProps = {
 	pokeData: formattedPokeDataType;
@@ -19,6 +39,7 @@ type StateProps = {
 type Props = StateProps;
 
 const OutputArea = ({ pokeData, pokeSpecies }: Props): JSX.Element | null => {
+	const classes = useStyles();
 	const dataArray = [
 		{
 			term: "No",
@@ -27,6 +48,10 @@ const OutputArea = ({ pokeData, pokeSpecies }: Props): JSX.Element | null => {
 		{
 			term: "Name",
 			description: pokeSpecies.names[0].name
+		},
+		{
+			term: "Species",
+			description: pokeSpecies.genera[0].genus
 		},
 		{
 			term: "Type1",
@@ -44,11 +69,15 @@ const OutputArea = ({ pokeData, pokeSpecies }: Props): JSX.Element | null => {
 	);
 
 	return pokeData.id ? (
-		<Container>
-			<PokeImg no={pokeData.id} img="animated" />
-			<StatsRadarChart data={statsArray} />
+		<Container className={classes.container}>
 			<Typography>{`${pokeData.text}は${pokeSpecies.names[0].name}にきめた！`}</Typography>
-			<DescriptionList data={dataArray} />
+			<Paper className={classes.paper}>
+				<PokeImg no={pokeData.id} img="animated" />
+				<div className={classes.dataContainer}>
+					<DescriptionList data={dataArray} />
+					<StatsRadarChart data={statsArray} />
+				</div>
+			</Paper>
 		</Container>
 	) : null;
 };

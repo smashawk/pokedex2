@@ -11,7 +11,7 @@ export type PokeSpeciesType = {
 	form_descriptions: [];
 	forms_switchable: boolean;
 	gender_rate: number;
-	genera: [];
+	genera: { genus: string }[];
 	generation: Record<string, unknown>;
 	growth_rate: Record<string, unknown>;
 	habitat: Record<string, unknown>;

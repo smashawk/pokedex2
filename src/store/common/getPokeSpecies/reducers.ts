@@ -12,7 +12,7 @@ const initialState: PokeSpeciesType = {
 	form_descriptions: [],
 	forms_switchable: false,
 	gender_rate: 0,
-	genera: [],
+	genera: [{ genus: "" }],
 	generation: {},
 	growth_rate: {},
 	habitat: {},
