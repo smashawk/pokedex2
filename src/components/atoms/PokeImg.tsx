@@ -1,4 +1,5 @@
 import React from "react";
+import classNames from "classnames";
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import { Box } from "@material-ui/core";
 
@@ -40,12 +41,14 @@ export const PokeImg = ({ no, img }: Props): JSX.Element => {
 	const classes = useStyles(no);
 
 	return img === "animated" ? (
-		<Box className={`${classes.pokeImg} ${classes.pokeImg0}`} />
+		<Box className={classNames(classes.pokeImg, classes.pokeImg0)} />
 	) : (
 		<>
-			{no < 650 && <Box className={`${classes.pokeImg} ${classes.pokeImg1}`} />}
+			{no < 650 && (
+				<Box className={classNames(classes.pokeImg, classes.pokeImg1)} />
+			)}
 			{no > 649 && no < 803 && (
-				<Box className={`${classes.pokeImg} ${classes.pokeImg2}`} />
+				<Box className={classNames(classes.pokeImg, classes.pokeImg2)} />
 			)}
 			{/*{no < 803 && <Box className={`${classes.pokeImg} ${classes.pokeImg3}`} />}*/}
 		</>

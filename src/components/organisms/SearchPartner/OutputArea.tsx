@@ -70,8 +70,8 @@ const OutputArea = ({ pokeData, pokeSpecies }: Props): JSX.Element | null => {
 
 	return pokeData.id ? (
 		<Container className={classes.container}>
-			<Typography>{`${pokeData.text}は${pokeSpecies.names[0].name}にきめた！`}</Typography>
 			<Paper className={classes.paper}>
+				<Typography>{`${pokeData.text}は${pokeSpecies.names[0].name}にきめた！`}</Typography>
 				<PokeImg no={pokeData.id} img="animated" />
 				<div className={classes.dataContainer}>
 					<DescriptionList data={dataArray} />
