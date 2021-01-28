@@ -43,6 +43,7 @@
 		],
 		"react/jsx-indent": [2, "tab"],
 		"react/jsx-indent-props": [2, "tab"],
+		"react/jsx-props-no-spreading": ["off"],
 		"react/prop-types": "off",
 		"no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
 		"spaced-comment": ["error", "always", { "markers": ["/ <reference"] }]

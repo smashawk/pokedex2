@@ -8,7 +8,7 @@ type OwnProps = {
 	onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
-type Props = OwnProps;
+export type Props = OwnProps;
 
 export const InputTextField = ({
 	label,
