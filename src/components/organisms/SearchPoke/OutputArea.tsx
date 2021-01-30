@@ -47,8 +47,8 @@ const OutputArea = ({ no }: Props): JSX.Element => {
 
 	return (
 		<Container>
-			<StatsRadarChart data={stats} />
 			<PokeImg no={no} />
+			<StatsRadarChart data={stats} />
 			<DescriptionList data={data} />
 		</Container>
 	);

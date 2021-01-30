@@ -30,7 +30,7 @@
 	"rules": {
 		"camelcase": ["off"],
 		"@typescript-eslint/explicit-function-return-type": ["warn"],
-		"@typescript-eslint/indent": ["error", "tab"],
+		"@typescript-eslint/indent": ["off"],
 		"@typescript-eslint/prefer-interface": "off",
 		"import/extensions": ["error", "never"],
 		"import/no-unresolved": "off",

@@ -2,9 +2,10 @@ import React from "react";
 import { connect } from "react-redux";
 import { Dispatch } from "redux";
 
-import { InputTextField } from "@components/atoms/InputTextField";
-
-import { AppState } from "@store/reducer";
+import {
+	SuggestTextField,
+	OptionType
+} from "@components/atoms/SuggestTextField";
 import { dispatches } from "@store/dispatches";
 import normalArray from "@utils/createNormalArray";
 
@@ -21,66 +22,63 @@ const useStyles = makeStyles((theme: Theme) =>
 	})
 );
 
-type StateProps = {
-	errorMessage: boolean;
-};
-
 type DispatchProps = {
-	decidePoke: (no: number, errorMessage: boolean) => void;
+	decidePoke: (no: number) => void;
 };
 
-type Props = StateProps & DispatchProps;
+type Props = DispatchProps;
 
 const InputArea = (props: Props): JSX.Element => {
 	const classes = useStyles();
 
-	const searchPoke = (event: React.ChangeEvent<HTMLInputElement>): void => {
-		const { value } = event.target;
+	const [isError, checkError] = React.useState(false);
+	let inputValueObj;
+
+	const searchPoke = (item: OptionType | null): void => {
+		const value = item !== null ? item.label : null;
 		let no = 0;
-		let errorMessage = true;
 
 		// 何も入力されていない場合 → No.0のおばけ画像を表示
 		if (!value) {
 			no = 0;
-			errorMessage = false;
-			props.decidePoke(no, errorMessage);
+			checkError(false);
+			props.decidePoke(no);
 			return;
 		}
 
-		// 範囲内の数字が入力されている場合
-		const numValue = Number(value);
-		if (numValue < 803 && numValue > 0) {
-			no = numValue;
-			errorMessage = false;
-			props.decidePoke(no, errorMessage);
-			return;
-		}
+		const matchPokeIndex = normalArray.findIndex((data) => value === data.name);
 
 		// ポケモンの名前が入力されている場合
-		for (let i = 0; i < normalArray.length; i++) {
-			if (value === normalArray[i].name) {
-				no = i;
-				errorMessage = false;
-				props.decidePoke(no, errorMessage);
-				break;
-			}
+		if (matchPokeIndex !== -1) {
+			props.decidePoke(matchPokeIndex);
+			checkError(false);
+		} else {
+			// 上記に当てはまらない場合
+			checkError(true);
 		}
-
-		// 上記に当てはまらない場合
-		props.decidePoke(no, errorMessage);
 	};
+
+	const pokeNameData = [
+		{ value: "フシギダネふしぎだね", label: "フシギダネ" },
+		{ value: "フシギソウふしぎそう", label: "フシギソウ" },
+		{ value: "フシギバナふしぎばな", label: "フシギバナ" },
+		{ value: "ヒトカゲひとかげ", label: "ヒトカゲ" },
+		{ value: "ゼニガメぜにがめ", label: "ゼニガメ" },
+		{ value: "ピカチュウぴかちゅう", label: "ピカチュウ" },
+		{ value: "ミュウツーみゅうつー", label: "ミュウツー" }
+	];
 
 	return (
 		<Container>
 			<Typography variant="h2">1. 名前or図鑑ナンバー検索</Typography>
 			<Typography>※カタカナ名or数字1〜802まで</Typography>
-			<InputTextField
-				type="text"
-				label="図鑑ナンバーを入力"
-				variant="filled"
+			<SuggestTextField
+				placeholder="ポケモンの名前を入力"
+				suggestList={pokeNameData}
+				value={inputValueObj}
 				onChange={searchPoke}
 			/>
-			{props.errorMessage && (
+			{isError && (
 				<Typography className={classes.errorMessage}>
 					適切な名前or数字を入力してください。
 				</Typography>
@@ -90,21 +88,14 @@ const InputArea = (props: Props): JSX.Element => {
 };
 
 // container
-const mapStateToProps = (state: AppState): StateProps => ({
-	errorMessage: state.searchPoke.decidePoke.errorMessage
-});
-
 const mapDispatchToProps = (dispatch: Dispatch): DispatchProps => {
 	const { searchPoke } = dispatches;
 
 	return {
-		decidePoke: (no: number, errorMessage: boolean): void => {
-			searchPoke.decidePokeDispatcher(dispatch)(no, errorMessage);
+		decidePoke: (no: number): void => {
+			searchPoke.decidePokeDispatcher(dispatch)(no);
 		}
 	};
 };
 
-export const InputAreaComp = connect(
-	mapStateToProps,
-	mapDispatchToProps
-)(InputArea);
+export const InputAreaComp = connect(null, mapDispatchToProps)(InputArea);

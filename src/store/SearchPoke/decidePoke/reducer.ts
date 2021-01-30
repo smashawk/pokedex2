@@ -5,8 +5,7 @@ import {
 } from "@store/searchPoke/decidePoke/types";
 
 const initialState: DecidePokeState = {
-	no: 0,
-	errorMessage: false
+	no: 0
 };
 
 export const decidePokeReducer = (

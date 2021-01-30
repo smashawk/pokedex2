@@ -3,15 +3,11 @@ import {
 	SEARCH_POKE_DATA
 } from "@store/searchPoke/decidePoke/types";
 
-export const decidePoke = (
-	no: number,
-	errorMessage: boolean
-): DecidePokeActionTypes => {
+export const decidePoke = (no: number): DecidePokeActionTypes => {
 	return {
 		type: SEARCH_POKE_DATA,
 		payload: {
-			no,
-			errorMessage
+			no
 		}
 	};
 };
