@@ -18,7 +18,7 @@ import { SearchPokeComp } from "@components/pages/SearchPoke";
 export const theme = createMuiTheme({
 	palette: {
 		text: {
-			primary: "#FFFFFF"
+			primary: "#000"
 		}
 	},
 	typography: {

@@ -12,6 +12,8 @@ import normalArray from "@utils/createNormalArray";
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
+import { createSuggestArray } from "@utils/createSuggestArray";
+import { AppState } from "@store/reducer";
 
 const useStyles = makeStyles((theme: Theme) =>
 	createStyles({
@@ -22,17 +24,20 @@ const useStyles = makeStyles((theme: Theme) =>
 	})
 );
 
-type DispatchProps = {
-	decidePoke: (no: number) => void;
+type StateProps = {
+	item: any;
 };
 
-type Props = DispatchProps;
+type DispatchProps = {
+	decidePoke: (no: number, item: any) => void;
+};
+
+type Props = StateProps & DispatchProps;
 
 const InputArea = (props: Props): JSX.Element => {
 	const classes = useStyles();
 
 	const [isError, checkError] = React.useState(false);
-	let inputValueObj;
 
 	const searchPoke = (item: OptionType | null): void => {
 		const value = item !== null ? item.label : null;
@@ -42,7 +47,7 @@ const InputArea = (props: Props): JSX.Element => {
 		if (!value) {
 			no = 0;
 			checkError(false);
-			props.decidePoke(no);
+			props.decidePoke(no, item);
 			return;
 		}
 
@@ -50,7 +55,7 @@ const InputArea = (props: Props): JSX.Element => {
 
 		// ポケモンの名前が入力されている場合
 		if (matchPokeIndex !== -1) {
-			props.decidePoke(matchPokeIndex);
+			props.decidePoke(matchPokeIndex, item);
 			checkError(false);
 		} else {
 			// 上記に当てはまらない場合
@@ -58,24 +63,14 @@ const InputArea = (props: Props): JSX.Element => {
 		}
 	};
 
-	const pokeNameData = [
-		{ value: "フシギダネふしぎだね", label: "フシギダネ" },
-		{ value: "フシギソウふしぎそう", label: "フシギソウ" },
-		{ value: "フシギバナふしぎばな", label: "フシギバナ" },
-		{ value: "ヒトカゲひとかげ", label: "ヒトカゲ" },
-		{ value: "ゼニガメぜにがめ", label: "ゼニガメ" },
-		{ value: "ピカチュウぴかちゅう", label: "ピカチュウ" },
-		{ value: "ミュウツーみゅうつー", label: "ミュウツー" }
-	];
-
+	const pokeNameData = createSuggestArray();
 	return (
 		<Container>
 			<Typography variant="h2">1. 名前or図鑑ナンバー検索</Typography>
-			<Typography>※カタカナ名or数字1〜802まで</Typography>
 			<SuggestTextField
 				placeholder="ポケモンの名前を入力"
 				suggestList={pokeNameData}
-				value={inputValueObj}
+				value={props.item}
 				onChange={searchPoke}
 			/>
 			{isError && (
@@ -88,14 +83,21 @@ const InputArea = (props: Props): JSX.Element => {
 };
 
 // container
+const mapStateToProps = (state: AppState): StateProps => ({
+	item: state.searchPoke.decidePoke.item
+});
+
 const mapDispatchToProps = (dispatch: Dispatch): DispatchProps => {
 	const { searchPoke } = dispatches;
 
 	return {
-		decidePoke: (no: number): void => {
-			searchPoke.decidePokeDispatcher(dispatch)(no);
+		decidePoke: (no: number, item: any): void => {
+			searchPoke.decidePokeDispatcher(dispatch)(no, item);
 		}
 	};
 };
 
-export const InputAreaComp = connect(null, mapDispatchToProps)(InputArea);
+export const InputAreaComp = connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(InputArea);

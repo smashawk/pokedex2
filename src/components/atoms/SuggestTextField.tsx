@@ -1,14 +1,19 @@
-import MenuItem from "@material-ui/core/MenuItem";
 import { createStyles, makeStyles } from "@material-ui/core/styles";
-import TextField, { BaseTextFieldProps } from "@material-ui/core/TextField";
-import React, { HTMLAttributes } from "react";
-import Select, { ActionMeta } from "react-select";
-import { ControlProps } from "react-select/src/components/Control";
+import React from "react";
+import VirtualizedSelect from "react-virtualized-select";
+
+// anyの許容(使用するcssのため)
+// eslint-disable-next-line import/no-extraneous-dependencies
+import "react-select/dist/react-select.css";
+import "react-virtualized/styles.css";
+import "react-virtualized-select/styles.css";
 
 const useStyles = makeStyles(() =>
 	createStyles({
 		root: {
-			padding: 40
+			margin: "auto",
+			padding: 40,
+			width: 280
 		},
 		input: {
 			display: "flex",
@@ -25,73 +30,14 @@ export type OptionType = {
 	value: string;
 };
 
-type InputComponentProps = Pick<BaseTextFieldProps, "inputRef"> &
-	HTMLAttributes<HTMLDivElement>;
-
 type OwnProps = {
 	placeholder: string;
 	suggestList: OptionType[];
 	value: OptionType | undefined;
-	onChange: (
-		value: OptionType | null,
-		actionMeta: ActionMeta<OptionType>
-	) => void;
+	onChange: any;
 };
 
 type Props = OwnProps;
-
-const inputComponent = ({
-	inputRef,
-	...props
-}: InputComponentProps): JSX.Element => {
-	return <div ref={inputRef} {...props} />;
-};
-
-const Control = (props: ControlProps<OptionType, false>): JSX.Element => {
-	const {
-		children,
-		innerProps,
-		innerRef,
-		selectProps: { classes }
-	} = props;
-
-	return (
-		<TextField
-			InputProps={{
-				inputComponent,
-				inputProps: {
-					className: classes.input,
-					ref: innerRef,
-					children,
-					...innerProps
-				}
-			}}
-		/>
-	);
-};
-
-// anyの許容:eventオブジェクトの違い
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const Option = (props: any): JSX.Element => {
-	return (
-		<MenuItem
-			ref={props.innerRef}
-			selected={props.isFocused}
-			style={{
-				fontWeight: props.isSelected ? "bold" : 400,
-				color: "#000"
-			}}
-			onClick={props.innerProps.onClick}
-		>
-			{props.children}
-		</MenuItem>
-	);
-};
-
-const components = {
-	Control,
-	Option
-};
 
 export const SuggestTextField = ({
 	placeholder,
@@ -103,19 +49,16 @@ export const SuggestTextField = ({
 
 	return (
 		<div className={classes.root}>
-			<Select
-				classes={classes}
+			<VirtualizedSelect
 				placeholder={placeholder}
 				options={suggestList}
-				components={components}
 				value={value}
+				clearable={false}
 				onChange={onChange}
-				styles={{
-					singleValue: (base, state): any => ({
-						...base,
-						color: state.selectProps.menuIsOpen ? "#999" : "#000",
-						display: state.selectProps.menuIsOpen ? "none" : "block"
-					})
+				style={{
+					width: 200,
+					margin: "auto",
+					textAlign: "left"
 				}}
 			/>
 		</div>
