@@ -65,7 +65,8 @@ export const App = (): JSX.Element => {
 						<hr />
 						<Switch>
 							<Route exact path="/" component={Index} />
-							<Route path="/pokemon" component={SearchPokeComp} />
+							<Route exact path="/pokemon" component={SearchPokeComp} />
+							<Route path="/pokemon/:no" component={SearchPokeComp} />
 							<Route path="/type" component={SearchTypeComp} />
 							<Route path="/partner" component={SearchPartnerComp} />
 						</Switch>

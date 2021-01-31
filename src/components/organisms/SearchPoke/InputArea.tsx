@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { Dispatch } from "redux";
 
@@ -11,6 +11,7 @@ import { createSuggestArray } from "@utils/createSuggestArray";
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
+import { RouteComponentProps } from "react-router-dom";
 
 const useStyles = makeStyles((theme: Theme) =>
 	createStyles({
@@ -31,18 +32,32 @@ type DispatchProps = {
 	fetchPokeSpecies: (no: number) => void;
 };
 
-type Props = StateProps & DispatchProps;
+type Props = StateProps & DispatchProps & RouteComponentProps<{ no: string }>;
 
 const InputArea = ({
 	option,
 	decidePoke,
 	fetchPokeData,
-	fetchPokeSpecies
+	fetchPokeSpecies,
+	...props
 }: Props): JSX.Element => {
 	const classes = useStyles();
 
+	// サジェスト用の配列を作る
 	const suggestArray = createSuggestArray();
-	const [isError, checkError] = React.useState(false);
+
+	useEffect(() => {
+		// 第2ルーティング
+		const { no } = props.match.params;
+		const numNo = Number(no);
+		if (!Number.isNaN(numNo)) {
+			decidePoke(numNo, suggestArray[numNo - 1]);
+			fetchPokeData(numNo);
+			fetchPokeSpecies(numNo);
+		}
+	}, []);
+
+	const [isError, checkError] = useState(false);
 
 	const searchPoke = (item: OptionType): void => {
 		const value = item.label;
@@ -57,6 +72,9 @@ const InputArea = ({
 			fetchPokeData(matchPokeIndex + 1);
 			fetchPokeSpecies(matchPokeIndex + 1);
 			checkError(false);
+
+			// paramsを付ける
+			props.history.push(`/pokemon/${matchPokeIndex + 1}`);
 		} else {
 			// 上記に当てはまらない場合
 			checkError(true);
