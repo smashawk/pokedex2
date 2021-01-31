@@ -3,15 +3,14 @@ import { connect } from "react-redux";
 import { Dispatch } from "redux";
 
 import { SuggestTextField } from "@components/atoms/SuggestTextField";
+import { AppState } from "@store/reducer";
 import { dispatches } from "@store/dispatches";
 import { OptionType } from "@store/searchPoke/decidePoke/types";
-import normalArray from "@utils/createNormalArray";
+import { createSuggestArray } from "@utils/createSuggestArray";
 
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
-import { createSuggestArray } from "@utils/createSuggestArray";
-import { AppState } from "@store/reducer";
 
 const useStyles = makeStyles((theme: Theme) =>
 	createStyles({
@@ -42,18 +41,21 @@ const InputArea = ({
 }: Props): JSX.Element => {
 	const classes = useStyles();
 
+	const suggestArray = createSuggestArray();
 	const [isError, checkError] = React.useState(false);
 
 	const searchPoke = (item: OptionType): void => {
 		const value = item.label;
 
-		const matchPokeIndex = normalArray.findIndex((data) => value === data.name);
+		const matchPokeIndex = suggestArray.findIndex(
+			(data: OptionType) => value === data.label
+		);
 
 		// ポケモンの名前が入力されている場合
 		if (matchPokeIndex !== -1) {
 			decidePoke(matchPokeIndex, item);
-			fetchPokeData(matchPokeIndex);
-			fetchPokeSpecies(matchPokeIndex);
+			fetchPokeData(matchPokeIndex + 1);
+			fetchPokeSpecies(matchPokeIndex + 1);
 			checkError(false);
 		} else {
 			// 上記に当てはまらない場合
@@ -61,12 +63,11 @@ const InputArea = ({
 		}
 	};
 
-	const pokeNameData = createSuggestArray();
 	return (
 		<Container>
 			<Typography variant="h2">1. 名前or図鑑ナンバー検索</Typography>
 			<SuggestTextField
-				suggestList={pokeNameData}
+				suggestList={suggestArray}
 				value={option}
 				onChange={searchPoke}
 			/>

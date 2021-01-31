@@ -1,4 +1,5 @@
 import pokeData from "@data/pokemon_data2.json";
+import { OptionType } from "@store/searchPoke/decidePoke/types";
 
 const kanaToHira = (str: string) => {
 	return str.replace(/[\u30a1-\u30f6]/g, function (match) {
@@ -7,8 +8,8 @@ const kanaToHira = (str: string) => {
 	});
 };
 
-export const createSuggestArray: any = () => {
-	const suggestArray: any = [];
+export const createSuggestArray = (): OptionType[] => {
+	const suggestArray = [] as OptionType[];
 
 	pokeData.forEach((data) => {
 		const kanaName = kanaToHira(data.name.japanese);
