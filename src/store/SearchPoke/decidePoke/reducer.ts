@@ -6,7 +6,7 @@ import {
 
 const initialState: DecidePokeState = {
 	no: 0,
-	item: { value: "", label: "" }
+	option: { value: "", label: "" }
 };
 
 export const decidePokeReducer = (

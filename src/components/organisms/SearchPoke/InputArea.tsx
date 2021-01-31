@@ -2,11 +2,9 @@ import React from "react";
 import { connect } from "react-redux";
 import { Dispatch } from "redux";
 
-import {
-	SuggestTextField,
-	OptionType
-} from "@components/atoms/SuggestTextField";
+import { SuggestTextField } from "@components/atoms/SuggestTextField";
 import { dispatches } from "@store/dispatches";
+import { OptionType } from "@store/searchPoke/decidePoke/types";
 import normalArray from "@utils/createNormalArray";
 
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
@@ -25,29 +23,29 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 type StateProps = {
-	item: any;
+	option: OptionType;
 };
 
 type DispatchProps = {
-	decidePoke: (no: number, item: any) => void;
+	decidePoke: (no: number, option: OptionType) => void;
 };
 
 type Props = StateProps & DispatchProps;
 
-const InputArea = (props: Props): JSX.Element => {
+const InputArea = ({ option, decidePoke }: Props): JSX.Element => {
 	const classes = useStyles();
 
 	const [isError, checkError] = React.useState(false);
 
-	const searchPoke = (item: OptionType | null): void => {
-		const value = item !== null ? item.label : null;
+	const searchPoke = (item: OptionType): void => {
+		const value = item.label;
 		let no = 0;
 
 		// 何も入力されていない場合 → No.0のおばけ画像を表示
 		if (!value) {
 			no = 0;
 			checkError(false);
-			props.decidePoke(no, item);
+			decidePoke(no, item);
 			return;
 		}
 
@@ -55,7 +53,7 @@ const InputArea = (props: Props): JSX.Element => {
 
 		// ポケモンの名前が入力されている場合
 		if (matchPokeIndex !== -1) {
-			props.decidePoke(matchPokeIndex, item);
+			decidePoke(matchPokeIndex, item);
 			checkError(false);
 		} else {
 			// 上記に当てはまらない場合
@@ -68,9 +66,8 @@ const InputArea = (props: Props): JSX.Element => {
 		<Container>
 			<Typography variant="h2">1. 名前or図鑑ナンバー検索</Typography>
 			<SuggestTextField
-				placeholder="ポケモンの名前を入力"
 				suggestList={pokeNameData}
-				value={props.item}
+				value={option}
 				onChange={searchPoke}
 			/>
 			{isError && (
@@ -84,15 +81,15 @@ const InputArea = (props: Props): JSX.Element => {
 
 // container
 const mapStateToProps = (state: AppState): StateProps => ({
-	item: state.searchPoke.decidePoke.item
+	option: state.searchPoke.decidePoke.option
 });
 
 const mapDispatchToProps = (dispatch: Dispatch): DispatchProps => {
 	const { searchPoke } = dispatches;
 
 	return {
-		decidePoke: (no: number, item: any): void => {
-			searchPoke.decidePokeDispatcher(dispatch)(no, item);
+		decidePoke: (no: number, option: OptionType): void => {
+			searchPoke.decidePokeDispatcher(dispatch)(no, option);
 		}
 	};
 };

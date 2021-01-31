@@ -1,7 +1,8 @@
-import { createStyles, makeStyles } from "@material-ui/core/styles";
 import React from "react";
-import VirtualizedSelect from "react-virtualized-select";
+import { OptionType } from "@store/searchPoke/decidePoke/types";
+import { createStyles, makeStyles } from "@material-ui/core/styles";
 
+import VirtualizedSelect from "react-virtualized-select";
 // anyの許容(使用するcssのため)
 // eslint-disable-next-line import/no-extraneous-dependencies
 import "react-select/dist/react-select.css";
@@ -15,32 +16,21 @@ const useStyles = makeStyles(() =>
 			padding: 40,
 			width: 280
 		},
-		input: {
-			display: "flex",
-			padding: 0,
-			height: "auto",
-			backgroundColor: "#fff",
-			width: 400
+		select: {
+			textAlign: "left"
 		}
 	})
 );
 
-export type OptionType = {
-	label: string;
-	value: string;
-};
-
 type OwnProps = {
-	placeholder: string;
 	suggestList: OptionType[];
 	value: OptionType | undefined;
-	onChange: any;
+	onChange: (option: any) => void;
 };
 
 type Props = OwnProps;
 
 export const SuggestTextField = ({
-	placeholder,
 	suggestList,
 	value,
 	onChange
@@ -50,16 +40,11 @@ export const SuggestTextField = ({
 	return (
 		<div className={classes.root}>
 			<VirtualizedSelect
-				placeholder={placeholder}
+				className={classes.select}
 				options={suggestList}
 				value={value}
 				clearable={false}
 				onChange={onChange}
-				style={{
-					width: 200,
-					margin: "auto",
-					textAlign: "left"
-				}}
 			/>
 		</div>
 	);
