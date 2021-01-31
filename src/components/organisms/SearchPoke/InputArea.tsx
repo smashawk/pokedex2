@@ -28,32 +28,32 @@ type StateProps = {
 
 type DispatchProps = {
 	decidePoke: (no: number, option: OptionType) => void;
+	fetchPokeData: (no: number) => void;
+	fetchPokeSpecies: (no: number) => void;
 };
 
 type Props = StateProps & DispatchProps;
 
-const InputArea = ({ option, decidePoke }: Props): JSX.Element => {
+const InputArea = ({
+	option,
+	decidePoke,
+	fetchPokeData,
+	fetchPokeSpecies
+}: Props): JSX.Element => {
 	const classes = useStyles();
 
 	const [isError, checkError] = React.useState(false);
 
 	const searchPoke = (item: OptionType): void => {
 		const value = item.label;
-		let no = 0;
-
-		// 何も入力されていない場合 → No.0のおばけ画像を表示
-		if (!value) {
-			no = 0;
-			checkError(false);
-			decidePoke(no, item);
-			return;
-		}
 
 		const matchPokeIndex = normalArray.findIndex((data) => value === data.name);
 
 		// ポケモンの名前が入力されている場合
 		if (matchPokeIndex !== -1) {
 			decidePoke(matchPokeIndex, item);
+			fetchPokeData(matchPokeIndex);
+			fetchPokeSpecies(matchPokeIndex);
 			checkError(false);
 		} else {
 			// 上記に当てはまらない場合
@@ -90,6 +90,12 @@ const mapDispatchToProps = (dispatch: Dispatch): DispatchProps => {
 	return {
 		decidePoke: (no: number, option: OptionType): void => {
 			searchPoke.decidePokeDispatcher(dispatch)(no, option);
+		},
+		fetchPokeData: async (no: number): Promise<void> => {
+			await searchPoke.getPokeDataDispatcher(dispatch)(no);
+		},
+		fetchPokeSpecies: async (no: number): Promise<void> => {
+			await searchPoke.getPokeSpeciesDispatcher(dispatch)(no);
 		}
 	};
 };
