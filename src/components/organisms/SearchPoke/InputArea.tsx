@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { Dispatch } from "redux";
 
@@ -8,21 +8,12 @@ import { dispatches } from "@store/dispatches";
 import { OptionType } from "@store/searchPoke/decidePoke/types";
 import { createSuggestArray } from "@utils/createSuggestArray";
 
-import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import { RouteComponentProps } from "react-router-dom";
 
-const useStyles = makeStyles((theme: Theme) =>
-	createStyles({
-		errorMessage: {
-			color: theme.palette.primary.main,
-			fontSize: 16
-		}
-	})
-);
-
 type StateProps = {
+	no: number;
 	option: OptionType;
 };
 
@@ -32,52 +23,48 @@ type DispatchProps = {
 	fetchPokeSpecies: (no: number) => void;
 };
 
-type Props = StateProps & DispatchProps & RouteComponentProps<{ no: string }>;
+type Props = StateProps & DispatchProps & RouteComponentProps<{ id: string }>;
 
 const InputArea = ({
+	no,
 	option,
 	decidePoke,
 	fetchPokeData,
 	fetchPokeSpecies,
 	...props
 }: Props): JSX.Element => {
-	const classes = useStyles();
-
 	// サジェスト用の配列を作る
 	const suggestArray = createSuggestArray();
 
 	useEffect(() => {
 		// 第2ルーティング
-		const { no } = props.match.params;
-		const numNo = Number(no);
-		if (!Number.isNaN(numNo)) {
-			decidePoke(numNo, suggestArray[numNo - 1]);
-			fetchPokeData(numNo);
-			fetchPokeSpecies(numNo);
+		const { id } = props.match.params;
+		const numId = Number(id);
+		if (!Number.isNaN(numId)) {
+			decidePoke(numId, suggestArray[numId - 1]);
+			fetchPokeData(numId);
+			fetchPokeSpecies(numId);
+		}
+
+		// ポケモン検索後、別ページに遷移 -> SearchPokeに再遷移したときにURLを保持する
+		if (no) {
+			props.history.push(`/pokemon/${no}`);
 		}
 	}, []);
 
-	const [isError, checkError] = useState(false);
-
 	const searchPoke = (item: OptionType): void => {
-		const value = item.label;
-
 		const matchPokeIndex = suggestArray.findIndex(
-			(data: OptionType) => value === data.label
+			(data: OptionType) => item.label === data.label
 		);
 
 		// ポケモンの名前が入力されている場合
 		if (matchPokeIndex !== -1) {
-			decidePoke(matchPokeIndex, item);
+			decidePoke(matchPokeIndex + 1, item);
 			fetchPokeData(matchPokeIndex + 1);
 			fetchPokeSpecies(matchPokeIndex + 1);
-			checkError(false);
 
 			// paramsを付ける
 			props.history.push(`/pokemon/${matchPokeIndex + 1}`);
-		} else {
-			// 上記に当てはまらない場合
-			checkError(true);
 		}
 	};
 
@@ -89,17 +76,13 @@ const InputArea = ({
 				value={option}
 				onChange={searchPoke}
 			/>
-			{isError && (
-				<Typography className={classes.errorMessage}>
-					適切な名前or数字を入力してください。
-				</Typography>
-			)}
 		</Container>
 	);
 };
 
 // container
 const mapStateToProps = (state: AppState): StateProps => ({
+	no: state.searchPoke.decidePoke.no,
 	option: state.searchPoke.decidePoke.option
 });
 

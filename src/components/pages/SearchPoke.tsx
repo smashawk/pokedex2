@@ -4,7 +4,7 @@ import { InputAreaComp } from "@components/organisms/searchPoke/InputArea";
 import { OutputAreaComp } from "@components/organisms/searchPoke/OutputArea";
 import { RouteComponentProps } from "react-router-dom";
 
-type Props = RouteComponentProps<{ no: string }>;
+type Props = RouteComponentProps<{ id: string }>;
 
 export const SearchPokeComp = (props: Props): JSX.Element => {
 	return (
