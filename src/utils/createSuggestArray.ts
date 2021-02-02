@@ -15,10 +15,12 @@ export const createSuggestArray = (): OptionType[] => {
 		const kanaName = kanaToHira(data.name.japanese);
 		const obj = {
 			value: "",
-			label: ""
+			label: "",
+			no: 0
 		};
 		obj.value = `${data.name.japanese}${kanaName}${data.name.english}`;
 		obj.label = data.name.japanese;
+		obj.no = data.id;
 		suggestArray.push(obj);
 	});
 

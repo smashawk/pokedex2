@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useMemo, useCallback } from "react";
 import { connect } from "react-redux";
 import { Dispatch } from "redux";
 
@@ -34,39 +34,45 @@ const InputArea = ({
 	...props
 }: Props): JSX.Element => {
 	// サジェスト用の配列を作る
-	const suggestArray = createSuggestArray();
+	const suggestArray = useMemo(() => createSuggestArray(), []);
 
 	useEffect(() => {
-		// 第2ルーティング
 		const { id } = props.match.params;
 		const numId = Number(id);
+
+		// 一度ポケモン検索している場合、URLにparamsを付け続ける
+		if (no && Number.isNaN(numId)) {
+			props.history.replace(`/pokemon/${no}`);
+			return;
+		}
+
+		// URLにparamsがついている場合、検索結果を表示する
 		if (!Number.isNaN(numId)) {
 			decidePoke(numId, suggestArray[numId - 1]);
 			fetchPokeData(numId);
 			fetchPokeSpecies(numId);
 		}
+	}, [
+		suggestArray,
+		no,
+		decidePoke,
+		fetchPokeData,
+		fetchPokeSpecies,
+		props.match,
+		props.history
+	]);
 
-		// ポケモン検索後、別ページに遷移 -> SearchPokeに再遷移したときにURLを保持する
-		if (no) {
-			props.history.push(`/pokemon/${no}`);
-		}
-	}, []);
-
-	const searchPoke = (item: OptionType): void => {
-		const matchPokeIndex = suggestArray.findIndex(
-			(data: OptionType) => item.label === data.label
-		);
-
-		// ポケモンの名前が入力されている場合
-		if (matchPokeIndex !== -1) {
-			decidePoke(matchPokeIndex + 1, item);
-			fetchPokeData(matchPokeIndex + 1);
-			fetchPokeSpecies(matchPokeIndex + 1);
+	const searchPoke = useCallback(
+		(item: OptionType): void => {
+			decidePoke(item.no, item);
+			fetchPokeData(item.no);
+			fetchPokeSpecies(item.no);
 
 			// paramsを付ける
-			props.history.push(`/pokemon/${matchPokeIndex + 1}`);
-		}
-	};
+			props.history.replace(`/pokemon/${item.no}`);
+		},
+		[decidePoke, fetchPokeData, fetchPokeSpecies, props.history]
+	);
 
 	return (
 		<Container>

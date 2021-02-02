@@ -3,6 +3,7 @@ export const SEARCH_POKE_DATA = "SEARCH_POKE_DATA";
 export type OptionType = {
 	label: string;
 	value: string;
+	no: number;
 };
 
 type DecidePokeAction = {
