@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme: Theme) =>
 			// display: "flex"
 		},
 		paper: {
-			backgroundImage: "url(./images/bg_black.png)",
+			backgroundImage: `url(${process.env.PUBLIC_URL}/images/bg_black.png)`,
 			backgroundRepeat: "repeat",
 			margin: "auto",
 			padding: "20px 100px",

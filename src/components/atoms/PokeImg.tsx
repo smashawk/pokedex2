@@ -50,7 +50,7 @@ export const PokeImg = ({ no, img }: Props): JSX.Element => {
 			{no > 649 && no < 803 && (
 				<Box className={classNames(classes.pokeImg, classes.pokeImg2)} />
 			)}
-			{/*{no < 803 && <Box className={`${classes.pokeImg} ${classes.pokeImg3}`} />}*/}
+			{/* {no < 803 && <Box className={`${classes.pokeImg} ${classes.pokeImg3}`} />}*/}
 		</>
 	);
 };

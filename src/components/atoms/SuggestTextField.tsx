@@ -5,7 +5,7 @@ import { createStyles, makeStyles } from "@material-ui/core/styles";
 import VirtualizedSelect from "react-virtualized-select";
 // anyの許容(使用するcssのため)
 // eslint-disable-next-line import/no-extraneous-dependencies
-import "react-select/dist/react-select.css";
+import "@styles/react-select.css";
 import "react-virtualized/styles.css";
 import "react-virtualized-select/styles.css";
 

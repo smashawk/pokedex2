@@ -8,7 +8,6 @@ export const SearchTypeComp = (): JSX.Element => {
 	return (
 		<Container>
 			<InputAreaComp />
-			<OutputAreaComp />
 			<IconListAreaComp />
 		</Container>
 	);

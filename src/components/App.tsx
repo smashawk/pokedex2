@@ -33,7 +33,7 @@ export const theme = createMuiTheme({
 	}
 });
 
-const useStyles = makeStyles((theme: Theme) =>
+const useStyles = makeStyles(() =>
 	createStyles({
 		mainWrapper: {
 			textAlign: "center"
