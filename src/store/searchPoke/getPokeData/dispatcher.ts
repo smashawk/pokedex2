@@ -3,9 +3,9 @@ import { getPokeData } from "@api/requests/getPokeData";
 import { normalizePokeData } from "./normalizer";
 import * as actions from "./actions";
 
-// anyの許容：https://github.com/DefinitelyTyped/DefinitelyTyped/issues/9611
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const searchPokeGetPokeDataDispatcher = (
+	// anyの許容：https://github.com/DefinitelyTyped/DefinitelyTyped/issues/9611
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	dispatch: Dispatch<any>
 ) => async (no: number): Promise<void> => {
 	dispatch(actions.fetchStarted());

@@ -1,7 +1,7 @@
 import normalArray from "./createNormalArray";
 
 // タイプ検索で選ばれたタイプを持つポケモンデータが入った配列をつくる
-const createTypeArray = (pokeType1: string, pokeType2: string) => {
+const createTypeArray = (pokeType1: string, pokeType2: string): any[] => {
 	let typeArray = [];
 	let subTypeArray = [];
 

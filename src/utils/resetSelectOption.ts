@@ -1,4 +1,4 @@
-const resetSelectOption = () => {
+const resetSelectOption = (): void => {
 	const typeSelector1: HTMLSelectElement = document.getElementById(
 		"typeSelector1"
 	) as HTMLSelectElement;

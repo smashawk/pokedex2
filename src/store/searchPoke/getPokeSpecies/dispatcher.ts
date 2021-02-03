@@ -2,9 +2,9 @@ import { Dispatch } from "react";
 import { getPokeSpecies } from "@api/requests/getPokeSpecies";
 import * as actions from "./actions";
 
-// anyの許容：https://github.com/DefinitelyTyped/DefinitelyTyped/issues/9611
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const searchPokeGetPokeSpeciesDispatcher = (
+	// anyの許容：https://github.com/DefinitelyTyped/DefinitelyTyped/issues/9611
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	dispatch: Dispatch<any>
 ) => async (no: number): Promise<void> => {
 	dispatch(actions.fetchStarted());

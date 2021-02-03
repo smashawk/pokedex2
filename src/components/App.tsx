@@ -4,7 +4,6 @@ import {
 	createMuiTheme,
 	createStyles,
 	makeStyles,
-	Theme,
 	ThemeProvider
 } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
