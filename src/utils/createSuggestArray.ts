@@ -1,4 +1,4 @@
-import pokeData from "@data/pokemon_data2.json";
+import pokeData from "@data/pokemon_data.json";
 import { OptionType } from "@store/searchPoke/decidePoke/types";
 
 const kanaToHira = (str: string): string => {

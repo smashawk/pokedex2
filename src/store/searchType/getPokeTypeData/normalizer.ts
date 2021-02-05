@@ -1,5 +1,5 @@
 import { PokeTypeDataType } from "@api/requests/getPokeTypeData";
-import pokeData from "@data/pokemon_data2.json";
+import pokeData from "@data/pokemon_data.json";
 import { formattedPokeTypeDataType } from "./reducers";
 
 export const normalizePokeData = (
