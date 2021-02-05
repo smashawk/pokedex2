@@ -4,8 +4,8 @@ import { searchPokeGetPokeSpeciesDispatcher } from "@store/searchPoke/getPokeSpe
 import { decidePokeType1Dispatcher } from "@store/searchType/decidePokeType/dispatcher";
 import { searchTypeGetPokeTypeDataDispatcher } from "@store/searchType/getPokeTypeData/dispatcher";
 import { searchTypeGetPokeDataDispatcher } from "@store/searchType/getPokeData/dispatcher";
-import { getPokeDataDispatcher } from "@store/common/getPokeData/dispatcher";
-import { getPokeSpeciesDispatcher } from "@store/common/getPokeSpecies/dispatcher";
+import { searchPartnerGetPokeDataDispatcher } from "@store/searchPartner/getPokeData/dispatcher";
+import { searchPartnerGetPokeSpeciesDispatcher } from "@store/searchPartner/getPokeSpecies/dispatcher";
 
 export const dispatches = {
 	searchPoke: {
@@ -18,8 +18,8 @@ export const dispatches = {
 		getPokeTypeDataDispatcher: searchTypeGetPokeTypeDataDispatcher,
 		decidePokeType1Dispatcher
 	},
-	pokeAPI: {
-		getPokeDataDispatcher,
-		getPokeSpeciesDispatcher
+	searchPartner: {
+		searchPartnerGetPokeDataDispatcher,
+		searchPartnerGetPokeSpeciesDispatcher
 	}
 };

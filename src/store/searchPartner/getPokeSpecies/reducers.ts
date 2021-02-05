@@ -31,7 +31,7 @@ const initialState: PokeSpeciesType = {
 	varieties: []
 };
 
-export const getPokeSpeciesReducer = (
+export const searchPartnerGetPokeSpeciesReducer = (
 	state: PokeSpeciesType = initialState,
 	action: actions.ActionTypes
 ): PokeSpeciesType => {

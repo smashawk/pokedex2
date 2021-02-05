@@ -1,4 +1,4 @@
-import { formattedPokeDataType } from "@store/common/getPokeData/reducers";
+import { formattedPokeDataType } from "./reducers";
 import * as types from "./types";
 
 export const fetchStarted = () => ({ type: types.FETCH_STARTED } as const);

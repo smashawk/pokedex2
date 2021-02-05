@@ -4,7 +4,6 @@ import { PokeSpeciesType } from "@api/requests/getPokeSpecies";
 import { PokeImg } from "@components/atoms/PokeImg";
 import { DescriptionList } from "@components/atoms/DescriptionList";
 import { StatsRadarChart } from "@components/atoms/StatsRadarChart";
-import { formattedPokeDataType } from "@store/common/getPokeData/reducers";
 
 import Container from "@material-ui/core/Container";
 import { Paper } from "@material-ui/core";

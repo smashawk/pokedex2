@@ -3,7 +3,7 @@ import { AppState } from "@store/reducer";
 import { connect } from "react-redux";
 
 import { PokeSpeciesType } from "@api/requests/getPokeSpecies";
-import { formattedPokeDataType } from "@store/common/getPokeData/reducers";
+import { formattedPokeDataType } from "@store/searchPartner/getPokeData/reducers";
 
 import Typography from "@material-ui/core/Typography";
 import { DataCard } from "@components/molecules/DataCard";
@@ -25,8 +25,8 @@ const OutputArea = ({ pokeData, pokeSpecies }: Props): JSX.Element | null => {
 
 // container
 const mapStateToProps = (state: AppState): StateProps => ({
-	pokeData: state.pokeAPI.pokeData,
-	pokeSpecies: state.pokeAPI.pokeSpecies
+	pokeData: state.searchPartner.pokeData,
+	pokeSpecies: state.searchPartner.pokeSpecies
 });
 
 export const OutputAreaComp = connect(mapStateToProps)(OutputArea);

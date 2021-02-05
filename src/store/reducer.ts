@@ -5,8 +5,8 @@ import { searchPokeGetPokeSpeciesReducer } from "@store/searchPoke/getPokeSpecie
 import { decidePokeTypeReducer } from "@store/searchType/decidePokeType/reducers";
 import { searchTypeGetPokeDataReducer } from "@store/searchType/getPokeData/reducers";
 import { searchTypeGetPokeTypeDataReducer } from "@store/searchType/getPokeTypeData/reducers";
-import { getPokeDataReducer } from "@store/common/getPokeData/reducers";
-import { getPokeSpeciesReducer } from "@store/common/getPokeSpecies/reducers";
+import { searchPartnerGetPokeDataReducer } from "@store/searchPartner/getPokeData/reducers";
+import { searchPartnerGetPokeSpeciesReducer } from "@store/searchPartner/getPokeSpecies/reducers";
 
 const rootReducer = combineReducers({
 	searchPoke: combineReducers({
@@ -19,9 +19,9 @@ const rootReducer = combineReducers({
 		pokeTypeData: searchTypeGetPokeTypeDataReducer,
 		decidePokeType: decidePokeTypeReducer
 	}),
-	pokeAPI: combineReducers({
-		pokeData: getPokeDataReducer,
-		pokeSpecies: getPokeSpeciesReducer
+	searchPartner: combineReducers({
+		pokeData: searchPartnerGetPokeDataReducer,
+		pokeSpecies: searchPartnerGetPokeSpeciesReducer
 	})
 });
 

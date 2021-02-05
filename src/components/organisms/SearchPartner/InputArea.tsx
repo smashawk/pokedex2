@@ -55,17 +55,22 @@ const InputArea = ({
 };
 
 const mapDispatchToProps = (dispatch: Dispatch): DispatchProps => {
-	const { pokeAPI } = dispatches;
+	const { searchPartner } = dispatches;
 
 	return {
 		fetchPartnerPokeData: async (
 			partnerNo: number,
 			inputName: string
 		): Promise<void> => {
-			await pokeAPI.getPokeDataDispatcher(dispatch)(partnerNo, inputName);
+			await searchPartner.searchPartnerGetPokeDataDispatcher(dispatch)(
+				partnerNo,
+				inputName
+			);
 		},
 		fetchPartnerPokeSpecies: async (partnerNo: number): Promise<void> => {
-			await pokeAPI.getPokeSpeciesDispatcher(dispatch)(partnerNo);
+			await searchPartner.searchPartnerGetPokeSpeciesDispatcher(dispatch)(
+				partnerNo
+			);
 		}
 	};
 };

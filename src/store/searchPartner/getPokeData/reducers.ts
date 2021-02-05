@@ -53,7 +53,7 @@ const initialState: formattedPokeDataType = {
 	text: ""
 };
 
-export const getPokeDataReducer = (
+export const searchPartnerGetPokeDataReducer = (
 	state: formattedPokeDataType = initialState,
 	action: actions.ActionTypes
 ): formattedPokeDataType => {

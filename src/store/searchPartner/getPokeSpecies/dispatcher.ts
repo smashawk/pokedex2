@@ -4,9 +4,9 @@ import * as actions from "./actions";
 
 // anyの許容：https://github.com/DefinitelyTyped/DefinitelyTyped/issues/9611
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const getPokeSpeciesDispatcher = (dispatch: Dispatch<any>) => async (
-	partnerNo: number
-): Promise<void> => {
+export const searchPartnerGetPokeSpeciesDispatcher = (
+	dispatch: Dispatch<any>
+) => async (partnerNo: number): Promise<void> => {
 	dispatch(actions.fetchStarted());
 	await getPokeSpecies(partnerNo)
 		.then((res) => {
