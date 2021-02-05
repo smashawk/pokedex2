@@ -16,8 +16,8 @@ export const normalizePokeData = (
 
 		const obj = {
 			name: {
-				ja: pokeData[pokeNo].name.japanese,
-				en: pokeData[pokeNo].name.english
+				ja: pokeData[pokeNo - 1].name.japanese,
+				en: pokeData[pokeNo - 1].name.english
 			},
 			no: pokeNo
 		};

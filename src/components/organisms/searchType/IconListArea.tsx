@@ -5,11 +5,12 @@ import { connect } from "react-redux";
 import { PokeIconList } from "@components/atoms/PokeIconList";
 import { AppState } from "@store/reducer";
 import { dispatches } from "@store/dispatches";
-import createTypeArray from "@utils/createTypeArray";
+import { formattedPokeTypeDataType } from "@store/searchType/getPokeTypeData/reducers";
 
-import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
+import { createStyles, makeStyles } from "@material-ui/core/styles";
+import Container from "@material-ui/core/Container";
 
-const useStyles = makeStyles((theme: Theme) =>
+const useStyles = makeStyles(() =>
 	createStyles({
 		pokeList: {
 			listStyle: "none",
@@ -20,45 +21,50 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 type StateProps = {
-	pokeType1: string;
-	pokeType2: string;
+	pokemon: formattedPokeTypeDataType["pokemon"];
+	pokeId: number;
 };
 
 type DispatchProps = {
-	showData: any;
+	showData: (no: number) => void;
 };
 
 type Props = StateProps & DispatchProps;
 
 const IconListArea = ({
-	pokeType1,
-	pokeType2,
+	pokemon,
+	pokeId,
 	showData
-}: Props): JSX.Element => {
+}: Props): JSX.Element | null => {
 	const classes = useStyles();
-	// 選択されたタイプを持つポケモンの配列を作成
-	const typeArray = createTypeArray(pokeType1, pokeType2);
-	const showPokeData = (event: any) => {
-		const { id } = event.target;
-		showData(Number(id));
+
+	const showPokeData = (
+		event: React.MouseEvent<HTMLInputElement, MouseEvent>
+	): void => {
+		// eventTargetの型解決
+		const { value } = event.target as HTMLInputElement;
+		showData(Number(value));
 	};
-	const nodes = typeArray.map((item: any) => {
+	const nodes = pokemon.map((item) => {
 		return (
 			<PokeIconList
-				key={item.number.no}
+				key={item.no}
 				item={item}
-				onMouseOver={showPokeData}
+				pokeId={pokeId}
+				onClick={showPokeData}
 			/>
 		);
 	});
 
-	return <ul className={classes.pokeList}>{nodes}</ul>;
+	return pokemon[0].no !== 0 ? (
+		<Container className={classes.pokeList}>{nodes}</Container>
+	) : null;
 };
 
 // container
 const mapStateToProps = (state: AppState): StateProps => ({
-	pokeType1: state.searchType.decidePokeType.pokeType1,
-	pokeType2: state.searchType.decidePokeType.pokeType2
+	pokemon: state.searchType.pokeTypeData.pokemon,
+	pokeId: state.searchType.showData.pokeId
 });
 
 const mapDispatchToProps = (dispatch: Dispatch): DispatchProps => {

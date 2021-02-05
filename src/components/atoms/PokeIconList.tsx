@@ -1,39 +1,53 @@
 import React from "react";
-import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
+import { createStyles, makeStyles } from "@material-ui/core/styles";
+import classNames from "classnames";
 
-const useStyles = makeStyles((theme: Theme) =>
+const useStyles = makeStyles(() =>
 	createStyles({
-		pokeIcon: (no) => ({
-			width: 50,
-			height: 50,
-			margin: "auto",
-			backgroundSize: "auto",
-			backgroundPosition: "center",
-			backgroundRepeat: "no-repeat",
-			backgroundImage: `url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/${no}.png)`,
+		pokeIcon: {
+			width: 60,
+			height: 45,
+			margin: 0,
+			padding: 8,
 			cursor: "pointer",
 			"&:hover": {
-				backgroundSize: "contain"
+				padding: 0
+			},
+			"&:focus": {
+				outline: "none"
 			}
-		})
+		},
+		onclick: {
+			padding: 0,
+			backgroundColor: "#FFF",
+			borderRadius: "50%"
+		}
 	})
 );
 
 type OwnProps = {
-	item: any;
-	onMouseOver: any;
+	item: { name: { ja: string; en: string }; no: number };
+	pokeId: number;
+	onClick: (event: React.MouseEvent<HTMLInputElement>) => void;
 };
 
 type Props = OwnProps;
 
-export const PokeIconList = ({ item, onMouseOver }: Props): JSX.Element => {
-	const classes = useStyles(item.number.no);
+export const PokeIconList = ({ item, pokeId, onClick }: Props): JSX.Element => {
+	const classes = useStyles();
+	const id = String(item.no);
 	return (
-		<li
-			id={item.number.no}
-			className={classes.pokeIcon}
-			onMouseOver={onMouseOver}
-			onFocus={onMouseOver}
+		<input
+			type="image"
+			alt={item.name.ja}
+			src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/${item.no}.png`}
+			value={id}
+			name={id}
+			className={classNames(
+				classes.pokeIcon,
+				item.no === pokeId && classes.onclick
+			)}
+			onClick={onClick}
 		/>
 	);
 };
