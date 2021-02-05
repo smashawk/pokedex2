@@ -10,6 +10,7 @@ import {
 	resetTypeDispatcher
 } from "@store/searchType/decidePokeType/dispatcher";
 import { showDataDispatcher } from "@store/searchType/showData/dispatcher";
+import { searchTypeGetPokeDataDispatcher } from "@store/searchType/getPokeData/dispatcher";
 
 export const dispatches = {
 	searchPoke: {
@@ -18,6 +19,7 @@ export const dispatches = {
 		getPokeSpeciesDispatcher: searchPokeGetPokeSpeciesDispatcher
 	},
 	searchType: {
+		getPokeDataDispatcher: searchTypeGetPokeDataDispatcher,
 		getPokeTypeDataDispatcher: searchTypeGetPokeTypeDataDispatcher,
 		decidePokeType1Dispatcher,
 		decidePokeType2Dispatcher,
