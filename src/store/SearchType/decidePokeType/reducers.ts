@@ -1,13 +1,11 @@
 import {
 	decidePokeTypeState,
 	decidePokeTypeActionTypes,
-	DECIDE_POKE_TYPE,
-	RESET_POKE_TYPE_LIST
+	DECIDE_POKE_TYPE
 } from "@store/searchType/decidePokeType/types";
 
 const initialState: decidePokeTypeState = {
-	pokeType1: "-",
-	pokeType2: "-"
+	pokeType1: "-"
 };
 
 export const decidePokeTypeReducer = (
@@ -19,13 +17,6 @@ export const decidePokeTypeReducer = (
 			return {
 				...state,
 				...action.payload
-			};
-
-		case RESET_POKE_TYPE_LIST:
-			return {
-				...state,
-				pokeType1: "-",
-				pokeType2: "-"
 			};
 
 		default:
