@@ -3,50 +3,47 @@ import { connect } from "react-redux";
 
 import { DescriptionList } from "@components/atoms/DescriptionList";
 import { PokeImg } from "@components/atoms/PokeImg";
+import { formattedPokeDataType } from "@store/searchType/getPokeData/reducers";
 import { AppState } from "@store/reducer";
-import normalArray from "@utils/createNormalArray";
 
 import Container from "@material-ui/core/Container";
 
 type StateProps = {
-	pokeId: number;
+	pokeData: formattedPokeDataType;
 };
 
 type Props = StateProps;
 
-const OutputArea = ({ pokeId }: Props): JSX.Element => {
+const OutputArea = ({ pokeData }: Props): JSX.Element => {
 	const data = [
 		{
 			term: "No",
-			description: pokeId
+			description: pokeData.id
 		},
 		{
 			term: "Name",
-			description: normalArray[pokeId].name
+			description: pokeData.name
 		},
 		{
 			term: "Type1",
-			description: normalArray[pokeId].types[0]
+			description: pokeData.types[0].ja
 		},
 		{
 			term: "Type2",
-			description:
-				normalArray[pokeId].types.length === 2
-					? normalArray[pokeId].types[1]
-					: ""
+			description: pokeData.types.length === 2 ? pokeData.types[1].ja : ""
 		}
 	];
 	return (
 		<Container>
 			<DescriptionList data={data} />
-			<PokeImg no={pokeId} />
+			<PokeImg no={pokeData.id} />
 		</Container>
 	);
 };
 
 // container
 const mapStateToProps = (state: AppState): StateProps => ({
-	pokeId: state.searchType.showData.pokeId
+	pokeData: state.searchType.pokeData
 });
 
-export const OutputAreaComp = connect(mapStateToProps, null)(OutputArea);
+export const OutputAreaComp = connect(mapStateToProps)(OutputArea);

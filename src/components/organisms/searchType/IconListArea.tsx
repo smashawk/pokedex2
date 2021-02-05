@@ -6,6 +6,7 @@ import { PokeIconList } from "@components/atoms/PokeIconList";
 import { AppState } from "@store/reducer";
 import { dispatches } from "@store/dispatches";
 import { formattedPokeTypeDataType } from "@store/searchType/getPokeTypeData/reducers";
+import { formattedPokeDataType } from "@store/searchType/getPokeData/reducers";
 
 import { createStyles, makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
@@ -22,19 +23,19 @@ const useStyles = makeStyles(() =>
 
 type StateProps = {
 	pokemon: formattedPokeTypeDataType["pokemon"];
-	pokeId: number;
+	pokeData: formattedPokeDataType;
 };
 
 type DispatchProps = {
-	showData: (no: number) => void;
+	fetchPokeData: (no: number) => void;
 };
 
 type Props = StateProps & DispatchProps;
 
 const IconListArea = ({
 	pokemon,
-	pokeId,
-	showData
+	pokeData,
+	fetchPokeData
 }: Props): JSX.Element | null => {
 	const classes = useStyles();
 
@@ -43,14 +44,14 @@ const IconListArea = ({
 	): void => {
 		// eventTargetの型解決
 		const { value } = event.target as HTMLInputElement;
-		showData(Number(value));
+		fetchPokeData(Number(value));
 	};
 	const nodes = pokemon.map((item) => {
 		return (
 			<PokeIconList
 				key={item.no}
 				item={item}
-				pokeId={pokeId}
+				pokeId={pokeData.id}
 				onClick={showPokeData}
 			/>
 		);
@@ -64,15 +65,15 @@ const IconListArea = ({
 // container
 const mapStateToProps = (state: AppState): StateProps => ({
 	pokemon: state.searchType.pokeTypeData.pokemon,
-	pokeId: state.searchType.showData.pokeId
+	pokeData: state.searchType.pokeData
 });
 
 const mapDispatchToProps = (dispatch: Dispatch): DispatchProps => {
 	const { searchType } = dispatches;
 
 	return {
-		showData: (no: number): void => {
-			searchType.showDataDispatcher(dispatch)(no);
+		fetchPokeData: async (no: number): Promise<void> => {
+			await searchType.getPokeDataDispatcher(dispatch)(no);
 		}
 	};
 };
