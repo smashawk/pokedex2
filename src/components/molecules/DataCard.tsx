@@ -7,9 +7,9 @@ import { StatsRadarChart } from "@components/atoms/StatsRadarChart";
 
 import Container from "@material-ui/core/Container";
 import { Paper } from "@material-ui/core";
-import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
+import { createStyles, makeStyles } from "@material-ui/core/styles";
 
-const useStyles = makeStyles((theme: Theme) =>
+const useStyles = makeStyles(() =>
 	createStyles({
 		container: {
 			// display: "flex"

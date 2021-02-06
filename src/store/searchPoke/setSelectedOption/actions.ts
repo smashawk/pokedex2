@@ -3,7 +3,7 @@ import * as types from "./types";
 
 export const setSelectedOption = (option: OptionType) =>
 	({
-		type: types.SEARCH_POKE_DATA,
+		type: types.SET_SELECTED_OPTION,
 		payload: {
 			option
 		}

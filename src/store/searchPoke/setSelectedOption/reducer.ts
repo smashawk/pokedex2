@@ -20,7 +20,7 @@ export const setSelectedOptionReducer = (
 	action: actions.ActionTypes
 ): setSelectedOptionState => {
 	switch (action.type) {
-		case types.SEARCH_POKE_DATA:
+		case types.SET_SELECTED_OPTION:
 			return {
 				...state,
 				...action.payload

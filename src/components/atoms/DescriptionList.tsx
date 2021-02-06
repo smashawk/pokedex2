@@ -1,7 +1,7 @@
 import React from "react";
-import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
+import { createStyles, makeStyles } from "@material-ui/core/styles";
 
-const useStyles = makeStyles((theme: Theme) =>
+const useStyles = makeStyles(() =>
 	createStyles({
 		dataList: {
 			width: 400,
@@ -35,8 +35,8 @@ export const DescriptionList = ({ data }: Props): JSX.Element => {
 	const classes = useStyles();
 	return (
 		<dl className={classes.dataList}>
-			{data.map((item: dataObject, index) => (
-				<React.Fragment key={index}>
+			{data.map((item: dataObject) => (
+				<React.Fragment key={item.term}>
 					<dt className={classes.dataTerm}>{item.term}</dt>
 					<dd className={classes.dataDescription}>{item.description}</dd>
 				</React.Fragment>

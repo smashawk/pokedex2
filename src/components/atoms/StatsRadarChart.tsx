@@ -1,9 +1,9 @@
 import React from "react";
 import { Radar } from "react-chartjs-2";
 import Container from "@material-ui/core/Container";
-import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
+import { createStyles, makeStyles } from "@material-ui/core/styles";
 
-const useStyles = makeStyles((theme: Theme) =>
+const useStyles = makeStyles(() =>
 	createStyles({
 		container: {
 			width: "250px",
