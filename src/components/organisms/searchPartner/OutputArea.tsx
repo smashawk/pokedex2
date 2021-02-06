@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 
 import { PokeSpeciesType } from "@api/requests/getPokeSpecies";
 import { setInputNameState } from "@store/searchPartner/setInputName/reducer";
-import { formattedPokeDataType } from "@store/searchPartner/getPokeData/reducers";
+import { formattedPokeDataType } from "@store/common/getPokeData/reducers";
 
 import Typography from "@material-ui/core/Typography";
 import { DataCard } from "@components/molecules/DataCard";

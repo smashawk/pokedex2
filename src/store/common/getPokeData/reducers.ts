@@ -51,16 +51,51 @@ const initialState: formattedPokeDataType = {
 	// weight: 0,
 };
 
-export const searchTypeGetPokeDataReducer = (
-	state: formattedPokeDataType = initialState,
-	action: actions.ActionTypes
+// searchPoke
+export const searchPokeGetPokeDataReducer = (
+	state = initialState,
+	action: actions.searchPokeActionTypes
 ): formattedPokeDataType => {
 	switch (action.type) {
-		case types.FETCH_STARTED:
+		case types.SEARCH_POKE_STARTED:
 			return { ...state };
-		case types.FETCH_SUCCESS:
+		case types.SEARCH_POKE_SUCCESS:
 			return { ...state, ...action.payload };
-		case types.FETCH_FAILED:
+		case types.SEARCH_POKE_FAILED:
+			return { ...state };
+		default:
+			return state;
+	}
+};
+
+// searchType
+export const searchTypeGetPokeDataReducer = (
+	state = initialState,
+	action: actions.searchTypeActionTypes
+): formattedPokeDataType => {
+	switch (action.type) {
+		case types.SEARCH_TYPE_STARTED:
+			return { ...state };
+		case types.SEARCH_TYPE_SUCCESS:
+			return { ...state, ...action.payload };
+		case types.SEARCH_TYPE_FAILED:
+			return { ...state };
+		default:
+			return state;
+	}
+};
+
+// searchPartner
+export const searchPartnerGetPokeDataReducer = (
+	state = initialState,
+	action: actions.searchPartnerActionTypes
+): formattedPokeDataType => {
+	switch (action.type) {
+		case types.SEARCH_PARTNER_STARTED:
+			return { ...state };
+		case types.SEARCH_PARTNER_SUCCESS:
+			return { ...state, ...action.payload };
+		case types.SEARCH_PARTNER_FAILED:
 			return { ...state };
 		default:
 			return state;

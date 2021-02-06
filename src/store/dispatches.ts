@@ -1,11 +1,13 @@
+import {
+	searchPartnerGetPokeDataDispatcher,
+	searchPokeGetPokeDataDispatcher,
+	searchTypeGetPokeDataDispatcher
+} from "@store/common/getPokeData/dispatchers";
 import { setSelectedOptionDispatcher } from "@store/searchPoke/setSelectedOption/dispatcher";
-import { searchPokeGetPokeDataDispatcher } from "@store/searchPoke/getPokeData/dispatcher";
 import { searchPokeGetPokeSpeciesDispatcher } from "@store/searchPoke/getPokeSpecies/dispatcher";
 import { decidePokeType1Dispatcher } from "@store/searchType/decidePokeType/dispatcher";
 import { searchTypeGetPokeTypeDataDispatcher } from "@store/searchType/getPokeTypeData/dispatcher";
-import { searchTypeGetPokeDataDispatcher } from "@store/searchType/getPokeData/dispatcher";
 import { setInputNameDispatcher } from "@store/searchPartner/setInputName/dispatcher";
-import { searchPartnerGetPokeDataDispatcher } from "@store/searchPartner/getPokeData/dispatcher";
 import { searchPartnerGetPokeSpeciesDispatcher } from "@store/searchPartner/getPokeSpecies/dispatcher";
 
 export const dispatches = {

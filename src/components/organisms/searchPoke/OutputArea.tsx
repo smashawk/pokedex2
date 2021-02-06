@@ -1,11 +1,10 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import { AppState } from "@store/reducer";
-import { formattedPokeDataType } from "@store/searchPoke/getPokeData/reducers";
-
 import { PokeSpeciesType } from "@api/requests/getPokeSpecies";
 import { DataCard } from "@components/molecules/DataCard";
+import { AppState } from "@store/reducer";
+import { formattedPokeDataType } from "@store/common/getPokeData/reducers";
 
 type StateProps = {
 	pokeData: formattedPokeDataType;

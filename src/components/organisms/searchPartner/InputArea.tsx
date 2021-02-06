@@ -12,7 +12,7 @@ import Typography from "@material-ui/core/Typography";
 
 type DispatchProps = {
 	setInputName: (inputName: string) => void;
-	fetchPartnerPokeData: (partnerNo: number, inputName: string) => void;
+	fetchPartnerPokeData: (partnerNo: number) => void;
 	fetchPartnerPokeSpecies: (partnerNo: number) => void;
 };
 
@@ -33,7 +33,7 @@ const InputArea = ({
 	const SearchPartner = (): void => {
 		const partnerNo = decidePartnerNo(textRef.value);
 		setInputName(textRef.value);
-		fetchPartnerPokeData(partnerNo, textRef.value);
+		fetchPartnerPokeData(partnerNo);
 		fetchPartnerPokeSpecies(partnerNo);
 	};
 
@@ -64,13 +64,9 @@ const mapDispatchToProps = (dispatch: Dispatch): DispatchProps => {
 		setInputName: (inputName: string): void => {
 			searchPartner.setInputNameDispatcher(dispatch)(inputName);
 		},
-		fetchPartnerPokeData: async (
-			partnerNo: number,
-			inputName: string
-		): Promise<void> => {
+		fetchPartnerPokeData: async (partnerNo: number): Promise<void> => {
 			await searchPartner.searchPartnerGetPokeDataDispatcher(dispatch)(
-				partnerNo,
-				inputName
+				partnerNo
 			);
 		},
 		fetchPartnerPokeSpecies: async (partnerNo: number): Promise<void> => {

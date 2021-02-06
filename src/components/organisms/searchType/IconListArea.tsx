@@ -5,8 +5,8 @@ import { connect } from "react-redux";
 import { PokeIconList } from "@components/atoms/PokeIconList";
 import { AppState } from "@store/reducer";
 import { dispatches } from "@store/dispatches";
+import { formattedPokeDataType } from "@store/common/getPokeData/reducers";
 import { formattedPokeTypeDataType } from "@store/searchType/getPokeTypeData/reducers";
-import { formattedPokeDataType } from "@store/searchType/getPokeData/reducers";
 
 import { createStyles, makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";

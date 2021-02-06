@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 
 import { DescriptionList } from "@components/atoms/DescriptionList";
 import { PokeImg } from "@components/atoms/PokeImg";
-import { formattedPokeDataType } from "@store/searchType/getPokeData/reducers";
+import { formattedPokeDataType } from "@store/common/getPokeData/reducers";
 import { AppState } from "@store/reducer";
 
 import Container from "@material-ui/core/Container";
