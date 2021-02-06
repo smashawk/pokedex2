@@ -11,11 +11,11 @@
  */
 import { translateKanaToHira } from "@utils/translateKanatoHira";
 
-export const kanaToRoman = (targetStr: string): string => {
+export const translateHiraToRoman = (targetStr: string): string => {
 	/**
 	 * 変換マップ
 	 */
-	const romanMap = {
+	const romanMap: { [key: string]: string } = {
 		あ: "a",
 		い: "i",
 		う: "u",
@@ -27,13 +27,13 @@ export const kanaToRoman = (targetStr: string): string => {
 		け: "ke",
 		こ: "ko",
 		さ: "sa",
-		し: { hepburn: "shi", kunrei: "si" },
+		し: "shi",
 		す: "su",
 		せ: "se",
 		そ: "so",
 		た: "ta",
-		ち: { hepburn: "chi", kunrei: "ti" },
-		つ: { hepburn: "tsu", kunrei: "tu" },
+		ち: "chi",
+		つ: "tsu",
 		て: "te",
 		と: "to",
 		な: "na",
@@ -43,7 +43,7 @@ export const kanaToRoman = (targetStr: string): string => {
 		の: "no",
 		は: "ha",
 		ひ: "hi",
-		ふ: { hepburn: "fu", kunrei: "hu" },
+		ふ: "fu",
 		へ: "he",
 		ほ: "ho",
 		ま: "ma",
@@ -62,7 +62,7 @@ export const kanaToRoman = (targetStr: string): string => {
 		わ: "wa",
 		ゐ: "wi",
 		ゑ: "we",
-		を: { hepburn: "o", kunrei: "wo" },
+		を: "wo",
 		ん: "n",
 		が: "ga",
 		ぎ: "gi",
@@ -70,13 +70,13 @@ export const kanaToRoman = (targetStr: string): string => {
 		げ: "ge",
 		ご: "go",
 		ざ: "za",
-		じ: { hepburn: "ji", kunrei: "zi" },
+		じ: "ji",
 		ず: "zu",
 		ぜ: "ze",
 		ぞ: "zo",
 		だ: "da",
-		ぢ: { hepburn: "ji", kunrei: "di" },
-		づ: { hepburn: "zu", kunrei: "du" },
+		ぢ: "di",
+		づ: "du",
 		で: "de",
 		ど: "do",
 		ば: "ba",
@@ -101,21 +101,24 @@ export const kanaToRoman = (targetStr: string): string => {
 		くゃ: "qya",
 		くゅ: "qyu",
 		くょ: "qyo",
-		しゃ: { hepburn: "sha", kunrei: "sya" },
+		しゃ: "sha",
 		しぃ: "syi",
-		しゅ: { hepburn: "shu", kunrei: "syu" },
+		しゅ: "shu",
 		しぇ: "sye",
-		しょ: { hepburn: "sho", kunrei: "syo" },
-		ちゃ: { hepburn: "cha", kunrei: "tya" },
-		ちぃ: ["tyi"],
-		ちゅ: { hepburn: "chu", kunrei: "tyu" },
-		ちぇ: ["tye"],
-		ちょ: { hepburn: "cho", kunrei: "tyo" },
+		しょ: "sho",
+		ちゃ: "cha",
+		ちぃ: "chi",
+		ちゅ: "chu",
+		ちぇ: "che",
+		ちょ: "cho",
 		てゃ: "tha",
 		てぃ: "thi",
 		てゅ: "thu",
 		てぇ: "the",
 		てょ: "tho",
+		にゃ: "nya",
+		にゅ: "nyu",
+		にょ: "nyo",
 		ひゃ: "hya",
 		ひぃ: "hyi",
 		ひゅ: "hyu",
@@ -139,23 +142,24 @@ export const kanaToRoman = (targetStr: string): string => {
 		ぎゅ: "gyu",
 		ぎぇ: "gye",
 		ぎょ: "gyo",
-		じゃ: { hepburn: "ja", kunrei: "zya" },
+		じゃ: "ja",
 		じぃ: "zyi",
-		じゅ: { hepburn: "ju", kunrei: "zyu" },
+		じゅ: "ju",
 		じぇ: "zye",
-		じょ: { hepburn: "jo", kunrei: "zyo" },
-		ぢゃ: { hepburn: "dya", kunrei: "zya" },
+		じょ: "jo",
+		ぢゃ: "dya",
 		ぢぃ: "dyi",
-		ぢゅ: { hepburn: "dyu", kunrei: "zya" },
+		ぢゅ: "dyu",
 		ぢぇ: "dye",
-		ぢょ: { hepburn: "dyo", kunrei: "zya" },
+		ぢょ: "dyo",
+		ばぁ: "ba",
 		びゃ: "bya",
-		びぃ: "byi",
+		びぃ: "bii",
 		びゅ: "byu",
 		びぇ: "bye",
 		びょ: "byo",
 		ぴゃ: "pya",
-		ぴぃ: "pyi",
+		ぴぃ: "pii",
 		ぴゅ: "pyu",
 		ぴぇ: "pye",
 		ぴょ: "pyo",
@@ -178,7 +182,7 @@ export const kanaToRoman = (targetStr: string): string => {
 	/**
 	 * 長音のラテン文字
 	 */
-	const latins = {
+	const latins: { [key: string]: number } = {
 		a: 257,
 		i: 299,
 		u: 363,
@@ -222,14 +226,9 @@ export const kanaToRoman = (targetStr: string): string => {
 	 * @return {string} 見つかった場合は対応するローマ字、見つからなかったら元のひらがなを返す
 	 */
 	const getRoman = (kana: string): string => {
-		// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-		// @ts-ignore
 		const romanLetter = romanMap[translateKanaToHira(kana)];
 		if (romanLetter) {
-			if (typeof romanLetter === "string") {
-				return romanLetter;
-			}
-			return romanLetter.hepburn;
+			return romanLetter;
 		}
 		return kana;
 	};
@@ -249,7 +248,7 @@ export const kanaToRoman = (targetStr: string): string => {
 			roman = getRoman(slStr);
 		}
 
-		const nextRoman = kanaToRoman(remStr.slice(0, 1));
+		const nextRoman = translateHiraToRoman(remStr.slice(0, 1));
 		if (roman === "n") {
 			if (nextRoman.match(/^[aiueo]$/)) {
 				if (type === "hepburn") {
@@ -268,8 +267,6 @@ export const kanaToRoman = (targetStr: string): string => {
 			lastStr = result.match(/[aiueo]$/);
 			if (lastStr && options.longSound === "latin") {
 				result = result.slice(0, -1);
-				// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-				// @ts-ignore
 				roman = String.fromCharCode(latins[lastStr[0]]);
 			}
 		}
