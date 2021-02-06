@@ -11,6 +11,7 @@ import TextField from "@material-ui/core/TextField";
 import Typography from "@material-ui/core/Typography";
 
 type DispatchProps = {
+	setInputName: (inputName: string) => void;
 	fetchPartnerPokeData: (partnerNo: number, inputName: string) => void;
 	fetchPartnerPokeSpecies: (partnerNo: number) => void;
 };
@@ -18,6 +19,7 @@ type DispatchProps = {
 type Props = DispatchProps;
 
 const InputArea = ({
+	setInputName,
 	fetchPartnerPokeData,
 	fetchPartnerPokeSpecies
 }: Props): JSX.Element => {
@@ -30,6 +32,7 @@ const InputArea = ({
 
 	const SearchPartner = (): void => {
 		const partnerNo = decidePartnerNo(textRef.value);
+		setInputName(textRef.value);
 		fetchPartnerPokeData(partnerNo, textRef.value);
 		fetchPartnerPokeSpecies(partnerNo);
 	};
@@ -58,6 +61,9 @@ const mapDispatchToProps = (dispatch: Dispatch): DispatchProps => {
 	const { searchPartner } = dispatches;
 
 	return {
+		setInputName: (inputName: string): void => {
+			searchPartner.setInputNameDispatcher(dispatch)(inputName);
+		},
 		fetchPartnerPokeData: async (
 			partnerNo: number,
 			inputName: string
