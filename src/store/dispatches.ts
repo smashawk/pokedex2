@@ -3,12 +3,15 @@ import {
 	searchPokeGetPokeDataDispatcher,
 	searchTypeGetPokeDataDispatcher
 } from "@store/common/getPokeData/dispatchers";
+import {
+	searchPartnerGetPokeSpeciesDispatcher,
+	searchTypeGetPokeSpeciesDispatcher,
+	searchPokeGetPokeSpeciesDispatcher
+} from "@store/common/getPokeSpecies/dispatchers";
 import { setSelectedOptionDispatcher } from "@store/searchPoke/setSelectedOption/dispatcher";
-import { searchPokeGetPokeSpeciesDispatcher } from "@store/searchPoke/getPokeSpecies/dispatcher";
 import { decidePokeType1Dispatcher } from "@store/searchType/decidePokeType/dispatcher";
 import { searchTypeGetPokeTypeDataDispatcher } from "@store/searchType/getPokeTypeData/dispatcher";
 import { setInputNameDispatcher } from "@store/searchPartner/setInputName/dispatcher";
-import { searchPartnerGetPokeSpeciesDispatcher } from "@store/searchPartner/getPokeSpecies/dispatcher";
 
 export const dispatches = {
 	searchPoke: {
@@ -18,6 +21,7 @@ export const dispatches = {
 	},
 	searchType: {
 		getPokeDataDispatcher: searchTypeGetPokeDataDispatcher,
+		getPokeSpeciesDispatcher: searchTypeGetPokeSpeciesDispatcher,
 		getPokeTypeDataDispatcher: searchTypeGetPokeTypeDataDispatcher,
 		decidePokeType1Dispatcher
 	},
