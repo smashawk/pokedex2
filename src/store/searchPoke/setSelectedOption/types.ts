@@ -1,0 +1,1 @@
+export const SEARCH_POKE_DATA = "SEARCH_POKE/DECIDE_POKE";

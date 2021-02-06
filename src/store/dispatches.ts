@@ -1,4 +1,4 @@
-import { decidePokeDispatcher } from "@store/searchPoke/decidePoke/dispatcher";
+import { setSelectedOptionDispatcher } from "@store/searchPoke/setSelectedOption/dispatcher";
 import { searchPokeGetPokeDataDispatcher } from "@store/searchPoke/getPokeData/dispatcher";
 import { searchPokeGetPokeSpeciesDispatcher } from "@store/searchPoke/getPokeSpecies/dispatcher";
 import { decidePokeType1Dispatcher } from "@store/searchType/decidePokeType/dispatcher";
@@ -9,7 +9,7 @@ import { searchPartnerGetPokeSpeciesDispatcher } from "@store/searchPartner/getP
 
 export const dispatches = {
 	searchPoke: {
-		decidePokeDispatcher,
+		setSelectedOptionDispatcher,
 		getPokeDataDispatcher: searchPokeGetPokeDataDispatcher,
 		getPokeSpeciesDispatcher: searchPokeGetPokeSpeciesDispatcher
 	},

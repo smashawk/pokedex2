@@ -1,24 +1,23 @@
 import React, { useEffect, useMemo, useCallback } from "react";
 import { connect } from "react-redux";
 import { Dispatch } from "redux";
+import { RouteComponentProps } from "react-router-dom";
 
 import { SuggestTextField } from "@components/atoms/SuggestTextField";
 import { AppState } from "@store/reducer";
 import { dispatches } from "@store/dispatches";
-import { OptionType } from "@store/searchPoke/decidePoke/types";
+import { OptionType } from "@store/searchPoke/setSelectedOption/reducer";
 import { createSuggestArray } from "@utils/createSuggestArray";
 
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
-import { RouteComponentProps } from "react-router-dom";
 
 type StateProps = {
-	no: number;
 	option: OptionType;
 };
 
 type DispatchProps = {
-	decidePoke: (no: number, option: OptionType) => void;
+	setSelectedOption: (option: OptionType) => void;
 	fetchPokeData: (no: number) => void;
 	fetchPokeSpecies: (no: number) => void;
 };
@@ -26,9 +25,8 @@ type DispatchProps = {
 type Props = StateProps & DispatchProps & RouteComponentProps<{ id: string }>;
 
 const InputArea = ({
-	no,
 	option,
-	decidePoke,
+	setSelectedOption,
 	fetchPokeData,
 	fetchPokeSpecies,
 	...props
@@ -41,45 +39,37 @@ const InputArea = ({
 		const numId = Number(id);
 
 		// 一度ポケモン検索している場合、URLにparamsを付け続ける
-		if (no && Number.isNaN(numId)) {
-			props.history.replace(`/pokemon/${no}`);
+		if (option.no && Number.isNaN(numId)) {
+			props.history.replace(`/pokemon/${option.no}`);
 			return;
 		}
 
 		// URLにparamsがついている場合、検索結果を表示する
 		if (!Number.isNaN(numId)) {
-			decidePoke(numId, suggestArray[numId - 1]);
+			setSelectedOption(suggestArray[numId - 1]);
 			fetchPokeData(numId);
 			fetchPokeSpecies(numId);
 		}
-	}, [
-		suggestArray,
-		no,
-		decidePoke,
-		fetchPokeData,
-		fetchPokeSpecies,
-		props.match,
-		props.history
-	]);
+	}, []);
 
 	const searchPoke = useCallback(
-		(item: OptionType): void => {
-			decidePoke(item.no, item);
-			fetchPokeData(item.no);
-			fetchPokeSpecies(item.no);
+		(selectedOption: OptionType): void => {
+			setSelectedOption(selectedOption);
+			fetchPokeData(selectedOption.no);
+			fetchPokeSpecies(selectedOption.no);
 
 			// paramsを付ける
-			props.history.replace(`/pokemon/${item.no}`);
+			props.history.replace(`/pokemon/${selectedOption.no}`);
 		},
-		[decidePoke, fetchPokeData, fetchPokeSpecies, props.history]
+		[setSelectedOption, fetchPokeData, fetchPokeSpecies, props.history]
 	);
 
 	return (
 		<Container>
-			<Typography variant="h2">1. 名前or図鑑ナンバー検索</Typography>
+			<Typography variant="h2">1. 名前検索</Typography>
 			<SuggestTextField
 				suggestList={suggestArray}
-				value={option}
+				option={option}
 				onChange={searchPoke}
 			/>
 		</Container>
@@ -88,16 +78,15 @@ const InputArea = ({
 
 // container
 const mapStateToProps = (state: AppState): StateProps => ({
-	no: state.searchPoke.decidePoke.no,
-	option: state.searchPoke.decidePoke.option
+	option: state.searchPoke.selectedOption.option
 });
 
 const mapDispatchToProps = (dispatch: Dispatch): DispatchProps => {
 	const { searchPoke } = dispatches;
 
 	return {
-		decidePoke: (no: number, option: OptionType): void => {
-			searchPoke.decidePokeDispatcher(dispatch)(no, option);
+		setSelectedOption: (option: OptionType): void => {
+			searchPoke.setSelectedOptionDispatcher(dispatch)(option);
 		},
 		fetchPokeData: async (no: number): Promise<void> => {
 			await searchPoke.getPokeDataDispatcher(dispatch)(no);

@@ -1,10 +1,8 @@
 import React from "react";
-import { OptionType } from "@store/searchPoke/decidePoke/types";
+import { OptionType } from "@store/searchPoke/setSelectedOption/reducer";
 import { createStyles, makeStyles } from "@material-ui/core/styles";
 
 import VirtualizedSelect from "react-virtualized-select";
-// anyの許容(使用するcssのため)
-// eslint-disable-next-line import/no-extraneous-dependencies
 import "@styles/react-select.css";
 import "react-virtualized/styles.css";
 import "react-virtualized-select/styles.css";
@@ -24,15 +22,17 @@ const useStyles = makeStyles(() =>
 
 type OwnProps = {
 	suggestList: OptionType[];
-	value: OptionType | undefined;
-	onChange: (option: any) => void;
+	option: OptionType | undefined;
+	// anyの許容、ライブラリのイベント
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	onChange: (item: OptionType | any) => void;
 };
 
 type Props = OwnProps;
 
 export const SuggestTextField = ({
 	suggestList,
-	value,
+	option,
 	onChange
 }: Props): JSX.Element => {
 	const classes = useStyles();
@@ -42,7 +42,7 @@ export const SuggestTextField = ({
 			<VirtualizedSelect
 				className={classes.select}
 				options={suggestList}
-				value={value}
+				value={option}
 				clearable={false}
 				onChange={onChange}
 			/>

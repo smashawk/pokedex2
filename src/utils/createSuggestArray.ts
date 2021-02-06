@@ -1,5 +1,5 @@
+import { OptionType } from "@store/searchPoke/setSelectedOption/reducer";
 import pokeData from "@data/pokemon_data.json";
-import { OptionType } from "@store/searchPoke/decidePoke/types";
 
 const kanaToHira = (str: string): string => {
 	return str.replace(/[\u30a1-\u30f6]/g, function (match) {
