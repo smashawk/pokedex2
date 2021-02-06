@@ -1,24 +1,20 @@
 import { OptionType } from "@store/searchPoke/setSelectedOption/reducer";
-import pokeData from "@data/pokemon_data.json";
-
-const kanaToHira = (str: string): string => {
-	return str.replace(/[\u30a1-\u30f6]/g, function (match) {
-		const chr = match.charCodeAt(0) - 0x60;
-		return String.fromCharCode(chr);
-	});
-};
+import { translateKanaToHira } from "@utils/translateKanatoHira";
+import pokeDataArray from "@data/pokemon_data.json";
+import { kanaToRoman } from "@utils/translateKanatoRomaji";
 
 export const createSuggestArray = (): OptionType[] => {
 	const suggestArray = [] as OptionType[];
 
-	pokeData.forEach((data) => {
-		const kanaName = kanaToHira(data.name.japanese);
+	pokeDataArray.forEach((data) => {
+		const kanaName = translateKanaToHira(data.name.japanese);
+		const Roman = kanaToRoman(kanaName);
 		const obj = {
 			value: "",
 			label: "",
 			no: 0
 		};
-		obj.value = `${data.name.japanese}${kanaName}${data.name.english}`;
+		obj.value = `${data.name.japanese}${kanaName}${Roman}`;
 		obj.label = data.name.japanese;
 		obj.no = data.id;
 		suggestArray.push(obj);
