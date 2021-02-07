@@ -22,15 +22,16 @@ const useStyles = makeStyles(() =>
 
 type OwnProps = {
 	suggestList: OptionType[];
-	option: OptionType | undefined;
-	// anyの許容、ライブラリのイベント
+	option: OptionType[];
+	// anyの許容、ライブラリのイベント(引数にOptionType、OptionType[]、nullのいずれかを持つ
+	// https://github.com/JedWatson/react-select/issues/2902
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	onChange: (item: OptionType | null | any) => void;
+	onChange: (item: OptionType | OptionType[] | null | any) => void;
 };
 
 type Props = OwnProps;
 
-export const SuggestTextField = ({
+export const SuggestMultiTextField = ({
 	suggestList,
 	option,
 	onChange
@@ -42,9 +43,10 @@ export const SuggestTextField = ({
 			<VirtualizedSelect
 				className={classes.select}
 				options={suggestList}
-				value={option}
+				value={option.length === 0 || option[0].no !== 0 ? option : undefined}
 				clearable={false}
 				onChange={onChange}
+				multi
 			/>
 		</div>
 	);

@@ -1,74 +1,92 @@
 [
 	{
 		"ja": "ノーマル",
-		"en": "normal"
+		"en": "normal",
+		"no": 1
 	},
 	{
 		"ja": "ほのお",
-		"en": "fire"
+		"en": "fire",
+		"no": 10
 	},
 	{
 		"ja": "みず",
-		"en": "water"
+		"en": "water",
+		"no": 11
 	},
 	{
 		"ja": "でんき",
-		"en": "electric"
+		"en": "electric",
+		"no": 13
 	},
 	{
 		"ja": "くさ",
-		"en": "grass"
+		"en": "grass",
+		"no": 12
 	},
 	{
 		"ja": "こおり",
-		"en": "ice"
+		"en": "ice",
+		"no": 15
 	},
 	{
 		"ja": "かくとう",
-		"en": "fighting"
+		"en": "fighting",
+		"no": 2
 	},
 	{
 		"ja": "どく",
-		"en": "poison"
+		"en": "poison",
+		"no": 4
 	},
 	{
 		"ja": "じめん",
-		"en": "ground"
+		"en": "ground",
+		"no": 5
 	},
 	{
 		"ja": "ひこう",
-		"en": "flying"
+		"en": "flying",
+		"no": 3
 	},
 	{
 		"ja": "エスパー",
-		"en": "psychic"
+		"en": "psychic",
+		"no": 14
 	},
 	{
 		"ja": "むし",
-		"en": "bug"
+		"en": "bug",
+		"no": 7
 	},
 	{
 		"ja": "いわ",
-		"en": "rock"
+		"en": "rock",
+		"no": 6
 	},
 	{
 		"ja": "ゴースト",
-		"en": "ghost"
+		"en": "ghost",
+		"no": 8
 	},
 	{
 		"ja": "ドラゴン",
-		"en": "dragon"
+		"en": "dragon",
+		"no": 16
 	},
 	{
 		"ja": "あく",
-		"en": "dark"
+		"en": "dark",
+		"no": 17
 	},
 	{
 		"ja": "はがね",
-		"en": "steel"
+		"en": "steel",
+		"no": 9
 	},
 	{
 		"ja": "フェアリー",
-		"en": "fairy"
+		"en": "fairy",
+		"no": 18
 	}
 ]

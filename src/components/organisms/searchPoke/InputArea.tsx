@@ -6,7 +6,7 @@ import { useHistory, useParams } from "react-router-dom";
 import { SuggestTextField } from "@components/atoms/SuggestTextField";
 import { AppState } from "@store/reducer";
 import { dispatches } from "@store/dispatches";
-import { OptionType } from "@store/searchPoke/setSelectedOption/reducer";
+import { OptionType } from "@store/common/setSelectedOption/reducer";
 import { createSuggestArray } from "@utils/createSuggestArray";
 
 import Container from "@material-ui/core/Container";

@@ -9,22 +9,24 @@ import {
 	searchTypeGetPokeSpeciesReducer,
 	searchPartnerGetPokeSpeciesReducer
 } from "@store/common/getPokeSpecies/reducers";
-import { setSelectedOptionReducer } from "@store/searchPoke/setSelectedOption/reducer";
-import { decidePokeTypeReducer } from "@store/searchType/decidePokeType/reducers";
+import {
+	searchPokeSetSelectedOptionReducer,
+	searchTypeSetSelectedOptionReducer
+} from "@store/common/setSelectedOption/reducer";
 import { searchTypeGetPokeTypeDataReducer } from "@store/searchType/getPokeTypeData/reducers";
 import { setInputNameReducer } from "@store/searchPartner/setInputName/reducer";
 
 const rootReducer = combineReducers({
 	searchPoke: combineReducers({
-		selectedOption: setSelectedOptionReducer,
+		selectedOption: searchPokeSetSelectedOptionReducer,
 		pokeData: searchPokeGetPokeDataReducer,
 		pokeSpecies: searchPokeGetPokeSpeciesReducer
 	}),
 	searchType: combineReducers({
+		selectedOption: searchTypeSetSelectedOptionReducer,
 		pokeData: searchTypeGetPokeDataReducer,
 		pokeSpecies: searchTypeGetPokeSpeciesReducer,
-		pokeTypeData: searchTypeGetPokeTypeDataReducer,
-		decidePokeType: decidePokeTypeReducer
+		pokeTypeData: searchTypeGetPokeTypeDataReducer
 	}),
 	searchPartner: combineReducers({
 		inputName: setInputNameReducer,

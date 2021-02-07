@@ -1,0 +1,5 @@
+// searchPoke
+export const SEARCH_POKE_SET = "SEARCH_POKE/SET_SELECTED_OPTION";
+
+// searchType
+export const SEARCH_TYPE_SET = "SEARCH_TYPE/SET_SELECTED_OPTION";
