@@ -25,7 +25,7 @@ type OwnProps = {
 	option: OptionType | undefined;
 	// anyの許容、ライブラリのイベント
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	onChange: (item: OptionType | any) => void;
+	onChange: (item: OptionType | null | any) => void;
 };
 
 type Props = OwnProps;

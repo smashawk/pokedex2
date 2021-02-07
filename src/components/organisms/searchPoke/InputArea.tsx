@@ -53,7 +53,10 @@ const InputArea = ({
 	}, []);
 
 	const searchPoke = useCallback(
-		(selectedOption: OptionType): void => {
+		(selectedOption: OptionType | null): void => {
+			// 文字列が入力されていない時は処理を行わない
+			if (selectedOption === null) return;
+
 			setSelectedOption(selectedOption);
 			fetchPokeData(selectedOption.no);
 			fetchPokeSpecies(selectedOption.no);
