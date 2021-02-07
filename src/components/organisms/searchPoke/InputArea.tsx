@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useCallback } from "react";
 import { connect } from "react-redux";
 import { Dispatch } from "redux";
-import { RouteComponentProps } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 
 import { SuggestTextField } from "@components/atoms/SuggestTextField";
 import { AppState } from "@store/reducer";
@@ -22,25 +22,27 @@ type DispatchProps = {
 	fetchPokeSpecies: (no: number) => void;
 };
 
-type Props = StateProps & DispatchProps & RouteComponentProps<{ id: string }>;
+type Props = StateProps & DispatchProps;
 
 const InputArea = ({
 	option,
 	setSelectedOption,
 	fetchPokeData,
-	fetchPokeSpecies,
-	...props
+	fetchPokeSpecies
 }: Props): JSX.Element => {
 	// サジェスト用の配列を作る
 	const suggestArray = useMemo(() => createSuggestArray(), []);
 
+	// React Router Hooksの定義
+	const H = useHistory();
+	const { id } = useParams<{ id: string }>();
+
 	useEffect(() => {
-		const { id } = props.match.params;
 		const numId = Number(id);
 
 		// 一度ポケモン検索している場合、URLにparamsを付け続ける
 		if (option.no && Number.isNaN(numId)) {
-			props.history.replace(`/pokemon/${option.no}`);
+			H.replace(`/pokemon/${option.no}`);
 			return;
 		}
 
@@ -54,17 +56,17 @@ const InputArea = ({
 
 	const searchPoke = useCallback(
 		(selectedOption: OptionType | null): void => {
-			// 文字列が入力されていない時は処理を行わない
-			if (selectedOption === null) return;
+			// 文字列が入力されていない時、及び直前と同じポケモンを選択時には処理を行わない
+			if (selectedOption === null || Number(id) === selectedOption.no) return;
 
 			setSelectedOption(selectedOption);
 			fetchPokeData(selectedOption.no);
 			fetchPokeSpecies(selectedOption.no);
 
 			// paramsを付ける
-			props.history.replace(`/pokemon/${selectedOption.no}`);
+			H.replace(`/pokemon/${selectedOption.no}`);
 		},
-		[setSelectedOption, fetchPokeData, fetchPokeSpecies, props.history]
+		[id, setSelectedOption, fetchPokeData, fetchPokeSpecies]
 	);
 
 	return (
