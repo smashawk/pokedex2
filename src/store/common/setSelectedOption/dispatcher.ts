@@ -1,4 +1,5 @@
 import { Dispatch } from "react";
+import { normalizeSelectedOption } from "@store/common/setSelectedOption/normalizer";
 import * as actions from "./actions";
 import { OptionType } from "./reducer";
 
@@ -12,6 +13,7 @@ export const searchPokeSetSelectedOptionDispatcher = (
 // searchType
 export const searchTypeSetSelectedOptionDispatcher = (
 	dispatch: Dispatch<actions.searchTypeActionTypes>
-) => (option: OptionType[]): void => {
-	dispatch(actions.searchTypeSetSelectedOption(option));
+) => (optionArray: OptionType[]): void => {
+	const normalizedOptionArray = normalizeSelectedOption(optionArray);
+	dispatch(actions.searchTypeSetSelectedOption(normalizedOptionArray));
 };

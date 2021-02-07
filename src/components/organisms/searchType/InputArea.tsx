@@ -12,7 +12,7 @@ import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 
 type StateProps = {
-	option: OptionType[];
+	optionArray: OptionType[];
 };
 
 type DispatchProps = {
@@ -23,7 +23,7 @@ type DispatchProps = {
 type Props = StateProps & DispatchProps;
 
 const InputArea = ({
-	option,
+	optionArray,
 	setSelectedOption,
 	fetchPokeTypeData
 }: Props): JSX.Element => {
@@ -35,10 +35,8 @@ const InputArea = ({
 		};
 	});
 
-	const decidePokeType = (selectedOption: OptionType[] | null): void => {
-		console.log("stype", selectedOption);
-		if (selectedOption === null) return;
-		setSelectedOption(selectedOption);
+	const decidePokeType = (selectedOptionArray: OptionType[]): void => {
+		setSelectedOption(selectedOptionArray);
 		// fetchPokeTypeData(selectedOption.value);
 	};
 
@@ -47,7 +45,7 @@ const InputArea = ({
 			<Typography variant="h2">2. タイプ検索</Typography>
 			<SuggestMultiTextField
 				suggestList={suggestArray}
-				option={option}
+				option={optionArray}
 				onChange={decidePokeType}
 			/>
 		</Container>
@@ -56,7 +54,7 @@ const InputArea = ({
 
 // container
 const mapStateToProps = (state: AppState): StateProps => ({
-	option: state.searchType.selectedOption.option
+	optionArray: state.searchType.selectedOption.option
 });
 
 const mapDispatchToProps = (dispatch: Dispatch): DispatchProps => {
