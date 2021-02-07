@@ -6,21 +6,38 @@ export type formattedPokeTypeDataType = {
 	pokemon: { name: { ja: string; en: string }; no: number }[];
 };
 
-const initialState: formattedPokeTypeDataType = {
-	type: "",
-	pokemon: [{ name: { ja: "", en: "" }, no: 0 }]
+type getPokeTypeDataType = {
+	type1: formattedPokeTypeDataType;
+	type2: formattedPokeTypeDataType;
+};
+
+const initialState: getPokeTypeDataType = {
+	type1: {
+		type: "",
+		pokemon: [{ name: { ja: "", en: "" }, no: 0 }]
+	},
+	type2: {
+		type: "",
+		pokemon: [{ name: { ja: "", en: "" }, no: 0 }]
+	}
 };
 
 export const searchTypeGetPokeTypeDataReducer = (
-	state: formattedPokeTypeDataType = initialState,
-	action: actions.ActionTypes
-): formattedPokeTypeDataType => {
+	state = initialState,
+	action: actions.TypeActionTypes
+): getPokeTypeDataType => {
 	switch (action.type) {
-		case types.FETCH_STARTED:
+		case types.POKE_TYPE1_STARTED:
 			return { ...state };
-		case types.FETCH_SUCCESS:
-			return { ...state, ...action.payload };
-		case types.FETCH_FAILED:
+		case types.POKE_TYPE1_SUCCESS:
+			return { ...state, type1: { ...action.payload } };
+		case types.POKE_TYPE1_FAILED:
+			return { ...state };
+		case types.POKE_TYPE2_STARTED:
+			return { ...state };
+		case types.POKE_TYPE2_SUCCESS:
+			return { ...state, type2: { ...action.payload } };
+		case types.POKE_TYPE2_FAILED:
 			return { ...state };
 		default:
 			return state;

@@ -1,14 +1,25 @@
 import { formattedPokeTypeDataType } from "./reducers";
 import * as types from "./types";
 
-export const fetchStarted = () => ({ type: types.FETCH_STARTED } as const);
-export const fetchSuccess = (res: formattedPokeTypeDataType) =>
-	({ type: types.FETCH_SUCCESS, payload: res } as const);
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types,@typescript-eslint/no-explicit-any
-export const fetchFailed = (err: any) =>
-	({ type: types.FETCH_FAILED, error: err } as const);
+// type1
+export const type1FetchStarted = () =>
+	({ type: types.POKE_TYPE1_STARTED } as const);
+export const type1FetchSuccess = (res: formattedPokeTypeDataType) =>
+	({ type: types.POKE_TYPE1_SUCCESS, payload: res } as const);
+export const type1FetchFailed = (err: Record<string, unknown>) =>
+	({ type: types.POKE_TYPE1_FAILED, error: err } as const);
+// type2
+export const type2FetchStarted = () =>
+	({ type: types.POKE_TYPE2_STARTED } as const);
+export const type2FetchSuccess = (res: formattedPokeTypeDataType) =>
+	({ type: types.POKE_TYPE2_SUCCESS, payload: res } as const);
+export const type2FetchFailed = (err: Record<string, unknown>) =>
+	({ type: types.POKE_TYPE2_FAILED, error: err } as const);
 
-export type ActionTypes =
-	| ReturnType<typeof fetchStarted>
-	| ReturnType<typeof fetchSuccess>
-	| ReturnType<typeof fetchFailed>;
+export type TypeActionTypes =
+	| ReturnType<typeof type1FetchStarted>
+	| ReturnType<typeof type1FetchSuccess>
+	| ReturnType<typeof type1FetchFailed>
+	| ReturnType<typeof type2FetchStarted>
+	| ReturnType<typeof type2FetchSuccess>
+	| ReturnType<typeof type2FetchFailed>;

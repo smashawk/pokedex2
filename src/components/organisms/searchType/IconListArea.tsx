@@ -64,7 +64,7 @@ const IconListArea = ({
 
 // container
 const mapStateToProps = (state: AppState): StateProps => ({
-	pokemon: state.searchType.pokeTypeData.pokemon,
+	pokemon: state.searchType.pokeTypeData.type1.pokemon,
 	pokeData: state.searchType.pokeData
 });
 
