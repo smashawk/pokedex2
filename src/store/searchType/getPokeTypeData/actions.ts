@@ -16,10 +16,16 @@ export const type2FetchSuccess = (res: formattedPokeTypeDataType) =>
 export const type2FetchFailed = (err: Record<string, unknown>) =>
 	({ type: types.POKE_TYPE2_FAILED, error: err } as const);
 
+// resetType
+export const resetType1 = () => ({ type: types.POKE_TYPE1_RESET } as const);
+export const resetType2 = () => ({ type: types.POKE_TYPE2_RESET } as const);
+
 export type TypeActionTypes =
 	| ReturnType<typeof type1FetchStarted>
 	| ReturnType<typeof type1FetchSuccess>
 	| ReturnType<typeof type1FetchFailed>
 	| ReturnType<typeof type2FetchStarted>
 	| ReturnType<typeof type2FetchSuccess>
-	| ReturnType<typeof type2FetchFailed>;
+	| ReturnType<typeof type2FetchFailed>
+	| ReturnType<typeof resetType1>
+	| ReturnType<typeof resetType2>;

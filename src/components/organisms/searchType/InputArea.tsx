@@ -17,7 +17,10 @@ type StateProps = {
 
 type DispatchProps = {
 	setSelectedOption: (option: OptionType[]) => void;
-	fetchPokeTypeData: (optionArray: OptionType[]) => void;
+	fetchPokeTypeData: (
+		selectedOptionArray: OptionType[],
+		optionArray: OptionType[]
+	) => void;
 };
 
 type Props = StateProps & DispatchProps;
@@ -37,10 +40,7 @@ const InputArea = ({
 
 	const decidePokeType = (selectedOptionArray: OptionType[]): void => {
 		setSelectedOption(selectedOptionArray);
-
-		if (selectedOptionArray.length === 0) return;
-
-		fetchPokeTypeData(selectedOptionArray);
+		fetchPokeTypeData(selectedOptionArray, optionArray);
 	};
 
 	return (
@@ -67,8 +67,14 @@ const mapDispatchToProps = (dispatch: Dispatch): DispatchProps => {
 		setSelectedOption: (optionArray: OptionType[]): void => {
 			searchType.setSelectedOptionDispatcher(dispatch)(optionArray);
 		},
-		fetchPokeTypeData: (optionArray: OptionType[]): void => {
-			searchType.getPokeTypeDataDispatcher(dispatch)(optionArray);
+		fetchPokeTypeData: (
+			selectedOptionArray: OptionType[],
+			optionArray: OptionType[]
+		): void => {
+			searchType.getPokeTypeDataDispatcher(dispatch)(
+				selectedOptionArray,
+				optionArray
+			);
 		}
 	};
 };

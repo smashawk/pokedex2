@@ -6,7 +6,7 @@ export type formattedPokeTypeDataType = {
 	pokemon: { name: { ja: string; en: string }; no: number }[];
 };
 
-type getPokeTypeDataType = {
+export type getPokeTypeDataType = {
 	type1: formattedPokeTypeDataType;
 	type2: formattedPokeTypeDataType;
 };
@@ -39,6 +39,16 @@ export const searchTypeGetPokeTypeDataReducer = (
 			return { ...state, type2: { ...action.payload } };
 		case types.POKE_TYPE2_FAILED:
 			return { ...state };
+		case types.POKE_TYPE1_RESET:
+			return {
+				...state,
+				type1: { type: "", pokemon: [{ name: { ja: "", en: "" }, no: 0 }] }
+			};
+		case types.POKE_TYPE2_RESET:
+			return {
+				...state,
+				type2: { type: "", pokemon: [{ name: { ja: "", en: "" }, no: 0 }] }
+			};
 		default:
 			return state;
 	}

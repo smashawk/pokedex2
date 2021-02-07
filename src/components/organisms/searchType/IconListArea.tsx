@@ -6,7 +6,7 @@ import { PokeIconList } from "@components/atoms/PokeIconList";
 import { AppState } from "@store/reducer";
 import { dispatches } from "@store/dispatches";
 import { formattedPokeDataType } from "@store/common/getPokeData/reducers";
-import { formattedPokeTypeDataType } from "@store/searchType/getPokeTypeData/reducers";
+import { getPokeTypeDataType } from "@store/searchType/getPokeTypeData/reducers";
 
 import { createStyles, makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
@@ -22,7 +22,7 @@ const useStyles = makeStyles(() =>
 );
 
 type StateProps = {
-	pokemon: formattedPokeTypeDataType["pokemon"];
+	pokeTypeData: getPokeTypeDataType;
 	pokeData: formattedPokeDataType;
 };
 
@@ -33,7 +33,7 @@ type DispatchProps = {
 type Props = StateProps & DispatchProps;
 
 const IconListArea = ({
-	pokemon,
+	pokeTypeData,
 	pokeData,
 	fetchPokeData
 }: Props): JSX.Element | null => {
@@ -46,7 +46,19 @@ const IconListArea = ({
 		const { value } = event.target as HTMLInputElement;
 		fetchPokeData(Number(value));
 	};
-	const nodes = pokemon.map((item) => {
+
+	const pokemonList = pokeTypeData.type1.pokemon.filter((type1Pokemon) => {
+		if (pokeTypeData.type2.type === "") {
+			return true;
+		}
+		return pokeTypeData.type2.pokemon.some(
+			(type2pokemon) => type2pokemon.name.ja === type1Pokemon.name.ja
+		);
+	});
+
+	// console.log(pokemonList);
+
+	const nodes = pokemonList.map((item) => {
 		return (
 			<PokeIconList
 				key={item.no}
@@ -57,14 +69,14 @@ const IconListArea = ({
 		);
 	});
 
-	return pokemon[0].no !== 0 ? (
+	return pokemonList.length !== 0 ? (
 		<Container className={classes.pokeList}>{nodes}</Container>
 	) : null;
 };
 
 // container
 const mapStateToProps = (state: AppState): StateProps => ({
-	pokemon: state.searchType.pokeTypeData.type1.pokemon,
+	pokeTypeData: state.searchType.pokeTypeData,
 	pokeData: state.searchType.pokeData
 });
 
