@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Dispatch } from "redux";
 import { connect } from "react-redux";
+import { useHistory, useLocation } from "react-router-dom";
 
 import { PokeIconList } from "@components/atoms/PokeIconList";
 import { AppState } from "@store/reducer";
@@ -44,12 +45,33 @@ const IconListArea = ({
 }: Props): JSX.Element | null => {
 	const classes = useStyles();
 
+	// React Router Hooksの定義
+	const H = useHistory();
+	const useQuery = (): URLSearchParams =>
+		new URLSearchParams(useLocation().search);
+	const query = useQuery();
+
+	useEffect(() => {
+		const pokemon = query.get("pokemon");
+
+		if (pokemon) {
+			fetchPokeData(Number(pokemon));
+		}
+	}, []);
+
 	const showPokeData = (
 		event: React.MouseEvent<HTMLInputElement, MouseEvent>
 	): void => {
 		// eventTargetの型解決
 		const { value } = event.target as HTMLInputElement;
 		fetchPokeData(Number(value));
+
+		// paramsを付ける
+		H.replace(
+			`/type?switch=${switchState}&type1=${pokeTypeData.type1.type}&type2=${
+				pokeTypeData.type2.type
+			}&pokemon=${Number(value)}`
+		);
 	};
 
 	let pokemonList = [] as formattedPokeTypeDataType["pokemon"];
