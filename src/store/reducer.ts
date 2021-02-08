@@ -13,6 +13,7 @@ import {
 	searchPokeSetSelectedOptionReducer,
 	searchTypeSetSelectedOptionReducer
 } from "@store/common/setSelectedOption/reducer";
+import { setSwitchStateReducer } from "@store/searchType/setSwitchState/reducer";
 import { searchTypeGetPokeTypeDataReducer } from "@store/searchType/getPokeTypeData/reducers";
 import { setInputNameReducer } from "@store/searchPartner/setInputName/reducer";
 
@@ -23,6 +24,7 @@ const rootReducer = combineReducers({
 		pokeSpecies: searchPokeGetPokeSpeciesReducer
 	}),
 	searchType: combineReducers({
+		switchState: setSwitchStateReducer,
 		selectedOption: searchTypeSetSelectedOptionReducer,
 		pokeData: searchTypeGetPokeDataReducer,
 		pokeSpecies: searchTypeGetPokeSpeciesReducer,

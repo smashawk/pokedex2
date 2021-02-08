@@ -12,6 +12,7 @@ import {
 	searchPokeSetSelectedOptionDispatcher,
 	searchTypeSetSelectedOptionDispatcher
 } from "@store/common/setSelectedOption/dispatcher";
+import { setSwitchStateDispatcher } from "@store/searchType/setSwitchState/dispatcher";
 import { searchTypeGetPokeTypeDataDispatcher } from "@store/searchType/getPokeTypeData/dispatcher";
 import { setInputNameDispatcher } from "@store/searchPartner/setInputName/dispatcher";
 
@@ -22,6 +23,7 @@ export const dispatches = {
 		getPokeSpeciesDispatcher: searchPokeGetPokeSpeciesDispatcher
 	},
 	searchType: {
+		setSwitchStateDispatcher,
 		setSelectedOptionDispatcher: searchTypeSetSelectedOptionDispatcher,
 		getPokeDataDispatcher: searchTypeGetPokeDataDispatcher,
 		getPokeSpeciesDispatcher: searchTypeGetPokeSpeciesDispatcher,
