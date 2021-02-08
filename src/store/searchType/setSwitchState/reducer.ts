@@ -6,7 +6,7 @@ export type setSwitchStateType = {
 };
 
 const initialState = {
-	switchState: true
+	switchState: false
 };
 
 export const setSwitchStateReducer = (
