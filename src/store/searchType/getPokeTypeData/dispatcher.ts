@@ -10,8 +10,15 @@ export const searchTypeGetPokeTypeDataDispatcher = (
 	selectedOptionArray: OptionType[],
 	optionArray: OptionType[]
 ): Promise<void> => {
+	// 2タイプ -> 0タイプの場合にtype1、2をリセットする
+	if (selectedOptionArray.length === 0 && optionArray.length === 2) {
+		dispatch(actions.resetType1());
+		dispatch(actions.resetType2());
+		return;
+	}
+
 	// 1タイプ -> 0タイプの場合にtype1をリセットする
-	if (selectedOptionArray.length === 0 && optionArray.length && 1) {
+	if (selectedOptionArray.length === 0 && optionArray.length === 1) {
 		dispatch(actions.resetType1());
 		return;
 	}

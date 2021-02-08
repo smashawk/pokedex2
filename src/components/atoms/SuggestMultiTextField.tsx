@@ -44,7 +44,6 @@ export const SuggestMultiTextField = ({
 				className={classes.select}
 				options={suggestList}
 				value={option.length === 0 || option[0].no !== 0 ? option : undefined}
-				clearable={false}
 				onChange={onChange}
 				multi
 			/>
