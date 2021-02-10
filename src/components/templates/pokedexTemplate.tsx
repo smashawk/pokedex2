@@ -7,7 +7,7 @@ import {
 } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Container from "@material-ui/core/Container";
-import { Header } from "@components/organisms/Header";
+import { Header } from "@components/organisms/common/Header";
 
 export const theme = createMuiTheme({
 	palette: {
