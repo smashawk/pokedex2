@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useCallback } from "react";
 import { connect } from "react-redux";
 import { Dispatch } from "redux";
-import { useHistory, useParams } from "react-router-dom";
+import { useHistory, useLocation, useParams } from "react-router-dom";
 
 import { SuggestTextField } from "@components/atoms/SuggestTextField";
 import { AppState } from "@store/reducer";
@@ -35,19 +35,21 @@ const InputArea = ({
 
 	// React Router Hooksの定義
 	const H = useHistory();
-	const { id } = useParams<{ id: string }>();
+	const useQuery = (): URLSearchParams =>
+		new URLSearchParams(useLocation().search);
+	const query = useQuery();
 
 	useEffect(() => {
+		const id = query.get("id");
 		const numId = Number(id);
 
 		// 一度ポケモン検索している場合、URLにparamsを付け続ける
-		if (option.no && Number.isNaN(numId)) {
-			H.replace(`/pokemon/${option.no}`);
+		if (option.no && !numId) {
+			H.replace(`/pokemon?id=${option.no}`);
 			return;
 		}
-
 		// URLにparamsがついている場合、検索結果を表示する
-		if (!Number.isNaN(numId)) {
+		if (numId) {
 			setSelectedOption(suggestArray[numId - 1]);
 			fetchPokeData(numId);
 			fetchPokeSpecies(numId);
@@ -56,17 +58,17 @@ const InputArea = ({
 
 	const searchPoke = useCallback(
 		(selectedOption: OptionType | null): void => {
-			// 文字列が入力されていない時、及び直前と同じポケモンを選択時には処理を行わない
-			if (selectedOption === null || Number(id) === selectedOption.no) return;
+			// 文字列が入力されていない時には処理を行わない
+			if (selectedOption === null) return;
 
 			setSelectedOption(selectedOption);
 			fetchPokeData(selectedOption.no);
 			fetchPokeSpecies(selectedOption.no);
 
 			// paramsを付ける
-			H.replace(`/pokemon/${selectedOption.no}`);
+			H.replace(`/pokemon?id=${selectedOption.no}`);
 		},
-		[id, setSelectedOption, fetchPokeData, fetchPokeSpecies]
+		[setSelectedOption, fetchPokeData, fetchPokeSpecies]
 	);
 
 	return (
