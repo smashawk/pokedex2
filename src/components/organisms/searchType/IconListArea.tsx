@@ -33,6 +33,7 @@ type StateProps = {
 
 type DispatchProps = {
 	fetchPokeData: (no: number) => void;
+	fetchPokeSpecies: (no: number) => void;
 };
 
 type Props = StateProps & DispatchProps;
@@ -41,7 +42,8 @@ const IconListArea = ({
 	switchState,
 	pokeTypeData,
 	pokeData,
-	fetchPokeData
+	fetchPokeData,
+	fetchPokeSpecies
 }: Props): JSX.Element | null => {
 	const classes = useStyles();
 
@@ -65,6 +67,7 @@ const IconListArea = ({
 		// eventTargetの型解決
 		const { value } = event.target as HTMLInputElement;
 		fetchPokeData(Number(value));
+		fetchPokeSpecies(Number(value));
 
 		// paramsを付ける
 		H.replace(
@@ -148,6 +151,9 @@ const mapDispatchToProps = (dispatch: Dispatch): DispatchProps => {
 	return {
 		fetchPokeData: async (no: number): Promise<void> => {
 			await searchType.getPokeDataDispatcher(dispatch)(no);
+		},
+		fetchPokeSpecies: async (no: number): Promise<void> => {
+			await searchType.getPokeSpeciesDispatcher(dispatch)(no);
 		}
 	};
 };

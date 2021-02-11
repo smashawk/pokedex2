@@ -64,6 +64,10 @@ export const DataCard = ({
 		{
 			term: "Type2",
 			description: pokeData.types.length === 2 ? pokeData.types[1].ja : ""
+		},
+		{
+			term: "Flavor",
+			description: pokeSpecies.flavor_text_entries.flavor_text
 		}
 	];
 

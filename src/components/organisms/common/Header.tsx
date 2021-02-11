@@ -52,7 +52,7 @@ export const Header = (): JSX.Element => {
 			id: 0
 		},
 		{
-			label: "図鑑ナンバー検索",
+			label: "名前検索",
 			value: "/pokemon",
 			id: 1
 		},
