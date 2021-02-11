@@ -1,6 +1,7 @@
 import { Dispatch } from "react";
 import { getPokeSpecies } from "@api/requests/getPokeSpecies";
 import * as actions from "./actions";
+import { normalizePokeData } from "./normalizer";
 
 // searchPoke
 export const searchPokeGetPokeSpeciesDispatcher = (
@@ -9,7 +10,8 @@ export const searchPokeGetPokeSpeciesDispatcher = (
 	dispatch(actions.searchPokeFetchStarted());
 	await getPokeSpecies(no)
 		.then((res) => {
-			dispatch(actions.searchPokeFetchSuccess(res.data));
+			const normalizedPokeData = normalizePokeData(res.data);
+			dispatch(actions.searchPokeFetchSuccess(normalizedPokeData));
 		})
 		.catch((e) => {
 			dispatch(actions.searchPokeFetchFailed({ error: e.response }));
@@ -23,7 +25,8 @@ export const searchTypeGetPokeSpeciesDispatcher = (
 	dispatch(actions.searchTypeFetchStarted());
 	await getPokeSpecies(no)
 		.then((res) => {
-			dispatch(actions.searchTypeFetchSuccess(res.data));
+			const normalizedPokeData = normalizePokeData(res.data);
+			dispatch(actions.searchTypeFetchSuccess(normalizedPokeData));
 		})
 		.catch((e) => {
 			dispatch(actions.searchTypeFetchFailed({ error: e.response }));
@@ -37,7 +40,8 @@ export const searchPartnerGetPokeSpeciesDispatcher = (
 	dispatch(actions.searchPartnerFetchStarted());
 	await getPokeSpecies(no)
 		.then((res) => {
-			dispatch(actions.searchPartnerFetchSuccess(res.data));
+			const normalizedPokeData = normalizePokeData(res.data);
+			dispatch(actions.searchPartnerFetchSuccess(normalizedPokeData));
 		})
 		.catch((e) => {
 			dispatch(actions.searchPartnerFetchFailed({ error: e.response }));

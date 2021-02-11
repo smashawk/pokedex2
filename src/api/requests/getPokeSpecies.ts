@@ -7,7 +7,7 @@ export type PokeSpeciesType = {
 	color: Record<string, unknown>;
 	egg_groups: [];
 	evolves_from_species: string | null;
-	flavor_text_entries: [];
+	flavor_text_entries: { flavor_text: string; language: { name: string } }[];
 	form_descriptions: [];
 	forms_switchable: boolean;
 	gender_rate: number;

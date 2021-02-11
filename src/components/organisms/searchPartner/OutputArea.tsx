@@ -2,9 +2,9 @@ import React from "react";
 import { AppState } from "@store/reducer";
 import { connect } from "react-redux";
 
-import { PokeSpeciesType } from "@api/requests/getPokeSpecies";
 import { setInputNameState } from "@store/searchPartner/setInputName/reducer";
 import { formattedPokeDataType } from "@store/common/getPokeData/reducers";
+import { normalizedPokeSpeciesType } from "@store/common/getPokeSpecies/reducers";
 
 import Typography from "@material-ui/core/Typography";
 import { DataCard } from "@components/molecules/DataCard";
@@ -12,7 +12,7 @@ import { DataCard } from "@components/molecules/DataCard";
 type StateProps = {
 	inputName: setInputNameState;
 	pokeData: formattedPokeDataType;
-	pokeSpecies: PokeSpeciesType;
+	pokeSpecies: normalizedPokeSpeciesType;
 };
 
 type Props = StateProps;

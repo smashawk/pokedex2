@@ -1,9 +1,10 @@
 import React from "react";
 
-import { PokeSpeciesType } from "@api/requests/getPokeSpecies";
 import { PokeImg } from "@components/atoms/PokeImg";
 import { DescriptionList } from "@components/atoms/DescriptionList";
 import { StatsRadarChart } from "@components/atoms/StatsRadarChart";
+import { normalizedPokeSpeciesType } from "@store/common/getPokeSpecies/reducers";
+import { formattedPokeDataType } from "@store/common/getPokeData/reducers";
 
 import Container from "@material-ui/core/Container";
 import { Paper } from "@material-ui/core";
@@ -28,8 +29,8 @@ const useStyles = makeStyles(() =>
 );
 
 type StateProps = {
-	pokeData: any;
-	pokeSpecies: PokeSpeciesType;
+	pokeData: formattedPokeDataType;
+	pokeSpecies: normalizedPokeSpeciesType;
 	img?: string;
 	children?: JSX.Element;
 };

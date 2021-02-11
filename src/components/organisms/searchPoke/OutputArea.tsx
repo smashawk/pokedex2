@@ -1,14 +1,14 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import { PokeSpeciesType } from "@api/requests/getPokeSpecies";
 import { DataCard } from "@components/molecules/DataCard";
 import { AppState } from "@store/reducer";
 import { formattedPokeDataType } from "@store/common/getPokeData/reducers";
+import { normalizedPokeSpeciesType } from "@store/common/getPokeSpecies/reducers";
 
 type StateProps = {
 	pokeData: formattedPokeDataType;
-	pokeSpecies: PokeSpeciesType;
+	pokeSpecies: normalizedPokeSpeciesType;
 };
 
 type Props = StateProps;
