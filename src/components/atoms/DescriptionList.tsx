@@ -1,5 +1,6 @@
 import React from "react";
 import { createStyles, makeStyles } from "@material-ui/core/styles";
+import classNames from "classnames";
 
 const useStyles = makeStyles(() =>
 	createStyles({
@@ -16,6 +17,11 @@ const useStyles = makeStyles(() =>
 		dataDescription: {
 			width: 250,
 			margin: 0
+		},
+		typeImg: {
+			backgroundSize: "50px 18px",
+			backgroundPosition: "left center",
+			backgroundRepeat: "no-repeat"
 		}
 	})
 );
@@ -38,7 +44,21 @@ export const DescriptionList = ({ data }: Props): JSX.Element => {
 			{data.map((item: dataObject) => (
 				<React.Fragment key={item.term}>
 					<dt className={classes.dataTerm}>{item.term}</dt>
-					<dd className={classes.dataDescription}>{item.description}</dd>
+					<dd
+						className={classNames(
+							classes.dataDescription,
+							(item.term === "Type1" || item.term === "Type2") &&
+								classes.typeImg
+						)}
+						style={{
+							backgroundImage:
+								item.term === "Type1" || item.term === "Type2"
+									? `url(${process.env.PUBLIC_URL}/images/types/${item.description}.png)`
+									: "none"
+						}}
+					>
+						{item.term === "Type1" || item.term === "Type2" || item.description}
+					</dd>
 				</React.Fragment>
 			))}
 		</dl>
