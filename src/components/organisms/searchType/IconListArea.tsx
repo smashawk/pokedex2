@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useMemo } from "react";
 import { Dispatch } from "redux";
 import { connect } from "react-redux";
 import { useHistory, useLocation } from "react-router-dom";
@@ -7,10 +7,9 @@ import { PokeIconList } from "@components/atoms/PokeIconList";
 import { AppState } from "@store/reducer";
 import { dispatches } from "@store/dispatches";
 import { formattedPokeDataType } from "@store/common/getPokeData/reducers";
-import {
-	formattedPokeTypeDataType,
-	getPokeTypeDataType
-} from "@store/searchType/getPokeTypeData/reducers";
+import { getPokeTypeDataType } from "@store/searchType/getPokeTypeData/reducers";
+import { createAndPokeArray } from "@utils/createAndPokeArray";
+import { createOrPokeArray } from "@utils/createOrPokeArray";
 
 import { createStyles, makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
@@ -77,64 +76,29 @@ const IconListArea = ({
 		);
 	};
 
-	let pokemonList = [] as formattedPokeTypeDataType["pokemon"];
-
 	// AND検索用リストを作成
-	if (!switchState) {
-		const matchedPokemonList = pokeTypeData.type1.pokemon.filter(
-			(type1Pokemon) => {
-				// タイプ2が空のときはタイプ1のリストを全て配列に入れる
-				if (pokeTypeData.type2.type === "") {
-					return true;
-				}
-
-				// タイプ2のポケモンがタイプ1に存在するか確認し、存在するポケモンのみ配列に入れる
-				return pokeTypeData.type2.pokemon.some(
-					(type2pokemon) => type2pokemon.name.ja === type1Pokemon.name.ja
-				);
-			}
-		);
-
-		pokemonList = matchedPokemonList.filter((pokemon) => pokemon.no);
-	}
+	const andPokeList = useMemo(() => createAndPokeArray(pokeTypeData), [
+		pokeTypeData
+	]);
 
 	// OR検索用リストを作成
-	if (switchState) {
-		const purePokemonList = [
-			...pokeTypeData.type1.pokemon,
-			...pokeTypeData.type2.pokemon
-		];
+	const orPokeList = useMemo(() => createOrPokeArray(pokeTypeData), [
+		pokeTypeData
+	]);
 
-		// 重複排除
-		const excludedPokemonList = purePokemonList.filter(
-			(pokemon, index, array) =>
-				array.findIndex((item) => item.no === pokemon.no) === index
-		);
-
-		// 番号の昇順に整列
-		const sortedPokemonList = excludedPokemonList.sort((a, b) => {
-			if (a.no < b.no) return -1;
-			if (a.no > b.no) return 1;
-			return 0;
-		});
-
-		// 空要素排除
-		pokemonList = sortedPokemonList.filter((pokemon) => pokemon.no);
-	}
-
-	const nodes = pokemonList.map((item) => {
-		return (
-			<PokeIconList
-				key={item.no}
-				item={item}
-				pokeId={pokeData.id}
-				onClick={showPokeData}
-			/>
-		);
-	});
-
-	return pokemonList.length !== 0 ? (
-		<Container className={classes.pokeList}>{nodes}</Container>
+	return orPokeList.length !== 0 ? (
+		<Container className={classes.pokeList}>
+			{(switchState ? orPokeList : andPokeList).map((item) => {
+				return (
+					<PokeIconList
+						key={item.no}
+						item={item}
+						pokeId={pokeData.id}
+						onClick={showPokeData}
+					/>
+				);
+			})}
+		</Container>
 	) : null;
 };
 
