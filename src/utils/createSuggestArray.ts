@@ -3,22 +3,19 @@ import { translateKanaToHira } from "@utils/translateKanatoHira";
 import pokeDataArray from "@data/pokemon_data.json";
 import { translateHiraToRoman } from "@utils/translateHiratoRoman";
 
+/**
+ * ポケモン検索のサジェスト用配列を作成する
+ * ひらがな、カタカナ、ローマ字で検索できる
+ * @return {OptionType[]} ポケモン検索サジェスト用配列
+ */
 export const createSuggestArray = (): OptionType[] => {
-	const suggestArray = [] as OptionType[];
-
-	pokeDataArray.forEach((data) => {
+	return pokeDataArray.map((data) => {
 		const kanaName = translateKanaToHira(data.name.japanese);
 		const Roman = translateHiraToRoman(kanaName);
-		const obj = {
-			value: "",
-			label: "",
-			no: 0
+		return {
+			value: `${data.name.japanese}${kanaName}${Roman}`,
+			label: data.name.japanese,
+			no: data.id
 		};
-		obj.value = `${data.name.japanese}${kanaName}${Roman}`;
-		obj.label = data.name.japanese;
-		obj.no = data.id;
-		suggestArray.push(obj);
 	});
-
-	return suggestArray;
 };

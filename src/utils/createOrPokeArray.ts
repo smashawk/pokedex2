@@ -2,7 +2,7 @@ import { getPokeTypeDataType } from "@store/searchType/getPokeTypeData/reducers"
 
 /**
  * OR検索で表示するポケモン配列を作成する
- * @param {getPokeTypeDataType} pokeTypeData タイプAPIで取得した配列
+ * @param {getPokeTypeDataType} pokeTypeData タイプstate
  * @return {getPokeTypeDataType["type1"]["pokemon"]} タイプ情報を排除したポケモン配列
  */
 export const createOrPokeArray = (

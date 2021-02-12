@@ -23,8 +23,11 @@ export const searchTypeGetPokeTypeDataDispatcher = (
 		return;
 	}
 
-	// 0タイプ -> 1タイプにtype1をfetchする
-	if (selectedOptionArray.length === 1) {
+	// 0タイプ -> 1タイプの場合、及び2タイプ選択のリロード時にtype1をfetchする
+	if (
+		selectedOptionArray.length === 1 ||
+		(selectedOptionArray.length === 2 && optionArray.length === 1)
+	) {
 		dispatch(actions.type1FetchStarted());
 		await getPokeTypeData(selectedOptionArray[0].value)
 			.then((res) => {
