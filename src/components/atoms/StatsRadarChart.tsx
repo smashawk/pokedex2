@@ -35,7 +35,7 @@ export const StatsRadarChart = ({ data }: Props): JSX.Element => {
 		datasets: [
 			{
 				data,
-				label: ["base_stats"],
+				label: "base_stats",
 				backgroundColor: "rgba(63, 81, 181, .5)",
 				borderColor: "rgba(63, 81, 181, .5)"
 			}
