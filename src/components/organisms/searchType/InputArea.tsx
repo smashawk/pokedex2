@@ -97,21 +97,20 @@ const InputArea = ({
 	}, []);
 
 	const decidePokeType = (
-		selectedOptionArray: OptionType | OptionType[] | null
+		e: unknown,
+		selectedOptionArray: OptionType[]
 	): void => {
-		if (Array.isArray(selectedOptionArray)) {
-			setSelectedOption(selectedOptionArray);
-			fetchPokeTypeData(selectedOptionArray, optionArray.option);
+		setSelectedOption(selectedOptionArray);
+		fetchPokeTypeData(selectedOptionArray, optionArray.option);
 
-			// paramsを付ける
-			H.replace(
-				`/type?switch=${switchState}&type1=${
-					selectedOptionArray.length ? selectedOptionArray[0].value : ""
-				}&type2=${
-					selectedOptionArray.length === 2 ? selectedOptionArray[1].value : ""
-				}&pokemon=${pokeData.id ? pokeData.id : ""}`
-			);
-		}
+		// paramsを付ける
+		H.replace(
+			`/type?switch=${switchState}&type1=${
+				selectedOptionArray.length ? selectedOptionArray[0].value : ""
+			}&type2=${
+				selectedOptionArray.length === 2 ? selectedOptionArray[1].value : ""
+			}&pokemon=${pokeData.id ? pokeData.id : ""}`
+		);
 	};
 
 	const changeSearchType = (

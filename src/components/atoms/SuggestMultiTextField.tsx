@@ -2,10 +2,13 @@ import React from "react";
 import { OptionType } from "@store/common/setSelectedOption/reducer";
 import { createStyles, makeStyles } from "@material-ui/core/styles";
 
-import VirtualizedSelect from "react-virtualized-select";
-import "@styles/react-select.css";
-import "react-virtualized/styles.css";
-import "react-virtualized-select/styles.css";
+import Autocomplete, {
+	createFilterOptions
+} from "@material-ui/lab/Autocomplete";
+import { TextField } from "@material-ui/core";
+import Checkbox from "@material-ui/core/Checkbox";
+import CheckBoxOutlineBlankIcon from "@material-ui/icons/CheckBoxOutlineBlank";
+import CheckBoxIcon from "@material-ui/icons/CheckBox";
 
 const useStyles = makeStyles(() =>
 	createStyles({
@@ -20,10 +23,16 @@ const useStyles = makeStyles(() =>
 	})
 );
 
+export type OptionTypes = {
+	label: string;
+	value: string;
+	no: number;
+};
+
 type OwnProps = {
-	suggestList: OptionType[];
-	option: OptionType[];
-	onChange: (item: OptionType | OptionType[] | null) => void;
+	suggestList: OptionTypes[];
+	option: any;
+	onChange: any;
 };
 
 type Props = OwnProps;
@@ -35,14 +44,32 @@ export const SuggestMultiTextField = ({
 }: Props): JSX.Element => {
 	const classes = useStyles();
 
+	const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;
+	const checkedIcon = <CheckBoxIcon fontSize="small" />;
+
 	return (
 		<div className={classes.root}>
-			<VirtualizedSelect
-				className={classes.select}
+			<Autocomplete
+				multiple
+				getOptionDisabled={(): boolean => option.length > 1}
 				options={suggestList}
-				value={option.length === 0 || option[0].no !== 0 ? option : undefined}
+				getOptionLabel={(item): string => item.label}
+				style={{ width: 300 }}
+				renderOption={(optionObj, { selected }) => (
+					<>
+						<Checkbox
+							icon={icon}
+							checkedIcon={checkedIcon}
+							style={{ marginRight: 8 }}
+							checked={selected}
+						/>
+						{optionObj.label}
+					</>
+				)}
 				onChange={onChange}
-				multi
+				renderInput={(params): React.ReactNode => (
+					<TextField {...params} label="Types" />
+				)}
 			/>
 		</div>
 	);

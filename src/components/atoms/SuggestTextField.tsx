@@ -2,10 +2,10 @@ import React from "react";
 import { OptionType } from "@store/common/setSelectedOption/reducer";
 import { createStyles, makeStyles } from "@material-ui/core/styles";
 
-import VirtualizedSelect from "react-virtualized-select";
-import "@styles/react-select.css";
-import "react-virtualized/styles.css";
-import "react-virtualized-select/styles.css";
+import Autocomplete, {
+	createFilterOptions
+} from "@material-ui/lab/Autocomplete";
+import { TextField } from "@material-ui/core";
 
 const useStyles = makeStyles(() =>
 	createStyles({
@@ -20,10 +20,16 @@ const useStyles = makeStyles(() =>
 	})
 );
 
+export type OptionTypes = {
+	label: string;
+	value: string;
+	no: number;
+};
+
 type OwnProps = {
-	suggestList: OptionType[];
-	option: OptionType | undefined;
-	onChange: (item: OptionType | OptionType[] | null) => void;
+	suggestList: OptionTypes[];
+	option: any;
+	onChange: any;
 };
 
 type Props = OwnProps;
@@ -37,12 +43,15 @@ export const SuggestTextField = ({
 
 	return (
 		<div className={classes.root}>
-			<VirtualizedSelect
-				className={classes.select}
+			<Autocomplete
+				id="combo-box-demo"
 				options={suggestList}
-				value={option}
-				clearable={false}
+				getOptionLabel={(item): string => item.label}
+				style={{ width: 300 }}
 				onChange={onChange}
+				renderInput={(params): React.ReactNode => (
+					<TextField {...params} label="Pokemon" />
+				)}
 			/>
 		</div>
 	);

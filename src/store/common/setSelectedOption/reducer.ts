@@ -2,9 +2,9 @@ import * as types from "./types";
 import * as actions from "./actions";
 
 export type OptionType = {
-	label?: string;
-	value?: string;
-	no?: number;
+	label: string;
+	value: string;
+	no: number;
 };
 
 const searchPokeInitialState = { value: "", label: "", no: 0 };
