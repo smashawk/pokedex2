@@ -57,16 +57,18 @@ const InputArea = ({
 	}, []);
 
 	const searchPoke = useCallback(
-		(selectedOption: OptionType | null): void => {
+		(selectedOption: OptionType | OptionType[] | null): void => {
 			// 文字列が入力されていない時には処理を行わない
 			if (selectedOption === null) return;
 
-			setSelectedOption(selectedOption);
-			fetchPokeData(selectedOption.no);
-			fetchPokeSpecies(selectedOption.no);
+			if (!Array.isArray(selectedOption)) {
+				setSelectedOption(selectedOption);
+				fetchPokeData(selectedOption.no as number);
+				fetchPokeSpecies(selectedOption.no as number);
 
-			// paramsを付ける
-			H.replace(`/pokemon?id=${selectedOption.no}`);
+				// paramsを付ける
+				H.replace(`/pokemon?id=${selectedOption.no}`);
+			}
 		},
 		[setSelectedOption, fetchPokeData, fetchPokeSpecies]
 	);
@@ -85,7 +87,7 @@ const InputArea = ({
 
 // container
 const mapStateToProps = (state: AppState): StateProps => ({
-	option: state.searchPoke.selectedOption.option
+	option: state.searchPoke.selectedOption
 });
 
 const mapDispatchToProps = (dispatch: Dispatch): DispatchProps => {

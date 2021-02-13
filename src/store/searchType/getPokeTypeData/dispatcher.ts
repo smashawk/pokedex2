@@ -29,7 +29,7 @@ export const searchTypeGetPokeTypeDataDispatcher = (
 		(selectedOptionArray.length === 2 && optionArray.length === 1)
 	) {
 		dispatch(actions.type1FetchStarted());
-		await getPokeTypeData(selectedOptionArray[0].value)
+		await getPokeTypeData(selectedOptionArray[0].value as string)
 			.then((res) => {
 				const formattedPokeData = normalizePokeData(res.data);
 				dispatch(actions.type1FetchSuccess(formattedPokeData));
@@ -50,8 +50,8 @@ export const searchTypeGetPokeTypeDataDispatcher = (
 		dispatch(actions.type2FetchStarted());
 		await getPokeTypeData(
 			selectedOptionArray.length === 2
-				? selectedOptionArray[1].value
-				: selectedOptionArray[2].value
+				? (selectedOptionArray[1].value as string)
+				: (selectedOptionArray[2].value as string)
 		)
 			.then((res) => {
 				const formattedPokeData = normalizePokeData(res.data);

@@ -17,7 +17,9 @@ import Typography from "@material-ui/core/Typography";
 
 type StateProps = {
 	switchState: boolean;
-	optionArray: OptionType[];
+	optionArray: {
+		option: OptionType[];
+	};
 	pokeTypeData: getPokeTypeDataType;
 	pokeData: formattedPokeDataType;
 };
@@ -90,22 +92,26 @@ const InputArea = ({
 			);
 
 			setSelectedOption(selectedOptionArray);
-			fetchPokeTypeData(selectedOptionArray, optionArray);
+			fetchPokeTypeData(selectedOptionArray, optionArray.option);
 		}
 	}, []);
 
-	const decidePokeType = (selectedOptionArray: OptionType[]): void => {
-		setSelectedOption(selectedOptionArray);
-		fetchPokeTypeData(selectedOptionArray, optionArray);
+	const decidePokeType = (
+		selectedOptionArray: OptionType | OptionType[] | null
+	): void => {
+		if (Array.isArray(selectedOptionArray)) {
+			setSelectedOption(selectedOptionArray);
+			fetchPokeTypeData(selectedOptionArray, optionArray.option);
 
-		// paramsを付ける
-		H.replace(
-			`/type?switch=${switchState}&type1=${
-				selectedOptionArray.length ? selectedOptionArray[0].value : ""
-			}&type2=${
-				selectedOptionArray.length === 2 ? selectedOptionArray[1].value : ""
-			}&pokemon=${pokeData.id ? pokeData.id : ""}`
-		);
+			// paramsを付ける
+			H.replace(
+				`/type?switch=${switchState}&type1=${
+					selectedOptionArray.length ? selectedOptionArray[0].value : ""
+				}&type2=${
+					selectedOptionArray.length === 2 ? selectedOptionArray[1].value : ""
+				}&pokemon=${pokeData.id ? pokeData.id : ""}`
+			);
+		}
 	};
 
 	const changeSearchType = (
@@ -129,7 +135,7 @@ const InputArea = ({
 			/>
 			<SuggestMultiTextField
 				suggestList={suggestArray}
-				option={optionArray}
+				option={optionArray.option}
 				onChange={decidePokeType}
 			/>
 		</Container>
@@ -139,7 +145,7 @@ const InputArea = ({
 // container
 const mapStateToProps = (state: AppState): StateProps => ({
 	switchState: state.searchType.switchState.switchState,
-	optionArray: state.searchType.selectedOption.option,
+	optionArray: state.searchType.selectedOption,
 	pokeTypeData: state.searchType.pokeTypeData,
 	pokeData: state.searchType.pokeData
 });

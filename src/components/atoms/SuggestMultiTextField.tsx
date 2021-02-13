@@ -23,10 +23,7 @@ const useStyles = makeStyles(() =>
 type OwnProps = {
 	suggestList: OptionType[];
 	option: OptionType[];
-	// anyの許容、ライブラリのイベント(引数にOptionType、OptionType[]、nullのいずれかを持つ
-	// https://github.com/JedWatson/react-select/issues/2902
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	onChange: (item: OptionType | OptionType[] | null | any) => void;
+	onChange: (item: OptionType | OptionType[] | null) => void;
 };
 
 type Props = OwnProps;

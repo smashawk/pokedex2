@@ -23,9 +23,7 @@ const useStyles = makeStyles(() =>
 type OwnProps = {
 	suggestList: OptionType[];
 	option: OptionType | undefined;
-	// anyの許容、ライブラリのイベント
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	onChange: (item: OptionType | null | any) => void;
+	onChange: (item: OptionType | OptionType[] | null) => void;
 };
 
 type Props = OwnProps;

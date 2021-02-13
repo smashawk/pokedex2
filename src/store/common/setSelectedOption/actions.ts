@@ -5,9 +5,7 @@ import * as types from "./types";
 export const searchPokeSetSelectedOption = (option: OptionType) =>
 	({
 		type: types.SEARCH_POKE_SET,
-		payload: {
-			option
-		}
+		payload: option
 	} as const);
 
 export type searchPokeActionTypes = ReturnType<

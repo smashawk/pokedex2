@@ -2,20 +2,14 @@ import * as types from "./types";
 import * as actions from "./actions";
 
 export type OptionType = {
-	label: string;
-	value: string;
-	no: number;
+	label?: string;
+	value?: string;
+	no?: number;
 };
 
-type searchPokeSetSelectedOptionState = {
-	option: OptionType;
-};
+const searchPokeInitialState = { value: "", label: "", no: 0 };
 
-const searchPokeInitialState = {
-	option: { value: "", label: "", no: 0 }
-};
-
-type searchTypeSetSelectedOptionState = {
+type searchTypeSetSelectedOptionType = {
 	option: OptionType[];
 };
 
@@ -26,7 +20,7 @@ const searchTypeInitialState = {
 export const searchPokeSetSelectedOptionReducer = (
 	state = searchPokeInitialState,
 	action: actions.searchPokeActionTypes
-): searchPokeSetSelectedOptionState => {
+): OptionType => {
 	switch (action.type) {
 		case types.SEARCH_POKE_SET:
 			return {
@@ -42,7 +36,7 @@ export const searchPokeSetSelectedOptionReducer = (
 export const searchTypeSetSelectedOptionReducer = (
 	state = searchTypeInitialState,
 	action: actions.searchTypeActionTypes
-): searchTypeSetSelectedOptionState => {
+): searchTypeSetSelectedOptionType => {
 	switch (action.type) {
 		case types.SEARCH_TYPE_SET:
 			return {
