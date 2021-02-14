@@ -1,21 +1,22 @@
+import { Header } from "@components/organisms/common/Header";
 import {
 	createMuiTheme,
 	createStyles,
 	makeStyles,
-	ThemeProvider
-} from "@material-ui/core/styles";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import Container from "@material-ui/core/Container";
-import { Header } from "@components/organisms/common/Header";
+	ThemeProvider,
+	CssBaseline,
+	Container,
+	Typography
+} from "@material-ui/core";
 
 export const theme = createMuiTheme({
-	palette: {
-		text: {
-			primary: "#000"
-		}
-	},
+	spacing: 4,
 	typography: {
 		htmlFontSize: 10,
+		h1: {
+			fontSize: 32,
+			fontWeight: 700
+		},
 		h2: {
 			fontSize: 24,
 			fontWeight: 700
@@ -29,14 +30,15 @@ export const theme = createMuiTheme({
 const useStyles = makeStyles(() =>
 	createStyles({
 		root: {
-			flexGrow: 1
-		},
-		mainWrapper: {
+			padding: 0,
 			textAlign: "center"
-			// margin: theme.spacing(10, "auto")
 		},
-		toolBar: {
-			justifyContent: "center"
+		main: {
+			marginTop: theme.spacing(8)
+		},
+		pageRoot: {
+			marginTop: theme.spacing(6),
+			padding: 0
 		}
 	})
 );
@@ -51,11 +53,11 @@ export const PokedexTemplate = ({ children }: Props): JSX.Element => {
 	return (
 		<ThemeProvider theme={theme}>
 			<CssBaseline />
-			<Container className={classes.mainWrapper} maxWidth="md">
+			<Container className={classes.root} maxWidth="md">
 				<Header />
-				<main>
-					<h1>ポケモン図鑑</h1>
-					{children}
+				<main className={classes.main}>
+					<Typography variant="h1">ポケモン図鑑</Typography>
+					<Container className={classes.pageRoot}>{children}</Container>
 				</main>
 			</Container>
 		</ThemeProvider>
