@@ -10,7 +10,7 @@ const useStyles = makeStyles(() =>
 		container: {
 			margin: "auto",
 			padding: 40,
-			width: 280
+			width: 380
 		},
 		root: {
 			width: 300
@@ -56,6 +56,7 @@ export const SuggestTextField = ({
 				renderInput={(params): React.ReactNode => (
 					<TextField {...params} label="Pokemon" />
 				)}
+				blurOnSelect
 			/>
 		</Container>
 	);

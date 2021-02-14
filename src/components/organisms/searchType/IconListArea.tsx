@@ -57,6 +57,7 @@ const IconListArea = ({
 
 		if (pokemon) {
 			fetchPokeData(Number(pokemon));
+			fetchPokeSpecies(Number(pokemon));
 		}
 	}, []);
 
