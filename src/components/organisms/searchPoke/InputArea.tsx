@@ -57,7 +57,7 @@ const InputArea = ({
 	}, []);
 
 	const searchPoke = useCallback(
-		(e: unknown, selectedOption: OptionType): void => {
+		(e: unknown, selectedOption: OptionType | null): void => {
 			// 文字列が入力されていない時には処理を行わない
 			if (selectedOption === null) return;
 

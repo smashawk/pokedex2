@@ -1,35 +1,33 @@
 import React from "react";
 import { OptionType } from "@store/common/setSelectedOption/reducer";
-import { createStyles, makeStyles } from "@material-ui/core/styles";
 
-import Autocomplete, {
-	createFilterOptions
-} from "@material-ui/lab/Autocomplete";
-import { TextField } from "@material-ui/core";
+import { Container, TextField } from "@material-ui/core";
+import { createStyles, makeStyles } from "@material-ui/core/styles";
+import Autocomplete from "@material-ui/lab/Autocomplete";
 
 const useStyles = makeStyles(() =>
 	createStyles({
-		root: {
+		container: {
 			margin: "auto",
 			padding: 40,
 			width: 280
 		},
+		root: {
+			width: 300
+		},
 		select: {
 			textAlign: "left"
+		},
+		endAdornment: {
+			top: -4
 		}
 	})
 );
 
-export type OptionTypes = {
-	label: string;
-	value: string;
-	no: number;
-};
-
 type OwnProps = {
-	suggestList: OptionTypes[];
-	option: any;
-	onChange: any;
+	suggestList: OptionType[];
+	option: OptionType;
+	onChange: (e: unknown, selectedOption: OptionType | null) => void;
 };
 
 type Props = OwnProps;
@@ -42,17 +40,23 @@ export const SuggestTextField = ({
 	const classes = useStyles();
 
 	return (
-		<div className={classes.root}>
+		<Container className={classes.container}>
 			<Autocomplete
-				id="combo-box-demo"
+				classes={{ endAdornment: classes.endAdornment, root: classes.root }}
 				options={suggestList}
-				getOptionLabel={(item): string => item.label}
-				style={{ width: 300 }}
+				value={option}
 				onChange={onChange}
+				getOptionLabel={(item): string => item.label}
+				getOptionSelected={(item, value): boolean => item.label === value.label}
+				filterOptions={(items, params): OptionType[] => {
+					return items.filter(
+						(item) => item.value.indexOf(params.inputValue) !== -1
+					);
+				}}
 				renderInput={(params): React.ReactNode => (
 					<TextField {...params} label="Pokemon" />
 				)}
 			/>
-		</div>
+		</Container>
 	);
 };
