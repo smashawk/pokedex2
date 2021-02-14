@@ -1,4 +1,3 @@
-import React from "react";
 import classNames from "classnames";
 import { createStyles, makeStyles } from "@material-ui/core/styles";
 import { Box } from "@material-ui/core";

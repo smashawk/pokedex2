@@ -1,4 +1,4 @@
-import React from "react";
+import { MouseEvent } from "react";
 import { createStyles, makeStyles } from "@material-ui/core/styles";
 import classNames from "classnames";
 
@@ -28,7 +28,7 @@ const useStyles = makeStyles(() =>
 type OwnProps = {
 	item: { name: { ja: string; en: string }; no: number };
 	pokeId: number;
-	onClick: (event: React.MouseEvent<HTMLInputElement>) => void;
+	onClick: (event: MouseEvent<HTMLInputElement>) => void;
 };
 
 type Props = OwnProps;

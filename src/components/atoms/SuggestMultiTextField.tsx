@@ -1,4 +1,4 @@
-import React from "react";
+import { ReactNode } from "react";
 import { OptionType } from "@store/common/setSelectedOption/reducer";
 import { createStyles, makeStyles } from "@material-ui/core/styles";
 
@@ -55,7 +55,7 @@ export const SuggestMultiTextField = ({
 				onChange={onChange}
 				getOptionLabel={(item): string => item.label}
 				getOptionDisabled={(): boolean => option.length > 1}
-				renderInput={(params): React.ReactNode => (
+				renderInput={(params): ReactNode => (
 					<TextField {...params} label="Types" />
 				)}
 				renderOption={(optionObj, { selected }): JSX.Element => (

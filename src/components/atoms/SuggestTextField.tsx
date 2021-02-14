@@ -1,4 +1,4 @@
-import React from "react";
+import { ReactNode } from "react";
 import { OptionType } from "@store/common/setSelectedOption/reducer";
 
 import { Container, TextField } from "@material-ui/core";
@@ -53,7 +53,7 @@ export const SuggestTextField = ({
 						(item) => item.value.indexOf(params.inputValue) !== -1
 					);
 				}}
-				renderInput={(params): React.ReactNode => (
+				renderInput={(params): ReactNode => (
 					<TextField {...params} label="Pokemon" />
 				)}
 				blurOnSelect

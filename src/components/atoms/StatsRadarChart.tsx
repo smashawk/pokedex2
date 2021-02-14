@@ -1,4 +1,3 @@
-import React from "react";
 import { Radar } from "react-chartjs-2";
 import Container from "@material-ui/core/Container";
 import { createStyles, makeStyles } from "@material-ui/core/styles";

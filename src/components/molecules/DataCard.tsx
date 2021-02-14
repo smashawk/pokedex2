@@ -1,5 +1,3 @@
-import React from "react";
-
 import { PokeImg } from "@components/atoms/PokeImg";
 import { DescriptionList } from "@components/atoms/DescriptionList";
 import { StatsRadarChart } from "@components/atoms/StatsRadarChart";

@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from "react";
+import { ChangeEvent, useEffect, useMemo } from "react";
 import { Dispatch } from "redux";
 import { connect } from "react-redux";
 import { useHistory, useLocation } from "react-router-dom";
@@ -113,9 +113,7 @@ const InputArea = ({
 		);
 	};
 
-	const changeSearchType = (
-		event: React.ChangeEvent<HTMLInputElement>
-	): void => {
+	const changeSearchType = (event: ChangeEvent<HTMLInputElement>): void => {
 		setSwitchState(event.target.checked);
 
 		// paramsを付ける

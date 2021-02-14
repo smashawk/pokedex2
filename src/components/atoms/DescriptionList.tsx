@@ -1,4 +1,4 @@
-import React from "react";
+import { Fragment } from "react";
 import { createStyles, makeStyles } from "@material-ui/core/styles";
 import classNames from "classnames";
 
@@ -42,7 +42,7 @@ export const DescriptionList = ({ data }: Props): JSX.Element => {
 	return (
 		<dl className={classes.dataList}>
 			{data.map((item: dataObject) => (
-				<React.Fragment key={item.term}>
+				<Fragment key={item.term}>
 					<dt className={classes.dataTerm}>{item.term}</dt>
 					<dd
 						className={classNames(
@@ -59,7 +59,7 @@ export const DescriptionList = ({ data }: Props): JSX.Element => {
 					>
 						{item.term === "Type1" || item.term === "Type2" || item.description}
 					</dd>
-				</React.Fragment>
+				</Fragment>
 			))}
 		</dl>
 	);

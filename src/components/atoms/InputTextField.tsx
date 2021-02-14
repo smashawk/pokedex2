@@ -1,11 +1,11 @@
-import React from "react";
+import { ChangeEvent } from "react";
 import TextField, { TextFieldProps } from "@material-ui/core/TextField";
 
 type OwnProps = {
 	label: string;
 	type: TextFieldProps["type"];
 	variant?: TextFieldProps["variant"];
-	onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+	onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
 };
 
 export type Props = OwnProps;

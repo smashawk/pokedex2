@@ -1,4 +1,3 @@
-import React from "react";
 import { AppState } from "@store/reducer";
 import { connect } from "react-redux";
 

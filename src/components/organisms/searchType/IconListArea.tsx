@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from "react";
+import { MouseEvent as ReactMouseEvent, useEffect, useMemo } from "react";
 import { Dispatch } from "redux";
 import { connect } from "react-redux";
 import { useHistory, useLocation } from "react-router-dom";
@@ -62,7 +62,7 @@ const IconListArea = ({
 	}, []);
 
 	const showPokeData = (
-		event: React.MouseEvent<HTMLInputElement, MouseEvent>
+		event: ReactMouseEvent<HTMLInputElement, MouseEvent>
 	): void => {
 		// eventTargetの型解決
 		const { value } = event.target as HTMLInputElement;
