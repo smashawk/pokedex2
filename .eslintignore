@@ -1,0 +1,5 @@
+build/
+public/
+**/node_modules/
+config-overrides.js
+.*lintrc.json

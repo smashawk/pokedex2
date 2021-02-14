@@ -9,10 +9,11 @@
 		"deploy": "npm run build && gh-pages -d build",
 		"test": "react-app-rewired test",
 		"eject": "react-app-rewired eject",
-		"lint": "npx eslint './src/**/*.{ts,tsx}'",
-		"fix": "npx eslint --fix './src/**/*.{ts,tsx}'",
+		"lint": "eslint './src/**/*.{js,jsx,ts,tsx}'",
+		"fix": "eslint --fix './src/**/*.{js,jsx,ts,tsx}'",
 		"storybook": "start-storybook -p 6006 -s public",
-		"build-storybook": "build-storybook -s public"
+		"build-storybook": "build-storybook -s public",
+		"postinstall": "typesync"
 	},
 	"dependencies": {
 		"@material-ui/core": "^4.11.3",
@@ -86,6 +87,17 @@
 			"last 1 chrome version",
 			"last 1 firefox version",
 			"last 1 safari version"
+		]
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged"
+		}
+	},
+	"lint-staged": {
+		"src/**/*.{js,jsx,ts,tsx}": [
+			"prettier --write --loglevel=warn",
+			"eslint --fix"
 		]
 	}
 }
