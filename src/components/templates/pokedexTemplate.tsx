@@ -1,5 +1,5 @@
 import { ReactNode, VFC } from "react";
-import { Header } from "@components/organisms/common/Header";
+import { HeaderMenu } from "@components/organisms/common/HeaderMenu";
 import {
 	createMuiTheme,
 	createStyles,
@@ -49,7 +49,7 @@ type Props = {
 };
 
 /**
- * Page Component's Template component which add Header and H1 Title
+ * Page Component's Template component which add HeaderMenu and H1 Title
  * @param children
  * @constructor
  */
@@ -64,7 +64,7 @@ export const PokedexTemplate: VFC<Props> = ({ children }) => {
 		<ThemeProvider theme={theme}>
 			<CssBaseline />
 			<Container className={classes.root} maxWidth="md">
-				<Header />
+				<HeaderMenu />
 				<main className={classes.main}>
 					<Typography variant="h1">ポケモン図鑑</Typography>
 					<Container className={classes.pageRoot}>

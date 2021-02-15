@@ -1,7 +1,12 @@
+import { VFC } from "react";
 import { AppBar, Tab, Tabs } from "@material-ui/core";
 import { Link, useLocation } from "react-router-dom";
 
-export const Header = (): JSX.Element => {
+/**
+ * Menu which have Link
+ * @constructor
+ */
+export const HeaderMenu: VFC = () => {
 	const currentTab = useLocation().pathname;
 	const menuList = [
 		{
