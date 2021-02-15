@@ -1,10 +1,14 @@
+import { VFC } from "react";
 import { HashRouter, Route, Switch } from "react-router-dom";
 import { Index } from "@components/pages/Index";
 import { SearchPartnerComp } from "@components/pages/SearchPartner";
 import { SearchTypeComp } from "@components/pages/SearchType";
 import { SearchPokeComp } from "@components/pages/SearchPoke";
 
-export const App = (): JSX.Element => {
+/**
+ * Routing component
+ */
+export const App: VFC = () => {
 	return (
 		<HashRouter hashType="noslash">
 			<Switch>

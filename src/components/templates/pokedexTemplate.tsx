@@ -1,3 +1,4 @@
+import { ReactNode, VFC } from "react";
 import { Header } from "@components/organisms/common/Header";
 import {
 	createMuiTheme,
@@ -44,20 +45,31 @@ const useStyles = makeStyles(() =>
 );
 
 type Props = {
-	children: JSX.Element;
+	children: ReactNode;
 };
 
-export const PokedexTemplate = ({ children }: Props): JSX.Element => {
+/**
+ * Page Component's Template component which add Header and H1 Title
+ * @param children
+ * @constructor
+ */
+export const PokedexTemplate: VFC<Props> = ({ children }) => {
 	const classes = useStyles();
 
 	return (
+		/**
+		 * wrap children in a React Fragment to avoid TS error
+		 * https://github.com/DefinitelyTyped/DefinitelyTyped/issues/18051#issuecomment-520077292
+		 * */
 		<ThemeProvider theme={theme}>
 			<CssBaseline />
 			<Container className={classes.root} maxWidth="md">
 				<Header />
 				<main className={classes.main}>
 					<Typography variant="h1">ポケモン図鑑</Typography>
-					<Container className={classes.pageRoot}>{children}</Container>
+					<Container className={classes.pageRoot}>
+						<>{children}</>
+					</Container>
 				</main>
 			</Container>
 		</ThemeProvider>

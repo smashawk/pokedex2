@@ -1,8 +1,13 @@
+import { VFC } from "react";
 import { PokedexTemplate } from "@components/templates/pokedexTemplate";
 import { InputAreaComp } from "@components/organisms/searchPartner/InputArea";
 import { OutputAreaComp } from "@components/organisms/searchPartner/OutputArea";
 
-export const SearchPartnerComp = (): JSX.Element => {
+/**
+ * Search Partner's root component
+ * @constructor
+ */
+export const SearchPartnerComp: VFC = () => {
 	return (
 		<PokedexTemplate>
 			<>
