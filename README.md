@@ -1,15 +1,15 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## ディレクトリ構成
+## Directory Structure
+preparing...
 
-- redux-way
-- [Reduxでのディレクトリ構成3パターンに見る「分割」と「分散」 – Super Hahnah](https://superhahnah.com/redux-directory-petterns/)
+## Coding Rules
 
-
-## コーディングルール
-
-### default export 禁止
+### Don't use default export
 [なぜ default export を使うべきではないのか？ - LINE ENGINEERING](https://engineering.linecorp.com/ja/blog/you-dont-need-default-export/)
 
-### ActionCreatorの戻り値はconst assertionで型固定する
+### Fix ActionCreator's return value type using const assertion
 [TypeScript3.4 の const assertion - Qiita](https://qiita.com/Takepepe/items/f39c249ed31e546ecb7c)
+
+### Use React.VFC when define React Component Type
+[Reactコンポーネントの定義にFCではなくVFCを使う](https://ikesyo.hatenablog.com/entry/2020/12/18/141737)
