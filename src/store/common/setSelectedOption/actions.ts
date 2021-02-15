@@ -1,15 +1,15 @@
 import { OptionType } from "./reducer";
 import * as types from "./types";
 
-// searchPoke
-export const searchPokeSetSelectedOption = (option: OptionType) =>
+// searchName
+export const searchNameSetSelectedOption = (option: OptionType) =>
 	({
-		type: types.SEARCH_POKE_SET,
+		type: types.SEARCH_NAME_SET,
 		payload: option
 	} as const);
 
-export type searchPokeActionTypes = ReturnType<
-	typeof searchPokeSetSelectedOption
+export type searchNameActionTypes = ReturnType<
+	typeof searchNameSetSelectedOption
 >;
 
 // searchType

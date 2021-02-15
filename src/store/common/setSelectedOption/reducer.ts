@@ -7,7 +7,7 @@ export type OptionType = {
 	no: number;
 };
 
-const searchPokeInitialState = { value: "", label: "", no: 0 };
+const searchNameInitialState = { value: "", label: "", no: 0 };
 
 type searchTypeSetSelectedOptionType = {
 	option: OptionType[];
@@ -17,12 +17,12 @@ const searchTypeInitialState = {
 	option: [{ value: "", label: "", no: 0 }]
 };
 
-export const searchPokeSetSelectedOptionReducer = (
-	state = searchPokeInitialState,
-	action: actions.searchPokeActionTypes
+export const searchNameSetSelectedOptionReducer = (
+	state = searchNameInitialState,
+	action: actions.searchNameActionTypes
 ): OptionType => {
 	switch (action.type) {
-		case types.SEARCH_POKE_SET:
+		case types.SEARCH_NAME_SET:
 			return {
 				...state,
 				...action.payload

@@ -1,18 +1,18 @@
 import { normalizedPokeSpeciesType } from "@store/common/getPokeSpecies/reducers";
 import * as types from "./types";
 
-// searchPoke
-export const searchPokeFetchStarted = () =>
-	({ type: types.SEARCH_POKE_STARTED } as const);
-export const searchPokeFetchSuccess = (res: normalizedPokeSpeciesType) =>
-	({ type: types.SEARCH_POKE_SUCCESS, payload: res } as const);
-export const searchPokeFetchFailed = (err: Record<string, unknown>) =>
-	({ type: types.SEARCH_POKE_FAILED, error: err.response } as const);
+// searchName
+export const searchNameFetchStarted = () =>
+	({ type: types.SEARCH_NAME_STARTED } as const);
+export const searchNameFetchSuccess = (res: normalizedPokeSpeciesType) =>
+	({ type: types.SEARCH_NAME_SUCCESS, payload: res } as const);
+export const searchNameFetchFailed = (err: Record<string, unknown>) =>
+	({ type: types.SEARCH_NAME_FAILED, error: err.response } as const);
 
-export type searchPokeActionTypes =
-	| ReturnType<typeof searchPokeFetchStarted>
-	| ReturnType<typeof searchPokeFetchSuccess>
-	| ReturnType<typeof searchPokeFetchFailed>;
+export type searchNameActionTypes =
+	| ReturnType<typeof searchNameFetchStarted>
+	| ReturnType<typeof searchNameFetchSuccess>
+	| ReturnType<typeof searchNameFetchFailed>;
 
 // searchType
 export const searchTypeFetchStarted = () =>

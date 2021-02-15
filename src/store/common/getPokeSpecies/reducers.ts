@@ -59,17 +59,17 @@ const initialState: normalizedPokeSpeciesType = {
 	// varieties: []
 };
 
-// searchPoke
-export const searchPokeGetPokeSpeciesReducer = (
+// searchName
+export const searchNameGetPokeSpeciesReducer = (
 	state = initialState,
-	action: actions.searchPokeActionTypes
+	action: actions.searchNameActionTypes
 ): normalizedPokeSpeciesType => {
 	switch (action.type) {
-		case types.SEARCH_POKE_STARTED:
+		case types.SEARCH_NAME_STARTED:
 			return { ...state };
-		case types.SEARCH_POKE_SUCCESS:
+		case types.SEARCH_NAME_SUCCESS:
 			return { ...state, ...action.payload };
-		case types.SEARCH_POKE_FAILED:
+		case types.SEARCH_NAME_FAILED:
 			return { ...state };
 		default:
 			return state;

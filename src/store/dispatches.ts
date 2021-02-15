@@ -1,15 +1,15 @@
 import {
 	searchPartnerGetPokeDataDispatcher,
-	searchPokeGetPokeDataDispatcher,
+	searchNameGetPokeDataDispatcher,
 	searchTypeGetPokeDataDispatcher
 } from "@store/common/getPokeData/dispatchers";
 import {
 	searchPartnerGetPokeSpeciesDispatcher,
 	searchTypeGetPokeSpeciesDispatcher,
-	searchPokeGetPokeSpeciesDispatcher
+	searchNameGetPokeSpeciesDispatcher
 } from "@store/common/getPokeSpecies/dispatchers";
 import {
-	searchPokeSetSelectedOptionDispatcher,
+	searchNameSetSelectedOptionDispatcher,
 	searchTypeSetSelectedOptionDispatcher
 } from "@store/common/setSelectedOption/dispatcher";
 import { setSwitchStateDispatcher } from "@store/searchType/setSwitchState/dispatcher";
@@ -17,10 +17,10 @@ import { searchTypeGetPokeTypeDataDispatcher } from "@store/searchType/getPokeTy
 import { setInputNameDispatcher } from "@store/searchPartner/setInputName/dispatcher";
 
 export const dispatches = {
-	searchPoke: {
-		setSelectedOptionDispatcher: searchPokeSetSelectedOptionDispatcher,
-		getPokeDataDispatcher: searchPokeGetPokeDataDispatcher,
-		getPokeSpeciesDispatcher: searchPokeGetPokeSpeciesDispatcher
+	searchName: {
+		setSelectedOptionDispatcher: searchNameSetSelectedOptionDispatcher,
+		getPokeDataDispatcher: searchNameGetPokeDataDispatcher,
+		getPokeSpeciesDispatcher: searchNameGetPokeSpeciesDispatcher
 	},
 	searchType: {
 		setSwitchStateDispatcher,

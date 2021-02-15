@@ -3,18 +3,18 @@ import { getPokeSpecies } from "@api/requests/getPokeSpecies";
 import * as actions from "./actions";
 import { normalizePokeData } from "./normalizer";
 
-// searchPoke
-export const searchPokeGetPokeSpeciesDispatcher = (
-	dispatch: Dispatch<actions.searchPokeActionTypes>
+// searchName
+export const searchNameGetPokeSpeciesDispatcher = (
+	dispatch: Dispatch<actions.searchNameActionTypes>
 ) => async (no: number): Promise<void> => {
-	dispatch(actions.searchPokeFetchStarted());
+	dispatch(actions.searchNameFetchStarted());
 	await getPokeSpecies(no)
 		.then((res) => {
 			const normalizedPokeData = normalizePokeData(res.data);
-			dispatch(actions.searchPokeFetchSuccess(normalizedPokeData));
+			dispatch(actions.searchNameFetchSuccess(normalizedPokeData));
 		})
 		.catch((e) => {
-			dispatch(actions.searchPokeFetchFailed({ error: e.response }));
+			dispatch(actions.searchNameFetchFailed({ error: e.response }));
 		});
 };
 

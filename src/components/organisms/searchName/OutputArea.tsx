@@ -18,8 +18,8 @@ const OutputArea = ({ pokeData, pokeSpecies }: Props): JSX.Element => {
 
 // container
 const mapStateToProps = (state: AppState): StateProps => ({
-	pokeData: state.searchPoke.pokeData,
-	pokeSpecies: state.searchPoke.pokeSpecies
+	pokeData: state.searchName.pokeData,
+	pokeSpecies: state.searchName.pokeSpecies
 });
 
 export const OutputAreaComp = connect(mapStateToProps)(OutputArea);

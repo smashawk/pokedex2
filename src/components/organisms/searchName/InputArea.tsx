@@ -56,7 +56,7 @@ const InputArea = ({
 		}
 	}, []);
 
-	const searchPoke = useCallback(
+	const searchName = useCallback(
 		(e: unknown, selectedOption: OptionType | null): void => {
 			// 文字列が入力されていない時には処理を行わない
 			if (selectedOption === null) return;
@@ -79,7 +79,7 @@ const InputArea = ({
 			<SuggestTextField
 				suggestList={suggestArray}
 				option={option}
-				onChange={searchPoke}
+				onChange={searchName}
 			/>
 		</Container>
 	);
@@ -87,21 +87,21 @@ const InputArea = ({
 
 // container
 const mapStateToProps = (state: AppState): StateProps => ({
-	option: state.searchPoke.selectedOption
+	option: state.searchName.selectedOption
 });
 
 const mapDispatchToProps = (dispatch: Dispatch): DispatchProps => {
-	const { searchPoke } = dispatches;
+	const { searchName } = dispatches;
 
 	return {
 		setSelectedOption: (option: OptionType): void => {
-			searchPoke.setSelectedOptionDispatcher(dispatch)(option);
+			searchName.setSelectedOptionDispatcher(dispatch)(option);
 		},
 		fetchPokeData: async (no: number): Promise<void> => {
-			await searchPoke.getPokeDataDispatcher(dispatch)(no);
+			await searchName.getPokeDataDispatcher(dispatch)(no);
 		},
 		fetchPokeSpecies: async (no: number): Promise<void> => {
-			await searchPoke.getPokeSpeciesDispatcher(dispatch)(no);
+			await searchName.getPokeSpeciesDispatcher(dispatch)(no);
 		}
 	};
 };
