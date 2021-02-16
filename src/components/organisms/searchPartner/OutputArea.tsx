@@ -2,7 +2,7 @@ import { AppState } from "@store/reducer";
 import { connect } from "react-redux";
 
 import { setInputNameState } from "@store/searchPartner/setInputName/reducer";
-import { formattedPokeDataType } from "@store/common/getPokeData/reducers";
+import { normalizedPokeDataType } from "@store/common/getPokeData/reducers";
 import { normalizedPokeSpeciesType } from "@store/common/getPokeSpecies/reducers";
 
 import Typography from "@material-ui/core/Typography";
@@ -10,7 +10,7 @@ import { DataCard } from "@components/molecules/DataCard";
 
 type StateProps = {
 	inputName: setInputNameState;
-	pokeData: formattedPokeDataType;
+	pokeData: normalizedPokeDataType;
 	pokeSpecies: normalizedPokeSpeciesType;
 };
 

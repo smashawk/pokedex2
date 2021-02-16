@@ -1,16 +1,13 @@
-import { useEffect, useMemo, useCallback } from "react";
+import { useEffect, useMemo, useCallback, VFC } from "react";
 import { connect } from "react-redux";
 import { Dispatch } from "redux";
 import { useHistory, useLocation } from "react-router-dom";
-
 import { SuggestTextField } from "@components/atoms/SuggestTextField";
 import { AppState } from "@store/reducer";
 import { dispatches } from "@store/dispatches";
 import { OptionType } from "@store/common/setSelectedOption/reducer";
 import { createSuggestArray } from "@utils/createSuggestArray";
-
-import Container from "@material-ui/core/Container";
-import Typography from "@material-ui/core/Typography";
+import { Container, Typography } from "@material-ui/core";
 
 type StateProps = {
 	option: OptionType;
@@ -24,16 +21,16 @@ type DispatchProps = {
 
 type Props = StateProps & DispatchProps;
 
-const InputArea = ({
+const WrappedInputArea: VFC<Props> = ({
 	option,
 	setSelectedOption,
 	fetchPokeData,
 	fetchPokeSpecies
-}: Props): JSX.Element => {
-	// サジェスト用の配列を作る
+}) => {
+	/** create list for suggest */
 	const suggestArray = useMemo(() => createSuggestArray(), []);
 
-	// React Router Hooksの定義
+	/** define for React Router Hooks */
 	const H = useHistory();
 	const useQuery = (): URLSearchParams =>
 		new URLSearchParams(useLocation().search);
@@ -41,34 +38,32 @@ const InputArea = ({
 
 	useEffect(() => {
 		const id = query.get("id");
-		const numId = Number(id);
 
-		// 一度ポケモン検索している場合、URLにparamsを付け続ける
-		if (option.no && !numId) {
+		/** add params if you have used searchName once */
+		if (option.no && !id) {
 			H.replace(`/pokemon?id=${option.no}`);
 			return;
 		}
-		// URLにparamsがついている場合、検索結果を表示する
-		if (numId) {
-			setSelectedOption(suggestArray[numId - 1]);
-			fetchPokeData(numId);
-			fetchPokeSpecies(numId);
+		/** show search result if URL has params */
+		if (id) {
+			setSelectedOption(suggestArray[+id - 1]);
+			fetchPokeData(+id);
+			fetchPokeSpecies(+id);
 		}
 	}, []);
 
+	/**
+	 * fire this function when you change inputValue
+	 */
 	const searchName = useCallback(
 		(e: unknown, selectedOption: OptionType | null): void => {
-			// 文字列が入力されていない時には処理を行わない
+			/** stop the processing if inputValue is empty */
 			if (selectedOption === null) return;
 
-			if (!Array.isArray(selectedOption)) {
-				setSelectedOption(selectedOption);
-				fetchPokeData(selectedOption.no as number);
-				fetchPokeSpecies(selectedOption.no as number);
-
-				// paramsを付ける
-				H.replace(`/pokemon?id=${selectedOption.no}`);
-			}
+			setSelectedOption(selectedOption);
+			fetchPokeData(selectedOption.no);
+			fetchPokeSpecies(selectedOption.no);
+			H.replace(`/pokemon?id=${selectedOption.no}`);
 		},
 		[setSelectedOption, fetchPokeData, fetchPokeSpecies]
 	);
@@ -85,7 +80,7 @@ const InputArea = ({
 	);
 };
 
-// container
+/** container */
 const mapStateToProps = (state: AppState): StateProps => ({
 	option: state.searchName.selectedOption
 });
@@ -106,7 +101,7 @@ const mapDispatchToProps = (dispatch: Dispatch): DispatchProps => {
 	};
 };
 
-export const InputAreaComp = connect(
+export const InputArea = connect(
 	mapStateToProps,
 	mapDispatchToProps
-)(InputArea);
+)(WrappedInputArea);

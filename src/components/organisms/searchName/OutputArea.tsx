@@ -1,25 +1,25 @@
+import { VFC } from "react";
 import { connect } from "react-redux";
-
-import { DataCard } from "@components/molecules/DataCard";
 import { AppState } from "@store/reducer";
-import { formattedPokeDataType } from "@store/common/getPokeData/reducers";
+import { normalizedPokeDataType } from "@store/common/getPokeData/reducers";
 import { normalizedPokeSpeciesType } from "@store/common/getPokeSpecies/reducers";
+import { DataCard } from "@components/molecules/DataCard";
 
 type StateProps = {
-	pokeData: formattedPokeDataType;
+	pokeData: normalizedPokeDataType;
 	pokeSpecies: normalizedPokeSpeciesType;
 };
 
 type Props = StateProps;
 
-const OutputArea = ({ pokeData, pokeSpecies }: Props): JSX.Element => {
+const OutputAreaComp: VFC<Props> = ({ pokeData, pokeSpecies }) => {
 	return <DataCard pokeData={pokeData} pokeSpecies={pokeSpecies} />;
 };
 
-// container
+/** container */
 const mapStateToProps = (state: AppState): StateProps => ({
 	pokeData: state.searchName.pokeData,
 	pokeSpecies: state.searchName.pokeSpecies
 });
 
-export const OutputAreaComp = connect(mapStateToProps)(OutputArea);
+export const OutputArea = connect(mapStateToProps)(OutputAreaComp);

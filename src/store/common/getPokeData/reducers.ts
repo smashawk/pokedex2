@@ -1,7 +1,7 @@
 import * as types from "./types";
 import * as actions from "./actions";
 
-export type formattedPokeDataType = {
+export type normalizedPokeDataType = {
 	// abilities: [];
 	// base_experience: number;
 	// forms: [];
@@ -21,7 +21,7 @@ export type formattedPokeDataType = {
 	// weight: number;
 };
 
-const initialState: formattedPokeDataType = {
+const initialState: normalizedPokeDataType = {
 	// abilities: [],
 	// base_experience: 0,
 	// forms: [],
@@ -51,11 +51,11 @@ const initialState: formattedPokeDataType = {
 	// weight: 0,
 };
 
-// searchName
+/** searchName */
 export const searchNameGetPokeDataReducer = (
 	state = initialState,
 	action: actions.searchNameActionTypes
-): formattedPokeDataType => {
+): normalizedPokeDataType => {
 	switch (action.type) {
 		case types.SEARCH_NAME_STARTED:
 			return { ...state };
@@ -68,11 +68,11 @@ export const searchNameGetPokeDataReducer = (
 	}
 };
 
-// searchType
+/** searchType */
 export const searchTypeGetPokeDataReducer = (
 	state = initialState,
 	action: actions.searchTypeActionTypes
-): formattedPokeDataType => {
+): normalizedPokeDataType => {
 	switch (action.type) {
 		case types.SEARCH_TYPE_STARTED:
 			return { ...state };
@@ -85,11 +85,11 @@ export const searchTypeGetPokeDataReducer = (
 	}
 };
 
-// searchPartner
+/** searchPartner */
 export const searchPartnerGetPokeDataReducer = (
 	state = initialState,
 	action: actions.searchPartnerActionTypes
-): formattedPokeDataType => {
+): normalizedPokeDataType => {
 	switch (action.type) {
 		case types.SEARCH_PARTNER_STARTED:
 			return { ...state };

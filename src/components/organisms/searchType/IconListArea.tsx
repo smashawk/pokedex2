@@ -6,7 +6,7 @@ import { useHistory, useLocation } from "react-router-dom";
 import { PokeIconList } from "@components/atoms/PokeIconList";
 import { AppState } from "@store/reducer";
 import { dispatches } from "@store/dispatches";
-import { formattedPokeDataType } from "@store/common/getPokeData/reducers";
+import { normalizedPokeDataType } from "@store/common/getPokeData/reducers";
 import { getPokeTypeDataType } from "@store/searchType/getPokeTypeData/reducers";
 import { createAndPokeArray } from "@utils/createAndPokeArray";
 import { createOrPokeArray } from "@utils/createOrPokeArray";
@@ -27,7 +27,7 @@ const useStyles = makeStyles(() =>
 type StateProps = {
 	switchState: boolean;
 	pokeTypeData: getPokeTypeDataType;
-	pokeData: formattedPokeDataType;
+	pokeData: normalizedPokeDataType;
 };
 
 type DispatchProps = {

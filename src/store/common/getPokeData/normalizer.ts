@@ -1,18 +1,17 @@
+import typeDataArray from "@data/type_data.json";
 import { PokeDataType } from "@api/requests/getPokeData";
-import typeData from "@data/type_data.json";
-import { formattedPokeDataType } from "./reducers";
+import { normalizedPokeDataType } from "./reducers";
 
 /**
- * API取得データを整形する
- * @param {PokeDataType} pokeData PokeAPIで取得したポケモンデータ
- * @return {formattedPokeDataType} 整形後のポケモンデータ
+ * @param pokeData gotten from PokeAPI
+ * @return normalized main Pokemon Data
  */
 export const normalizePokeData = (
 	pokeData: PokeDataType
-): formattedPokeDataType => {
+): normalizedPokeDataType => {
 	const matchedTypeArray = pokeData.types.map((type) =>
-		typeData.find((data) => type.type.name === data.en)
-	) as typeof typeData;
+		typeDataArray.find((data) => type.type.name === data.en)
+	) as typeof typeDataArray;
 
 	return {
 		id: pokeData.id,

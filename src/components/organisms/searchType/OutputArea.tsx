@@ -3,13 +3,13 @@ import { connect } from "react-redux";
 import { DescriptionList } from "@components/atoms/DescriptionList";
 import { PokeImg } from "@components/atoms/PokeImg";
 import { AppState } from "@store/reducer";
-import { formattedPokeDataType } from "@store/common/getPokeData/reducers";
+import { normalizedPokeDataType } from "@store/common/getPokeData/reducers";
 import { normalizedPokeSpeciesType } from "@store/common/getPokeSpecies/reducers";
 
 import Container from "@material-ui/core/Container";
 
 type StateProps = {
-	pokeData: formattedPokeDataType;
+	pokeData: normalizedPokeDataType;
 	pokeSpecies: normalizedPokeSpeciesType;
 };
 

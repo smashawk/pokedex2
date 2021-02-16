@@ -9,7 +9,7 @@ import { AppState } from "@store/reducer";
 import { dispatches } from "@store/dispatches";
 import { OptionType } from "@store/common/setSelectedOption/reducer";
 import { getPokeTypeDataType } from "@store/searchType/getPokeTypeData/reducers";
-import { formattedPokeDataType } from "@store/common/getPokeData/reducers";
+import { normalizedPokeDataType } from "@store/common/getPokeData/reducers";
 import typeData from "@data/type_data.json";
 
 import Container from "@material-ui/core/Container";
@@ -21,7 +21,7 @@ type StateProps = {
 		option: OptionType[];
 	};
 	pokeTypeData: getPokeTypeDataType;
-	pokeData: formattedPokeDataType;
+	pokeData: normalizedPokeDataType;
 };
 
 type DispatchProps = {
