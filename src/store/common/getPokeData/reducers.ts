@@ -2,40 +2,15 @@ import * as types from "./types";
 import * as actions from "./actions";
 
 export type normalizedPokeDataType = {
-	// abilities: [];
-	// base_experience: number;
-	// forms: [];
-	// game_indices: [];
-	// height: number;
-	// held_items: [];
 	id: number;
-	// is_default: boolean;
-	// location_area_encounters: string;
-	// moves: [];
 	name: string;
-	// order: number;
-	// species: Record<string, unknown>;
-	// sprites: Record<string, unknown>;
 	stats: { base_stat: number }[];
 	types: { ja: string; en: string }[];
-	// weight: number;
 };
 
 const initialState: normalizedPokeDataType = {
-	// abilities: [],
-	// base_experience: 0,
-	// forms: [],
-	// game_indices: [],
-	// height: 0,
-	// held_items: [],
 	id: 0,
-	// is_default: true,
-	// location_area_encounters: "",
-	// moves: [],
 	name: "",
-	// order: 0,
-	// species: {},
-	// sprites: {},
 	stats: [
 		{ base_stat: 0 },
 		{ base_stat: 0 },
@@ -48,7 +23,6 @@ const initialState: normalizedPokeDataType = {
 		{ ja: "", en: "" },
 		{ ja: "", en: "" }
 	]
-	// weight: 0,
 };
 
 /** searchName */
