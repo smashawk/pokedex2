@@ -49,11 +49,11 @@ export const DataCard = ({
 		},
 		{
 			term: "Name",
-			description: pokeSpecies.names[0].name
+			description: pokeSpecies.name.ja
 		},
 		{
 			term: "Species",
-			description: pokeSpecies.genera[0].genus
+			description: pokeSpecies.genera.ja
 		},
 		{
 			term: "Type1",
@@ -65,7 +65,7 @@ export const DataCard = ({
 		},
 		{
 			term: "Flavor",
-			description: pokeSpecies.flavor_text_entries.flavor_text
+			description: pokeSpecies.flavor_text_entries.ja
 		}
 	];
 

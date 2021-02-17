@@ -11,7 +11,7 @@ export type PokeSpeciesType = {
 	form_descriptions: [];
 	forms_switchable: boolean;
 	gender_rate: number;
-	genera: { genus: string }[];
+	genera: { genus: string; language: { name: string } }[];
 	generation: Record<string, unknown>;
 	growth_rate: Record<string, unknown>;
 	habitat: Record<string, unknown>;
@@ -22,7 +22,7 @@ export type PokeSpeciesType = {
 	is_legendary: boolean;
 	is_mythical: boolean;
 	name: string;
-	names: { name: string }[];
+	names: { name: string; language: { name: string } }[];
 	order: number;
 	pal_park_encounters: [];
 	pokedex_numbers: [];
