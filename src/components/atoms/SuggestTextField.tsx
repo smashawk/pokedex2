@@ -10,10 +10,10 @@ const useStyles = makeStyles(() =>
 		container: {
 			margin: "auto",
 			padding: 40,
-			width: 380
+			width: 320
 		},
 		root: {
-			width: 300
+			width: 240
 		},
 		select: {
 			textAlign: "left"
@@ -44,7 +44,7 @@ export const SuggestTextField = ({
 			<Autocomplete
 				classes={{ endAdornment: classes.endAdornment, root: classes.root }}
 				options={suggestList}
-				value={option}
+				value={option.value ? option : null}
 				onChange={onChange}
 				getOptionLabel={(item): string => item.label}
 				getOptionSelected={(item, value): boolean => item.label === value.label}

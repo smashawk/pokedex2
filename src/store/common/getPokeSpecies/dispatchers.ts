@@ -7,6 +7,7 @@ import { normalizePokeData } from "./normalizer";
 export const searchNameGetPokeSpeciesDispatcher = (
 	dispatch: Dispatch<actions.searchNameActionTypes>
 ) => async (no: number): Promise<void> => {
+	if (!no) return;
 	dispatch(actions.searchNameFetchStarted());
 	await getPokeSpecies(no)
 		.then((res) => {
@@ -22,6 +23,7 @@ export const searchNameGetPokeSpeciesDispatcher = (
 export const searchTypeGetPokeSpeciesDispatcher = (
 	dispatch: Dispatch<actions.searchTypeActionTypes>
 ) => async (no: number): Promise<void> => {
+	if (!no) return;
 	dispatch(actions.searchTypeFetchStarted());
 	await getPokeSpecies(no)
 		.then((res) => {
@@ -37,6 +39,7 @@ export const searchTypeGetPokeSpeciesDispatcher = (
 export const searchPartnerGetPokeSpeciesDispatcher = (
 	dispatch: Dispatch<actions.searchPartnerActionTypes>
 ) => async (no: number): Promise<void> => {
+	if (!no) return;
 	dispatch(actions.searchPartnerFetchStarted());
 	await getPokeSpecies(no)
 		.then((res) => {

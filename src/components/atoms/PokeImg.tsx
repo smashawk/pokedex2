@@ -35,7 +35,7 @@ export const PokeImg = ({ no }: Props): JSX.Element => {
 
 	return (
 		<>
-			{no < 650 && (
+			{no > 0 && no < 650 && (
 				<Box className={classNames(classes.pokeImg, classes.pokeImgDotGif)} />
 			)}
 			{no > 649 && no < 793 && (

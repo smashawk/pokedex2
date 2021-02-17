@@ -55,6 +55,7 @@ export const SuggestMultiTextField = ({
 				onChange={onChange}
 				getOptionLabel={(item): string => item.label}
 				getOptionDisabled={(): boolean => option.length > 1}
+				getOptionSelected={(item, value): boolean => item.no === value.no}
 				renderInput={(params): ReactNode => (
 					<TextField {...params} label="Types" />
 				)}
