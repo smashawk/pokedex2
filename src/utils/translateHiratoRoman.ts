@@ -192,7 +192,7 @@ export const translateHiraToRoman = (targetStr: string): string => {
 
 	const type = "hepburn";
 	const options = {
-		bmp: true,
+		bmp: false,
 		longSound: "latin"
 	};
 

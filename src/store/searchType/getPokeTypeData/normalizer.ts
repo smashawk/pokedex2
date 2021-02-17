@@ -3,18 +3,17 @@ import pokeData from "@data/pokemon_data.json";
 import { formattedPokeTypeDataType } from "./reducers";
 
 /**
- * API取得データを整形する
- * @param {PokeTypeDataType} typeData タイプAPIで取得した配列
- * @return {formattedPokeTypeDataType} 整形済みのタイプ配列
+ * @param typeData gotten from PokeAPI
+ * @return normalized Type Pokemon Data
  */
 export const normalizePokeData = (
 	typeData: PokeTypeDataType
 ): formattedPokeTypeDataType => {
 	const typePokeArray = typeData.pokemon
-		// Noが810以上のポケモンはいないので、その場合は配列から削除する
+		/** Pokemon range is between 1.bulbasaur and 2.lunala */
 		.filter((data) => {
 			const pokeNo = +data.pokemon.url.split("/")[6];
-			return pokeNo < 810;
+			return pokeNo < 793;
 		})
 		.map((data) => {
 			const pokeNo = +data.pokemon.url.split("/")[6];

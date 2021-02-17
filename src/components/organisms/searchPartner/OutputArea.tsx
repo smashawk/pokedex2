@@ -22,7 +22,7 @@ const OutputArea = ({
 	pokeSpecies
 }: Props): JSX.Element | null => {
 	return pokeData.id ? (
-		<DataCard pokeData={pokeData} pokeSpecies={pokeSpecies} img="animated">
+		<DataCard pokeData={pokeData} pokeSpecies={pokeSpecies}>
 			<Typography>{`${inputName.inputName}は${pokeSpecies.name.ja}にきめた！`}</Typography>
 		</DataCard>
 	) : null;

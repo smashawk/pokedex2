@@ -14,5 +14,5 @@ export const decidePartnerNo = (inputName: string): number => {
 
 	// 計算（配列の合計値を全ポケモンの数で割った余りをNoとする）
 	const baseNo = charNumArray.reduce((acc, cur) => acc + cur);
-	return baseNo % 807 ? baseNo % 807 : 807;
+	return baseNo % 792 ? baseNo % 792 : 792;
 };

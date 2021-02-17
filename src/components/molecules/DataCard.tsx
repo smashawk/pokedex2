@@ -29,7 +29,6 @@ const useStyles = makeStyles(() =>
 type StateProps = {
 	pokeData: normalizedPokeDataType;
 	pokeSpecies: normalizedPokeSpeciesType;
-	img?: string;
 	children?: JSX.Element;
 };
 
@@ -38,7 +37,6 @@ type Props = StateProps;
 export const DataCard = ({
 	pokeData,
 	pokeSpecies,
-	img,
 	children
 }: Props): JSX.Element | null => {
 	const classes = useStyles();
@@ -78,7 +76,7 @@ export const DataCard = ({
 		<Container className={classes.container}>
 			<Paper className={classes.paper}>
 				{children}
-				<PokeImg no={pokeData.id} img={img} />
+				<PokeImg no={pokeData.id} />
 				<div className={classes.dataContainer}>
 					<DescriptionList data={dataArray} />
 					<StatsRadarChart data={statsArray} />

@@ -12,44 +12,38 @@ const useStyles = makeStyles(() =>
 			backgroundPosition: "center",
 			backgroundRepeat: "no-repeat"
 		},
-		pokeImg0: (no) => ({
-			// backgroundImage: `url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${no}.gif)`
+		pokeImgHome: (no) => ({
+			backgroundImage: `url(https://www.cpokemon.com/pokes/home/${no}.png)`
+		}),
+		pokeImgDotGif: (no) => ({
+			backgroundImage: `url(https://www.cpokemon.com/pokes/animated/ds/${no}.gif)`
+		}),
+		pokeImgAnimeGif: (no) => ({
 			backgroundImage: `url(https://www.cpokemon.com/pokes/animated/3ds/${no}.gif)`
-		}),
-		pokeImg1: (no) => ({
-			backgroundImage: `url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${no}.gif)`
-			// backgroundImage: `url(https://www.cpokemon.com/pokes/animated/3ds/${no}.gif)`
-		}),
-		pokeImg2: (no) => ({
-			backgroundImage: `url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/ultra-sun-ultra-moon/${no}.png)`
 		})
-		// pokeImg3: (no) => ({
-		// 	backgroundImage: `url(./images/${no}_0.png)`
-		// })
 	})
 );
 
 type OwnProps = {
 	no: number;
-	img?: string;
 };
 
 type Props = OwnProps;
 
-export const PokeImg = ({ no, img }: Props): JSX.Element => {
+export const PokeImg = ({ no }: Props): JSX.Element => {
 	const classes = useStyles(no);
 
-	return img === "animated" ? (
-		<Box className={classNames(classes.pokeImg, classes.pokeImg0)} />
-	) : (
+	return (
 		<>
 			{no < 650 && (
-				<Box className={classNames(classes.pokeImg, classes.pokeImg1)} />
+				<Box className={classNames(classes.pokeImg, classes.pokeImgDotGif)} />
 			)}
-			{no > 649 && no < 803 && (
-				<Box className={classNames(classes.pokeImg, classes.pokeImg2)} />
+			{no > 649 && no < 793 && (
+				<Box className={classNames(classes.pokeImg, classes.pokeImgAnimeGif)} />
 			)}
-			{/* {no < 803 && <Box className={`${classes.pokeImg} ${classes.pokeImg3}`} />}*/}
+			{no > 792 && (
+				<Box className={`${classes.pokeImg} ${classes.pokeImgHome}`} />
+			)}
 		</>
 	);
 };
