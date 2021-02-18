@@ -7,7 +7,7 @@ import { AppState } from "@store/reducer";
 import { dispatches } from "@store/dispatches";
 import { OptionType } from "@store/common/setSelectedOption/reducer";
 import { createSuggestArray } from "@utils/createSuggestArray";
-import { Container, Typography } from "@material-ui/core";
+import { Box, Typography } from "@material-ui/core";
 
 type StateProps = {
 	option: OptionType;
@@ -54,9 +54,11 @@ const WrappedInputArea: VFC<Props> = ({
 
 	/**
 	 * fire this function when you change inputValue
+	 * @param e event object don't use
+	 * @param selectedOption OptionType you select
 	 */
 	const searchName = useCallback(
-		(e: unknown, selectedOption: OptionType | null): void => {
+		(event: unknown, selectedOption: OptionType | null): void => {
 			/** stop the processing if inputValue is empty */
 			if (selectedOption === null) return;
 
@@ -69,14 +71,16 @@ const WrappedInputArea: VFC<Props> = ({
 	);
 
 	return (
-		<Container>
+		<Box>
 			<Typography variant="h2">1. 名前検索</Typography>
-			<SuggestTextField
-				suggestList={suggestArray}
-				option={option}
-				onChange={searchName}
-			/>
-		</Container>
+			<Box mt={10} mx="auto" display="inline-block">
+				<SuggestTextField
+					suggestList={suggestArray}
+					option={option}
+					onChange={searchName}
+				/>
+			</Box>
+		</Box>
 	);
 };
 

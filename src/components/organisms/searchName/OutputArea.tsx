@@ -4,6 +4,7 @@ import { AppState } from "@store/reducer";
 import { normalizedPokeDataType } from "@store/common/getPokeData/reducers";
 import { normalizedPokeSpeciesType } from "@store/common/getPokeSpecies/reducers";
 import { DataCard } from "@components/molecules/DataCard";
+import { Box } from "@material-ui/core";
 
 type StateProps = {
 	pokeData: normalizedPokeDataType;
@@ -13,7 +14,11 @@ type StateProps = {
 type Props = StateProps;
 
 const OutputAreaComp: VFC<Props> = ({ pokeData, pokeSpecies }) => {
-	return <DataCard pokeData={pokeData} pokeSpecies={pokeSpecies} />;
+	return (
+		<Box mt={10}>
+			<DataCard pokeData={pokeData} pokeSpecies={pokeSpecies} />
+		</Box>
+	);
 };
 
 /** container */

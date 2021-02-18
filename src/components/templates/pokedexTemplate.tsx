@@ -7,7 +7,8 @@ import {
 	ThemeProvider,
 	CssBaseline,
 	Container,
-	Typography
+	Typography,
+	Box
 } from "@material-ui/core";
 
 export const theme = createMuiTheme({
@@ -36,10 +37,6 @@ const useStyles = makeStyles(() =>
 		},
 		main: {
 			marginTop: theme.spacing(8)
-		},
-		pageRoot: {
-			marginTop: theme.spacing(6),
-			padding: 0
 		}
 	})
 );
@@ -67,9 +64,9 @@ export const PokedexTemplate: VFC<Props> = ({ children }) => {
 				<HeaderMenu />
 				<main className={classes.main}>
 					<Typography variant="h1">ポケモン図鑑</Typography>
-					<Container className={classes.pageRoot}>
+					<Box mt={6}>
 						<>{children}</>
-					</Container>
+					</Box>
 				</main>
 			</Container>
 		</ThemeProvider>

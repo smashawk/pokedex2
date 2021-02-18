@@ -1,19 +1,12 @@
 import { ReactNode } from "react";
 import { OptionType } from "@store/common/setSelectedOption/reducer";
-
-import { Container, TextField } from "@material-ui/core";
-import { createStyles, makeStyles } from "@material-ui/core/styles";
+import { createStyles, makeStyles, Box, TextField } from "@material-ui/core";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 
 const useStyles = makeStyles(() =>
 	createStyles({
-		container: {
-			margin: "auto",
-			padding: 40,
+		boxRoot: {
 			width: 320
-		},
-		root: {
-			width: 240
 		},
 		select: {
 			textAlign: "left"
@@ -40,9 +33,9 @@ export const SuggestTextField = ({
 	const classes = useStyles();
 
 	return (
-		<Container className={classes.container}>
+		<Box className={classes.boxRoot}>
 			<Autocomplete
-				classes={{ endAdornment: classes.endAdornment, root: classes.root }}
+				classes={{ endAdornment: classes.endAdornment }}
 				options={suggestList}
 				value={option.value ? option : null}
 				onChange={onChange}
@@ -58,6 +51,6 @@ export const SuggestTextField = ({
 				)}
 				blurOnSelect
 			/>
-		</Container>
+		</Box>
 	);
 };
