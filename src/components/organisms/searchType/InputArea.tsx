@@ -1,8 +1,7 @@
-import { ChangeEvent, useEffect, useMemo } from "react";
+import { ChangeEvent, useEffect, useMemo, VFC } from "react";
 import { Dispatch } from "redux";
 import { connect } from "react-redux";
 import { useHistory, useLocation } from "react-router-dom";
-
 import { Switcher } from "@components/atoms/Switcher";
 import { SuggestMultiTextField } from "@components/atoms/SuggestMultiTextField";
 import { AppState } from "@store/reducer";
@@ -12,14 +11,22 @@ import { getPokeTypeDataType } from "@store/searchType/getPokeTypeData/reducers"
 import { normalizedPokeDataType } from "@store/common/getPokeData/reducers";
 import typeData from "@data/type_data.json";
 
-import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
+import { Box } from "@material-ui/core";
+import { createStyles, makeStyles } from "@material-ui/core/styles";
+
+const useStyles = makeStyles(() =>
+	createStyles({
+		inputBox: {
+			display: "flex",
+			justifyContent: "center"
+		}
+	})
+);
 
 type StateProps = {
 	switchState: boolean;
-	optionArray: {
-		option: OptionType[];
-	};
+	optionArray: { option: OptionType[] };
 	pokeTypeData: getPokeTypeDataType;
 	pokeData: normalizedPokeDataType;
 };
@@ -35,7 +42,7 @@ type DispatchProps = {
 
 type Props = StateProps & DispatchProps;
 
-const InputArea = ({
+const WrappedInputArea: VFC<Props> = ({
 	switchState,
 	optionArray,
 	pokeTypeData,
@@ -43,8 +50,8 @@ const InputArea = ({
 	setSwitchState,
 	setSelectedOption,
 	fetchPokeTypeData
-}: Props): JSX.Element => {
-	// サジェスト用の配列を作る
+}) => {
+	/** create list for suggest */
 	const suggestArray = useMemo(
 		() =>
 			typeData.map((value) => {
@@ -57,7 +64,7 @@ const InputArea = ({
 		[]
 	);
 
-	// React Router Hooksの定義
+	/** define for React Router Hooks */
 	const H = useHistory();
 	const useQuery = (): URLSearchParams =>
 		new URLSearchParams(useLocation().search);
@@ -69,7 +76,7 @@ const InputArea = ({
 		const type2 = query.get("type2");
 		const pokemon = query.get("pokemon");
 
-		// 一度何か操作していた場合、URLにQuery Stringsを付け続ける
+		/** add Query Strings if store have searchType State */
 		if (
 			!switchType ||
 			(pokeTypeData.type1.type && !type1) ||
@@ -82,7 +89,7 @@ const InputArea = ({
 			return;
 		}
 
-		// URLにparamsがついている場合、検索結果を表示する
+		/** show search result if URL has query */
 		if (switchType) {
 			setSwitchState(switchType === "true");
 		}
@@ -96,14 +103,30 @@ const InputArea = ({
 		}
 	}, []);
 
+	/**
+	 * toggle AND Search and OR Search
+	 * @param event event object
+	 */
+	const changeSearchType = (event: ChangeEvent<HTMLInputElement>): void => {
+		setSwitchState(event.target.checked);
+
+		H.replace(
+			`/type?switch=${event.target.checked}&type1=${pokeTypeData.type1.type}&type2=${pokeTypeData.type2.type}&pokemon=${pokeData.id}`
+		);
+	};
+
+	/**
+	 * fire this function when you change inputValue
+	 * @param event event object don't use
+	 * @param selectedOptionArray array including OptionType you select
+	 */
 	const decidePokeType = (
-		e: unknown,
+		event: unknown,
 		selectedOptionArray: OptionType[]
 	): void => {
 		setSelectedOption(selectedOptionArray);
 		fetchPokeTypeData(selectedOptionArray, optionArray.option);
 
-		// paramsを付ける
 		H.replace(
 			`/type?switch=${switchState}&type1=${
 				selectedOptionArray.length ? selectedOptionArray[0].value : ""
@@ -113,33 +136,28 @@ const InputArea = ({
 		);
 	};
 
-	const changeSearchType = (event: ChangeEvent<HTMLInputElement>): void => {
-		setSwitchState(event.target.checked);
-
-		// paramsを付ける
-		H.replace(
-			`/type?switch=${event.target.checked}&type1=${pokeTypeData.type1.type}&type2=${pokeTypeData.type2.type}&pokemon=${pokeData.id}`
-		);
-	};
+	const classes = useStyles();
 
 	return (
-		<Container>
+		<Box>
 			<Typography variant="h2">2. タイプ検索</Typography>
-			<Switcher
-				checked={switchState}
-				label="AND/OR"
-				onChange={changeSearchType}
-			/>
-			<SuggestMultiTextField
-				suggestList={suggestArray}
-				option={optionArray.option}
-				onChange={decidePokeType}
-			/>
-		</Container>
+			<Box mt={9} className={classes.inputBox}>
+				<SuggestMultiTextField
+					suggestList={suggestArray}
+					option={optionArray.option}
+					onChange={decidePokeType}
+				/>
+				<Switcher
+					checked={switchState}
+					label="AND/OR"
+					onChange={changeSearchType}
+				/>
+			</Box>
+		</Box>
 	);
 };
 
-// container
+/** container */
 const mapStateToProps = (state: AppState): StateProps => ({
 	switchState: state.searchType.switchState.switchState,
 	optionArray: state.searchType.selectedOption,
@@ -169,7 +187,7 @@ const mapDispatchToProps = (dispatch: Dispatch): DispatchProps => {
 	};
 };
 
-export const InputAreaComp = connect(
+export const InputArea = connect(
 	mapStateToProps,
 	mapDispatchToProps
-)(InputArea);
+)(WrappedInputArea);

@@ -1,12 +1,13 @@
-import { Fragment } from "react";
+import { Fragment, VFC } from "react";
 import { createStyles, makeStyles } from "@material-ui/core/styles";
 import classNames from "classnames";
 
 const useStyles = makeStyles(() =>
 	createStyles({
 		dataList: {
-			width: 400,
 			display: "flex",
+			width: 400,
+			margin: "0 auto",
 			flexWrap: "wrap",
 			textAlign: "left",
 			alignContent: "flex-start"
@@ -37,7 +38,7 @@ type OwnProps = {
 
 type Props = OwnProps;
 
-export const DescriptionList = ({ data }: Props): JSX.Element => {
+export const DescriptionList: VFC<Props> = ({ data }) => {
 	const classes = useStyles();
 	return (
 		<dl className={classes.dataList}>

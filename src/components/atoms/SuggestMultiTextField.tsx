@@ -1,21 +1,19 @@
-import { ReactNode } from "react";
+import { ReactNode, VFC } from "react";
 import { OptionType } from "@store/common/setSelectedOption/reducer";
-import { createStyles, makeStyles } from "@material-ui/core/styles";
-
-import { Container, TextField } from "@material-ui/core";
-import Checkbox from "@material-ui/core/Checkbox";
+import {
+	createStyles,
+	makeStyles,
+	Box,
+	TextField,
+	Checkbox
+} from "@material-ui/core";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import CheckBoxOutlineBlankIcon from "@material-ui/icons/CheckBoxOutlineBlank";
 import CheckBoxIcon from "@material-ui/icons/CheckBox";
 
 const useStyles = makeStyles(() =>
 	createStyles({
-		container: {
-			margin: "auto",
-			padding: 40,
-			width: 480
-		},
-		root: {
+		boxRoot: {
 			width: 400
 		},
 		select: {
@@ -35,21 +33,21 @@ type OwnProps = {
 
 type Props = OwnProps;
 
-export const SuggestMultiTextField = ({
+export const SuggestMultiTextField: VFC<Props> = ({
 	suggestList,
 	option,
 	onChange
-}: Props): JSX.Element => {
+}) => {
 	const classes = useStyles();
 
 	const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;
 	const checkedIcon = <CheckBoxIcon fontSize="small" />;
 
 	return (
-		<Container className={classes.container}>
+		<Box mt={1} className={classes.boxRoot}>
 			<Autocomplete
 				multiple
-				classes={{ endAdornment: classes.endAdornment, root: classes.root }}
+				classes={{ endAdornment: classes.endAdornment }}
 				options={suggestList}
 				value={option[0]?.no !== 0 ? option : []}
 				onChange={onChange}
@@ -71,6 +69,6 @@ export const SuggestMultiTextField = ({
 					</>
 				)}
 			/>
-		</Container>
+		</Box>
 	);
 };
