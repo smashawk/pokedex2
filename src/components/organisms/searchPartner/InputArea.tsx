@@ -1,17 +1,13 @@
-import { useEffect } from "react";
+import { useEffect, VFC } from "react";
 import { connect } from "react-redux";
 import { Dispatch } from "redux";
-
-import { FixButton } from "@components/atoms/FixButton";
+import { useHistory, useLocation } from "react-router-dom";
+import { AppState } from "@store/reducer";
 import { dispatches } from "@store/dispatches";
 import { setInputNameState } from "@store/searchPartner/setInputName/reducer";
 import { decidePartnerNo } from "@utils/decidePartnerNo";
-
-import Container from "@material-ui/core/Container";
-import TextField from "@material-ui/core/TextField";
-import Typography from "@material-ui/core/Typography";
-import { useHistory, useLocation } from "react-router-dom";
-import { AppState } from "@store/reducer";
+import { FixButton } from "@components/atoms/FixButton";
+import { Box, Typography, TextField } from "@material-ui/core";
 
 type StateProps = {
 	inputName: setInputNameState;
@@ -25,28 +21,28 @@ type DispatchProps = {
 
 type Props = StateProps & DispatchProps;
 
-const InputArea = ({
+const InputArea: VFC<Props> = ({
 	inputName,
 	setInputName,
 	fetchPartnerPokeData,
 	fetchPartnerPokeSpecies
-}: Props): JSX.Element => {
-	// React Router Hooksの定義
+}) => {
+	/** define for React Router Hooks */
 	const H = useHistory();
 	const useQuery = (): URLSearchParams =>
 		new URLSearchParams(useLocation().search);
 	const query = useQuery();
 
-	// 一度何か操作していた場合、URLにQuery Stringsを付け続ける
 	useEffect(() => {
 		const name = query.get("name");
 
+		/** add Query Strings if store have searchPartner State */
 		if (setInputName && !name) {
 			H.replace(`/partner?name=${inputName.inputName}`);
 			return;
 		}
 
-		// URLにparamsがついている場合、検索結果を表示する
+		/** show search result if URL has query */
 		if (name) {
 			const partnerNo = decidePartnerNo(name);
 			setInputName(name);
@@ -55,44 +51,49 @@ const InputArea = ({
 		}
 	}, []);
 
-	// テキストフィールドのDOMを取得
+	/** get textField DOM */
 	let textRef: HTMLInputElement;
 	const refFnc = (element: HTMLInputElement): HTMLInputElement => {
 		textRef = element;
 		return textRef;
 	};
 
+	/**
+	 * fire this function when you click Fix Button
+	 */
 	const SearchPartner = (): void => {
 		const partnerNo = decidePartnerNo(textRef.value);
 		setInputName(textRef.value);
 		fetchPartnerPokeData(partnerNo);
 		fetchPartnerPokeSpecies(partnerNo);
 
-		// paramsを付ける
 		H.replace(`/partner?name=${textRef.value}`);
 	};
 
 	return (
-		<Container>
-			<Typography variant="h2">3. あなたの相棒ポケ○ン検索</Typography>
-			<TextField
-				id="inputName"
-				type="text"
-				variant="filled"
-				label="名前を入力しよう"
-				inputRef={refFnc}
-			/>
-			<FixButton
-				color="primary"
-				text="決定"
-				variant="contained"
-				onClick={SearchPartner}
-			/>
-		</Container>
+		<>
+			<Typography variant="h2">3. 相棒検索</Typography>
+			<Box mt={10}>
+				<TextField
+					size="small"
+					id="inputName"
+					type="text"
+					variant="filled"
+					label="名前を入力しよう"
+					inputRef={refFnc}
+				/>
+				<FixButton
+					color="primary"
+					text="決定"
+					variant="contained"
+					onClick={SearchPartner}
+				/>
+			</Box>
+		</>
 	);
 };
 
-// container
+/** container */
 const mapStateToProps = (state: AppState): StateProps => ({
 	inputName: state.searchPartner.inputName
 });

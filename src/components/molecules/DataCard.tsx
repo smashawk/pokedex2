@@ -1,24 +1,20 @@
+import { VFC } from "react";
+import { normalizedPokeSpeciesType } from "@store/common/getPokeSpecies/reducers";
+import { normalizedPokeDataType } from "@store/common/getPokeData/reducers";
 import { PokeImg } from "@components/atoms/PokeImg";
 import { DescriptionList } from "@components/atoms/DescriptionList";
 import { StatsRadarChart } from "@components/atoms/StatsRadarChart";
-import { normalizedPokeSpeciesType } from "@store/common/getPokeSpecies/reducers";
-import { normalizedPokeDataType } from "@store/common/getPokeData/reducers";
-
-import Container from "@material-ui/core/Container";
-import { Paper } from "@material-ui/core";
-import { createStyles, makeStyles } from "@material-ui/core/styles";
+import { Paper, createStyles, makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles(() =>
 	createStyles({
-		container: {
-			// display: "flex"
-		},
 		paper: {
-			backgroundImage: `url(${process.env.PUBLIC_URL}/images/bg_black.png)`,
-			backgroundRepeat: "repeat",
+			width: 800,
+			height: 520,
 			margin: "auto",
-			padding: "20px 100px",
-			width: 800
+			padding: "20px 40px",
+			backgroundImage: `url(${process.env.PUBLIC_URL}/images/bg_black.png)`,
+			backgroundRepeat: "repeat"
 		},
 		dataContainer: {
 			display: "flex"
@@ -34,11 +30,7 @@ type StateProps = {
 
 type Props = StateProps;
 
-export const DataCard = ({
-	pokeData,
-	pokeSpecies,
-	children
-}: Props): JSX.Element | null => {
+export const DataCard: VFC<Props> = ({ pokeData, pokeSpecies, children }) => {
 	const classes = useStyles();
 	const dataArray = [
 		{
@@ -72,16 +64,18 @@ export const DataCard = ({
 		(num) => pokeData.stats[num].base_stat
 	);
 
-	return pokeData.id ? (
-		<Container className={classes.container}>
-			<Paper className={classes.paper}>
-				{children}
-				<PokeImg no={pokeData.id} />
-				<div className={classes.dataContainer}>
-					<DescriptionList data={dataArray} />
-					<StatsRadarChart data={statsArray} />
-				</div>
-			</Paper>
-		</Container>
-	) : null;
+	return (
+		<Paper className={classes.paper}>
+			{pokeData.name && (
+				<>
+					{children}
+					<PokeImg no={pokeData.id} />
+					<div className={classes.dataContainer}>
+						<DescriptionList data={dataArray} />
+						<StatsRadarChart data={statsArray} />
+					</div>
+				</>
+			)}
+		</Paper>
+	);
 };
