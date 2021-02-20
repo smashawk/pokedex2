@@ -82,7 +82,6 @@ const WrappedInputArea: VFC<Props> = ({
 
 		/** add Query Strings if store have searchType State */
 		if (
-			!switchType ||
 			(pokeTypeData.type1.type && !type1) ||
 			(pokeTypeData.type2.type && !type2) ||
 			(pokeData.id && !pokemon)
@@ -141,7 +140,7 @@ const WrappedInputArea: VFC<Props> = ({
 				selectedOptionArray.length ? selectedOptionArray[0].value : ""
 			}&type2=${
 				selectedOptionArray.length === 2 ? selectedOptionArray[1].value : ""
-			}&pokemon=${pokeData.id ? pokeData.id : ""}`
+			}&pokemon=${pokeData.id || ""}`
 		);
 	};
 

@@ -37,7 +37,7 @@ const InputArea: VFC<Props> = ({
 		const name = query.get("name");
 
 		/** add Query Strings if store have searchPartner State */
-		if (setInputName && !name) {
+		if (inputName.inputName && !name) {
 			H.replace(`/partner?name=${inputName.inputName}`);
 			return;
 		}

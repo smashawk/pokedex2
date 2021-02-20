@@ -1,7 +1,7 @@
 /**
- * 相棒ポケモンのNoを決定する
- * @param {string} inputName 入力した文字列
- * @return {number} 相棒ポケモンのNo
+ * decide partner pokemon's No
+ * @param inputName input value
+ * @return partner pokemon's No
  */
 export const decidePartnerNo = (inputName: string): number => {
 	// 入力された名前を一文字ずつ配列に入れる
@@ -14,5 +14,5 @@ export const decidePartnerNo = (inputName: string): number => {
 
 	// 計算（配列の合計値を全ポケモンの数で割った余りをNoとする）
 	const baseNo = charNumArray.reduce((acc, cur) => acc + cur);
-	return baseNo % 792 ? baseNo % 792 : 792;
+	return baseNo % 792 || 792;
 };
