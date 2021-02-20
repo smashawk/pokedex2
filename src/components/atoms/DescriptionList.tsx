@@ -16,7 +16,7 @@ const useStyles = makeStyles(() =>
 			width: 100
 		},
 		dataDescription: {
-			width: 250,
+			width: "calc(100% - 100px)",
 			margin: 0
 		},
 		typeImg: {

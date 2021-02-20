@@ -10,6 +10,7 @@ const useStyles = makeStyles(() =>
 			margin: 0,
 			padding: 8,
 			cursor: "pointer",
+			filter: "drop-shadow(2px 4px 6px black)",
 			"&:hover": {
 				padding: 0
 			},

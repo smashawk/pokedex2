@@ -9,15 +9,25 @@ import { getPokeTypeDataType } from "@store/searchType/getPokeTypeData/reducers"
 import { createAndPokeArray } from "@utils/createAndPokeArray";
 import { createOrPokeArray } from "@utils/createOrPokeArray";
 import { PokeIconList } from "@components/atoms/PokeIconList";
-import { createStyles, makeStyles, Box } from "@material-ui/core";
+import { createStyles, makeStyles, Paper } from "@material-ui/core";
+import { theme } from "@components/templates/pokedexTemplate";
 
 const useStyles = makeStyles(() =>
 	createStyles({
-		pokeList: {
-			listStyle: "none",
-			display: "flex",
-			flexWrap: "wrap",
-			justifyContent: "center"
+		listRoot: {
+			width: "100%",
+			height: "100%",
+			backgroundImage: `url(${process.env.PUBLIC_URL}/images/bg_black.png)`,
+			backgroundRepeat: "repeat",
+			overflowY: "scroll",
+			willChange: "transform",
+			"&::-webkit-scrollbar": {
+				width: 10
+			},
+			"&::-webkit-scrollbar-thumb": {
+				backgroundColor: theme.palette.primary.main,
+				borderRadius: 10
+			}
 		}
 	})
 );
@@ -88,20 +98,22 @@ const WrappedIconListArea: VFC<Props> = ({
 
 	const classes = useStyles();
 
-	return orPokeList.length !== 0 ? (
-		<Box className={classes.pokeList}>
-			{(switchState ? orPokeList : andPokeList).map((item) => {
-				return (
-					<PokeIconList
-						key={item.no}
-						item={item}
-						pokeId={pokeData.id}
-						onClick={showPokeData}
-					/>
-				);
-			})}
-		</Box>
-	) : null;
+	return (
+		<Paper className={classes.listRoot}>
+			{orPokeList.length !== 0
+				? (switchState ? orPokeList : andPokeList).map((item) => {
+						return (
+							<PokeIconList
+								key={item.no}
+								item={item}
+								pokeId={pokeData.id}
+								onClick={showPokeData}
+							/>
+						);
+				  })
+				: null}
+		</Paper>
+	);
 };
 
 /** container */

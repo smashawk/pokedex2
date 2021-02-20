@@ -10,7 +10,8 @@ const useStyles = makeStyles(() =>
 			margin: "auto",
 			backgroundSize: "contain",
 			backgroundPosition: "center",
-			backgroundRepeat: "no-repeat"
+			backgroundRepeat: "no-repeat",
+			filter: "drop-shadow(2px 4px 6px black)"
 		},
 		pokeImgHome: (no) => ({
 			backgroundImage: `url(https://www.cpokemon.com/pokes/home/${no}.png)`
