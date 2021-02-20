@@ -31,10 +31,14 @@ type Props = StateProps;
 export const SimpleDataCard: VFC<Props> = ({ pokeData, dataArray }) => {
 	const classes = useStyles();
 
-	return pokeData.id ? (
+	return (
 		<Paper className={classes.paper}>
-			<PokeImg no={pokeData.id} />
-			<DescriptionList data={dataArray} />
+			{pokeData.name && (
+				<>
+					<PokeImg no={pokeData.id} />
+					<DescriptionList data={dataArray} />
+				</>
+			)}
 		</Paper>
-	) : null;
+	);
 };

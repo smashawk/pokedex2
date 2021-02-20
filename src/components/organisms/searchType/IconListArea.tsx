@@ -63,8 +63,8 @@ const WrappedIconListArea: VFC<Props> = ({
 
 		/** add Query Strings if store have searchType State */
 		if (pokemon) {
-			fetchPokeData(Number(pokemon));
-			fetchPokeSpecies(Number(pokemon));
+			fetchPokeData(+pokemon);
+			fetchPokeSpecies(+pokemon);
 		}
 	}, []);
 
@@ -76,13 +76,13 @@ const WrappedIconListArea: VFC<Props> = ({
 		event: ReactMouseEvent<HTMLInputElement, MouseEvent>
 	): void => {
 		const { value } = event.target as HTMLInputElement;
-		fetchPokeData(Number(value));
-		fetchPokeSpecies(Number(value));
+		fetchPokeData(+value);
+		fetchPokeSpecies(+value);
 
 		H.replace(
 			`/type?switch=${switchState}&type1=${pokeTypeData.type1.type}&type2=${
 				pokeTypeData.type2.type
-			}&pokemon=${Number(value)}`
+			}&pokemon=${+value}`
 		);
 	};
 
@@ -100,18 +100,17 @@ const WrappedIconListArea: VFC<Props> = ({
 
 	return (
 		<Paper className={classes.listRoot}>
-			{orPokeList.length !== 0
-				? (switchState ? orPokeList : andPokeList).map((item) => {
-						return (
-							<PokeIconList
-								key={item.no}
-								item={item}
-								pokeId={pokeData.id}
-								onClick={showPokeData}
-							/>
-						);
-				  })
-				: null}
+			{orPokeList.length !== 0 &&
+				(switchState ? orPokeList : andPokeList).map((item) => {
+					return (
+						<PokeIconList
+							key={item.no}
+							item={item}
+							pokeId={pokeData.id}
+							onClick={showPokeData}
+						/>
+					);
+				})}
 		</Paper>
 	);
 };

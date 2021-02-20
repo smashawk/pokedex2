@@ -22,6 +22,10 @@ export const searchNameGetPokeDataDispatcher = (
 export const searchTypeGetPokeDataDispatcher = (
 	dispatch: Dispatch<actions.searchTypeActionTypes>
 ) => async (no: number): Promise<void> => {
+	if (!no) {
+		dispatch(actions.searchTypeDataReset());
+		return;
+	}
 	dispatch(actions.searchTypeFetchStarted());
 	await getPokeData(no)
 		.then((res) => {

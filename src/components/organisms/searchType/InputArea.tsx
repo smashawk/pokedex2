@@ -38,6 +38,8 @@ type DispatchProps = {
 		selectedOptionArray: OptionType[],
 		optionArray: OptionType[]
 	) => void;
+	fetchPokeData: (no: number) => void;
+	fetchPokeSpecies: (no: number) => void;
 };
 
 type Props = StateProps & DispatchProps;
@@ -49,7 +51,9 @@ const WrappedInputArea: VFC<Props> = ({
 	pokeData,
 	setSwitchState,
 	setSelectedOption,
-	fetchPokeTypeData
+	fetchPokeTypeData,
+	fetchPokeData,
+	fetchPokeSpecies
 }) => {
 	/** create list for suggest */
 	const suggestArray = useMemo(
@@ -127,6 +131,11 @@ const WrappedInputArea: VFC<Props> = ({
 		setSelectedOption(selectedOptionArray);
 		fetchPokeTypeData(selectedOptionArray, optionArray.option);
 
+		if (!selectedOptionArray.length) {
+			fetchPokeData(0);
+			fetchPokeSpecies(0);
+		}
+
 		H.replace(
 			`/type?switch=${switchState}&type1=${
 				selectedOptionArray.length ? selectedOptionArray[0].value : ""
@@ -183,6 +192,12 @@ const mapDispatchToProps = (dispatch: Dispatch): DispatchProps => {
 				selectedOptionArray,
 				optionArray
 			);
+		},
+		fetchPokeData: async (no: number): Promise<void> => {
+			await searchType.getPokeDataDispatcher(dispatch)(no);
+		},
+		fetchPokeSpecies: async (no: number): Promise<void> => {
+			await searchType.getPokeSpeciesDispatcher(dispatch)(no);
 		}
 	};
 };
