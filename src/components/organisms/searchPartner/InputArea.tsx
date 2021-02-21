@@ -15,7 +15,7 @@ type StateProps = {
 
 type DispatchProps = {
 	setInputName: (inputName: string) => void;
-	fetchPartnerPokeData: (partnerNo: number) => void;
+	fetchPokeData: (partnerNo: number) => void;
 	fetchPartnerPokeSpecies: (partnerNo: number) => void;
 };
 
@@ -24,7 +24,7 @@ type Props = StateProps & DispatchProps;
 const InputArea: VFC<Props> = ({
 	inputName,
 	setInputName,
-	fetchPartnerPokeData,
+	fetchPokeData,
 	fetchPartnerPokeSpecies
 }) => {
 	/** define for React Router Hooks */
@@ -46,7 +46,7 @@ const InputArea: VFC<Props> = ({
 		if (name) {
 			const partnerNo = decidePartnerNo(name);
 			setInputName(name);
-			fetchPartnerPokeData(partnerNo);
+			fetchPokeData(partnerNo);
 			fetchPartnerPokeSpecies(partnerNo);
 		}
 	}, []);
@@ -64,7 +64,7 @@ const InputArea: VFC<Props> = ({
 	const SearchPartner = (): void => {
 		const partnerNo = decidePartnerNo(textRef.value);
 		setInputName(textRef.value);
-		fetchPartnerPokeData(partnerNo);
+		fetchPokeData(partnerNo);
 		fetchPartnerPokeSpecies(partnerNo);
 
 		H.replace(`/partner?name=${textRef.value}`);
@@ -105,10 +105,8 @@ const mapDispatchToProps = (dispatch: Dispatch): DispatchProps => {
 		setInputName: (inputName: string): void => {
 			searchPartner.setInputNameDispatcher(dispatch)(inputName);
 		},
-		fetchPartnerPokeData: async (partnerNo: number): Promise<void> => {
-			await searchPartner.searchPartnerGetPokeDataDispatcher(dispatch)(
-				partnerNo
-			);
+		fetchPokeData: (partnerNo: number): void => {
+			searchPartner.searchPartnerGetPokeDataDispatcher(dispatch)(partnerNo);
 		},
 		fetchPartnerPokeSpecies: async (partnerNo: number): Promise<void> => {
 			await searchPartner.searchPartnerGetPokeSpeciesDispatcher(dispatch)(

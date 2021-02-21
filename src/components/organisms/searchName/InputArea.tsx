@@ -96,8 +96,8 @@ const mapDispatchToProps = (dispatch: Dispatch): DispatchProps => {
 		setSelectedOption: (option: OptionType): void => {
 			searchName.setSelectedOptionDispatcher(dispatch)(option);
 		},
-		fetchPokeData: async (no: number): Promise<void> => {
-			await searchName.getPokeDataDispatcher(dispatch)(no);
+		fetchPokeData: (no: number): void => {
+			searchName.getPokeDataDispatcher(dispatch)(no);
 		},
 		fetchPokeSpecies: async (no: number): Promise<void> => {
 			await searchName.getPokeSpeciesDispatcher(dispatch)(no);

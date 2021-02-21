@@ -1,9 +1,9 @@
 import { normalizedPokeDataType } from "./reducers";
 import * as types from "./types";
 
-// searchName
+/** searchName */
 export const searchNameFetchStarted = (no: number) =>
-	({ type: types.SEARCH_NAME_STARTED, payload: no } as const);
+	({ type: types.SEARCH_NAME_STARTED, payload: { id: no } } as const);
 export const searchNameFetchSuccess = (res: normalizedPokeDataType) =>
 	({ type: types.SEARCH_NAME_SUCCESS, payload: res } as const);
 export const searchNameFetchFailed = (err: Record<string, unknown>) =>
@@ -14,9 +14,9 @@ export type searchNameActionTypes =
 	| ReturnType<typeof searchNameFetchSuccess>
 	| ReturnType<typeof searchNameFetchFailed>;
 
-// searchType
-export const searchTypeFetchStarted = () =>
-	({ type: types.SEARCH_TYPE_STARTED } as const);
+/** searchType */
+export const searchTypeFetchStarted = (no: number) =>
+	({ type: types.SEARCH_TYPE_STARTED, payload: { id: no } } as const);
 export const searchTypeFetchSuccess = (res: normalizedPokeDataType) =>
 	({ type: types.SEARCH_TYPE_SUCCESS, payload: res } as const);
 export const searchTypeFetchFailed = (err: Record<string, unknown>) =>
@@ -30,9 +30,9 @@ export type searchTypeActionTypes =
 	| ReturnType<typeof searchTypeFetchFailed>
 	| ReturnType<typeof searchTypeDataReset>;
 
-// searchPartner
-export const searchPartnerFetchStarted = () =>
-	({ type: types.SEARCH_PARTNER_STARTED } as const);
+/** searchPartner */
+export const searchPartnerFetchStarted = (no: number) =>
+	({ type: types.SEARCH_PARTNER_STARTED, payload: { id: no } } as const);
 export const searchPartnerFetchSuccess = (res: normalizedPokeDataType) =>
 	({ type: types.SEARCH_PARTNER_SUCCESS, payload: res } as const);
 export const searchPartnerFetchFailed = (err: Record<string, unknown>) =>

@@ -126,8 +126,8 @@ const mapDispatchToProps = (dispatch: Dispatch): DispatchProps => {
 	const { searchType } = dispatches;
 
 	return {
-		fetchPokeData: async (no: number): Promise<void> => {
-			await searchType.getPokeDataDispatcher(dispatch)(no);
+		fetchPokeData: (no: number): void => {
+			searchType.getPokeDataDispatcher(dispatch)(no);
 		},
 		fetchPokeSpecies: async (no: number): Promise<void> => {
 			await searchType.getPokeSpeciesDispatcher(dispatch)(no);
