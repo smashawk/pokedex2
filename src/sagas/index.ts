@@ -1,6 +1,6 @@
 import { fork, all } from "redux-saga/effects";
-import { helloSaga } from "@sagas/getPokeData";
+import { watchGetPokeData } from "@sagas/getPokeDataSaga";
 
-export const rootSaga = function* () {
-	yield all([fork(helloSaga)]);
-};
+export function* rootSaga() {
+	yield all([fork(watchGetPokeData)]);
+}

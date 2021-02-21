@@ -6,16 +6,8 @@ import * as actions from "./actions";
 /** searchName */
 export const searchNameGetPokeDataDispatcher = (
 	dispatch: Dispatch<actions.searchNameActionTypes>
-) => async (no: number): Promise<void> => {
-	dispatch(actions.searchNameFetchStarted());
-	await getPokeData(no)
-		.then((res) => {
-			const normalizedPokeData = normalizePokeData(res.data);
-			dispatch(actions.searchNameFetchSuccess(normalizedPokeData));
-		})
-		.catch((e) => {
-			dispatch(actions.searchNameFetchFailed({ error: e.response }));
-		});
+) => (no: number): void => {
+	dispatch(actions.searchNameFetchStarted(no));
 };
 
 /** searchType */

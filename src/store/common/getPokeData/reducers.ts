@@ -32,7 +32,7 @@ export const searchNameGetPokeDataReducer = (
 ): normalizedPokeDataType => {
 	switch (action.type) {
 		case types.SEARCH_NAME_STARTED:
-			return { ...state };
+			return { ...state, id: action.payload };
 		case types.SEARCH_NAME_SUCCESS:
 			return { ...state, ...action.payload };
 		case types.SEARCH_NAME_FAILED:

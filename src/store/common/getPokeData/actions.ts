@@ -2,8 +2,8 @@ import { normalizedPokeDataType } from "./reducers";
 import * as types from "./types";
 
 // searchName
-export const searchNameFetchStarted = () =>
-	({ type: types.SEARCH_NAME_STARTED } as const);
+export const searchNameFetchStarted = (no: number) =>
+	({ type: types.SEARCH_NAME_STARTED, payload: no } as const);
 export const searchNameFetchSuccess = (res: normalizedPokeDataType) =>
 	({ type: types.SEARCH_NAME_SUCCESS, payload: res } as const);
 export const searchNameFetchFailed = (err: Record<string, unknown>) =>
