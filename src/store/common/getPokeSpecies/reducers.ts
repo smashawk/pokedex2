@@ -15,14 +15,14 @@ const initialState: normalizedPokeSpeciesType = {
 	genera: { ja: "", en: "" }
 };
 
-// searchName
+/** searchName */
 export const searchNameGetPokeSpeciesReducer = (
 	state = initialState,
 	action: actions.searchNameActionTypes
 ): normalizedPokeSpeciesType => {
 	switch (action.type) {
 		case types.SEARCH_NAME_STARTED:
-			return { ...state };
+			return { ...state, ...action.payload };
 		case types.SEARCH_NAME_SUCCESS:
 			return { ...state, ...action.payload };
 		case types.SEARCH_NAME_FAILED:
@@ -32,14 +32,14 @@ export const searchNameGetPokeSpeciesReducer = (
 	}
 };
 
-// searchType
+/** searchType */
 export const searchTypeGetPokeSpeciesReducer = (
 	state = initialState,
 	action: actions.searchTypeActionTypes
 ): normalizedPokeSpeciesType => {
 	switch (action.type) {
 		case types.SEARCH_TYPE_STARTED:
-			return { ...state };
+			return { ...state, ...action.payload };
 		case types.SEARCH_TYPE_SUCCESS:
 			return { ...state, ...action.payload };
 		case types.SEARCH_TYPE_FAILED:
@@ -49,14 +49,14 @@ export const searchTypeGetPokeSpeciesReducer = (
 	}
 };
 
-// searchPartner
+/** searchPartner */
 export const searchPartnerGetPokeSpeciesReducer = (
 	state = initialState,
 	action: actions.searchPartnerActionTypes
 ): normalizedPokeSpeciesType => {
 	switch (action.type) {
 		case types.SEARCH_PARTNER_STARTED:
-			return { ...state };
+			return { ...state, ...action.payload };
 		case types.SEARCH_PARTNER_SUCCESS:
 			return { ...state, ...action.payload };
 		case types.SEARCH_PARTNER_FAILED:

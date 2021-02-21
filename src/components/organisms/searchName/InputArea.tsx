@@ -99,8 +99,8 @@ const mapDispatchToProps = (dispatch: Dispatch): DispatchProps => {
 		fetchPokeData: (no: number): void => {
 			searchName.getPokeDataDispatcher(dispatch)(no);
 		},
-		fetchPokeSpecies: async (no: number): Promise<void> => {
-			await searchName.getPokeSpeciesDispatcher(dispatch)(no);
+		fetchPokeSpecies: (no: number): void => {
+			searchName.getPokeSpeciesDispatcher(dispatch)(no);
 		}
 	};
 };
