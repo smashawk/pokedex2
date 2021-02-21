@@ -28,13 +28,13 @@ export const searchTypeGetPokeTypeDataReducer = (
 ): getPokeTypeDataType => {
 	switch (action.type) {
 		case types.POKE_TYPE1_STARTED:
-			return { ...state };
+			return { ...state, type1: { type: action.payload, pokemon: [] } };
 		case types.POKE_TYPE1_SUCCESS:
 			return { ...state, type1: { ...action.payload } };
 		case types.POKE_TYPE1_FAILED:
 			return { ...state };
 		case types.POKE_TYPE2_STARTED:
-			return { ...state };
+			return { ...state, type2: { type: action.payload, pokemon: [] } };
 		case types.POKE_TYPE2_SUCCESS:
 			return { ...state, type2: { ...action.payload } };
 		case types.POKE_TYPE2_FAILED:

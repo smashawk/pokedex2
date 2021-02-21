@@ -1,15 +1,10 @@
 import { Dispatch } from "react";
-import { getPokeTypeData } from "@api/requests/getPokeTypeData";
 import { OptionType } from "@store/common/setSelectedOption/reducer";
-import { normalizePokeData } from "./normalizer";
 import * as actions from "./actions";
 
 export const searchTypeGetPokeTypeDataDispatcher = (
 	dispatch: Dispatch<actions.TypeActionTypes>
-) => async (
-	selectedOptionArray: OptionType[],
-	optionArray: OptionType[]
-): Promise<void> => {
+) => (selectedOptionArray: OptionType[], optionArray: OptionType[]): void => {
 	// 2タイプ -> 0タイプの場合にtype1、2をリセットする
 	if (selectedOptionArray.length === 0 && optionArray.length === 2) {
 		dispatch(actions.resetType1());
@@ -28,15 +23,7 @@ export const searchTypeGetPokeTypeDataDispatcher = (
 		selectedOptionArray.length === 1 ||
 		(selectedOptionArray.length === 2 && optionArray.length === 1)
 	) {
-		dispatch(actions.type1FetchStarted());
-		await getPokeTypeData(selectedOptionArray[0].value as string)
-			.then((res) => {
-				const formattedPokeData = normalizePokeData(res.data);
-				dispatch(actions.type1FetchSuccess(formattedPokeData));
-			})
-			.catch((e) => {
-				dispatch(actions.type1FetchFailed({ error: e.response }));
-			});
+		dispatch(actions.type1FetchStarted(selectedOptionArray[0].value as string));
 	}
 
 	// 2タイプ -> 1タイプの場合にtype1をリセットする
@@ -45,20 +32,14 @@ export const searchTypeGetPokeTypeDataDispatcher = (
 		return;
 	}
 
-	// 1タイプ -> 2タイプにtype1をfetchする
+	// 1タイプ -> 2タイプにtype2をfetchする
 	if (selectedOptionArray.length === 2 || selectedOptionArray.length === 3) {
-		dispatch(actions.type2FetchStarted());
-		await getPokeTypeData(
-			selectedOptionArray.length === 2
-				? (selectedOptionArray[1].value as string)
-				: (selectedOptionArray[2].value as string)
-		)
-			.then((res) => {
-				const formattedPokeData = normalizePokeData(res.data);
-				dispatch(actions.type2FetchSuccess(formattedPokeData));
-			})
-			.catch((e) => {
-				dispatch(actions.type2FetchFailed({ error: e.response }));
-			});
+		dispatch(
+			actions.type2FetchStarted(
+				selectedOptionArray.length === 2
+					? (selectedOptionArray[1].value as string)
+					: (selectedOptionArray[2].value as string)
+			)
+		);
 	}
 };
