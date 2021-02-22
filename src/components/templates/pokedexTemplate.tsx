@@ -1,7 +1,6 @@
 import { ReactNode, VFC } from "react";
 import { HeaderMenu } from "@components/organisms/common/HeaderMenu";
 import {
-	createMuiTheme,
 	createStyles,
 	makeStyles,
 	ThemeProvider,
@@ -10,24 +9,7 @@ import {
 	Typography,
 	Box
 } from "@material-ui/core";
-
-export const theme = createMuiTheme({
-	spacing: 4,
-	typography: {
-		htmlFontSize: 10,
-		h1: {
-			fontSize: 32,
-			fontWeight: 700
-		},
-		h2: {
-			fontSize: 24,
-			fontWeight: 700
-		},
-		body1: {
-			fontSize: 20
-		}
-	}
-});
+import { theme } from "@styles/theme";
 
 const useStyles = makeStyles(() =>
 	createStyles({

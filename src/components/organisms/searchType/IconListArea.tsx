@@ -10,7 +10,7 @@ import { createAndPokeArray } from "@utils/createAndPokeArray";
 import { createOrPokeArray } from "@utils/createOrPokeArray";
 import { PokeIconList } from "@components/atoms/PokeIconList";
 import { createStyles, makeStyles, Paper } from "@material-ui/core";
-import { theme } from "@components/templates/pokedexTemplate";
+import { theme } from "@styles/theme";
 
 const useStyles = makeStyles(() =>
 	createStyles({

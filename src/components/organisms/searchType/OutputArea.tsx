@@ -3,10 +3,10 @@ import { connect } from "react-redux";
 import { AppState } from "@store/reducer";
 import { normalizedPokeDataType } from "@store/common/getPokeData/reducers";
 import { normalizedPokeSpeciesType } from "@store/common/getPokeSpecies/reducers";
-import { theme } from "@components/templates/pokedexTemplate";
 import { IconListArea } from "@components/organisms/searchType/IconListArea";
 import { SimpleDataCard } from "@components/molecules/SimpleDataCard";
 import { createStyles, makeStyles, Grid } from "@material-ui/core";
+import { theme } from "@styles/theme";
 
 const useStyles = makeStyles(() =>
 	createStyles({
