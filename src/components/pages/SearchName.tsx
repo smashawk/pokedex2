@@ -7,7 +7,7 @@ import { EnhancedOutputArea } from "@containers/organisms/searchName/OutputArea"
  * Search Name's root component
  * @constructor
  */
-export const SearchNameComp: VFC = () => {
+export const SearchName: VFC = () => {
 	return (
 		<PokedexTemplate>
 			<>

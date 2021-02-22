@@ -1,6 +1,4 @@
 import { VFC } from "react";
-import { connect } from "react-redux";
-import { AppState } from "@store/reducer";
 import { setInputNameState } from "@store/searchPartner/setInputName/reducer";
 import { normalizedPokeDataType } from "@store/common/getPokeData/reducers";
 import { normalizedPokeSpeciesType } from "@store/common/getPokeSpecies/reducers";
@@ -24,7 +22,11 @@ type StateProps = {
 
 type Props = StateProps;
 
-const OutputArea: VFC<Props> = ({ inputName, pokeData, pokeSpecies }) => {
+export const OutputArea: VFC<Props> = ({
+	inputName,
+	pokeData,
+	pokeSpecies
+}) => {
 	const classes = useStyles();
 	return (
 		<Box mt={10}>
@@ -38,12 +40,3 @@ const OutputArea: VFC<Props> = ({ inputName, pokeData, pokeSpecies }) => {
 		</Box>
 	);
 };
-
-/** container */
-const mapStateToProps = (state: AppState): StateProps => ({
-	inputName: state.searchPartner.inputName,
-	pokeData: state.searchPartner.pokeData,
-	pokeSpecies: state.searchPartner.pokeSpecies
-});
-
-export const OutputAreaComp = connect(mapStateToProps)(OutputArea);

@@ -7,7 +7,7 @@ import { OutputArea } from "@components/organisms/searchType/OutputArea";
  * Search Type's root component
  * @constructor
  */
-export const SearchTypeComp: VFC = () => {
+export const SearchType: VFC = () => {
 	return (
 		<PokedexTemplate>
 			<>
