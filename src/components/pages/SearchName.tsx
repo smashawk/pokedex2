@@ -1,7 +1,7 @@
 import { VFC } from "react";
 import { PokedexTemplate } from "@components/templates/pokedexTemplate";
-import { InputArea } from "@components/organisms/searchName/InputArea";
-import { OutputArea } from "@components/organisms/searchName/OutputArea";
+import { EnhancedInputArea } from "@containers/organisms/searchName/InputArea";
+import { EnhancedOutputArea } from "@containers/organisms/searchName/OutputArea";
 
 /**
  * Search Name's root component
@@ -11,8 +11,8 @@ export const SearchNameComp: VFC = () => {
 	return (
 		<PokedexTemplate>
 			<>
-				<InputArea />
-				<OutputArea />
+				<EnhancedInputArea />
+				<EnhancedOutputArea />
 			</>
 		</PokedexTemplate>
 	);

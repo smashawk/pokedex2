@@ -7,6 +7,7 @@ module.exports = (config) => {
 			...config.alias,
 			"@api": path.resolve(__dirname, "./src/api"),
 			"@components": path.resolve(__dirname, "./src/components"),
+			"@containers": path.resolve(__dirname, "./src/containers"),
 			"@data": path.resolve(__dirname, "./src/data"),
 			"@sagas": path.resolve(__dirname, "./src/sagas"),
 			"@store": path.resolve(__dirname, "./src/store"),
