@@ -6,9 +6,7 @@ export default {
 	component: InputTextField
 } as Meta;
 
-const Template: Story<Props> = (args): JSX.Element => (
-	<InputTextField {...args} />
-);
+const Template: Story<Props> = (args) => <InputTextField {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
