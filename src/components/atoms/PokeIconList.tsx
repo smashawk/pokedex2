@@ -1,4 +1,4 @@
-import { MouseEvent } from "react";
+import { MouseEvent, VFC } from "react";
 import { createStyles, makeStyles } from "@material-ui/core/styles";
 import classNames from "classnames";
 
@@ -34,7 +34,7 @@ type OwnProps = {
 
 type Props = OwnProps;
 
-export const PokeIconList = ({ item, pokeId, onClick }: Props): JSX.Element => {
+export const PokeIconList: VFC<Props> = ({ item, pokeId, onClick }) => {
 	const classes = useStyles();
 	const id = String(item.no);
 	return (

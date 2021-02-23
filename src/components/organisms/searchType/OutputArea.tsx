@@ -1,9 +1,7 @@
 import { VFC } from "react";
-import { connect } from "react-redux";
-import { AppState } from "@store/reducer";
 import { normalizedPokeDataType } from "@store/common/getPokeData/reducers";
-import { normalizedPokeSpeciesType } from "@store/common/getPokeSpecies/reducers";
-import { IconListArea } from "@components/organisms/searchType/IconListArea";
+import { descType } from "@utils/createDescArray";
+import { EnhancedIconListArea } from "@containers/organisms/searchType/IconListArea";
 import { SimpleDataCard } from "@components/molecules/SimpleDataCard";
 import { createStyles, makeStyles, Grid } from "@material-ui/core";
 import { theme } from "@styles/theme";
@@ -24,59 +22,22 @@ const useStyles = makeStyles(() =>
 	})
 );
 
-type StateProps = {
+type Props = {
 	pokeData: normalizedPokeDataType;
-	pokeSpecies: normalizedPokeSpeciesType;
+	DescArray: descType[];
 };
 
-type Props = StateProps;
-
-const WrappedOutputArea: VFC<Props> = ({ pokeData, pokeSpecies }) => {
-	const dataArray = [
-		{
-			term: "No",
-			description: pokeData.id
-		},
-		{
-			term: "Name",
-			description: pokeSpecies.name.ja
-		},
-		{
-			term: "Species",
-			description: pokeSpecies.genera.ja
-		},
-		{
-			term: "Type1",
-			description: pokeData.types[0].en
-		},
-		{
-			term: "Type2",
-			description: pokeData.types.length === 2 ? pokeData.types[1].en : ""
-		},
-		{
-			term: "Flavor",
-			description: pokeSpecies.flavor_text_entries.ja
-		}
-	];
-
+export const OutputArea: VFC<Props> = ({ pokeData, DescArray }) => {
 	const classes = useStyles();
 
 	return (
 		<Grid container classes={{ root: classes.gridRoot }}>
 			<Grid item xs classes={{ item: classes.iconList }}>
-				<IconListArea />
+				<EnhancedIconListArea />
 			</Grid>
 			<Grid item xs classes={{ item: classes.dataCard }}>
-				<SimpleDataCard pokeData={pokeData} dataArray={dataArray} />
+				<SimpleDataCard {...{ pokeData, DescArray }} />
 			</Grid>
 		</Grid>
 	);
 };
-
-/** container */
-const mapStateToProps = (state: AppState): StateProps => ({
-	pokeData: state.searchType.pokeData,
-	pokeSpecies: state.searchType.pokeSpecies
-});
-
-export const OutputArea = connect(mapStateToProps)(WrappedOutputArea);
