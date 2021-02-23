@@ -1,6 +1,7 @@
 import { VFC } from "react";
 import { AppBar, Tab, Tabs } from "@material-ui/core";
 import { Link, useLocation } from "react-router-dom";
+import { menuList } from "@constants/variables";
 
 /**
  * Menu which have Link
@@ -8,28 +9,6 @@ import { Link, useLocation } from "react-router-dom";
  */
 export const HeaderMenu: VFC = () => {
 	const currentTab = useLocation().pathname;
-	const menuList = [
-		{
-			label: "TOP",
-			value: "/",
-			id: 0
-		},
-		{
-			label: "名前検索",
-			value: "/pokemon",
-			id: 1
-		},
-		{
-			label: "タイプ検索",
-			value: "/type",
-			id: 2
-		},
-		{
-			label: "相棒検索",
-			value: "/partner",
-			id: 3
-		}
-	];
 
 	return (
 		<AppBar position="static" color="primary">

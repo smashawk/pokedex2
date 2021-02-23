@@ -7,8 +7,8 @@ import { dispatches } from "@store/dispatches";
 import { OptionType } from "@store/common/setSelectedOption/reducer";
 import { getPokeTypeDataType } from "@store/searchType/getPokeTypeData/reducers";
 import { normalizedPokeDataType } from "@store/common/getPokeData/reducers";
-import typeData from "@data/type_data.json";
 import { InputArea } from "@components/organisms/searchType/InputArea";
+import typeData from "@constants/type_data.json";
 
 type StateProps = {
 	switchState: boolean;

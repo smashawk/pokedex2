@@ -1,5 +1,5 @@
 import { PokeTypeDataType } from "@api/requests/getPokeTypeData";
-import pokeData from "@data/pokemon_data.json";
+import pokeData from "@constants/pokemon_data.json";
 import { formattedPokeTypeDataType } from "./reducers";
 
 /**

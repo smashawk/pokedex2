@@ -1,7 +1,7 @@
 import { OptionType } from "@store/common/setSelectedOption/reducer";
-import pokeDataArray from "@data/pokemon_data.json";
 import { translateKanaToHira } from "@utils/translateKanatoHira";
 import { translateHiraToRoman } from "@utils/translateHiratoRoman";
+import pokeDataArray from "@constants/pokemon_data.json";
 
 /**
  * ポケモン検索のサジェスト用配列を作成する

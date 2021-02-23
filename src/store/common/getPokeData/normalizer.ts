@@ -1,5 +1,5 @@
-import typeDataArray from "@data/type_data.json";
 import { PokeDataType } from "@api/requests/getPokeData";
+import typeDataArray from "@constants/type_data.json";
 import { normalizedPokeDataType } from "./reducers";
 
 /**
