@@ -13,3 +13,7 @@ export const ON = Template.bind({});
 ON.args = {
 	isSelected: true
 };
+
+ON.parameters = {
+	backgrounds: { default: "light" }
+};
