@@ -1,20 +1,14 @@
+import { VFC } from "react";
 import { Button, ButtonProps } from "@material-ui/core";
 
-type OwnProps = {
-	color?: ButtonProps["color"];
+export type Props = {
 	text: string;
+	color?: ButtonProps["color"];
 	variant?: ButtonProps["variant"];
 	onClick: () => void;
 };
 
-type Props = OwnProps;
-
-export const FixButton = ({
-	color,
-	text,
-	variant,
-	onClick
-}: Props): JSX.Element => {
+export const FixButton: VFC<Props> = ({ color, text, variant, onClick }) => {
 	return (
 		<Button color={color} variant={variant} onClick={onClick}>
 			{text}

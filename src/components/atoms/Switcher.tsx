@@ -1,16 +1,13 @@
-import { ChangeEvent } from "react";
-import Switch from "@material-ui/core/Switch";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
+import { ChangeEvent, VFC } from "react";
+import { Switch, FormControlLabel } from "@material-ui/core";
 
-type OwnProps = {
+export type Props = {
 	checked: boolean;
 	label: string;
 	onChange: (event: ChangeEvent<HTMLInputElement>, checked: boolean) => void;
 };
 
-type Props = OwnProps;
-
-export const Switcher = ({ checked, label, onChange }: Props): JSX.Element => {
+export const Switcher: VFC<Props> = ({ checked, label, onChange }) => {
 	const switchComp = (
 		<Switch
 			checked={checked}

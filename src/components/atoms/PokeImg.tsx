@@ -1,6 +1,6 @@
+import { VFC } from "react";
+import { createStyles, makeStyles, Box } from "@material-ui/core";
 import classNames from "classnames";
-import { createStyles, makeStyles } from "@material-ui/core/styles";
-import { Box } from "@material-ui/core";
 
 const useStyles = makeStyles(() =>
 	createStyles({
@@ -25,13 +25,11 @@ const useStyles = makeStyles(() =>
 	})
 );
 
-type OwnProps = {
+export type Props = {
 	no: number;
 };
 
-type Props = OwnProps;
-
-export const PokeImg = ({ no }: Props): JSX.Element => {
+export const PokeImg: VFC<Props> = ({ no }) => {
 	const classes = useStyles(no);
 
 	return (

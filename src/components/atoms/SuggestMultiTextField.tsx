@@ -1,15 +1,8 @@
 import { ReactNode, VFC } from "react";
 import { OptionType } from "@store/common/setSelectedOption/reducer";
-import {
-	createStyles,
-	makeStyles,
-	Box,
-	TextField,
-	Checkbox
-} from "@material-ui/core";
+import { createStyles, makeStyles, Box, TextField } from "@material-ui/core";
 import Autocomplete from "@material-ui/lab/Autocomplete";
-import CheckBoxOutlineBlankIcon from "@material-ui/icons/CheckBoxOutlineBlank";
-import CheckBoxIcon from "@material-ui/icons/CheckBox";
+import { CheckBox } from "@components/atoms/CheckBox";
 
 const useStyles = makeStyles(() =>
 	createStyles({
@@ -25,13 +18,11 @@ const useStyles = makeStyles(() =>
 	})
 );
 
-type OwnProps = {
+export type Props = {
 	suggestList: OptionType[];
 	option: OptionType[];
 	onChange: (e: unknown, selectedOption: OptionType[]) => void;
 };
-
-type Props = OwnProps;
 
 export const SuggestMultiTextField: VFC<Props> = ({
 	suggestList,
@@ -39,9 +30,6 @@ export const SuggestMultiTextField: VFC<Props> = ({
 	onChange
 }) => {
 	const classes = useStyles();
-
-	const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;
-	const checkedIcon = <CheckBoxIcon fontSize="small" />;
 
 	return (
 		<Box mt={1} className={classes.boxRoot}>
@@ -59,12 +47,7 @@ export const SuggestMultiTextField: VFC<Props> = ({
 				)}
 				renderOption={(optionObj, { selected }): JSX.Element => (
 					<>
-						<Checkbox
-							icon={icon}
-							checkedIcon={checkedIcon}
-							style={{ marginRight: 8 }}
-							checked={selected}
-						/>
+						<CheckBox isSelected={selected} />
 						{optionObj.label}
 					</>
 				)}

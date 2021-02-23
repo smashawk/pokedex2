@@ -28,7 +28,7 @@ const useStyles = makeStyles(() =>
 	})
 );
 
-type Props = {
+export type Props = {
 	data: descType[];
 };
 

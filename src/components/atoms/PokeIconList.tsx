@@ -26,13 +26,11 @@ const useStyles = makeStyles(() =>
 	})
 );
 
-type OwnProps = {
+export type Props = {
 	item: { name: { ja: string; en: string }; no: number };
 	pokeId: number;
 	onClick: (event: MouseEvent<HTMLInputElement>) => void;
 };
-
-type Props = OwnProps;
 
 export const PokeIconList: VFC<Props> = ({ item, pokeId, onClick }) => {
 	const classes = useStyles();

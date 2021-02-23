@@ -23,7 +23,7 @@ type OwnProps = {
 	onChange: (e: unknown, selectedOption: OptionType | null) => void;
 };
 
-type Props = OwnProps;
+export type Props = OwnProps;
 
 export const SuggestTextField: VFC<Props> = ({
 	suggestList,
