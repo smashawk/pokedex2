@@ -1,6 +1,6 @@
+import { VFC } from "react";
 import { Radar } from "react-chartjs-2";
-import Container from "@material-ui/core/Container";
-import { createStyles, makeStyles } from "@material-ui/core/styles";
+import { createStyles, makeStyles, Container } from "@material-ui/core";
 
 const useStyles = makeStyles(() =>
 	createStyles({
@@ -12,7 +12,7 @@ const useStyles = makeStyles(() =>
 	})
 );
 
-type OwnProps = {
+type Props = {
 	data: number[];
 };
 
@@ -25,9 +25,7 @@ type tooltipItemTypes = {
 	y: number;
 }[];
 
-type Props = OwnProps;
-
-export const StatsRadarChart = ({ data }: Props): JSX.Element => {
+export const StatsRadarChart: VFC<Props> = ({ data }) => {
 	const classes = useStyles();
 	const graphData = {
 		labels: ["HP", "AT", "DF", "SA", "SD", "SP"],

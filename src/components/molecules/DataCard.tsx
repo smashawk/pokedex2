@@ -1,6 +1,6 @@
 import { VFC } from "react";
-import { normalizedPokeSpeciesType } from "@store/common/getPokeSpecies/reducers";
 import { normalizedPokeDataType } from "@store/common/getPokeData/reducers";
+import { descType } from "@utils/createDescArray";
 import { PokeImg } from "@components/atoms/PokeImg";
 import { DescriptionList } from "@components/atoms/DescriptionList";
 import { StatsRadarChart } from "@components/atoms/StatsRadarChart";
@@ -22,47 +22,20 @@ const useStyles = makeStyles(() =>
 	})
 );
 
-type StateProps = {
+type Props = {
 	pokeData: normalizedPokeDataType;
-	pokeSpecies: normalizedPokeSpeciesType;
+	DescArray: descType[];
+	statsArray: number[];
 	children?: JSX.Element;
 };
 
-type Props = StateProps;
-
-export const DataCard: VFC<Props> = ({ pokeData, pokeSpecies, children }) => {
+export const DataCard: VFC<Props> = ({
+	pokeData,
+	DescArray,
+	statsArray,
+	children
+}) => {
 	const classes = useStyles();
-	const dataArray = [
-		{
-			term: "No",
-			description: pokeData.id
-		},
-		{
-			term: "Name",
-			description: pokeSpecies.name.ja
-		},
-		{
-			term: "Species",
-			description: pokeSpecies.genera.ja
-		},
-		{
-			term: "Type1",
-			description: pokeData.types[0].en
-		},
-		{
-			term: "Type2",
-			description: pokeData.types.length === 2 ? pokeData.types[1].en : ""
-		},
-		{
-			term: "Flavor",
-			description: pokeSpecies.flavor_text_entries.ja
-		}
-	];
-
-	// 種族値の配列を作る
-	const statsArray = [...Array(6).keys()].map(
-		(num) => pokeData.stats[num].base_stat
-	);
 
 	return (
 		<Paper className={classes.paper}>
@@ -71,7 +44,7 @@ export const DataCard: VFC<Props> = ({ pokeData, pokeSpecies, children }) => {
 					{children}
 					<PokeImg no={pokeData.id} />
 					<div className={classes.dataContainer}>
-						<DescriptionList data={dataArray} />
+						<DescriptionList data={DescArray} />
 						<StatsRadarChart data={statsArray} />
 					</div>
 				</>
