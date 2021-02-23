@@ -10,7 +10,11 @@ type Props = {
 	children?: JSX.Element;
 };
 
-export const EnhancedDataCard: VFC<Props> = ({ pokeData, pokeSpecies }) => {
+export const EnhancedDataCard: VFC<Props> = ({
+	pokeData,
+	pokeSpecies,
+	children
+}) => {
 	const DescArray = useMemo(() => createDescArray(pokeData, pokeSpecies), [
 		pokeData,
 		pokeSpecies
@@ -22,5 +26,7 @@ export const EnhancedDataCard: VFC<Props> = ({ pokeData, pokeSpecies }) => {
 		[pokeData]
 	);
 
-	return <DataCard {...{ pokeData, DescArray, statsArray }} />;
+	return (
+		<DataCard {...{ pokeData, DescArray, statsArray }}>{children}</DataCard>
+	);
 };

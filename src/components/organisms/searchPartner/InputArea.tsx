@@ -1,6 +1,7 @@
 import { VFC } from "react";
 import { FixButton } from "@components/atoms/FixButton";
-import { Box, Typography, TextField } from "@material-ui/core";
+import { InputTextField } from "@components/atoms/InputTextField";
+import { Box, Typography } from "@material-ui/core";
 
 type Props = {
 	refFnc: (element: HTMLInputElement) => HTMLInputElement;
@@ -12,13 +13,13 @@ export const InputArea: VFC<Props> = ({ refFnc, searchPartner }) => {
 		<>
 			<Typography variant="h2">3. 相棒検索</Typography>
 			<Box mt={10}>
-				<TextField
+				<InputTextField
+					label="名前を入力しよう"
 					size="small"
-					id="inputName"
 					type="text"
 					variant="filled"
-					label="名前を入力しよう"
 					inputRef={refFnc}
+					inputProps={{ minLength: 1, maxLength: 16 }}
 				/>
 				<FixButton
 					color="primary"

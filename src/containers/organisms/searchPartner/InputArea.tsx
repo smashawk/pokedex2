@@ -61,6 +61,7 @@ const WrappedInputArea: VFC<Props> = ({
 	 * fire this function when you click Fix Button
 	 */
 	const searchPartner = (): void => {
+		if (!textRef.value) return;
 		const partnerNo = decidePartnerNo(textRef.value);
 		setInputName(textRef.value);
 		fetchPokeData(partnerNo);

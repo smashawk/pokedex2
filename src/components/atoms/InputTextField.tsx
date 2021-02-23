@@ -1,28 +1,25 @@
-import { ChangeEvent } from "react";
+import { VFC } from "react";
 import TextField, { TextFieldProps } from "@material-ui/core/TextField";
+import { InputProps as StandardInputProps } from "@material-ui/core/Input/Input";
 
-type OwnProps = {
+export type Props = {
 	label: string;
 	type: TextFieldProps["type"];
+	size?: TextFieldProps["size"];
 	variant?: TextFieldProps["variant"];
-	onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
+	inputProps?: StandardInputProps["inputProps"];
+	inputRef?: (element: HTMLInputElement) => HTMLInputElement;
 };
 
-export type Props = OwnProps;
-
-export const InputTextField = ({
+export const InputTextField: VFC<Props> = ({
 	label,
 	type,
+	size,
 	variant,
-	onChange
-}: Props): JSX.Element => {
+	inputRef,
+	inputProps
+}) => {
 	return (
-		<TextField
-			type={type}
-			onChange={onChange}
-			label={label}
-			/* eslint-disable-next-line @typescript-eslint/no-explicit-any */
-			variant={variant as any} // anyの許容：https://github.com/mui-org/material-ui/issues/15697#issuecomment-493419773
-		/>
+		<TextField {...{ label, type, size, variant, inputRef, inputProps }} />
 	);
 };
