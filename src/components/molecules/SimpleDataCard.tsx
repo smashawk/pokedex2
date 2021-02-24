@@ -17,12 +17,10 @@ const useStyles = makeStyles(() =>
 	})
 );
 
-type StateProps = {
+export type Props = {
 	pokeData: normalizedPokeDataType;
 	DescArray: descType[];
 };
-
-type Props = StateProps;
 
 export const SimpleDataCard: VFC<Props> = ({ pokeData, DescArray }) => {
 	const classes = useStyles();

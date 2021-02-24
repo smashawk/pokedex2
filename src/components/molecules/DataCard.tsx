@@ -22,7 +22,7 @@ const useStyles = makeStyles(() =>
 	})
 );
 
-type Props = {
+export type Props = {
 	pokeData: normalizedPokeDataType;
 	DescArray: descType[];
 	statsArray: number[];
