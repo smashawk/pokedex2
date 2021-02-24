@@ -1,15 +1,17 @@
 import { VFC } from "react";
 import { AppBar, Tab, Tabs } from "@material-ui/core";
-import { Link, useLocation } from "react-router-dom";
-import { menuList } from "@constants/variables";
+import { Link } from "react-router-dom";
+
+export type Props = {
+	currentTab: string;
+	menuList: { label: string; value: string; id: number }[];
+};
 
 /**
  * Menu which have Link
  * @constructor
  */
-export const HeaderMenu: VFC = () => {
-	const currentTab = useLocation().pathname;
-
+export const HeaderMenu: VFC<Props> = ({ currentTab, menuList }) => {
 	return (
 		<AppBar position="static" color="primary">
 			<Tabs

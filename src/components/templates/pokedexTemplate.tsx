@@ -1,5 +1,5 @@
 import { ReactNode, VFC } from "react";
-import { HeaderMenu } from "@components/organisms/common/HeaderMenu";
+import { EnhancedHeaderMenu } from "@containers/molecules/HeaderMenu";
 import {
 	createStyles,
 	makeStyles,
@@ -43,7 +43,7 @@ export const PokedexTemplate: VFC<Props> = ({ children }) => {
 		<ThemeProvider theme={theme}>
 			<CssBaseline />
 			<Container className={classes.root} maxWidth="md">
-				<HeaderMenu />
+				<EnhancedHeaderMenu />
 				<main className={classes.main}>
 					<Typography variant="h1">ポケモン図鑑</Typography>
 					<Box mt={6}>
