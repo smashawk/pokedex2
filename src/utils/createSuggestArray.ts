@@ -1,4 +1,4 @@
-import { OptionType } from "@store/common/setSelectedOption/reducer";
+import { OptionType } from "@store/setSelectedOption/reducer";
 import { translateKanaToHira } from "@utils/translateKanatoHira";
 import { translateHiraToRoman } from "@utils/translateHiratoRoman";
 import pokeDataArray from "@constants/pokemon_data.json";

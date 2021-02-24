@@ -3,19 +3,19 @@ import {
 	searchNameGetPokeDataReducer,
 	searchTypeGetPokeDataReducer,
 	searchPartnerGetPokeDataReducer
-} from "@store/common/getPokeData/reducers";
+} from "@store/getPokeData/reducers";
 import {
 	searchNameGetPokeSpeciesReducer,
 	searchTypeGetPokeSpeciesReducer,
 	searchPartnerGetPokeSpeciesReducer
-} from "@store/common/getPokeSpecies/reducers";
+} from "@store/getPokeSpecies/reducers";
 import {
 	searchNameSetSelectedOptionReducer,
 	searchTypeSetSelectedOptionReducer
-} from "@store/common/setSelectedOption/reducer";
-import { setSwitchStateReducer } from "@store/searchType/setSwitchState/reducer";
-import { searchTypeGetPokeTypeDataReducer } from "@store/searchType/getPokeTypeData/reducers";
-import { setInputNameReducer } from "@store/searchPartner/setInputName/reducer";
+} from "@store/setSelectedOption/reducer";
+import { setSwitchStateReducer } from "@store/setSwitchState/reducer";
+import { searchTypeGetPokeTypeDataReducer } from "@store/getPokeTypeData/reducers";
+import { setInputNameReducer } from "@store/setInputName/reducer";
 
 const rootReducer = combineReducers({
 	searchName: combineReducers({

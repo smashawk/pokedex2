@@ -1,5 +1,5 @@
 import { ChangeEvent, VFC } from "react";
-import { OptionType } from "@store/common/setSelectedOption/reducer";
+import { OptionType } from "@store/setSelectedOption/reducer";
 import { Switcher } from "@components/atoms/Switcher";
 import { SuggestMultiTextField } from "@components/atoms/SuggestMultiTextField";
 import { createStyles, makeStyles, Box, Typography } from "@material-ui/core";

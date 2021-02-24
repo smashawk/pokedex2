@@ -1,6 +1,6 @@
 import { useMemo, VFC } from "react";
-import { normalizedPokeSpeciesType } from "@store/common/getPokeSpecies/reducers";
-import { normalizedPokeDataType } from "@store/common/getPokeData/reducers";
+import { normalizedPokeSpeciesType } from "@store/getPokeSpecies/reducers";
+import { normalizedPokeDataType } from "@store/getPokeData/reducers";
 import { DataCard } from "@components/molecules/DataCard";
 import { createDescArray } from "@utils/createDescArray";
 

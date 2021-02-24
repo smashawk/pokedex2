@@ -1,5 +1,5 @@
-import { normalizedPokeDataType } from "@store/common/getPokeData/reducers";
-import { normalizedPokeSpeciesType } from "@store/common/getPokeSpecies/reducers";
+import { normalizedPokeDataType } from "@store/getPokeData/reducers";
+import { normalizedPokeSpeciesType } from "@store/getPokeSpecies/reducers";
 
 export type descType = {
 	term: string;

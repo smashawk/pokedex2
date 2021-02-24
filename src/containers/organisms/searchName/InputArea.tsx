@@ -4,7 +4,7 @@ import { Dispatch } from "redux";
 import { useHistory, useLocation } from "react-router-dom";
 import { AppState } from "@store/reducer";
 import { dispatches } from "@store/dispatches";
-import { OptionType } from "@store/common/setSelectedOption/reducer";
+import { OptionType } from "@store/setSelectedOption/reducer";
 import { createSuggestArray } from "@utils/createSuggestArray";
 import { InputArea } from "@components/organisms/searchName/InputArea";
 

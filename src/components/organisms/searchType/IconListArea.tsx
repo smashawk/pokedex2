@@ -1,6 +1,6 @@
 import { MouseEvent as ReactMouseEvent, VFC } from "react";
-import { normalizedPokeDataType } from "@store/common/getPokeData/reducers";
-import { getPokeTypeDataType } from "@store/searchType/getPokeTypeData/reducers";
+import { normalizedPokeDataType } from "@store/getPokeData/reducers";
+import { getPokeTypeDataType } from "@store/getPokeTypeData/reducers";
 import { PokeIconList } from "@components/atoms/PokeIconList";
 import { createStyles, makeStyles, Paper } from "@material-ui/core";
 import { theme } from "@styles/theme";

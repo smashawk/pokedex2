@@ -1,9 +1,9 @@
 import { AppState } from "@store/reducer";
 import { select, call, put, fork, takeEvery } from "redux-saga/effects";
 import { getPokeTypeData } from "@api/requests/getPokeTypeData";
-import { normalizePokeData } from "@store/searchType/getPokeTypeData/normalizer";
-import * as actions from "@store/searchType/getPokeTypeData/actions";
-import * as types from "@store/searchType/getPokeTypeData/types";
+import { normalizePokeData } from "@store/getPokeTypeData/normalizer";
+import * as actions from "@store/getPokeTypeData/actions";
+import * as types from "@store/getPokeTypeData/types";
 
 function* getPokeType1Data() {
 	const type = yield select(

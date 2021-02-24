@@ -1,5 +1,5 @@
 import { Dispatch } from "react";
-import { OptionType } from "@store/common/setSelectedOption/reducer";
+import { OptionType } from "@store/setSelectedOption/reducer";
 import * as actions from "./actions";
 
 export const searchTypeGetPokeTypeDataDispatcher = (

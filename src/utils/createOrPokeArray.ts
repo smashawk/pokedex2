@@ -1,4 +1,4 @@
-import { getPokeTypeDataType } from "@store/searchType/getPokeTypeData/reducers";
+import { getPokeTypeDataType } from "@store/getPokeTypeData/reducers";
 
 /**
  * OR検索で表示するポケモン配列を作成する

@@ -1,5 +1,5 @@
 import { VFC } from "react";
-import { normalizedPokeDataType } from "@store/common/getPokeData/reducers";
+import { normalizedPokeDataType } from "@store/getPokeData/reducers";
 import { descType } from "@utils/createDescArray";
 import { EnhancedIconListArea } from "@containers/organisms/searchType/IconListArea";
 import { SimpleDataCard } from "@components/molecules/SimpleDataCard";

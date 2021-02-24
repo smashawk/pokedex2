@@ -1,6 +1,6 @@
 import { VFC } from "react";
 import { SuggestTextField } from "@components/atoms/SuggestTextField";
-import { OptionType } from "@store/common/setSelectedOption/reducer";
+import { OptionType } from "@store/setSelectedOption/reducer";
 import { Box, Typography } from "@material-ui/core";
 
 type Props = {

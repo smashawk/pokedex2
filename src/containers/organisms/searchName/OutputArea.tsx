@@ -1,8 +1,8 @@
 import { VFC } from "react";
 import { connect } from "react-redux";
 import { AppState } from "@store/reducer";
-import { normalizedPokeDataType } from "@store/common/getPokeData/reducers";
-import { normalizedPokeSpeciesType } from "@store/common/getPokeSpecies/reducers";
+import { normalizedPokeDataType } from "@store/getPokeData/reducers";
+import { normalizedPokeSpeciesType } from "@store/getPokeSpecies/reducers";
 import { OutputArea } from "@components/organisms/searchName/OutputArea";
 
 type StateProps = {

@@ -4,9 +4,9 @@ import { connect } from "react-redux";
 import { useHistory, useLocation } from "react-router-dom";
 import { AppState } from "@store/reducer";
 import { dispatches } from "@store/dispatches";
-import { OptionType } from "@store/common/setSelectedOption/reducer";
-import { getPokeTypeDataType } from "@store/searchType/getPokeTypeData/reducers";
-import { normalizedPokeDataType } from "@store/common/getPokeData/reducers";
+import { OptionType } from "@store/setSelectedOption/reducer";
+import { getPokeTypeDataType } from "@store/getPokeTypeData/reducers";
+import { normalizedPokeDataType } from "@store/getPokeData/reducers";
 import { InputArea } from "@components/organisms/searchType/InputArea";
 import typeData from "@constants/type_data.json";
 

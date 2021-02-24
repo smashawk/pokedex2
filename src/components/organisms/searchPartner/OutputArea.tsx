@@ -1,7 +1,7 @@
 import { VFC } from "react";
-import { setInputNameState } from "@store/searchPartner/setInputName/reducer";
-import { normalizedPokeDataType } from "@store/common/getPokeData/reducers";
-import { normalizedPokeSpeciesType } from "@store/common/getPokeSpecies/reducers";
+import { setInputNameState } from "@store/setInputName/reducer";
+import { normalizedPokeDataType } from "@store/getPokeData/reducers";
+import { normalizedPokeSpeciesType } from "@store/getPokeSpecies/reducers";
 import { EnhancedDataCard } from "@containers/molecules/DataCard";
 import { Box, Typography, createStyles, makeStyles } from "@material-ui/core";
 

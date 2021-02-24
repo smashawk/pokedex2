@@ -4,7 +4,7 @@ import { Dispatch } from "redux";
 import { useHistory, useLocation } from "react-router-dom";
 import { AppState } from "@store/reducer";
 import { dispatches } from "@store/dispatches";
-import { setInputNameState } from "@store/searchPartner/setInputName/reducer";
+import { setInputNameState } from "@store/setInputName/reducer";
 import { decidePartnerNo } from "@utils/decidePartnerNo";
 import { InputArea } from "@components/organisms/searchPartner/InputArea";
 

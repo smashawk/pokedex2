@@ -1,4 +1,4 @@
-import { normalizedPokeSpeciesType } from "@store/common/getPokeSpecies/reducers";
+import { normalizedPokeSpeciesType } from "@store/getPokeSpecies/reducers";
 import * as types from "./types";
 
 /** searchName */

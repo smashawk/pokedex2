@@ -1,9 +1,9 @@
 import { AppState } from "@store/reducer";
 import { select, call, put, fork, takeEvery } from "redux-saga/effects";
 import { getPokeSpecies } from "@api/requests/getPokeSpecies";
-import { normalizePokeData } from "@store/common/getPokeSpecies/normalizer";
-import * as actions from "@store/common/getPokeSpecies/actions";
-import * as types from "@store/common/getPokeSpecies/types";
+import { normalizePokeData } from "@store/getPokeSpecies/normalizer";
+import * as actions from "@store/getPokeSpecies/actions";
+import * as types from "@store/getPokeSpecies/types";
 
 /** searchName */
 function* searchNameGetPokeSpecies() {

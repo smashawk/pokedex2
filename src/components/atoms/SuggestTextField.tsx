@@ -1,5 +1,5 @@
 import { ReactNode, VFC } from "react";
-import { OptionType } from "@store/common/setSelectedOption/reducer";
+import { OptionType } from "@store/setSelectedOption/reducer";
 import { createStyles, makeStyles, Box, TextField } from "@material-ui/core";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 
