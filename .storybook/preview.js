@@ -1,4 +1,5 @@
 import { ThemeProvider, CssBaseline } from "@material-ui/core";
+import StoryRouter from "storybook-react-router";
 import { theme } from "../src/styles/theme";
 
 export const decorators = [
@@ -7,7 +8,8 @@ export const decorators = [
 			<CssBaseline />
 			<Story />
 		</ThemeProvider>
-	)
+	),
+	StoryRouter()
 ];
 
 export const parameters = {
