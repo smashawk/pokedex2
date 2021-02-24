@@ -1,3 +1,5 @@
+export type menuListType = { label: string; value: string; id: number }[];
+
 export const menuList = [
 	{
 		label: "TOP",
