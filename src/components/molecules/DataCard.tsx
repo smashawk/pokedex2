@@ -1,9 +1,9 @@
 import { VFC } from "react";
 import { normalizedPokeDataType } from "@store/getPokeData/reducers";
 import { descType } from "@utils/createDescArray";
-import { PokeImg } from "@components/atoms/PokeImg";
 import { DescriptionList } from "@components/atoms/DescriptionList";
 import { StatsRadarChart } from "@components/atoms/StatsRadarChart";
+import { EnhancedPokeImg } from "@containers/atoms/PokeImg";
 import { Paper, createStyles, makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles(() =>
@@ -42,7 +42,7 @@ export const DataCard: VFC<Props> = ({
 			{pokeData.name && (
 				<>
 					{children}
-					<PokeImg no={pokeData.id} />
+					<EnhancedPokeImg no={pokeData.id} />
 					<div className={classes.dataContainer}>
 						<DescriptionList data={DescArray} />
 						<StatsRadarChart data={statsArray} />

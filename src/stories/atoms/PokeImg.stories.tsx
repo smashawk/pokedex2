@@ -12,8 +12,12 @@ export const Bulbasaur = Template.bind({});
 export const Chespin = Template.bind({});
 
 Bulbasaur.args = {
-	no: 1
+	no: 1,
+	url: "https://www.cpokemon.com/pokes/animated/ds/1.gif",
+	loading: false
 };
 Chespin.args = {
-	no: 650
+	no: 650,
+	url: "https://www.cpokemon.com/pokes/animated/3ds/650.gif",
+	loading: false
 };

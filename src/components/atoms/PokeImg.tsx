@@ -1,4 +1,4 @@
-import { useEffect, useState, VFC } from "react";
+import { VFC } from "react";
 import { createStyles, makeStyles, Box } from "@material-ui/core";
 import classNames from "classnames";
 
@@ -30,26 +30,12 @@ const useStyles = makeStyles(() =>
 
 export type Props = {
 	no: number;
+	url: string;
+	loading: boolean;
+	imageLoaded: () => void;
 };
 
-export const PokeImg: VFC<Props> = ({ no }) => {
-	const [loading, setLoading] = useState(true);
-
-	useEffect(() => {
-		setLoading(true);
-	}, [no]);
-	const imageLoaded = () => {
-		setLoading(false);
-	};
-
-	let url = "";
-
-	if (no > 0 && no < 650)
-		url = `https://www.cpokemon.com/pokes/animated/ds/${no}.gif`;
-	else if (no > 649 && no < 793)
-		url = `https://www.cpokemon.com/pokes/animated/3ds/${no}.gif`;
-	else url = `https://www.cpokemon.com/pokes/home/${no}.png`;
-
+export const PokeImg: VFC<Props> = ({ no, url, loading, imageLoaded }) => {
 	const classes = useStyles(no);
 
 	return (
