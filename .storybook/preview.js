@@ -1,6 +1,6 @@
 import { ThemeProvider, CssBaseline } from "@material-ui/core";
 import StoryRouter from "storybook-react-router";
-import { theme } from "../src/styles/theme";
+import { theme } from "@styles/theme";
 
 export const decorators = [
 	(Story) => (
