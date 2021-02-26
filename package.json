@@ -1,7 +1,6 @@
 {
 	"name": "pokedex",
 	"version": "0.1.0",
-	"homepage": "https://smashawk.github.io/pokedex2/",
 	"private": true,
 	"scripts": {
 		"start": "react-app-rewired start",
