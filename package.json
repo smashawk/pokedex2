@@ -5,14 +5,13 @@
 	"scripts": {
 		"start": "react-app-rewired start",
 		"build": "react-app-rewired build",
-		"deploy": "npm run build && gh-pages -d build",
 		"test": "react-app-rewired test",
 		"eject": "react-app-rewired eject",
 		"lint": "eslint './src/**/*.{js,jsx,ts,tsx}'",
 		"fix": "eslint --fix './src/**/*.{js,jsx,ts,tsx}'",
 		"storybook": "start-storybook -p 6006 -s public",
 		"build-storybook": "build-storybook -s public",
-		"postinstall": "typesync"
+		"postinstall": "npx typesync && yarn install --ignore-scripts"
 	},
 	"dependencies": {
 		"@material-ui/core": "^4.11.3",
