@@ -7,6 +7,7 @@ import { dispatches } from "@store/dispatches";
 import { OptionType } from "@store/setSelectedOption/reducer";
 import { createSuggestArray } from "@utils/createSuggestArray";
 import { InputArea } from "@components/organisms/searchName/InputArea";
+import pokeDataArray from "@constants/pokemon_data.json";
 
 type StateProps = {
 	option: OptionType;
@@ -27,7 +28,9 @@ const WrappedInputArea: VFC<Props> = ({
 	fetchPokeSpecies
 }) => {
 	/** create list for suggest */
-	const suggestArray = useMemo(() => createSuggestArray(), []);
+	const suggestArray = useMemo(() => createSuggestArray(pokeDataArray), [
+		pokeDataArray
+	]);
 
 	/** define for React Router Hooks */
 	const H = useHistory();
