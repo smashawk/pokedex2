@@ -101,6 +101,9 @@
 	},
 	"jest": {
 		"moduleNameMapper": {
+			"@api/(.*)": [
+				"<rootDir>/src/api/$1"
+			],
 			"@utils/(.*)": [
 				"<rootDir>/src/utils/$1"
 			]
