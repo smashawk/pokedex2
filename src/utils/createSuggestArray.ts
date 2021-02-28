@@ -1,14 +1,23 @@
 import { OptionType } from "@store/setSelectedOption/reducer";
 import { translateKanaToHira } from "@utils/translateKanatoHira";
 import { translateHiraToRoman } from "@utils/translateHiratoRoman";
-import pokeDataArray from "@constants/pokemon_data.json";
+
+type pokeTypeArrayType = {
+	id: number;
+	name: {
+		english: string;
+		japanese: string;
+	};
+};
 
 /**
  * ポケモン検索のサジェスト用配列を作成する
  * ひらがな、カタカナ、ローマ字で検索できる
  * @return  ポケモン検索サジェスト用配列
  */
-export const createSuggestArray = (): OptionType[] => {
+export const createSuggestArray = (
+	pokeDataArray: pokeTypeArrayType[]
+): OptionType[] => {
 	return pokeDataArray.map((data) => {
 		const kanaName = translateKanaToHira(data.name.japanese);
 		const Roman = translateHiraToRoman(kanaName);

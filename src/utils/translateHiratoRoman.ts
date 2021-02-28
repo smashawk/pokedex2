@@ -3,10 +3,6 @@
 /**
  * ひらがなまたはカタカナからローマ字へ変換
  * @param {string} targetStr ローマ字へ変換する文字列（変換元の文字列）
- * @param {"hepburn"|"kunrei"} [type="hepburn"] ローマ字の種類
- * @param {Object} [options] その他各種オプション
- *                           {boolean} [options.bmp=true] ... "ん"（n）の次がb.m.pの場合にnからmへ変換するかどうか
- *                           {"latin"|"hyphen"} [options.longSound="latin"] ... 長音の表し方
  * @return {string} ローマ字へ変換された文字列を返す
  */
 import { translateKanaToHira } from "@utils/translateKanatoHira";
@@ -104,7 +100,7 @@ export const translateHiraToRoman = (targetStr: string): string => {
 		しゃ: "sha",
 		しぃ: "syi",
 		しゅ: "shu",
-		しぇ: "sye",
+		しぇ: "she",
 		しょ: "sho",
 		ちゃ: "cha",
 		ちぃ: "chi",
@@ -116,6 +112,7 @@ export const translateHiraToRoman = (targetStr: string): string => {
 		てゅ: "thu",
 		てぇ: "the",
 		てょ: "tho",
+		でぃ: "dhi",
 		にゃ: "nya",
 		にゅ: "nyu",
 		にょ: "nyo",
@@ -133,10 +130,12 @@ export const translateHiraToRoman = (targetStr: string): string => {
 		みゅ: "myu",
 		みぇ: "mye",
 		みょ: "myo",
-		ヴぁ: "va",
-		ヴぃ: "vi",
-		ヴぇ: "ve",
-		ヴぉ: "vo",
+		めぇ: "mexe",
+		うぉ: "uxo",
+		ゔぁ: "va",
+		ゔぃ: "vi",
+		ゔぇ: "ve",
+		ゔぉ: "vo",
 		ぎゃ: "gya",
 		ぎぃ: "gyi",
 		ぎゅ: "gyu",
@@ -145,21 +144,21 @@ export const translateHiraToRoman = (targetStr: string): string => {
 		じゃ: "ja",
 		じぃ: "zyi",
 		じゅ: "ju",
-		じぇ: "zye",
+		じぇ: "je",
 		じょ: "jo",
 		ぢゃ: "dya",
 		ぢぃ: "dyi",
 		ぢゅ: "dyu",
 		ぢぇ: "dye",
 		ぢょ: "dyo",
-		ばぁ: "ba",
+		ばぁ: "baxa",
 		びゃ: "bya",
-		びぃ: "bii",
+		びぃ: "bixi",
 		びゅ: "byu",
 		びぇ: "bye",
 		びょ: "byo",
 		ぴゃ: "pya",
-		ぴぃ: "pii",
+		ぴぃ: "pyi",
 		ぴゅ: "pyu",
 		ぴぇ: "pye",
 		ぴょ: "pyo",
@@ -179,28 +178,10 @@ export const translateHiraToRoman = (targetStr: string): string => {
 		"。": "."
 	};
 
-	/**
-	 * 長音のラテン文字
-	 */
-	const latins: { [key: string]: number } = {
-		a: 257,
-		i: 299,
-		u: 363,
-		e: 275,
-		o: 333
-	};
-
-	const type = "hepburn";
-	const options = {
-		bmp: false,
-		longSound: "latin"
-	};
-
-	let remStr = String(targetStr);
+	let remStr = targetStr;
 	let result = "";
 	let slStr;
 	let roman;
-	let lastStr;
 
 	/**
 	 * 残りの文字列から1文字を切り抜く
@@ -238,37 +219,16 @@ export const translateHiraToRoman = (targetStr: string): string => {
 
 		if (slStr.match(/^(っ|ッ)$/)) {
 			slStr = splice();
-			if (isSmallChar()) slStr += splice();
-
 			roman = getRoman(slStr);
-			roman = (roman !== slStr ? roman.slice(0, 1) : "") + roman;
+			roman = (roman !== slStr && roman.slice(0, 1)) + roman;
 		} else {
 			if (isSmallChar()) slStr += splice();
 
 			roman = getRoman(slStr);
 		}
 
-		const nextRoman = translateHiraToRoman(remStr.slice(0, 1));
-		if (roman === "n") {
-			if (nextRoman.match(/^[aiueo]$/)) {
-				if (type === "hepburn") {
-					roman += "-";
-				} else {
-					roman += "'";
-				}
-			} else if (
-				options.bmp &&
-				nextRoman.match(/^[bmp]/) &&
-				type === "hepburn"
-			) {
-				roman = "m";
-			}
-		} else if (roman === "-") {
-			lastStr = result.match(/[aiueo]$/);
-			if (lastStr && options.longSound === "latin") {
-				result = result.slice(0, -1);
-				roman = String.fromCharCode(latins[lastStr[0]]);
-			}
+		if (roman === "-") {
+			roman = "";
 		}
 
 		result += roman;

@@ -38,7 +38,7 @@
 		"import/no-unresolved": "off",
 		"import/prefer-default-export": ["off"],
 		"import/no-extraneous-dependencies": ["error", {
-			"devDependencies": ["**/store.ts", "**/*stories.tsx"],
+			"devDependencies": ["**/store.ts", "**/*stories.tsx", "**/*spec.ts"],
 			"peerDependencies": false
 		}],
 		"react/destructuring-assignment": ["off"],
