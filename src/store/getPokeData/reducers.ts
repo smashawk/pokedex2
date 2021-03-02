@@ -8,7 +8,7 @@ export type normalizedPokeDataType = {
 	types: { ja: string; en: string }[];
 };
 
-const initialState: normalizedPokeDataType = {
+export const initialState: normalizedPokeDataType = {
 	id: 0,
 	name: "",
 	stats: [

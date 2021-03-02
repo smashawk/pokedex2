@@ -5,10 +5,10 @@ export type PokeSpeciesType = {
 	base_happiness: number;
 	capture_rate: number;
 	color: Record<string, unknown>;
-	egg_groups: [];
+	// egg_groups: [];
 	evolves_from_species: string | null;
 	flavor_text_entries: { flavor_text: string; language: { name: string } }[];
-	form_descriptions: [];
+	// form_descriptions: [];
 	forms_switchable: boolean;
 	gender_rate: number;
 	genera: { genus: string; language: { name: string } }[];
@@ -24,10 +24,10 @@ export type PokeSpeciesType = {
 	name: string;
 	names: { name: string; language: { name: string } }[];
 	order: number;
-	pal_park_encounters: [];
-	pokedex_numbers: [];
+	// pal_park_encounters: [];
+	// pokedex_numbers: [];
 	shape: Record<string, unknown>;
-	varieties: [];
+	// varieties: [];
 };
 
 export const getPokeSpecies = async (

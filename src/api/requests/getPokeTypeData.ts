@@ -3,13 +3,13 @@ import { getRequest } from "@api/index";
 
 export type PokeTypeDataType = {
 	damage_relations: Record<string, unknown>;
-	game_indices: [];
+	// game_indices: [];
 	generation: Record<string, unknown>;
 	id: number;
 	move_damage_class: Record<string, unknown>;
-	moves: Record<string, unknown>;
+	// moves: Record<string, unknown>;
 	name: string;
-	names: [];
+	// names: [];
 	pokemon: { pokemon: { name: string; url: string } }[];
 };
 

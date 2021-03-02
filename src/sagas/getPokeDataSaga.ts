@@ -1,15 +1,17 @@
-import { AppState } from "@store/reducer";
-import { select, call, put, fork, takeEvery } from "redux-saga/effects";
+import { call, put, fork, takeEvery } from "redux-saga/effects";
 import { getPokeData } from "@api/requests/getPokeData";
 import { normalizePokeData } from "@store/getPokeData/normalizer";
 import * as actions from "@store/getPokeData/actions";
 import * as types from "@store/getPokeData/types";
 
 /** searchName */
-function* searchNameGetPokeData() {
-	const no = yield select((state: AppState) => state.searchName.pokeData.id);
+function* searchNameGetPokeData(
+	handler: typeof getPokeData,
+	action: ReturnType<typeof actions.searchNameFetchStarted>
+) {
+	const { id } = action.payload;
 	try {
-		const res = yield call(getPokeData, no);
+		const res = yield call(handler, id);
 		const normalizedPokeData = normalizePokeData(res.data);
 		yield put(actions.searchNameFetchSuccess(normalizedPokeData));
 	} catch (e) {
@@ -17,15 +19,18 @@ function* searchNameGetPokeData() {
 	}
 }
 
-function* watchSearchNameGetPokeData() {
-	yield takeEvery(types.SEARCH_NAME_STARTED, searchNameGetPokeData);
+export function* watchSearchNameGetPokeData(handler: typeof getPokeData) {
+	yield takeEvery(types.SEARCH_NAME_STARTED, searchNameGetPokeData, handler);
 }
 
 /** searchType */
-function* searchTypeGetPokeData() {
-	const no = yield select((state: AppState) => state.searchType.pokeData.id);
+function* searchTypeGetPokeData(
+	handler: typeof getPokeData,
+	action: ReturnType<typeof actions.searchTypeFetchStarted>
+) {
+	const { id } = action.payload;
 	try {
-		const res = yield call(getPokeData, no);
+		const res = yield call(getPokeData, id);
 		const normalizedPokeData = normalizePokeData(res.data);
 		yield put(actions.searchTypeFetchSuccess(normalizedPokeData));
 	} catch (e) {
@@ -33,15 +38,18 @@ function* searchTypeGetPokeData() {
 	}
 }
 
-function* watchSearchTypeGetPokeData() {
-	yield takeEvery(types.SEARCH_TYPE_STARTED, searchTypeGetPokeData);
+export function* watchSearchTypeGetPokeData(handler: typeof getPokeData) {
+	yield takeEvery(types.SEARCH_TYPE_STARTED, searchTypeGetPokeData, handler);
 }
 
 /** searchPartner */
-function* searchPartnerGetPokeData() {
-	const no = yield select((state: AppState) => state.searchPartner.pokeData.id);
+function* searchPartnerGetPokeData(
+	handler: typeof getPokeData,
+	action: ReturnType<typeof actions.searchPartnerFetchStarted>
+) {
+	const { id } = action.payload;
 	try {
-		const res = yield call(getPokeData, no);
+		const res = yield call(getPokeData, id);
 		const normalizedPokeData = normalizePokeData(res.data);
 		yield put(actions.searchPartnerFetchSuccess(normalizedPokeData));
 	} catch (e) {
@@ -49,12 +57,16 @@ function* searchPartnerGetPokeData() {
 	}
 }
 
-function* watchSearchPartnerGetPokeData() {
-	yield takeEvery(types.SEARCH_PARTNER_STARTED, searchPartnerGetPokeData);
+export function* watchSearchPartnerGetPokeData(handler: typeof getPokeData) {
+	yield takeEvery(
+		types.SEARCH_PARTNER_STARTED,
+		searchPartnerGetPokeData,
+		handler
+	);
 }
 
 export const getPokeDataSagas = [
-	fork(watchSearchNameGetPokeData),
-	fork(watchSearchTypeGetPokeData),
-	fork(watchSearchPartnerGetPokeData)
+	fork(watchSearchNameGetPokeData, getPokeData),
+	fork(watchSearchTypeGetPokeData, getPokeData),
+	fork(watchSearchPartnerGetPokeData, getPokeData)
 ];

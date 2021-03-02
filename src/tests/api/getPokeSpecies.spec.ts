@@ -1,9 +1,9 @@
-import { getPokeData } from "@api/requests/getPokeData";
+import { getPokeSpecies } from "@api/requests/getPokeSpecies";
 
-describe("getPokeData", () => {
+describe("getPokeSpecies", () => {
 	it("should succeed", async () => {
 		const no = 1;
-		const PokeData = await getPokeData(no);
+		const PokeData = await getPokeSpecies(no);
 
 		expect(PokeData.status).toBe(200);
 	});
@@ -12,7 +12,7 @@ describe("getPokeData", () => {
 		const no = 0;
 
 		try {
-			await getPokeData(no);
+			await getPokeSpecies(no);
 		} catch (error) {
 			expect(error.response.status).toBe(404);
 		}
@@ -26,7 +26,7 @@ describe("getPokeData", () => {
 	//
 	// 	const data = await Promise.all(
 	// 		noArray.map(async (no) => {
-	// 			const response = await getPokeData(no);
+	// 			const response = await getPokeSpecies(no);
 	// 			return { no, status: response.status };
 	// 		})
 	// 	);
@@ -39,7 +39,7 @@ describe("getPokeData", () => {
 	//
 	// 	const data = await Promise.all(
 	// 		noArray.map(async (no) => {
-	// 			const response = await getPokeData(no);
+	// 			const response = await getPokeSpecies(no);
 	// 			return { no, status: response.status };
 	// 		})
 	// 	);
@@ -52,7 +52,7 @@ describe("getPokeData", () => {
 	//
 	// 	const data = await Promise.all(
 	// 		noArray.map(async (no) => {
-	// 			const response = await getPokeData(no);
+	// 			const response = await getPokeSpecies(no);
 	// 			return { no, status: response.status };
 	// 		})
 	// 	);

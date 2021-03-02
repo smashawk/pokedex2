@@ -11,7 +11,7 @@ export type getPokeTypeDataType = {
 	type2: formattedPokeTypeDataType;
 };
 
-const initialState: getPokeTypeDataType = {
+export const initialState: getPokeTypeDataType = {
 	type1: {
 		type: "",
 		pokemon: [{ name: { ja: "", en: "" }, no: 0 }]
