@@ -8,7 +8,7 @@ export type normalizedPokeSpeciesType = {
 	genera: { ja: string; en: string };
 };
 
-const initialState: normalizedPokeSpeciesType = {
+export const initialState: normalizedPokeSpeciesType = {
 	id: 0,
 	name: { ja: "", en: "" },
 	flavor_text_entries: { ja: "", en: "" },
