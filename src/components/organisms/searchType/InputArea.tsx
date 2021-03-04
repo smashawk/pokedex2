@@ -38,7 +38,7 @@ export const InputArea: VFC<Props> = ({
 					suggestList={suggestArray}
 					option={optionArray.option}
 					onChange={decidePokeType}
-					testid="suggestMultiTextField"
+					testId="suggestMultiTextField"
 				/>
 				<Switcher
 					checked={switchState}

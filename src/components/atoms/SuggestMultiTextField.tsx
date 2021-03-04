@@ -22,14 +22,14 @@ export type Props = {
 	suggestList: OptionType[];
 	option: OptionType[];
 	onChange: (e: unknown, selectedOption: OptionType[]) => void;
-	testid: string;
+	testId: string;
 };
 
 export const SuggestMultiTextField: VFC<Props> = ({
 	suggestList,
 	option,
 	onChange,
-	testid
+	testId
 }) => {
 	const classes = useStyles();
 
@@ -53,7 +53,7 @@ export const SuggestMultiTextField: VFC<Props> = ({
 						{optionObj.label}
 					</>
 				)}
-				data-testid={testid}
+				data-testId={testId}
 			/>
 		</Box>
 	);

@@ -4,15 +4,12 @@ describe("searchName", () => {
 	it("Can search フシギダネ", () => {
 		cy.visit(baseUrl);
 
-		cy.get("[data-testid=menu-1]").click();
+		cy.get("[data-testId=menu-1]").click();
 		cy.location("pathname").should("eq", "/pokemon");
 
-		cy.get("[data-testid=suggestTextField]").click();
+		cy.get("[data-testId=suggestTextField]").click();
 		cy.get("[data-option-index=0]").click();
 
-		cy.get("[data-testid=descid-1] > dl  > :nth-child(2)").should(
-			"have.text",
-			"1"
-		);
+		cy.get("[data-testId=descId-1] > :nth-child(2)").should("have.text", "1");
 	});
 });

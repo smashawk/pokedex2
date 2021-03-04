@@ -43,11 +43,11 @@ export const DataCard: VFC<Props> = ({
 				<>
 					{children}
 					<EnhancedPokeImg no={pokeData.id} />
-					<div
-						className={classes.dataContainer}
-						data-testid={`descid-${pokeData.id}`}
-					>
-						<DescriptionList data={DescArray} />
+					<div className={classes.dataContainer}>
+						<DescriptionList
+							data={DescArray}
+							testId={`descId-${pokeData.id}`}
+						/>
 						<StatsRadarChart data={statsArray} />
 					</div>
 				</>

@@ -18,7 +18,7 @@ export const InputArea: VFC<Props> = ({ suggestList, option, searchName }) => {
 					suggestList={suggestList}
 					option={option}
 					onChange={searchName}
-					testid="suggestTextField"
+					testId="suggestTextField"
 				/>
 			</Box>
 		</Box>

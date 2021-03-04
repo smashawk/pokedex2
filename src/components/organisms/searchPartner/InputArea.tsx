@@ -20,14 +20,14 @@ export const InputArea: VFC<Props> = ({ refFnc, searchPartner }) => {
 					variant="filled"
 					inputRef={refFnc}
 					inputProps={{ minLength: 1, maxLength: 16 }}
-					testid="searchPartner-input"
+					testId="searchPartner-input"
 				/>
 				<FixButton
 					color="primary"
 					text="決定"
 					variant="contained"
 					onClick={searchPartner}
-					testid="searchPartner-button"
+					testId="searchPartner-button"
 				/>
 			</Box>
 		</>

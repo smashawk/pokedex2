@@ -6,7 +6,7 @@ export type Props = {
 	color?: ButtonProps["color"];
 	variant?: ButtonProps["variant"];
 	onClick: () => void;
-	testid?: string;
+	testId?: string;
 };
 
 export const FixButton: VFC<Props> = ({
@@ -14,10 +14,10 @@ export const FixButton: VFC<Props> = ({
 	text,
 	variant,
 	onClick,
-	testid
+	testId
 }) => {
 	return (
-		<Button {...{ color, variant, onClick }} data-testid={testid}>
+		<Button {...{ color, variant, onClick }} data-testId={testId}>
 			{text}
 		</Button>
 	);

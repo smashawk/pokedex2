@@ -4,10 +4,10 @@ describe("searchType", () => {
 	it("Can search a type", () => {
 		cy.visit(baseUrl);
 
-		cy.get("[data-testid=menu-2]").click();
+		cy.get("[data-testId=menu-2]").click();
 		cy.location("pathname").should("eq", "/type");
 
-		cy.get("[data-testid=suggestMultiTextField]").click();
+		cy.get("[data-testId=suggestMultiTextField]").click();
 		cy.get("[data-option-index=0]").click();
 
 		cy.get("[data-testId=pokeIconId-16]").should("have.attr", "name", "16");
@@ -18,11 +18,11 @@ describe("searchType", () => {
 	});
 
 	it("Can search multiType", () => {
-		cy.get("[data-testid=suggestMultiTextField]").click();
+		cy.get("[data-testId=suggestMultiTextField]").click();
 		cy.get(".MuiAutocomplete-clearIndicator").click();
 
 		cy.get("[data-option-index=2]").click();
-		cy.get("[data-testid=suggestMultiTextField]").click();
+		cy.get("[data-testId=suggestMultiTextField]").click();
 		cy.get("[data-option-index=4]").click();
 
 		cy.get("[data-testId=pokeIconId-270]").should("have.attr", "name", "270");

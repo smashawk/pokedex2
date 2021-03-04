@@ -21,7 +21,7 @@ type OwnProps = {
 	suggestList: OptionType[];
 	option: OptionType;
 	onChange: (e: unknown, selectedOption: OptionType | null) => void;
-	testid?: string;
+	testId?: string;
 };
 
 export type Props = OwnProps;
@@ -30,7 +30,7 @@ export const SuggestTextField: VFC<Props> = ({
 	suggestList,
 	option,
 	onChange,
-	testid
+	testId
 }) => {
 	const classes = useStyles();
 
@@ -51,7 +51,7 @@ export const SuggestTextField: VFC<Props> = ({
 				renderInput={(params): ReactNode => (
 					<TextField {...params} label="Pokemon" />
 				)}
-				data-testid={testid}
+				data-testId={testId}
 			/>
 		</Box>
 	);
