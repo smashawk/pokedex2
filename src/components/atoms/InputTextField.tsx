@@ -9,6 +9,7 @@ export type Props = {
 	variant?: TextFieldProps["variant"];
 	inputProps?: StandardInputProps["inputProps"];
 	inputRef?: (element: HTMLInputElement) => HTMLInputElement;
+	testId?: string;
 };
 
 export const InputTextField: VFC<Props> = ({
@@ -17,9 +18,13 @@ export const InputTextField: VFC<Props> = ({
 	size,
 	variant,
 	inputRef,
-	inputProps
+	inputProps,
+	testId
 }) => {
 	return (
-		<TextField {...{ label, type, size, variant, inputRef, inputProps }} />
+		<TextField
+			{...{ label, type, size, variant, inputRef, inputProps }}
+			data-testId={testId}
+		/>
 	);
 };

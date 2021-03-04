@@ -29,6 +29,7 @@ export const HeaderMenu: VFC<Props> = ({ currentTab, menuList }) => {
 							value={item.value}
 							to={item.value}
 							component={Link}
+							data-testId={`menu-${item.id}`}
 						/>
 					);
 				})}

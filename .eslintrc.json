@@ -27,6 +27,10 @@
 			}
 		}
 	},
+	"globals": {
+		"cy": "readonly",
+		"Cypress": "readonly"
+	},
 	"rules": {
 		"camelcase": ["off"],
 		"@typescript-eslint/explicit-function-return-type": ["off"],

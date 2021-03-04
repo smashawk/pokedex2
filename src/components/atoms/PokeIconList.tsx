@@ -30,9 +30,10 @@ export type Props = {
 	item: { name: { ja: string; en: string }; no: number };
 	pokeId: number;
 	onClick: (event: MouseEvent<HTMLInputElement>) => void;
+	testId?: string;
 };
 
-export const PokeIconList: VFC<Props> = ({ item, pokeId, onClick }) => {
+export const PokeIconList: VFC<Props> = ({ item, pokeId, onClick, testId }) => {
 	const classes = useStyles();
 	const id = String(item.no);
 	return (
@@ -47,6 +48,7 @@ export const PokeIconList: VFC<Props> = ({ item, pokeId, onClick }) => {
 				item.no === pokeId && classes.onclick
 			)}
 			onClick={onClick}
+			data-testId={testId}
 		/>
 	);
 };

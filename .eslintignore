@@ -3,3 +3,5 @@ public/
 **/node_modules/
 config-overrides.js
 .*lintrc.json
+cypress/plugins/
+cypress/integration/examples

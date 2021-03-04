@@ -30,12 +30,13 @@ const useStyles = makeStyles(() =>
 
 export type Props = {
 	data: descType[];
+	testId?: string;
 };
 
-export const DescriptionList: VFC<Props> = ({ data }) => {
+export const DescriptionList: VFC<Props> = ({ data, testId }) => {
 	const classes = useStyles();
 	return (
-		<dl className={classes.dataList}>
+		<dl className={classes.dataList} data-testId={testId}>
 			{data.map((item: descType) => (
 				<Fragment key={item.term}>
 					<dt className={classes.dataTerm}>{item.term}</dt>
