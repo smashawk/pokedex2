@@ -31,7 +31,7 @@ export const OutputArea: VFC<Props> = ({
 	return (
 		<Box mt={10}>
 			<EnhancedDataCard pokeData={pokeData} pokeSpecies={pokeSpecies}>
-				<Typography variant="subtitle1">
+				<Typography variant="subtitle1" data-testid="searchPartner-text">
 					<span className={classes.bold}>{inputName.inputName}</span>は
 					<span className={classes.bold}>{pokeSpecies.name.ja}</span>
 					にきめた！
