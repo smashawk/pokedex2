@@ -53,6 +53,7 @@ export const IconListArea: VFC<Props> = ({
 							item={item}
 							pokeId={pokeData.id}
 							onClick={showPokeData}
+							testId={`pokeIconId-${item.no}`}
 						/>
 					);
 				})}

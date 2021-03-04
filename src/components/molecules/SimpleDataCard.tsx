@@ -30,7 +30,7 @@ export const SimpleDataCard: VFC<Props> = ({ pokeData, DescArray }) => {
 			{pokeData.name && (
 				<>
 					<EnhancedPokeImg no={pokeData.id} />
-					<DescriptionList data={DescArray} />
+					<DescriptionList data={DescArray} testId={`descId-${pokeData.id}`} />
 				</>
 			)}
 		</Paper>
