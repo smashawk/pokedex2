@@ -1,7 +1,7 @@
-describe("searchName", () => {
+describe("searchPartner", () => {
 	const baseUrl = Cypress.env("baseUrl");
 
-	it("Can search pokemon", () => {
+	it("Can search partner", () => {
 		cy.visit(baseUrl);
 
 		cy.get("[data-testid=menu-3]").click();
