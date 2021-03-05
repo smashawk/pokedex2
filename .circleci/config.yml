@@ -1,0 +1,25 @@
+version: 2.1
+orbs:
+  node: circleci/node@3.0.0
+jobs:
+  build:
+    executor:
+      name: node/default
+    steps:
+      - run: yarn
+      # テスト
+      - run: yarn test
+      # ビルド
+      - run: yarn build
+      # cliからNetlifyにデプロイできるようにするライブラリをインストール
+      - run: yarn add netlify-cli
+      # デプロイコマンド
+      - run: yarn netlify deploy -p -d build -a ${NETLIFY_AUTH_TOKEN} -s ${NETLIFY_POKEDEX2_ID}
+
+workflows:
+  test-build-deploy:
+    jobs:
+      - build
+        filters:
+          branches:
+            only: master
