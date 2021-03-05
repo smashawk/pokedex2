@@ -2,9 +2,9 @@ version: 2.1
 orbs:
   node: circleci/node@3.0.0
 jobs:
-  build:
+  test-build-deploy:
     executor:
-      name: node/default
+      name: default
     steps:
       - run: yarn
       # テスト
@@ -17,9 +17,9 @@ jobs:
       - run: yarn netlify deploy -p -d build -a ${NETLIFY_AUTH_TOKEN} -s ${NETLIFY_POKEDEX2_ID}
 
 workflows:
-  test-build-deploy:
+  build-and-test:
     jobs:
-      - build
+      - test-build-deploy:
         filters:
           branches:
             only: master
