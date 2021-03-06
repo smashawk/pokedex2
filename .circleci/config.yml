@@ -1,7 +1,6 @@
 version: 2.1
 orbs:
   cypress: cypress-io/cypress@1.27.0
-    yarn: true
 executors:
   node:
     docker:
@@ -44,6 +43,7 @@ workflows:
             branches:
               only: master
       - cypress/run:
+          yarn: true
           filters:
             branches:
               only: master
