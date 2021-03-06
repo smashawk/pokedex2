@@ -18,7 +18,7 @@ commands:
             - ./node_modules
 
 jobs:
-  jest/run:
+  jest_run:
     executor: node
     steps:
       - checkout
@@ -38,7 +38,7 @@ jobs:
 workflows:
   build-test-deploy:
     jobs:
-      - jest/run:
+      - jest_run:
           filters:
             branches:
               only: master
