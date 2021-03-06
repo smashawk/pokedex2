@@ -44,6 +44,8 @@ workflows:
               only: master
       - cypress/run:
           yarn: true
+          start: yarn start
+          wait-on: 'http://localhost:3000'
           filters:
             branches:
               only: master
