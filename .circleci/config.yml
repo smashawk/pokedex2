@@ -1,26 +1,60 @@
 version: 2.1
-orbs:
-  node: circleci/node@3.0.0
-jobs:
-  build:
+executors:
+  node:
     docker:
       - image: circleci/node:14
+commands:
+  restore_modules:
+    steps:
+      - restore_cache:
+          key: dependency-cache-{{ checksum "yarn.lock" }}
+  save_modules:
+    steps:
+      - save_cache:
+          key:  dependency-cache-{{ checksum "yarn.lock" }}
+          paths:
+            - ./node_modules
+
+jobs:
+  unit_test:
+    executor: node
     steps:
       - checkout
+      - restore_modules
       - run: yarn
-      # テスト
       - run: yarn test
-      # ビルド
+      - save_modules
+  e2e_test:
+    executor: node
+    steps:
+      - checkout
+      - restore_modules
+      - run: yarn
+      - run: yarn start
+      - run: yarn cypress:run
+      - save_modules
+  build and deploy:
+    executor: node
+    steps:
+      - checkout
+      - restore_modules
+      - run: yarn
       - run: yarn build
-      # cliからNetlifyにデプロイできるようにするライブラリをインストール
-      - run: yarn add netlify-cli
-      # デプロイコマンド
       - run: yarn netlify deploy -p -d build -a ${NETLIFY_AUTH_TOKEN} -s ${NETLIFY_POKEDEX2_ID}
 
 workflows:
+  version: 2
   build-and-test:
     jobs:
-      - build:
+      - unit_test:
+          filters:
+            branches:
+              only: master
+      - e2e_test:
+          filters:
+            branches:
+              only: master
+      - build and deploy:
           filters:
             branches:
               only: master
