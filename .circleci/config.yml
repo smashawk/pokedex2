@@ -1,4 +1,6 @@
 version: 2.1
+orbs:
+  cypress: cypress-io/cypress@1.27.0
 executors:
   node:
     docker:
@@ -16,21 +18,13 @@ commands:
             - ./node_modules
 
 jobs:
-  unit_test:
+  jest/run:
     executor: node
     steps:
       - checkout
       - restore_modules
       - run: yarn
       - run: yarn test
-      - save_modules
-  e2e_test:
-    executor: node
-    steps:
-      - checkout
-      - restore_modules
-      - run: yarn
-      - run: yarn cypress:run
       - save_modules
   build and deploy:
     executor: node
@@ -42,14 +36,13 @@ jobs:
       - run: yarn netlify deploy -p -d build -a ${NETLIFY_AUTH_TOKEN} -s ${NETLIFY_POKEDEX2_ID}
 
 workflows:
-  version: 2
   build-test-deploy:
     jobs:
-      - unit_test:
+      - jest/run:
           filters:
             branches:
               only: master
-      - e2e_test:
+      - cypress/run:
           filters:
             branches:
               only: master
