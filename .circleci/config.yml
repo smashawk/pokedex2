@@ -30,7 +30,6 @@ jobs:
       - checkout
       - restore_modules
       - run: yarn
-      - run: yarn start
       - run: yarn cypress:run
       - save_modules
   build and deploy:
@@ -44,7 +43,7 @@ jobs:
 
 workflows:
   version: 2
-  build-and-test:
+  build-test-deploy:
     jobs:
       - unit_test:
           filters:
