@@ -35,7 +35,7 @@ export type Props = {
 export const DescriptionList: VFC<Props> = ({ data, testId }) => {
 	const classes = useStyles();
 	return (
-		<dl className={classes.dataList} data-testId={testId}>
+		<dl className={classes.dataList} data-testid={testId}>
 			{data.map((item: descType) => (
 				<Fragment key={item.term}>
 					<dt className={classes.dataTerm}>{item.term}</dt>

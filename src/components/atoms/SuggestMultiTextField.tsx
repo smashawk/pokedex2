@@ -53,7 +53,7 @@ export const SuggestMultiTextField: VFC<Props> = ({
 						{optionObj.label}
 					</>
 				)}
-				data-testId={testId}
+				data-testid={testId}
 			/>
 		</Box>
 	);

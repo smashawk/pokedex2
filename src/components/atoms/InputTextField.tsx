@@ -24,7 +24,7 @@ export const InputTextField: VFC<Props> = ({
 	return (
 		<TextField
 			{...{ label, type, size, variant, inputRef, inputProps }}
-			data-testId={testId}
+			data-testid={testId}
 		/>
 	);
 };

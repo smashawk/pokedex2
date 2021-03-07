@@ -66,7 +66,7 @@ export const OutputArea: VFC<Props> = ({
 				simple
 			>
 				<>
-					<Typography variant="subtitle1" data-testId="searchPartner-text">
+					<Typography variant="subtitle1" data-testid="searchPartner-text">
 						<span className={classes.bold}>{partnerInfo.inputName}</span>は
 						<span className={classes.bold}>{pokeSpecies.name.ja}</span>
 						にきめた！

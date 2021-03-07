@@ -43,7 +43,7 @@ export const Switcher: VFC<Props> = ({ checked, label, onChange, testId }) => {
 			onChange={onChange}
 			color="primary"
 			inputProps={{ "aria-label": "primary checkbox" }}
-			data-testId={testId}
+			data-testid={testId}
 		/>
 	);
 

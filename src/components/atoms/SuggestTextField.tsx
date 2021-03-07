@@ -51,7 +51,7 @@ export const SuggestTextField: VFC<Props> = ({
 				renderInput={(params): ReactNode => (
 					<TextField {...params} label="Pokemon" />
 				)}
-				data-testId={testId}
+				data-testid={testId}
 			/>
 		</Box>
 	);
