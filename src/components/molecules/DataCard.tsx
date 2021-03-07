@@ -4,13 +4,21 @@ import { descType } from "@utils/createDescArray";
 import { DescriptionList } from "@components/atoms/DescriptionList";
 import { StatsRadarChart } from "@components/atoms/StatsRadarChart";
 import { EnhancedPokeImg } from "@containers/atoms/PokeImg";
-import { Paper, createStyles, makeStyles } from "@material-ui/core";
+import {
+	Paper,
+	createStyles,
+	makeStyles,
+	Box,
+	Container
+} from "@material-ui/core";
+import classNames from "classnames";
 
 const useStyles = makeStyles(() =>
 	createStyles({
 		paper: {
-			width: 800,
-			height: 520,
+			maxWidth: 800,
+			minHeight: 428,
+			position: "relative",
 			margin: "auto",
 			padding: "20px 40px",
 			backgroundImage: `url(${process.env.PUBLIC_URL}/images/brickwall.png)`,
@@ -18,6 +26,15 @@ const useStyles = makeStyles(() =>
 		},
 		dataContainer: {
 			display: "flex"
+		},
+		descFlex: {
+			marginTop: "20px"
+		},
+		ListWrapper: {
+			width: 400
+		},
+		simpleWrapper: {
+			width: "100%"
 		}
 	})
 );
@@ -26,6 +43,8 @@ export type Props = {
 	pokeData: normalizedPokeDataType;
 	DescArray: descType[];
 	statsArray: number[];
+	graph: boolean;
+	simple: boolean;
 	children?: JSX.Element;
 };
 
@@ -33,6 +52,8 @@ export const DataCard: VFC<Props> = ({
 	pokeData,
 	DescArray,
 	statsArray,
+	graph,
+	simple,
 	children
 }) => {
 	const classes = useStyles();
@@ -43,13 +64,25 @@ export const DataCard: VFC<Props> = ({
 				<>
 					{children}
 					<EnhancedPokeImg no={pokeData.id} />
-					<div className={classes.dataContainer}>
-						<DescriptionList
-							data={DescArray}
-							testId={`descId-${pokeData.id}`}
-						/>
-						<StatsRadarChart data={statsArray} />
-					</div>
+					<Box
+						className={classNames(
+							classes.dataContainer,
+							simple && classes.descFlex
+						)}
+					>
+						<Container
+							className={classNames(
+								classes.ListWrapper,
+								simple && classes.simpleWrapper
+							)}
+						>
+							<DescriptionList
+								data={DescArray}
+								testId={`descId-${pokeData.id}`}
+							/>
+						</Container>
+						{graph && <StatsRadarChart data={statsArray} />}
+					</Box>
 				</>
 			)}
 		</Paper>

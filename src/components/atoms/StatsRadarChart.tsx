@@ -6,7 +6,7 @@ const useStyles = makeStyles(() =>
 	createStyles({
 		container: {
 			width: "250px",
-			margin: 0,
+			margin: "-20px 0 0",
 			padding: 0
 		}
 	})

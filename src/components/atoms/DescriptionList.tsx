@@ -7,7 +7,6 @@ const useStyles = makeStyles(() =>
 	createStyles({
 		dataList: {
 			display: "flex",
-			width: 400,
 			margin: "0 auto",
 			flexWrap: "wrap",
 			textAlign: "left",

@@ -1,4 +1,4 @@
-import { decidePartnerNo } from "@utils/decidePartnerNo";
+import { decidePartnerInfo } from "@utils/decidePartnerInfo";
 
 describe("decidePartnerNo", () => {
 	it.each([
@@ -10,12 +10,12 @@ describe("decidePartnerNo", () => {
 		["記号¥^-@[]/.;|~"],
 		["絵文字👻"]
 	])("decidePartnerNo", (name) => {
-		expect(decidePartnerNo(name)).toBeGreaterThan(0);
-		expect(decidePartnerNo(name)).toBeLessThan(793);
+		expect(decidePartnerInfo(name)).toBeGreaterThan(0);
+		expect(decidePartnerInfo(name)).toBeLessThan(793);
 	});
 
 	it("792ぴったり", () => {
-		expect(decidePartnerNo("ddddddd\\")).toBeGreaterThan(0);
-		expect(decidePartnerNo("ddddddd\\")).toBeLessThan(793);
+		expect(decidePartnerInfo("ddddddd\\")).toBeGreaterThan(0);
+		expect(decidePartnerInfo("ddddddd\\")).toBeLessThan(793);
 	});
 });

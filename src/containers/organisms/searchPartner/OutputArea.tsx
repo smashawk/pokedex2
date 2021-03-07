@@ -1,13 +1,13 @@
 import { VFC } from "react";
 import { connect } from "react-redux";
 import { AppState } from "@store/reducer";
-import { setInputNameState } from "@store/setInputName/reducer";
+import { setPartnerInfoState } from "@store/setPartnerInfo/reducer";
 import { normalizedPokeDataType } from "@store/getPokeData/reducers";
 import { normalizedPokeSpeciesType } from "@store/getPokeSpecies/reducers";
 import { OutputArea } from "@components/organisms/searchPartner/OutputArea";
 
 type StateProps = {
-	inputName: setInputNameState;
+	partnerInfo: setPartnerInfoState;
 	pokeData: normalizedPokeDataType;
 	pokeSpecies: normalizedPokeSpeciesType;
 };
@@ -15,16 +15,16 @@ type StateProps = {
 type Props = StateProps;
 
 const WrappedOutputArea: VFC<Props> = ({
-	inputName,
+	partnerInfo,
 	pokeData,
 	pokeSpecies
 }) => {
-	return <OutputArea {...{ inputName, pokeData, pokeSpecies }} />;
+	return <OutputArea {...{ partnerInfo, pokeData, pokeSpecies }} />;
 };
 
 /** container */
 const mapStateToProps = (state: AppState): StateProps => ({
-	inputName: state.searchPartner.inputName,
+	partnerInfo: state.searchPartner.partnerInfo,
 	pokeData: state.searchPartner.pokeData,
 	pokeSpecies: state.searchPartner.pokeSpecies
 });

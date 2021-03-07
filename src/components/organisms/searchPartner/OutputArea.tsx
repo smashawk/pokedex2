@@ -1,21 +1,50 @@
 import { VFC } from "react";
-import { setInputNameState } from "@store/setInputName/reducer";
+import { setPartnerInfoState } from "@store/setPartnerInfo/reducer";
 import { normalizedPokeDataType } from "@store/getPokeData/reducers";
 import { normalizedPokeSpeciesType } from "@store/getPokeSpecies/reducers";
 import { EnhancedDataCard } from "@containers/molecules/DataCard";
 import { Box, Typography, createStyles, makeStyles } from "@material-ui/core";
+import { theme } from "@styles/theme";
 
 const useStyles = makeStyles(() =>
 	createStyles({
 		bold: {
 			fontWeight: "bold",
 			padding: "0 4px"
+		},
+		subTitle: {
+			position: "absolute",
+			whiteSpace: "pre-line",
+			fontSize: "1.1rem",
+			textAlign: "right",
+			right: "calc(50% + 60px)",
+			top: "108px"
+		},
+		pokeInfo: {
+			display: "inline-block",
+			position: "relative",
+			margin: "0 10px 0 0",
+			padding: "8px",
+			maxWidth: "250px",
+			borderRadius: "12px",
+			background: theme.palette.primary.light,
+			fontSize: "15px",
+			fontWeight: "bold",
+			"&::after": {
+				content: '""',
+				position: "absolute",
+				top: "3px",
+				right: "-19px",
+				border: "8px solid transparent",
+				borderLeft: `18px solid ${theme.palette.primary.light}`,
+				transform: "rotate(-35deg)"
+			}
 		}
 	})
 );
 
 type StateProps = {
-	inputName: setInputNameState;
+	partnerInfo: setPartnerInfoState;
 	pokeData: normalizedPokeDataType;
 	pokeSpecies: normalizedPokeSpeciesType;
 };
@@ -23,19 +52,35 @@ type StateProps = {
 type Props = StateProps;
 
 export const OutputArea: VFC<Props> = ({
-	inputName,
+	partnerInfo,
 	pokeData,
 	pokeSpecies
 }) => {
 	const classes = useStyles();
 	return (
 		<Box mt={10}>
-			<EnhancedDataCard pokeData={pokeData} pokeSpecies={pokeSpecies}>
-				<Typography variant="subtitle1" data-testId="searchPartner-text">
-					<span className={classes.bold}>{inputName.inputName}</span>は
-					<span className={classes.bold}>{pokeSpecies.name.ja}</span>
-					にきめた！
-				</Typography>
+			<EnhancedDataCard
+				pokeData={pokeData}
+				pokeSpecies={pokeSpecies}
+				graph={false}
+				simple
+			>
+				<>
+					<Typography variant="subtitle1" data-testId="searchPartner-text">
+						<span className={classes.bold}>{partnerInfo.inputName}</span>は
+						<span className={classes.bold}>{pokeSpecies.name.ja}</span>
+						にきめた！
+					</Typography>
+					<Typography
+						className={classes.subTitle}
+						variant="subtitle2"
+						data-testId="searchPartner-text"
+					>
+						<p className={classes.pokeInfo}>
+							{`${partnerInfo.natureNo.ja}な性格\n${partnerInfo.charNo.ja}`}
+						</p>
+					</Typography>
+				</>
 			</EnhancedDataCard>
 		</Box>
 	);

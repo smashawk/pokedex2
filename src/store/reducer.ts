@@ -15,7 +15,7 @@ import {
 } from "@store/setSelectedOption/reducer";
 import { setSwitchStateReducer } from "@store/setSwitchState/reducer";
 import { searchTypeGetPokeTypeDataReducer } from "@store/getPokeTypeData/reducers";
-import { setInputNameReducer } from "@store/setInputName/reducer";
+import { setPartnerInfoReducer } from "@store/setPartnerInfo/reducer";
 
 const rootReducer = combineReducers({
 	searchName: combineReducers({
@@ -31,7 +31,7 @@ const rootReducer = combineReducers({
 		pokeTypeData: searchTypeGetPokeTypeDataReducer
 	}),
 	searchPartner: combineReducers({
-		inputName: setInputNameReducer,
+		partnerInfo: setPartnerInfoReducer,
 		pokeData: searchPartnerGetPokeDataReducer,
 		pokeSpecies: searchPartnerGetPokeSpeciesReducer
 	})
