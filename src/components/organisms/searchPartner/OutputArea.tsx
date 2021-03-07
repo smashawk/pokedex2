@@ -71,11 +71,7 @@ export const OutputArea: VFC<Props> = ({
 						<span className={classes.bold}>{pokeSpecies.name.ja}</span>
 						にきめた！
 					</Typography>
-					<Typography
-						className={classes.subTitle}
-						variant="subtitle2"
-						data-testId="searchPartner-text"
-					>
+					<Typography className={classes.subTitle} variant="subtitle2">
 						<p className={classes.pokeInfo}>
 							{`${partnerInfo.natureNo.ja}な性格\n${partnerInfo.charNo.ja}`}
 						</p>

@@ -20,9 +20,9 @@ export const decidePartnerInfo = (inputName: string): partnerInfoType => {
 		nameValue.charCodeAt(0)
 	);
 
-	// 計算（配列の合計値を全ポケモンの数で割った余りをNoとする）
+	// 計算
 	const basePokeNo = charNumArray.reduce((acc, cur) => acc + cur);
-	const baseNatureNo = charNumArray.reduce((acc, cur) => acc * cur + 1);
+	const baseNatureNo = charNumArray.reduce((acc, cur) => (acc + cur) * 3);
 	const baseCharNo = charNumArray.reduce((acc, cur) => acc + cur * 3);
 	return {
 		pokeNo: basePokeNo % 792 || 792,
