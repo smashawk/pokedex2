@@ -13,7 +13,10 @@ export const searchNameGetPokeSpeciesDispatcher = (
 export const searchTypeGetPokeSpeciesDispatcher = (
 	dispatch: Dispatch<actions.searchTypeActionTypes>
 ) => (no: number): void => {
-	if (!no) return;
+	if (!no) {
+		dispatch(actions.searchTypeDataReset());
+		return;
+	}
 	dispatch(actions.searchTypeFetchStarted(no));
 };
 

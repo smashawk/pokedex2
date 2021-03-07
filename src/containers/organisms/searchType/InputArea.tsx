@@ -117,17 +117,18 @@ const WrappedInputArea: VFC<Props> = ({
 			setSelectedOption(selectedOptionArray);
 			fetchPokeTypeData(selectedOptionArray, optionArray.option);
 
+			let no = pokeData.id;
 			if (!selectedOptionArray.length) {
 				fetchPokeData(0);
 				fetchPokeSpecies(0);
+				no = 0;
 			}
-
 			H.replace(
 				`/type?switch=${switchState}&type1=${
 					selectedOptionArray.length ? selectedOptionArray[0].value : ""
 				}&type2=${
 					selectedOptionArray.length === 2 ? selectedOptionArray[1].value : ""
-				}&pokemon=${pokeData.id || ""}`
+				}&pokemon=${!no ? "" : pokeData.id}`
 			);
 		},
 		[
