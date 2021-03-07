@@ -10,7 +10,7 @@ const useStyles = makeStyles(() =>
 		listRoot: {
 			width: "100%",
 			height: "100%",
-			backgroundImage: `url(${process.env.PUBLIC_URL}/images/bg_black.png)`,
+			backgroundImage: `url(${process.env.PUBLIC_URL}/images/brickwall.png)`,
 			backgroundRepeat: "repeat",
 			overflowY: "scroll",
 			willChange: "transform",

@@ -11,7 +11,7 @@ const useStyles = makeStyles(() =>
 			height: 460,
 			margin: "auto",
 			padding: "20px 0",
-			backgroundImage: `url(${process.env.PUBLIC_URL}/images/bg_black.png)`,
+			backgroundImage: `url(${process.env.PUBLIC_URL}/images/brickwall.png)`,
 			backgroundRepeat: "repeat"
 		}
 	})

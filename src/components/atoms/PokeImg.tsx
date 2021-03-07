@@ -12,8 +12,7 @@ const useStyles = makeStyles(() =>
 		pokeImg: {
 			display: "none",
 			width: "auto",
-			height: "100%",
-			filter: "drop-shadow(2px 4px 6px black)"
+			height: "100%"
 		},
 		loadingImg: {
 			display: "block",

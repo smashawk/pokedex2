@@ -13,7 +13,7 @@ const useStyles = makeStyles(() =>
 			height: 520,
 			margin: "auto",
 			padding: "20px 40px",
-			backgroundImage: `url(${process.env.PUBLIC_URL}/images/bg_black.png)`,
+			backgroundImage: `url(${process.env.PUBLIC_URL}/images/brickwall.png)`,
 			backgroundRepeat: "repeat"
 		},
 		dataContainer: {

@@ -43,7 +43,7 @@ export const StatsRadarChart: VFC<Props> = ({ data }) => {
 		title: {
 			display: true,
 			text: "Base_Stats",
-			fontColor: "#FFFFFF"
+			fontColor: "#000000"
 		},
 		legend: {
 			display: false
@@ -62,7 +62,7 @@ export const StatsRadarChart: VFC<Props> = ({ data }) => {
 				color: "#444444"
 			},
 			pointLabels: {
-				fontColor: "#FFFFFF"
+				fontColor: "#000000"
 			}
 		},
 		tooltips: {
