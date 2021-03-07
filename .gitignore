@@ -22,8 +22,5 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# use relative path in cra project and run tests in circleci
-tsconfig.json
-
 # Local Netlify folder
 .netlify
