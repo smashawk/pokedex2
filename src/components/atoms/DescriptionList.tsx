@@ -47,7 +47,8 @@ export const DescriptionList: VFC<Props> = ({ data, testId }) => {
 						)}
 						style={{
 							backgroundImage:
-								item.term === "Type1" || item.term === "Type2"
+								item.term === "Type1" ||
+								(item.term === "Type2" && item.description)
 									? `url(${process.env.PUBLIC_URL}/images/types/${item.description}.png)`
 									: "none"
 						}}
