@@ -19,7 +19,7 @@ describe("decidePartnerInfo", () => {
 		const partnerInfo = decidePartnerInfo("ddddddd\\");
 		expect(partnerInfo.pokeNo).toBeGreaterThan(0);
 		expect(partnerInfo.pokeNo).toBeLessThan(793);
-		expect(partnerInfo.natureNo.ja).toBe("ひかえめ");
+		expect(partnerInfo.natureNo.ja).toBe("うっかりや");
 		expect(partnerInfo.charNo.ja).toBe("まけずぎらい");
 	});
 

@@ -19,7 +19,9 @@ describe("createSuggestArray", () => {
 			}
 		];
 
-		expect(createSuggestArray(pokeDataArray)).toEqual([
+		expect(
+			createSuggestArray(pokeDataArray.map((data) => data.name.japanese))
+		).toEqual([
 			{ value: "フシギダネふしぎだねfushigidane", label: "フシギダネ", no: 1 },
 			{ value: "フシギソウふしぎそうfushigisou", label: "フシギソウ", no: 2 }
 		]);

@@ -21,9 +21,9 @@ describe("searchType", () => {
 		cy.get("[data-testid=suggestMultiTextField]").click();
 		cy.get(".MuiAutocomplete-clearIndicator").click();
 
-		cy.get("[data-option-index=2]").click();
+		cy.get("[data-option-index=10]").click();
 		cy.get("[data-testid=suggestMultiTextField]").click();
-		cy.get("[data-option-index=4]").click();
+		cy.get("[data-option-index=11]").click();
 
 		cy.get("[data-testid=pokeIconId-270]").should("have.attr", "name", "270");
 		cy.get("[data-testid=pokeIconId-270]").click();
