@@ -7,12 +7,16 @@ import { createDescArray } from "@utils/createDescArray";
 type Props = {
 	pokeData: normalizedPokeDataType;
 	pokeSpecies: normalizedPokeSpeciesType;
+	graph?: boolean;
+	simple?: boolean;
 	children?: JSX.Element;
 };
 
 export const EnhancedDataCard: VFC<Props> = ({
 	pokeData,
 	pokeSpecies,
+	graph = true,
+	simple = false,
 	children
 }) => {
 	const DescArray = useMemo(() => createDescArray(pokeData, pokeSpecies), [
@@ -27,6 +31,8 @@ export const EnhancedDataCard: VFC<Props> = ({
 	);
 
 	return (
-		<DataCard {...{ pokeData, DescArray, statsArray }}>{children}</DataCard>
+		<DataCard {...{ pokeData, DescArray, statsArray, graph, simple }}>
+			{children}
+		</DataCard>
 	);
 };

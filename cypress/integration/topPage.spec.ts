@@ -4,7 +4,7 @@ describe("topPage", () => {
 	it("Can go to topPage", () => {
 		cy.visit(baseUrl);
 
-		cy.get("[data-testId=menu-0]").click();
+		cy.get("[data-testid=menu-0]").click();
 		cy.location("pathname").should("eq", "/");
 	});
 });

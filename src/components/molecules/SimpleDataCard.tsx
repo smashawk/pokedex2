@@ -10,8 +10,8 @@ const useStyles = makeStyles(() =>
 		paper: {
 			height: 460,
 			margin: "auto",
-			padding: "20px 0",
-			backgroundImage: `url(${process.env.PUBLIC_URL}/images/bg_black.png)`,
+			padding: "20px 32px",
+			backgroundImage: `url(${process.env.PUBLIC_URL}/images/brickwall.png)`,
 			backgroundRepeat: "repeat"
 		}
 	})

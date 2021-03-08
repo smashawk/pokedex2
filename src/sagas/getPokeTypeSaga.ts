@@ -8,9 +8,9 @@ function* getPokeType1Data(
 	handler: typeof getPokeTypeData,
 	action: ReturnType<typeof actions.type1FetchStarted>
 ) {
-	const type = action.payload;
+	const no = action.payload;
 	try {
-		const res = yield call(getPokeTypeData, type);
+		const res = yield call(getPokeTypeData, no);
 		const normalizedPokeData = normalizePokeData(res.data);
 		yield put(actions.type1FetchSuccess(normalizedPokeData));
 	} catch (e) {
@@ -26,9 +26,9 @@ function* getPokeType2Data(
 	handler: typeof getPokeTypeData,
 	action: ReturnType<typeof actions.type2FetchStarted>
 ) {
-	const type = action.payload;
+	const no = action.payload;
 	try {
-		const res = yield call(getPokeTypeData, type);
+		const res = yield call(getPokeTypeData, no);
 		const normalizedPokeData = normalizePokeData(res.data);
 		yield put(actions.type2FetchSuccess(normalizedPokeData));
 	} catch (e) {

@@ -21,11 +21,14 @@ export const searchTypeFetchSuccess = (res: normalizedPokeSpeciesType) =>
 	({ type: types.SEARCH_TYPE_SUCCESS, payload: res } as const);
 export const searchTypeFetchFailed = (err: Record<string, unknown>) =>
 	({ type: types.SEARCH_TYPE_FAILED, error: err.response } as const);
+export const searchTypeDataReset = () =>
+	({ type: types.SEARCH_TYPE_RESET } as const);
 
 export type searchTypeActionTypes =
 	| ReturnType<typeof searchTypeFetchStarted>
 	| ReturnType<typeof searchTypeFetchSuccess>
-	| ReturnType<typeof searchTypeFetchFailed>;
+	| ReturnType<typeof searchTypeFetchFailed>
+	| ReturnType<typeof searchTypeDataReset>;
 
 /** searchPartner */
 export const searchPartnerFetchStarted = (no: number) =>

@@ -7,7 +7,8 @@ describe("translateKanatoHira", () => {
 		["ピィ", "ぴぃ"],
 		["ポリゴン２", "ぽりごん２"],
 		["ポリゴンＺ", "ぽりごんＺ"],
-		["タイプ：ヌル", "たいぷ：ぬる"]
+		["タイプ：ヌル", "たいぷ：ぬる"],
+		["くさ", "くさ"]
 	])("translateKanatoHira", (name, expectValue) => {
 		expect(translateKanaToHira(name)).toBe(expectValue);
 	});

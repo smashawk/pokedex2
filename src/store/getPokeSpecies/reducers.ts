@@ -44,6 +44,8 @@ export const searchTypeGetPokeSpeciesReducer = (
 			return { ...state, ...action.payload };
 		case types.SEARCH_TYPE_FAILED:
 			return { ...state };
+		case types.SEARCH_TYPE_RESET:
+			return initialState;
 		default:
 			return state;
 	}

@@ -1,19 +1,19 @@
 import { getPokeTypeData } from "@api/requests/getPokeTypeData";
-import typeData from "@constants/type_data.json";
+import { typeList } from "@constants/variables";
 
 describe("getPokeTypeData", () => {
 	it("should succeed", async () => {
-		const type = "grass";
-		const PokeData = await getPokeTypeData(type);
+		const typeNo = 12;
+		const PokeData = await getPokeTypeData(typeNo);
 
 		expect(PokeData.status).toBe(200);
 	});
 
 	it("should fail with nonexistent type", async () => {
-		const type = "";
+		const typeNo = 0;
 
 		try {
-			await getPokeTypeData(type);
+			await getPokeTypeData(typeNo);
 		} catch (error) {
 			expect(error.response.status).toBe(404);
 		}
@@ -21,14 +21,14 @@ describe("getPokeTypeData", () => {
 
 	it("confirm existence about Pokemon type", async () => {
 		const data = await Promise.all(
-			typeData.map(async (tData) => {
-				const response = await getPokeTypeData(tData.en);
-				return { type: tData.en, status: response.status };
+			typeList.map(async (typeData) => {
+				const response = await getPokeTypeData(typeData.no);
+				return { type: typeData.en, status: response.status };
 			})
 		);
 
 		expect(data).toEqual(
-			typeData.map((tData) => ({ type: tData.en, status: 200 }))
+			typeList.map((typeData) => ({ type: typeData.en, status: 200 }))
 		);
 	});
 });

@@ -17,7 +17,7 @@ export const FixButton: VFC<Props> = ({
 	testId
 }) => {
 	return (
-		<Button {...{ color, variant, onClick }} data-testId={testId}>
+		<Button {...{ color, variant, onClick }} data-testid={testId}>
 			{text}
 		</Button>
 	);

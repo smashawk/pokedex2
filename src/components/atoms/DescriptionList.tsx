@@ -7,7 +7,6 @@ const useStyles = makeStyles(() =>
 	createStyles({
 		dataList: {
 			display: "flex",
-			width: 400,
 			margin: "0 auto",
 			flexWrap: "wrap",
 			textAlign: "left",
@@ -36,7 +35,7 @@ export type Props = {
 export const DescriptionList: VFC<Props> = ({ data, testId }) => {
 	const classes = useStyles();
 	return (
-		<dl className={classes.dataList} data-testId={testId}>
+		<dl className={classes.dataList} data-testid={testId}>
 			{data.map((item: descType) => (
 				<Fragment key={item.term}>
 					<dt className={classes.dataTerm}>{item.term}</dt>
@@ -48,7 +47,8 @@ export const DescriptionList: VFC<Props> = ({ data, testId }) => {
 						)}
 						style={{
 							backgroundImage:
-								item.term === "Type1" || item.term === "Type2"
+								item.term === "Type1" ||
+								(item.term === "Type2" && item.description)
 									? `url(${process.env.PUBLIC_URL}/images/types/${item.description}.png)`
 									: "none"
 						}}

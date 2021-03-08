@@ -40,8 +40,8 @@ workflows:
     jobs:
       - jest_run:
           filters:
-#            branches:
-#              only: master
+            branches:
+              ignore: /.*/
             tags:
               only: /^v.*/
       - cypress/run:
@@ -49,9 +49,13 @@ workflows:
           start: yarn start
           wait-on: 'http://localhost:3000'
           filters:
+            branches:
+              ignore: /.*/
             tags:
               only: /^v.*/
       - build and deploy:
           filters:
+            branches:
+              ignore: /.*/
             tags:
               only: /^v.*/

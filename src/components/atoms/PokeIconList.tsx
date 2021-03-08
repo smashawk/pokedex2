@@ -48,7 +48,7 @@ export const PokeIconList: VFC<Props> = ({ item, pokeId, onClick, testId }) => {
 				item.no === pokeId && classes.onclick
 			)}
 			onClick={onClick}
-			data-testId={testId}
+			data-testid={testId}
 		/>
 	);
 };

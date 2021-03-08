@@ -55,6 +55,7 @@
 		"react/jsx-one-expression-per-line": "off",
 		"react/jsx-props-no-spreading": ["off"],
 		"react/jsx-uses-react": "off",
+		"react/jsx-wrap-multilines": ["error", { "arrow": true, "return": true, "declaration": true }],
 		"react/no-array-index-key": ["warn"],
 		"react/react-in-jsx-scope": "off",
 		"react/require-default-props": ["off"],

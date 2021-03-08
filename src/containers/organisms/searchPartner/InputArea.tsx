@@ -4,16 +4,16 @@ import { Dispatch } from "redux";
 import { useHistory, useLocation } from "react-router-dom";
 import { AppState } from "@store/reducer";
 import { dispatches } from "@store/dispatches";
-import { setInputNameState } from "@store/setInputName/reducer";
-import { decidePartnerNo } from "@utils/decidePartnerNo";
+import { setPartnerInfoState } from "@store/setPartnerInfo/reducer";
+import { decidePartnerInfo, partnerInfoType } from "@utils/decidePartnerInfo";
 import { InputArea } from "@components/organisms/searchPartner/InputArea";
 
 type StateProps = {
-	inputName: setInputNameState;
+	partnerInfoState: setPartnerInfoState;
 };
 
 type DispatchProps = {
-	setInputName: (inputName: string) => void;
+	setPartnerInfo: (inputName: string, partnerInfo: partnerInfoType) => void;
 	fetchPokeData: (partnerNo: number) => void;
 	fetchPartnerPokeSpecies: (partnerNo: number) => void;
 };
@@ -21,8 +21,8 @@ type DispatchProps = {
 type Props = StateProps & DispatchProps;
 
 const WrappedInputArea: VFC<Props> = ({
-	inputName,
-	setInputName,
+	partnerInfoState,
+	setPartnerInfo,
 	fetchPokeData,
 	fetchPartnerPokeSpecies
 }) => {
@@ -36,17 +36,17 @@ const WrappedInputArea: VFC<Props> = ({
 		const name = query.get("name");
 
 		/** add Query Strings if store have searchPartner State */
-		if (inputName.inputName && !name) {
-			H.replace(`/partner?name=${inputName.inputName}`);
+		if (partnerInfoState.inputName && !name) {
+			H.replace(`/partner?name=${partnerInfoState.inputName}`);
 			return;
 		}
 
 		/** show search result if URL has query */
 		if (name) {
-			const partnerNo = decidePartnerNo(name);
-			setInputName(name);
-			fetchPokeData(partnerNo);
-			fetchPartnerPokeSpecies(partnerNo);
+			const partnerInfo = decidePartnerInfo(name);
+			setPartnerInfo(name, partnerInfo);
+			fetchPokeData(partnerInfo.pokeNo);
+			fetchPartnerPokeSpecies(partnerInfo.pokeNo);
 		}
 	}, []);
 
@@ -62,10 +62,10 @@ const WrappedInputArea: VFC<Props> = ({
 	 */
 	const searchPartner = (): void => {
 		if (!textRef.value) return;
-		const partnerNo = decidePartnerNo(textRef.value);
-		setInputName(textRef.value);
-		fetchPokeData(partnerNo);
-		fetchPartnerPokeSpecies(partnerNo);
+		const partnerInfo = decidePartnerInfo(textRef.value);
+		setPartnerInfo(textRef.value, partnerInfo);
+		fetchPokeData(partnerInfo.pokeNo);
+		fetchPartnerPokeSpecies(partnerInfo.pokeNo);
 
 		H.replace(`/partner?name=${textRef.value}`);
 	};
@@ -75,15 +75,15 @@ const WrappedInputArea: VFC<Props> = ({
 
 /** container */
 const mapStateToProps = (state: AppState): StateProps => ({
-	inputName: state.searchPartner.inputName
+	partnerInfoState: state.searchPartner.partnerInfo
 });
 
 const mapDispatchToProps = (dispatch: Dispatch): DispatchProps => {
 	const { searchPartner } = dispatches;
 
 	return {
-		setInputName: (inputName: string): void => {
-			searchPartner.setInputNameDispatcher(dispatch)(inputName);
+		setPartnerInfo: (inputName: string, partnerInfo: partnerInfoType): void => {
+			searchPartner.setPartnerInfoDispatcher(dispatch)(inputName, partnerInfo);
 		},
 		fetchPokeData: (partnerNo: number): void => {
 			searchPartner.searchPartnerGetPokeDataDispatcher(dispatch)(partnerNo);

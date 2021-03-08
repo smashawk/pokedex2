@@ -5,7 +5,6 @@ import {
 	makeStyles,
 	ThemeProvider,
 	CssBaseline,
-	Container,
 	Typography,
 	Box
 } from "@material-ui/core";
@@ -14,11 +13,16 @@ import { theme } from "@styles/theme";
 const useStyles = makeStyles(() =>
 	createStyles({
 		root: {
+			minHeight: "100vh",
 			padding: 0,
-			textAlign: "center"
+			textAlign: "center",
+			backgroundImage: `url(${process.env.PUBLIC_URL}/images/bg_white.png)`,
+			backgroundRepeat: "repeat"
 		},
 		main: {
-			marginTop: theme.spacing(8)
+			maxWidth: 960,
+			margin: "0 auto",
+			padding: "32px 0"
 		}
 	})
 );
@@ -42,7 +46,7 @@ export const PokedexTemplate: VFC<Props> = ({ children }) => {
 		 * */
 		<ThemeProvider theme={theme}>
 			<CssBaseline />
-			<Container className={classes.root} maxWidth="md">
+			<Box className={classes.root}>
 				<EnhancedHeaderMenu />
 				<main className={classes.main}>
 					<Typography variant="h1">ポケモン図鑑</Typography>
@@ -50,7 +54,7 @@ export const PokedexTemplate: VFC<Props> = ({ children }) => {
 						<>{children}</>
 					</Box>
 				</main>
-			</Container>
+			</Box>
 		</ThemeProvider>
 	);
 };

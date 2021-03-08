@@ -28,9 +28,9 @@ const WrappedInputArea: VFC<Props> = ({
 	fetchPokeSpecies
 }) => {
 	/** create list for suggest */
-	const suggestArray = useMemo(() => createSuggestArray(pokeDataArray), [
-		pokeDataArray
-	]);
+	const suggestArray = useMemo(() => {
+		return createSuggestArray(pokeDataArray.map((data) => data.name.japanese));
+	}, [pokeDataArray]);
 
 	/** define for React Router Hooks */
 	const H = useHistory();

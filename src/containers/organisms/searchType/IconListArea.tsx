@@ -63,8 +63,8 @@ const WrappedIconListArea: VFC<Props> = ({
 			fetchPokeSpecies(+value);
 
 			H.replace(
-				`/type?switch=${switchState}&type1=${pokeTypeData.type1.type}&type2=${
-					pokeTypeData.type2.type
+				`/type?switch=${switchState}&type1=${pokeTypeData.type1.no}&type2=${
+					pokeTypeData.type2.no
 				}&pokemon=${+value}`
 			);
 		},
