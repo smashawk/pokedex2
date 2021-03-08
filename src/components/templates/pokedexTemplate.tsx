@@ -21,7 +21,8 @@ const useStyles = makeStyles(() =>
 		},
 		main: {
 			maxWidth: 960,
-			margin: "32px auto"
+			margin: "0 auto",
+			padding: "32px 0"
 		}
 	})
 );
