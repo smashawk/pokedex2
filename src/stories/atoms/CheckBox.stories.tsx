@@ -11,7 +11,8 @@ const Template: Story<Props> = (args) => <CheckBox {...args} />;
 export const ON = Template.bind({});
 
 ON.args = {
-	isSelected: true
+	isSelected: true,
+	label: "くさ"
 };
 
 ON.parameters = {

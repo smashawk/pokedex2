@@ -53,10 +53,7 @@ export const SuggestMultiTextField: VFC<Props> = ({
 					<TextField {...params} label="Types" />
 				)}
 				renderOption={(optionObj, { selected }): JSX.Element => (
-					<>
-						<CheckBox isSelected={selected} />
-						{optionObj.label}
-					</>
+					<CheckBox isSelected={selected} label={optionObj.label} />
 				)}
 				data-testid={testId}
 			/>
