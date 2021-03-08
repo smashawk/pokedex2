@@ -8,7 +8,8 @@ import { OptionType } from "@store/setSelectedOption/reducer";
 import { getPokeTypeDataType } from "@store/getPokeTypeData/reducers";
 import { normalizedPokeDataType } from "@store/getPokeData/reducers";
 import { InputArea } from "@components/organisms/searchType/InputArea";
-import typeData from "@constants/type_data.json";
+import { typeList } from "@constants/variables";
+import { createSuggestArray } from "@utils/createSuggestArray";
 
 type StateProps = {
 	switchState: boolean;
@@ -42,17 +43,9 @@ const WrappedInputArea: VFC<Props> = ({
 	fetchPokeSpecies
 }) => {
 	/** create list for suggest */
-	const suggestArray = useMemo(
-		() =>
-			typeData.map((value) => {
-				return {
-					value: value.en,
-					label: value.ja,
-					no: value.no
-				};
-			}),
-		[]
-	);
+	const suggestArray = useMemo(() => {
+		return createSuggestArray(typeList.map((data) => data.ja));
+	}, [typeList]);
 
 	/** define for React Router Hooks */
 	const H = useHistory();
@@ -62,18 +55,18 @@ const WrappedInputArea: VFC<Props> = ({
 
 	useEffect(() => {
 		const switchType = query.get("switch");
-		const type1 = query.get("type1");
-		const type2 = query.get("type2");
+		const type1No = query.get("type1");
+		const type2No = query.get("type2");
 		const pokemon = query.get("pokemon");
 
 		/** add Query Strings if store have searchType State */
 		if (
-			(pokeTypeData.type1.type && !type1) ||
-			(pokeTypeData.type2.type && !type2) ||
+			(pokeTypeData.type1.no && !type1No) ||
+			(pokeTypeData.type2.no && !type2No) ||
 			(pokeData.id && !pokemon)
 		) {
 			H.replace(
-				`/type?switch=${switchState}&type1=${pokeTypeData.type1.type}&type2=${pokeTypeData.type2.type}&pokemon=${pokeData.id}`
+				`/type?switch=${switchState}&type1=${pokeTypeData.type1.no}&type2=${pokeTypeData.type2.no}&pokemon=${pokeData.id}`
 			);
 			return;
 		}
@@ -82,9 +75,9 @@ const WrappedInputArea: VFC<Props> = ({
 		if (switchType) {
 			setSwitchState(switchType === "true");
 		}
-		if (type1 || type2) {
+		if (type1No || type2No) {
 			const selectedOptionArray = suggestArray.filter(
-				(item) => item.value === type1 || item.value === type2
+				(item) => String(item.no) === type1No || String(item.no) === type2No
 			);
 
 			setSelectedOption(selectedOptionArray);
@@ -101,7 +94,7 @@ const WrappedInputArea: VFC<Props> = ({
 			setSwitchState(event.target.checked);
 
 			H.replace(
-				`/type?switch=${event.target.checked}&type1=${pokeTypeData.type1.type}&type2=${pokeTypeData.type2.type}&pokemon=${pokeData.id}`
+				`/type?switch=${event.target.checked}&type1=${pokeTypeData.type1.no}&type2=${pokeTypeData.type2.no}&pokemon=${pokeData.id}`
 			);
 		},
 		[setSwitchState, pokeData, pokeTypeData]
@@ -125,9 +118,9 @@ const WrappedInputArea: VFC<Props> = ({
 			}
 			H.replace(
 				`/type?switch=${switchState}&type1=${
-					selectedOptionArray.length ? selectedOptionArray[0].value : ""
+					selectedOptionArray.length ? selectedOptionArray[0].no : 0
 				}&type2=${
-					selectedOptionArray.length === 2 ? selectedOptionArray[1].value : ""
+					selectedOptionArray.length === 2 ? selectedOptionArray[1].no : 0
 				}&pokemon=${!no ? "" : pokeData.id}`
 			);
 		},

@@ -28,6 +28,7 @@ export const normalizePokeData = (
 
 	return {
 		type: typeData.name,
+		no: typeData.id,
 		pokemon: typePokeArray
 	};
 };

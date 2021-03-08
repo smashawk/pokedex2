@@ -14,7 +14,6 @@ export const App: VFC = () => {
 			<Switch>
 				<Route exact path="/" component={Index} />
 				<Route exact path="/pokemon" component={SearchName} />
-				<Route path="/pokemon/:id" component={SearchName} />
 				<Route path="/type" component={SearchType} />
 				<Route path="/partner" component={SearchPartner} />
 			</Switch>

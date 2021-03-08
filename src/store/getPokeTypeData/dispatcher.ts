@@ -23,7 +23,7 @@ export const searchTypeGetPokeTypeDataDispatcher = (
 		selectedOptionArray.length === 1 ||
 		(selectedOptionArray.length === 2 && optionArray.length === 1)
 	) {
-		dispatch(actions.type1FetchStarted(selectedOptionArray[0].value as string));
+		dispatch(actions.type1FetchStarted(selectedOptionArray[0].no));
 	}
 
 	// 2タイプ -> 1タイプの場合にtype1をリセットする
@@ -37,8 +37,8 @@ export const searchTypeGetPokeTypeDataDispatcher = (
 		dispatch(
 			actions.type2FetchStarted(
 				selectedOptionArray.length === 2
-					? (selectedOptionArray[1].value as string)
-					: (selectedOptionArray[2].value as string)
+					? selectedOptionArray[1].no
+					: selectedOptionArray[2].no
 			)
 		);
 	}

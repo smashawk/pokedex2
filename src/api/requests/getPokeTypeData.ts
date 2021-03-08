@@ -14,8 +14,8 @@ export type PokeTypeDataType = {
 };
 
 export const getPokeTypeData = async (
-	type: string
+	no: number
 ): Promise<AxiosResponse<PokeTypeDataType>> => {
-	const url = `https://pokeapi.co/api/v2/type/${type}`;
+	const url = `https://pokeapi.co/api/v2/type/${no}`;
 	return getRequest<PokeTypeDataType>(url);
 };

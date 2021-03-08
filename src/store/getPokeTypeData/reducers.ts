@@ -3,6 +3,7 @@ import * as actions from "./actions";
 
 export type formattedPokeTypeDataType = {
 	type: string;
+	no: number;
 	pokemon: { name: { ja: string; en: string }; no: number }[];
 };
 
@@ -14,10 +15,12 @@ export type getPokeTypeDataType = {
 export const initialState: getPokeTypeDataType = {
 	type1: {
 		type: "",
+		no: 0,
 		pokemon: [{ name: { ja: "", en: "" }, no: 0 }]
 	},
 	type2: {
 		type: "",
+		no: 0,
 		pokemon: [{ name: { ja: "", en: "" }, no: 0 }]
 	}
 };
@@ -28,13 +31,13 @@ export const searchTypeGetPokeTypeDataReducer = (
 ): getPokeTypeDataType => {
 	switch (action.type) {
 		case types.POKE_TYPE1_STARTED:
-			return { ...state, type1: { type: action.payload, pokemon: [] } };
+			return { ...state, type1: { type: "", no: action.payload, pokemon: [] } };
 		case types.POKE_TYPE1_SUCCESS:
 			return { ...state, type1: { ...action.payload } };
 		case types.POKE_TYPE1_FAILED:
 			return { ...state };
 		case types.POKE_TYPE2_STARTED:
-			return { ...state, type2: { type: action.payload, pokemon: [] } };
+			return { ...state, type2: { type: "", no: action.payload, pokemon: [] } };
 		case types.POKE_TYPE2_SUCCESS:
 			return { ...state, type2: { ...action.payload } };
 		case types.POKE_TYPE2_FAILED:
@@ -42,12 +45,20 @@ export const searchTypeGetPokeTypeDataReducer = (
 		case types.POKE_TYPE1_RESET:
 			return {
 				...state,
-				type1: { type: "", pokemon: [{ name: { ja: "", en: "" }, no: 0 }] }
+				type1: {
+					type: "",
+					no: 0,
+					pokemon: [{ name: { ja: "", en: "" }, no: 0 }]
+				}
 			};
 		case types.POKE_TYPE2_RESET:
 			return {
 				...state,
-				type2: { type: "", pokemon: [{ name: { ja: "", en: "" }, no: 0 }] }
+				type2: {
+					type: "",
+					no: 0,
+					pokemon: [{ name: { ja: "", en: "" }, no: 0 }]
+				}
 			};
 		default:
 			return state;

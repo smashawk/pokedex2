@@ -44,6 +44,11 @@ export const SuggestMultiTextField: VFC<Props> = ({
 				getOptionLabel={(item): string => item.label}
 				getOptionDisabled={(): boolean => option.length > 1}
 				getOptionSelected={(item, value): boolean => item.no === value.no}
+				filterOptions={(items, params): OptionType[] => {
+					return items.filter(
+						(item) => item.value.indexOf(params.inputValue) !== -1
+					);
+				}}
 				renderInput={(params): ReactNode => (
 					<TextField {...params} label="Types" />
 				)}

@@ -23,6 +23,100 @@ export const menuList = [
 	}
 ];
 
+export const typeList = [
+	{
+		ja: "ノーマル",
+		en: "normal",
+		no: 1
+	},
+	{
+		ja: "かくとう",
+		en: "fighting",
+		no: 2
+	},
+	{
+		ja: "ひこう",
+		en: "flying",
+		no: 3
+	},
+	{
+		ja: "どく",
+		en: "poison",
+		no: 4
+	},
+	{
+		ja: "じめん",
+		en: "ground",
+		no: 5
+	},
+	{
+		ja: "いわ",
+		en: "rock",
+		no: 6
+	},
+	{
+		ja: "むし",
+		en: "bug",
+		no: 7
+	},
+	{
+		ja: "ゴースト",
+		en: "ghost",
+		no: 8
+	},
+	{
+		ja: "はがね",
+		en: "steel",
+		no: 9
+	},
+	{
+		ja: "ほのお",
+		en: "fire",
+		no: 10
+	},
+	{
+		ja: "みず",
+		en: "water",
+		no: 11
+	},
+	{
+		ja: "くさ",
+		en: "grass",
+		no: 12
+	},
+	{
+		ja: "でんき",
+		en: "electric",
+		no: 13
+	},
+	{
+		ja: "エスパー",
+		en: "psychic",
+		no: 14
+	},
+	{
+		ja: "こおり",
+		en: "ice",
+		no: 15
+	},
+	{
+		ja: "ドラゴン",
+		en: "dragon",
+		no: 16
+	},
+	{
+		ja: "あく",
+		en: "dark",
+		no: 17
+	},
+
+	{
+		ja: "フェアリー",
+		en: "fairy",
+		no: 18
+	}
+];
+
 export const NatureList = [
 	{
 		ja: "いじっぱり",
