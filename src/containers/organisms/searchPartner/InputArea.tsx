@@ -50,27 +50,19 @@ const WrappedInputArea: VFC<Props> = ({
 		}
 	}, []);
 
-	/** get textField DOM */
-	let textRef: HTMLInputElement;
-	const refFnc = (element: HTMLInputElement): HTMLInputElement => {
-		textRef = element;
-		return textRef;
-	};
-
 	/**
 	 * fire this function when you click Fix Button
 	 */
-	const searchPartner = (): void => {
-		if (!textRef.value) return;
-		const partnerInfo = decidePartnerInfo(textRef.value);
-		setPartnerInfo(textRef.value, partnerInfo);
+	const searchPartner = (value: { inputText: string }): void => {
+		if (!value.inputText) return;
+		const partnerInfo = decidePartnerInfo(value.inputText);
+		setPartnerInfo(value.inputText, partnerInfo);
 		fetchPokeData(partnerInfo.pokeNo);
 		fetchPartnerPokeSpecies(partnerInfo.pokeNo);
-
-		H.replace(`/partner?name=${textRef.value}`);
+		H.replace(`/partner?name=${value.inputText}`);
 	};
 
-	return <InputArea {...{ refFnc, searchPartner }} />;
+	return <InputArea {...{ searchPartner }} />;
 };
 
 /** container */
