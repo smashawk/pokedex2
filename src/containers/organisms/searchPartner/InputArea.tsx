@@ -7,6 +7,7 @@ import { dispatches } from "@store/dispatches";
 import { setPartnerInfoState } from "@store/setPartnerInfo/reducer";
 import { decidePartnerInfo, partnerInfoType } from "@utils/decidePartnerInfo";
 import { InputArea } from "@components/organisms/searchPartner/InputArea";
+import { useFormik } from "formik";
 
 type StateProps = {
 	partnerInfoState: setPartnerInfoState;
@@ -62,7 +63,13 @@ const WrappedInputArea: VFC<Props> = ({
 		H.replace(`/partner?name=${value.inputText}`);
 	};
 
-	return <InputArea {...{ searchPartner }} />;
+	const formik = useFormik({
+		initialValues: { inputText: "" },
+		validationSchema: null,
+		onSubmit: searchPartner
+	});
+
+	return <InputArea {...{ searchPartner, formik }} />;
 };
 
 /** container */
