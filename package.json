@@ -4,7 +4,8 @@
 	"private": true,
 	"scripts": {
 		"start": "react-app-rewired start",
-		"build": "react-app-rewired build",
+		"build:local": "dotenv -e .env react-app-rewired build",
+		"build:prod": "dotenv -e .env.production react-app-rewired build",
 		"test": "react-app-rewired test",
 		"cypress": "cypress open",
 		"cypress:run": "cypress run",
@@ -61,6 +62,7 @@
 		"axios-mock-adapter": "^1.19.0",
 		"babel-jest": "^26.6.3",
 		"cypress": "^6.6.0",
+		"dotenv-cli": "^4.0.0",
 		"eslint": "7.19.0",
 		"eslint-config-airbnb": "^18.2.1",
 		"eslint-config-prettier": "^7.2.0",

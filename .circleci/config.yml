@@ -32,7 +32,7 @@ jobs:
       - checkout
       - restore_modules
       - run: yarn
-      - run: yarn build
+      - run: yarn build:prod
       - run: yarn netlify deploy -p -d build -a ${NETLIFY_AUTH_TOKEN} -s ${NETLIFY_POKEDEX2_ID}
 
 workflows:
