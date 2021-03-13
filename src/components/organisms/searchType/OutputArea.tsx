@@ -9,14 +9,14 @@ import { theme } from "@styles/theme";
 const useStyles = makeStyles(() =>
 	createStyles({
 		gridRoot: {
-			marginTop: 31
+			marginTop: 23
 		},
 		iconList: {
-			height: 460,
+			height: 428,
 			borderRadius: 20
 		},
 		dataCard: {
-			height: 460,
+			height: 428,
 			marginLeft: theme.spacing(8)
 		}
 	})

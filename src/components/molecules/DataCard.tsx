@@ -20,7 +20,7 @@ const useStyles = makeStyles(() =>
 			minHeight: 428,
 			position: "relative",
 			margin: "auto",
-			padding: "20px 40px",
+			padding: "12px 40px 0",
 			backgroundImage: `url(${process.env.PUBLIC_URL}/images/brickwall.png)`,
 			backgroundRepeat: "repeat"
 		},
