@@ -8,7 +8,7 @@ import { createStyles, makeStyles, Paper } from "@material-ui/core";
 const useStyles = makeStyles(() =>
 	createStyles({
 		paper: {
-			height: 460,
+			height: "100%",
 			margin: "auto",
 			padding: "20px 32px",
 			backgroundImage: `url(${process.env.PUBLIC_URL}/images/brickwall.png)`,

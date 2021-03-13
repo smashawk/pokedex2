@@ -11,7 +11,7 @@ type Props = {
 
 export const OutputArea: VFC<Props> = ({ pokeData, pokeSpecies }) => {
 	return (
-		<Box mt={10}>
+		<Box mt={8}>
 			<EnhancedDataCard {...{ pokeData, pokeSpecies }} />
 		</Box>
 	);

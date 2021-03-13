@@ -1,15 +1,17 @@
-import { VFC } from "react";
+import { VFC, ChangeEvent } from "react";
 import TextField, { TextFieldProps } from "@material-ui/core/TextField";
 import { InputProps as StandardInputProps } from "@material-ui/core/Input/Input";
 
 export type Props = {
 	label: string;
-	type: TextFieldProps["type"];
+	type?: TextFieldProps["type"];
 	size?: TextFieldProps["size"];
 	variant?: TextFieldProps["variant"];
 	inputProps?: StandardInputProps["inputProps"];
-	inputRef?: (element: HTMLInputElement) => HTMLInputElement;
 	testId?: string;
+	name?: string;
+	value?: string;
+	onChange?: (e: ChangeEvent) => void;
 };
 
 export const InputTextField: VFC<Props> = ({
@@ -17,13 +19,15 @@ export const InputTextField: VFC<Props> = ({
 	type,
 	size,
 	variant,
-	inputRef,
 	inputProps,
-	testId
+	testId,
+	name,
+	value,
+	onChange
 }) => {
 	return (
 		<TextField
-			{...{ label, type, size, variant, inputRef, inputProps }}
+			{...{ label, type, size, variant, inputProps, name, value, onChange }}
 			data-testid={testId}
 		/>
 	);

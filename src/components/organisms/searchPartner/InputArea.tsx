@@ -1,33 +1,27 @@
 import { VFC } from "react";
-import { FixButton } from "@components/atoms/FixButton";
-import { InputTextField } from "@components/atoms/InputTextField";
+import {
+	FormikTextField,
+	FormikValue
+} from "@components/molecules/FomikTextField";
 import { Box, Typography } from "@material-ui/core";
+import { FormikProps } from "formik";
 
 type Props = {
-	refFnc: (element: HTMLInputElement) => HTMLInputElement;
-	searchPartner: () => void;
+	formik: FormikProps<FormikValue>;
 };
 
-export const InputArea: VFC<Props> = ({ refFnc, searchPartner }) => {
+export const InputArea: VFC<Props> = ({ formik }) => {
 	return (
 		<>
 			<Typography variant="h2">3. 相棒検索</Typography>
 			<Box mt={10}>
-				<InputTextField
+				<FormikTextField
+					name="inputText"
 					label="名前を入力しよう"
-					size="small"
-					type="text"
-					variant="filled"
-					inputRef={refFnc}
-					inputProps={{ minLength: 1, maxLength: 16 }}
-					testId="searchPartner-input"
-				/>
-				<FixButton
-					color="primary"
 					text="決定"
-					variant="contained"
-					onClick={searchPartner}
-					testId="searchPartner-button"
+					fieldTestId="searchPartner-input"
+					buttonTestId="searchPartner-button"
+					formik={formik}
 				/>
 			</Box>
 		</>

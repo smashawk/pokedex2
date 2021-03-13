@@ -18,7 +18,7 @@ const useStyles = makeStyles(() =>
 			fontSize: "1.1rem",
 			textAlign: "right",
 			right: "calc(50% + 60px)",
-			top: "108px"
+			top: "100px"
 		},
 		pokeInfo: {
 			display: "inline-block",
@@ -58,7 +58,7 @@ export const OutputArea: VFC<Props> = ({
 }) => {
 	const classes = useStyles();
 	return (
-		<Box mt={10}>
+		<Box mt={8}>
 			<EnhancedDataCard
 				pokeData={pokeData}
 				pokeSpecies={pokeSpecies}
