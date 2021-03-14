@@ -34,14 +34,14 @@ export const FormikTextField: VFC<Props> = ({
 				variant="filled"
 				onChange={formik.handleChange}
 				inputProps={{ minLength: 1, maxLength: 16 }}
-				data-testId={fieldTestId}
+				testId={fieldTestId}
 			/>
 			<FixButton
 				color="primary"
 				text={text}
 				variant="contained"
-				testId={buttonTestId}
 				type="submit"
+				testId={buttonTestId}
 			/>
 		</form>
 	);
