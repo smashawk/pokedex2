@@ -3,21 +3,30 @@ import { Button, ButtonProps } from "@material-ui/core";
 
 export type Props = {
 	text: string;
+	disabled?: boolean;
+	id?: string;
 	color?: ButtonProps["color"];
 	variant?: ButtonProps["variant"];
-	type: ButtonHTMLAttributes<HTMLButtonElement>["type"];
+	type?: ButtonHTMLAttributes<HTMLButtonElement>["type"];
 	testId?: string;
+	onClick?: () => void;
 };
 
 export const FixButton: VFC<Props> = ({
-	color,
 	text,
-	variant,
-	type,
-	testId
+	disabled,
+	id,
+	color = "primary",
+	variant = "contained",
+	type = "submit",
+	testId,
+	onClick
 }) => {
 	return (
-		<Button {...{ color, variant, type }} data-testid={testId}>
+		<Button
+			{...{ id, color, variant, type, onClick, disabled }}
+			data-testid={testId}
+		>
 			{text}
 		</Button>
 	);

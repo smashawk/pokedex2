@@ -20,6 +20,12 @@ const useStyles = makeStyles(() =>
 			minHeight: 428,
 			position: "relative",
 			margin: "auto",
+			backgroundImage: `url(${process.env.PUBLIC_URL}/images/brickwall.png)`,
+			backgroundRepeat: "repeat"
+		},
+		box: {
+			maxWidth: 800,
+			minHeight: 428,
 			padding: "12px 40px 0",
 			backgroundImage: `url(${process.env.PUBLIC_URL}/images/brickwall.png)`,
 			backgroundRepeat: "repeat"
@@ -60,31 +66,33 @@ export const DataCard: VFC<Props> = ({
 
 	return (
 		<Paper className={classes.paper}>
-			{pokeData.name && (
-				<>
-					{children}
-					<EnhancedPokeImg no={pokeData.id} />
-					<Box
-						className={classNames(
-							classes.dataContainer,
-							simple && classes.descFlex
-						)}
-					>
-						<Container
+			<Box id="target-component" className={classes.box}>
+				{pokeData.name && (
+					<>
+						{children}
+						<EnhancedPokeImg no={pokeData.id} />
+						<Box
 							className={classNames(
-								classes.ListWrapper,
-								simple && classes.simpleWrapper
+								classes.dataContainer,
+								simple && classes.descFlex
 							)}
 						>
-							<DescriptionList
-								data={DescArray}
-								testId={`descId-${pokeData.id}`}
-							/>
-						</Container>
-						{graph && <StatsRadarChart data={statsArray} />}
-					</Box>
-				</>
-			)}
+							<Container
+								className={classNames(
+									classes.ListWrapper,
+									simple && classes.simpleWrapper
+								)}
+							>
+								<DescriptionList
+									data={DescArray}
+									testId={`descId-${pokeData.id}`}
+								/>
+							</Container>
+							{graph && <StatsRadarChart data={statsArray} />}
+						</Box>
+					</>
+				)}
+			</Box>
 		</Paper>
 	);
 };

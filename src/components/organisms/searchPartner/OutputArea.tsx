@@ -43,13 +43,11 @@ const useStyles = makeStyles(() =>
 	})
 );
 
-type StateProps = {
+type Props = {
 	partnerInfo: setPartnerInfoState;
 	pokeData: normalizedPokeDataType;
 	pokeSpecies: normalizedPokeSpeciesType;
 };
-
-type Props = StateProps;
 
 export const OutputArea: VFC<Props> = ({
 	partnerInfo,

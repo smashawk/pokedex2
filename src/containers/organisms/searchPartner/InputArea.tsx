@@ -1,4 +1,4 @@
-import { useEffect, VFC } from "react";
+import { useEffect, useState, VFC } from "react";
 import { connect } from "react-redux";
 import { Dispatch } from "redux";
 import { useHistory, useLocation } from "react-router-dom";
@@ -8,6 +8,7 @@ import { setPartnerInfoState } from "@store/setPartnerInfo/reducer";
 import { decidePartnerInfo, partnerInfoType } from "@utils/decidePartnerInfo";
 import { InputArea } from "@components/organisms/searchPartner/InputArea";
 import { useFormik } from "formik";
+import html2canvas from "html2canvas";
 
 type StateProps = {
 	partnerInfoState: setPartnerInfoState;
@@ -69,7 +70,49 @@ const WrappedInputArea: VFC<Props> = ({
 		onSubmit: searchPartner
 	});
 
-	return <InputArea {...{ searchPartner, formik }} />;
+	// html2canvas で得られる URI を用いてダウンロードさせる関数
+	const saveAsImage = (uri: string) => {
+		const downloadLink = document.createElement("a");
+
+		downloadLink.href = uri;
+
+		// ファイル名
+		downloadLink.download = `partner_${partnerInfoState.inputName}.png`;
+
+		// Firefox では body の中にダウンロードリンクがないといけないので一時的に追加
+		document.body.appendChild(downloadLink);
+
+		// ダウンロードリンクが設定された a タグをクリック
+		downloadLink.click();
+
+		// Firefox 対策で追加したリンクを削除しておく
+		document.body.removeChild(downloadLink);
+	};
+
+	const exportPng = () => {
+		// 画像に変換する component の id を指定
+		const target = document.getElementById("target-component");
+		if (!target) return;
+		html2canvas(target, {
+			scale: 1
+		}).then((canvas) => {
+			const targetImgUri = canvas.toDataURL();
+
+			saveAsImage(targetImgUri);
+		});
+	};
+
+	const [disabled, setDisabled] = useState(true);
+
+	useEffect(() => {
+		if (partnerInfoState.inputName) {
+			setDisabled(false);
+		} else {
+			setDisabled(true);
+		}
+	}, [partnerInfoState]);
+
+	return <InputArea {...{ searchPartner, formik, exportPng, disabled }} />;
 };
 
 /** container */
