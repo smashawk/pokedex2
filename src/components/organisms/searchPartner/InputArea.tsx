@@ -47,6 +47,7 @@ export const InputArea: VFC<Props> = ({ exportPng, formik, DLBtnDisabled }) => {
 						text="ダウンロード"
 						disabled={DLBtnDisabled}
 						onClick={exportPng}
+						testId="searchPartner-DL-button"
 					/>
 				</Box>
 			</Box>
