@@ -19,7 +19,7 @@ export const EnhancedPokeImg: VFC<Props> = ({ no }) => {
 
 	if (no > 0 && no < 650)
 		url = `${process.env.PUBLIC_URL}/images/dot_gif/${no}.gif`;
-	else if (no > 649 && no < 793)
+	else if (no > 649 && no < 808)
 		url = `${process.env.PUBLIC_URL}/images/3ds_gif/${no}.gif`;
 	else url = `https://www.cpokemon.com/pokes/home/${no}.png`;
 

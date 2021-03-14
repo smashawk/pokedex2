@@ -16231,5 +16231,316 @@
 			"Sp. Defense": 107,
 			"Speed": 97
 		}
+	},
+	{
+		"id": 793,
+		"name": {
+			"english": "Nihilego",
+			"japanese": "ウツロイド",
+			"chinese": "虚吾伊德",
+			"french": "Mouscoto"
+		},
+		"type": [
+			"Rock",
+			"Poison"
+		],
+		"base": {
+			"HP": 109,
+			"Attack": 53,
+			"Defense": 47,
+			"Sp. Attack": 127,
+			"Sp. Defense": 131,
+			"Speed": 103
+		}
+	},
+	{
+		"id": 794,
+		"name": {
+			"english": "Buzzwole",
+			"japanese": "マッシブーン",
+			"chinese": "爆肌蚊",
+			"french": "Cancrelove"
+		},
+		"type": [
+			"Bug",
+			"Fighting"
+		],
+		"base": {
+			"HP": 107,
+			"Attack": 139,
+			"Defense": 139,
+			"Sp. Attack": 53,
+			"Sp. Defense": 53,
+			"Speed": 79
+		}
+	},
+	{
+		"id": 795,
+		"name": {
+			"english": "Pheromosa",
+			"japanese": "フェローチェ",
+			"chinese": "费洛美螂",
+			"french": "Câblifère"
+		},
+		"type": [
+			"Bug",
+			"Fighting"
+		],
+		"base": {
+			"HP": 71,
+			"Attack": 137,
+			"Defense": 37,
+			"Sp. Attack": 137,
+			"Sp. Defense": 37,
+			"Speed": 151
+		}
+	},
+	{
+		"id": 796,
+		"name": {
+			"english": "Xurkitree",
+			"japanese": "デンジュモク",
+			"chinese": "电束木",
+			"french": "Bamboiselle"
+		},
+		"type": [
+			"Electric"
+		],
+		"base": {
+			"HP": 83,
+			"Attack": 89,
+			"Defense": 71,
+			"Sp. Attack": 173,
+			"Sp. Defense": 71,
+			"Speed": 83
+		}
+	},
+	{
+		"id": 797,
+		"name": {
+			"english": "Celesteela",
+			"japanese": "テッカグヤ",
+			"chinese": "铁火辉夜",
+			"french": "Katagami"
+		},
+		"type": [
+			"Steel",
+			"Flying"
+		],
+		"base": {
+			"HP": 97,
+			"Attack": 101,
+			"Defense": 103,
+			"Sp. Attack": 107,
+			"Sp. Defense": 101,
+			"Speed": 61
+		}
+	},
+	{
+		"id": 798,
+		"name": {
+			"english": "Kartana",
+			"japanese": "カミツルギ",
+			"chinese": "纸御剑",
+			"french": "Engloutyran"
+		},
+		"type": [
+			"Grass",
+			"Steel"
+		],
+		"base": {
+			"HP": 59,
+			"Attack": 181,
+			"Defense": 131,
+			"Sp. Attack": 59,
+			"Sp. Defense": 31,
+			"Speed": 109
+		}
+	},
+	{
+		"id": 799,
+		"name": {
+			"english": "Guzzlord",
+			"japanese": "アクジキング",
+			"chinese": "恶食大王",
+			"french": "Necrozma"
+		},
+		"type": [
+			"Dark",
+			"Dragon"
+		],
+		"base": {
+			"HP": 223,
+			"Attack": 101,
+			"Defense": 53,
+			"Sp. Attack": 97,
+			"Sp. Defense": 53,
+			"Speed": 43
+		}
+	},
+	{
+		"id": 800,
+		"name": {
+			"english": "Necrozma",
+			"japanese": "ネクロズマ",
+			"chinese": "奈克洛兹玛",
+			"french": "Magearna"
+		},
+		"type": [
+			"Psychic"
+		],
+		"base": {
+			"HP": 97,
+			"Attack": 107,
+			"Defense": 101,
+			"Sp. Attack": 127,
+			"Sp. Defense": 89,
+			"Speed": 79
+		}
+	},
+	{
+		"id": 801,
+		"name": {
+			"english": "Magearna",
+			"japanese": "マギアナ",
+			"chinese": "玛机雅娜",
+			"french": "Marshadow"
+		},
+		"type": [
+			"Steel",
+			"Fairy"
+		],
+		"base": {
+			"HP": 80,
+			"Attack": 95,
+			"Defense": 115,
+			"Sp. Attack": 130,
+			"Sp. Defense": 115,
+			"Speed": 65
+		}
+	},
+	{
+		"id": 802,
+		"name": {
+			"english": "Marshadow",
+			"japanese": "マーシャドー",
+			"chinese": "玛夏多",
+			"french": "Vémini"
+		},
+		"type": [
+			"Fighting",
+			"Ghost"
+		],
+		"base": {
+			"HP": 90,
+			"Attack": 125,
+			"Defense": 80,
+			"Sp. Attack": 90,
+			"Sp. Defense": 90,
+			"Speed": 125
+		}
+	},
+	{
+		"id": 803,
+		"name": {
+			"english": "Poipole",
+			"japanese": "ベベノム",
+			"chinese": "毒贝比",
+			"french": "Mandrillon"
+		},
+		"type": [
+			"Poison"
+		],
+		"base": {
+			"HP": 67,
+			"Attack": 73,
+			"Defense": 67,
+			"Sp. Attack": 73,
+			"Sp. Defense": 67,
+			"Speed": 73
+		}
+	},
+	{
+		"id": 804,
+		"name": {
+			"english": "Naganadel",
+			"japanese": "アーゴヨン",
+			"chinese": "四颚针龙",
+			"french": "Ama-Ama"
+		},
+		"type": [
+			"Poison",
+			"Dragon"
+		],
+		"base": {
+			"HP": 73,
+			"Attack": 73,
+			"Defense": 73,
+			"Sp. Attack": 127,
+			"Sp. Defense": 73,
+			"Speed": 121
+		}
+	},
+	{
+		"id": 805,
+		"name": {
+			"english": "Stakataka",
+			"japanese": "ツンデツンデ",
+			"chinese": "垒磊石",
+			"french": "Pierroteknik"
+		},
+		"type": [
+			"Rock",
+			"Steel"
+		],
+		"base": {
+			"HP": 61,
+			"Attack": 131,
+			"Defense": 211,
+			"Sp. Attack": 53,
+			"Sp. Defense": 101,
+			"Speed": 13
+		}
+	},
+	{
+		"id": 806,
+		"name": {
+			"english": "Blacephalon",
+			"japanese": "ズガドーン",
+			"chinese": "砰头小丑",
+			"french": "Zeraora"
+		},
+		"type": [
+			"Fire",
+			"Ghost"
+		],
+		"base": {
+			"HP": 53,
+			"Attack": 127,
+			"Defense": 53,
+			"Sp. Attack": 151,
+			"Sp. Defense": 79,
+			"Speed": 107
+		}
+	},
+	{
+		"id": 807,
+		"name": {
+			"english": "Zeraora",
+			"japanese": "ゼラオラ",
+			"chinese": "捷拉奥拉",
+			"french": "Meltan"
+		},
+		"type": [
+			"Electric"
+		],
+		"base": {
+			"HP": 88,
+			"Attack": 112,
+			"Defense": 75,
+			"Sp. Attack": 102,
+			"Sp. Defense": 80,
+			"Speed": 143
+		}
 	}
 ]

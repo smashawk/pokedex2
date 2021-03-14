@@ -13,7 +13,7 @@ export const normalizePokeData = (
 		/** Pokemon range is between 1.bulbasaur and 2.lunala */
 		.filter((data) => {
 			const pokeNo = +data.pokemon.url.split("/")[6];
-			return pokeNo < 793;
+			return pokeNo < 808;
 		})
 		.map((data) => {
 			const pokeNo = +data.pokemon.url.split("/")[6];

@@ -37,7 +37,7 @@ const useStyles = makeStyles(() =>
 			marginTop: "20px"
 		},
 		ListWrapper: {
-			width: 400
+			width: 440
 		},
 		simpleWrapper: {
 			width: "100%"

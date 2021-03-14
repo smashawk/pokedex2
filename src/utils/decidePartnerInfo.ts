@@ -29,7 +29,7 @@ export const decidePartnerInfo = (inputName: string): partnerInfoType => {
 		(acc, cur, index) => acc + cur * cur + index * 3
 	);
 	return {
-		pokeNo: basePokeNo % 792 || 792,
+		pokeNo: basePokeNo % 807 || 807,
 		natureNo: NatureList[baseNatureNo % 25],
 		charNo: CharacteristicList[baseCharNo % 30]
 	};
