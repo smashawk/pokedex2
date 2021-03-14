@@ -6,13 +6,11 @@ import { normalizedPokeDataType } from "@store/getPokeData/reducers";
 import { normalizedPokeSpeciesType } from "@store/getPokeSpecies/reducers";
 import { OutputArea } from "@components/organisms/searchPartner/OutputArea";
 
-type StateProps = {
+type Props = {
 	partnerInfo: setPartnerInfoState;
 	pokeData: normalizedPokeDataType;
 	pokeSpecies: normalizedPokeSpeciesType;
 };
-
-type Props = StateProps;
 
 const WrappedOutputArea: VFC<Props> = ({
 	partnerInfo,
@@ -23,7 +21,7 @@ const WrappedOutputArea: VFC<Props> = ({
 };
 
 /** container */
-const mapStateToProps = (state: AppState): StateProps => ({
+const mapStateToProps = (state: AppState): Props => ({
 	partnerInfo: state.searchPartner.partnerInfo,
 	pokeData: state.searchPartner.pokeData,
 	pokeSpecies: state.searchPartner.pokeSpecies

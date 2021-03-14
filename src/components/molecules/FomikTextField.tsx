@@ -12,6 +12,7 @@ export type Props = {
 	label: string;
 	text: string;
 	formik: FormikProps<FormikValue>;
+	formikBtnDisabled: boolean;
 	fieldTestId?: string;
 	buttonTestId?: string;
 };
@@ -21,6 +22,7 @@ export const FormikTextField: VFC<Props> = ({
 	label,
 	text,
 	formik,
+	formikBtnDisabled,
 	fieldTestId,
 	buttonTestId
 }) => {
@@ -33,15 +35,16 @@ export const FormikTextField: VFC<Props> = ({
 				size="small"
 				variant="filled"
 				onChange={formik.handleChange}
-				inputProps={{ minLength: 1, maxLength: 16 }}
-				data-testId={fieldTestId}
+				inputProps={{ minLength: 1, maxLength: 12 }}
+				testId={fieldTestId}
 			/>
 			<FixButton
 				color="primary"
 				text={text}
 				variant="contained"
-				testId={buttonTestId}
 				type="submit"
+				disabled={formikBtnDisabled}
+				testId={buttonTestId}
 			/>
 		</form>
 	);

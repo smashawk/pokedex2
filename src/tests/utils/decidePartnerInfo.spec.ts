@@ -12,29 +12,20 @@ describe("decidePartnerInfo", () => {
 	])("decidePartnerNo", (name) => {
 		const partnerInfo = decidePartnerInfo(name);
 		expect(partnerInfo.pokeNo).toBeGreaterThan(0);
-		expect(partnerInfo.pokeNo).toBeLessThan(793);
+		expect(partnerInfo.pokeNo).toBeLessThan(808);
 	});
 
-	it("792ぴったり", () => {
-		const partnerInfo = decidePartnerInfo("ddddddd\\");
+	it("807ぴったり", () => {
+		const partnerInfo = decidePartnerInfo("6'");
 		expect(partnerInfo.pokeNo).toBeGreaterThan(0);
-		expect(partnerInfo.pokeNo).toBeLessThan(793);
-		expect(partnerInfo.natureNo.ja).toBe("うっかりや");
-		expect(partnerInfo.charNo.ja).toBe("まけずぎらい");
+		expect(partnerInfo.pokeNo).toBeLessThan(808);
+		expect(partnerInfo.natureNo.ja).toBe("おだやか");
+		expect(partnerInfo.charNo.ja).toBe("ものをよくちらかす");
 	});
 
-	it("ユニーク値テスト1", () => {
-		const partnerInfo1 = decidePartnerInfo("222222!!!");
-		const partnerInfo2 = decidePartnerInfo("KKKKc");
-
-		expect(partnerInfo1.pokeNo).toBe(partnerInfo2.pokeNo);
-		expect(partnerInfo1.natureNo.ja).not.toBe(partnerInfo2.natureNo.ja);
-		expect(partnerInfo1.charNo.ja).not.toBe(partnerInfo2.charNo.ja);
-	});
-
-	it("ユニーク値テスト2", () => {
-		const partnerInfo1 = decidePartnerInfo("ddd");
-		const partnerInfo2 = decidePartnerInfo("2222(<");
+	it("ユニーク値テスト", () => {
+		const partnerInfo1 = decidePartnerInfo("6'");
+		const partnerInfo2 = decidePartnerInfo("っ$");
 
 		expect(partnerInfo1.pokeNo).toBe(partnerInfo2.pokeNo);
 		expect(partnerInfo1.natureNo.ja).not.toBe(partnerInfo2.natureNo.ja);

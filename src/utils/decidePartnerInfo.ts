@@ -21,11 +21,17 @@ export const decidePartnerInfo = (inputName: string): partnerInfoType => {
 	);
 
 	// 計算
-	const basePokeNo = charNumArray.reduce((acc, cur) => acc + cur);
-	const baseNatureNo = charNumArray.reduce((acc, cur) => (acc + cur) * 3);
-	const baseCharNo = charNumArray.reduce((acc, cur) => acc + cur * 3);
+	const basePokeNo = charNumArray.reduce(
+		(acc, cur, index) => acc + cur * (cur + index)
+	);
+	const baseNatureNo = charNumArray.reduce(
+		(acc, cur, index) => acc + cur * (cur + index + 1)
+	);
+	const baseCharNo = charNumArray.reduce(
+		(acc, cur, index) => acc + cur * (cur + index + 2)
+	);
 	return {
-		pokeNo: basePokeNo % 792 || 792,
+		pokeNo: basePokeNo % 807 || 807,
 		natureNo: NatureList[baseNatureNo % 25],
 		charNo: CharacteristicList[baseCharNo % 30]
 	};

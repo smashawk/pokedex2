@@ -1,0 +1,1287 @@
+
+<!doctype html>
+<html lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Página no encontrada &bull; Centro Pokémon</title>
+<meta name="apple-mobile-web-app-title" content="CPokémon">
+<script src="/cdn-cgi/apps/head/FYoqYVxF-PwoK0TOs7N-54eF3io.js"></script><link href="//www.cpokemon.com/icono.png" rel="apple-touch-icon" />
+<link rel="apple-touch-startup-image" href="//cpokemon.com/wp-content/themes/nuevocp/images/launch.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="msapplication-TileImage" content="//www.cpokemon.com/icono192.png" />
+<link href="//www.cpokemon.com/icono192.png" rel="icon" sizes="192x192" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<meta name="theme-color" content="#C32020">
+<link rel="alternate" type="application/rss+xml" title="Centro Pokémon RSS Feed" href="https://www.cpokemon.com/feed/" />
+<link rel="alternate" type="application/atom+xml" title="Centro Pokémon Atom Feed" href="https://www.cpokemon.com/feed/atom/" />
+<link rel="pingback" href="https://www.cpokemon.com/xmlrpc.php" />
+<link rel="manifest" href="/manifest.json">
+
+<meta property="fb:app_id" content="262214920600848" />
+<meta property="og:site_name" content="Centro Pok&eacute;mon" />
+<meta property="og:locale" content="es_LA" />
+<meta name="twitter:site" content="@CentroPokemon">
+<script type="application/ld+json">
+{
+   "@context": "https://schema.org",
+   "@type": "WebSite",
+   "url": "https://www.cpokemon.com/",
+   "name" : "Centro Pokémon",
+   "potentialAction": {
+     "@type": "SearchAction",
+     "target": "https://www.cpokemon.com/?s={search_term}",
+     "query-input": "required name=search_term"
+   }
+}
+</script>
+<script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "url": "http://www.cpokemon.com/",
+      "name": "Centro Pokémon",
+      "logo": "http://www.cpokemon.com/logo.png",
+      "sameAs" : [
+        "http://www.facebook.com/cpokemon",
+        "http://www.twitter.com/centropokemon",
+        "http://plus.google.com/+centropokemon",
+        "http://www.youtube.com/user/cpokemoncom"
+      ]
+    }
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link rel='dns-prefetch' href='https://i0.wp.com'>
+<link rel='dns-prefetch' href='https://i1.wp.com'>
+<link rel='dns-prefetch' href='https://i2.wp.com'>
+<meta property="fb:pages" content="226318678012" />
+
+
+
+
+
+<meta name="robots" content="noindex, follow" />
+<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.cpokemon.com/#organization","name":"Centro Pok\u00e9mon","url":"https://www.cpokemon.com/","sameAs":["https://www.facebook.com/CPokemon","https://www.instagram.com/centropokemon/","https://www.youtube.com/c/CentroPokemon","https://twitter.com/CentroPokemon"],"logo":{"@type":"ImageObject","@id":"https://www.cpokemon.com/#logo","inLanguage":"es","url":"https://www.cpokemon.com/wp-content/uploads/2015/07/logo1.png","width":749,"height":361,"caption":"Centro Pok\u00e9mon"},"image":{"@id":"https://www.cpokemon.com/#logo"}},{"@type":"WebSite","@id":"https://www.cpokemon.com/#website","url":"https://www.cpokemon.com/","name":"Centro Pok\u00e9mon","description":"Noticias Pok\u00e9mon GO, Espada y Escudo","publisher":{"@id":"https://www.cpokemon.com/#organization"},"potentialAction":[{"@type":"SearchAction","target":"https://www.cpokemon.com/?s={search_term_string}","query-input":"required name=search_term_string"}],"inLanguage":"es"}]}</script>
+
+<link rel='dns-prefetch' href='//ajax.googleapis.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//use.fontawesome.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+
+<script src="//www.googletagmanager.com/gtag/js?id=UA-370442-1" type="text/javascript" data-cfasync="false"></script>
+<script type="text/javascript" data-cfasync="false">
+				var em_version = '6.6.2';
+				var em_track_user = true;
+				var em_no_track_reason = '';
+				
+								var disableStr = 'ga-disable-UA-370442-1';
+
+				/* Function to detect opted out users */
+				function __gtagTrackerIsOptedOut() {
+					return document.cookie.indexOf( disableStr + '=true' ) > - 1;
+				}
+
+				/* Disable tracking if the opt-out cookie exists. */
+				if ( __gtagTrackerIsOptedOut() ) {
+					window[disableStr] = true;
+				}
+
+				/* Opt-out function */
+				function __gtagTrackerOptout() {
+					document.cookie = disableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+					window[disableStr] = true;
+				}
+
+				if ( 'undefined' === typeof gaOptout ) {
+					function gaOptout() {
+						__gtagTrackerOptout();
+					}
+				}
+								window.dataLayer = window.dataLayer || [];
+				if ( em_track_user ) {
+					function __gtagTracker() {dataLayer.push( arguments );}
+					__gtagTracker( 'js', new Date() );
+					__gtagTracker( 'set', {
+						'developer_id.dNDMyYj' : true,
+						                    });
+					__gtagTracker( 'config', 'UA-370442-1', {
+						forceSSL:true,page_path:'/404.html?page=' + document.location.pathname + document.location.search + '&from=' + document.referrer,					} );
+										window.gtag = __gtagTracker;										(
+						function () {
+							/* https://developers.google.com/analytics/devguides/collection/analyticsjs/ */
+							/* ga and __gaTracker compatibility shim. */
+							var noopfn = function () {
+								return null;
+							};
+							var newtracker = function () {
+								return new Tracker();
+							};
+							var Tracker = function () {
+								return null;
+							};
+							var p = Tracker.prototype;
+							p.get = noopfn;
+							p.set = noopfn;
+							p.send = function (){
+								var args = Array.prototype.slice.call(arguments);
+								args.unshift( 'send' );
+								__gaTracker.apply(null, args);
+							};
+							var __gaTracker = function () {
+								var len = arguments.length;
+								if ( len === 0 ) {
+									return;
+								}
+								var f = arguments[len - 1];
+								if ( typeof f !== 'object' || f === null || typeof f.hitCallback !== 'function' ) {
+									if ( 'send' === arguments[0] ) {
+										var hitConverted, hitObject = false, action;
+										if ( 'event' === arguments[1] ) {
+											if ( 'undefined' !== typeof arguments[3] ) {
+												hitObject = {
+													'eventAction': arguments[3],
+													'eventCategory': arguments[2],
+													'eventLabel': arguments[4],
+													'value': arguments[5] ? arguments[5] : 1,
+												}
+											}
+										}
+										if ( typeof arguments[2] === 'object' ) {
+											hitObject = arguments[2];
+										}
+										if ( 'undefined' !== typeof (
+											arguments[1].hitType
+										) ) {
+											hitObject = arguments[1];
+										}
+										if ( hitObject ) {
+											action = 'timing' === arguments[1].hitType ? 'timing_complete' : hitObject.eventAction;
+											hitConverted = mapArgs( hitObject );
+											__gtagTracker( 'event', action, hitConverted );
+										}
+									}
+									return;
+								}
+
+								function mapArgs( args ) {
+									var gaKey, hit = {};
+									var gaMap = {
+										'eventCategory': 'event_category',
+										'eventAction': 'event_action',
+										'eventLabel': 'event_label',
+										'eventValue': 'event_value',
+										'nonInteraction': 'non_interaction',
+										'timingCategory': 'event_category',
+										'timingVar': 'name',
+										'timingValue': 'value',
+										'timingLabel': 'event_label',
+									};
+									for ( gaKey in gaMap ) {
+										if ( 'undefined' !== typeof args[gaKey] ) {
+											hit[gaMap[gaKey]] = args[gaKey];
+										}
+									}
+									return hit;
+								}
+
+								try {
+									f.hitCallback();
+								} catch ( ex ) {
+								}
+							};
+							__gaTracker.create = newtracker;
+							__gaTracker.getByName = newtracker;
+							__gaTracker.getAll = function () {
+								return [];
+							};
+							__gaTracker.remove = noopfn;
+							__gaTracker.loaded = true;
+							window['__gaTracker'] = __gaTracker;
+						}
+					)();
+									} else {
+										console.log( "" );
+					( function () {
+							function __gtagTracker() {
+								return null;
+							}
+							window['__gtagTracker'] = __gtagTracker;
+							window['gtag'] = __gtagTracker;
+					} )();
+									}
+			</script>
+
+<link crossorigin="anonymous" rel='stylesheet' href='https://fonts.googleapis.com/css?family=Oswald%7CRoboto%3A700%2C500%2C400%2C400i&#038;ver=5.6.2' type='text/css' media='all' />
+<link rel='stylesheet' href='https://www.cpokemon.com/wp-content/themes/nuevocp/css/print.css' type='text/css' media='print' />
+<link rel='stylesheet' href='https://www.cpokemon.com/wp-content/themes/nuevocp/style.css?v=2.1.4&#038;ver=5.6.2' type='text/css' media='all' />
+<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.14.0/css/all.css?ver=5.6.2' type='text/css' media='all' />
+<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.14.0/css/v4-shims.css?ver=5.6.2' type='text/css' media='all' />
+<link rel='stylesheet' href='https://www.cpokemon.com/labs/pokesprite/output/pokesprite.css?ver=5.6.2' type='text/css' media='all' />
+<link rel='stylesheet' href='https://www.cpokemon.com/wp-includes/css/dist/block-library/style.min.css?ver=5.6.2' type='text/css' media='all' />
+<style id='wp-block-library-inline-css' type='text/css'>
+.has-text-align-justify{text-align:justify;}
+</style>
+<link rel='stylesheet' href='https://www.cpokemon.com/wp-content/plugins/ajaxy-search-form/themes/common.css?ver=5.6.2' type='text/css' media='all' />
+<link rel='stylesheet' href='https://www.cpokemon.com/wp-content/plugins/ajaxy-search-form/themes/selective.css?ver=5.6.2' type='text/css' media='all' />
+<link rel='stylesheet' href='https://www.cpokemon.com/wp-content/plugins/ajaxy-search-form/themes/dark/style.css?ver=5.6.2' type='text/css' media='all' />
+<link rel='stylesheet' href='https://www.cpokemon.com/wp-content/plugins/table-of-contents-plus/screen.min.css?ver=2002' type='text/css' media='all' />
+<link rel='stylesheet' href='https://www.cpokemon.com/wp-content/plugins/youtube-embed/css/main.min.css?ver=5.2' type='text/css' media='all' />
+<link rel='stylesheet' href='https://www.cpokemon.com/wp-content/plugins/google-analytics-dashboard-for-wp/assets/css/frontend.min.css?ver=6.6.2' type='text/css' media='all' />
+<link rel='stylesheet' href='https://www.cpokemon.com/wp-content/tablepress-combined.min.css?ver=9' type='text/css' media='all' />
+<link rel='stylesheet' href='https://www.cpokemon.com/wp-content/plugins/jetpack/css/jetpack.css?ver=9.5' type='text/css' media='all' />
+<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js?ver=5.6.2' id='jquery-js'></script>
+<script type='text/javascript' id='exactmetrics-frontend-script-js-extra'>
+/* <![CDATA[ */
+var exactmetrics_frontend = {"js_events_tracking":"true","download_extensions":"zip,mp3,mpeg,pdf,doc,ppt,xls,jpeg,png,gif,tiff","inbound_paths":"[{\"path\":\"\\\/go\\\/\",\"label\":\"affiliate\"},{\"path\":\"\\\/recommend\\\/\",\"label\":\"affiliate\"}]","home_url":"https:\/\/www.cpokemon.com","hash_tracking":"false","ua":"UA-370442-1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.cpokemon.com/wp-content/plugins/google-analytics-dashboard-for-wp/assets/js/frontend-gtag.min.js?ver=6.6.2' id='exactmetrics-frontend-script-js'></script>
+<link rel="https://api.w.org/" href="https://www.cpokemon.com/wp-json/" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.cpokemon.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.cpokemon.com/wp-includes/wlwmanifest.xml" />
+<meta name="generator" content="WordPress 5.6.2" />
+
+<script type="text/javascript">
+
+			/* <![CDATA[ */
+
+				var sf_position = '0';
+
+				var sf_templates = "<a href=\"{search_url_escaped}\"><span class=\"sf_text\">Ver m\u00e1s resultados para \"{search_value}\"<\/span><span class=\"sf_small\">Mostrando {total} resultados<\/span><\/a>";
+
+				var sf_input = '.buscar-forma';
+
+				jQuery(document).ready(function(){
+
+					jQuery(sf_input).ajaxyLiveSearch({"expand":"0","searchUrl":"http:\/\/www.cpokemon.com\/?s=%s","text":"Buscar...","delay":"500","iwidth":"185","width":"450","ajaxUrl":"https:\/\/www.cpokemon.com\/wp-admin\/admin-ajax.php","rtl":"0"});
+
+					jQuery(".sf_ajaxy-selective-input").keyup(function() {
+
+						var width = jQuery(this).val().length * 8;
+
+						if(width < 50) {
+
+							width = 50;
+
+						}
+
+						jQuery(this).width(width);
+
+					});
+
+					jQuery(".sf_ajaxy-selective-search").click(function() {
+
+						jQuery(this).find(".sf_ajaxy-selective-input").focus();
+
+					});
+
+					jQuery(".sf_ajaxy-selective-close").click(function() {
+
+						jQuery(this).parent().remove();
+
+					});
+
+				});
+
+			/* ]]> */
+
+		</script>
+<script async src="/arc-widget#1cY1V7g9?env=wp&wpPluginVersion=1.1.9"></script> <script type="text/javascript">
+            var belaAjaxUrl="/wp-admin/admin-ajax.php";
+            var belaAjaxAction = "bela_ajax";
+        </script><link rel="stylesheet" href="https://www.cpokemon.com/wp-content/plugins/better-extended-live-archive/css/bela-default.css?ver=20140509" type="text/css" media="screen" /><style type='text/css'>img#wpstats{display:none}</style> <script>
+
+      window.OneSignal = window.OneSignal || [];
+
+      OneSignal.push( function() {
+        OneSignal.SERVICE_WORKER_UPDATER_PATH = "OneSignalSDKUpdaterWorker.js.php";
+        OneSignal.SERVICE_WORKER_PATH = "OneSignalSDKWorker.js.php";
+        OneSignal.SERVICE_WORKER_PARAM = { scope: '/' };
+
+        OneSignal.setDefaultNotificationUrl("https://www.cpokemon.com");
+        var oneSignal_options = {};
+        window._oneSignalInitOptions = oneSignal_options;
+
+        oneSignal_options['wordpress'] = true;
+oneSignal_options['appId'] = 'fb7b0b32-5b56-44a6-b7c1-2a5a7c0a6727';
+oneSignal_options['allowLocalhostAsSecureOrigin'] = true;
+oneSignal_options['welcomeNotification'] = { };
+oneSignal_options['welcomeNotification']['title'] = "Notificaciones activadas";
+oneSignal_options['welcomeNotification']['message'] = "¡Bien! Ahora recibirás notificaciones cuando una nueva noticia sea publicada en Centro Pokémon :)";
+oneSignal_options['subdomainName'] = "cpokemon";
+oneSignal_options['safari_web_id'] = "web.onesignal.auto.54cd441e-7f12-4aed-9845-f98eb5c10ecb";
+oneSignal_options['promptOptions'] = { };
+oneSignal_options['promptOptions']['actionMessage'] = "quiere mostrarte notificaciones";
+oneSignal_options['promptOptions']['exampleNotificationTitleDesktop'] = "Recibe notificaciones cada vez";
+oneSignal_options['promptOptions']['exampleNotificationMessageDesktop'] = "que una nueva noticia sea publicada.";
+oneSignal_options['promptOptions']['exampleNotificationTitleMobile'] = "Nuevo juego de Pokémon anunciado";
+oneSignal_options['promptOptions']['exampleNotificationMessageMobile'] = "Esta es una notificación de ejemplo.";
+oneSignal_options['promptOptions']['exampleNotificationCaption'] = "(puedes cancelar en cualquier momento)";
+oneSignal_options['promptOptions']['acceptButtonText'] = "Continuar";
+oneSignal_options['promptOptions']['cancelButtonText'] = "Cancelar";
+                OneSignal.init(window._oneSignalInitOptions);
+                      });
+
+      function documentInitOneSignal() {
+        var oneSignal_elements = document.getElementsByClassName("OneSignal-prompt");
+
+        var oneSignalLinkClickHandler = function(event) { OneSignal.push(['registerForPushNotifications']); event.preventDefault(); };        for(var i = 0; i < oneSignal_elements.length; i++)
+          oneSignal_elements[i].addEventListener('click', oneSignalLinkClickHandler, false);
+      }
+
+      if (document.readyState === 'complete') {
+           documentInitOneSignal();
+      }
+      else {
+           window.addEventListener("load", function(event){
+               documentInitOneSignal();
+          });
+      }
+    </script>
+<script type="text/javascript">var algolia = {"debug":false,"application_id":"0FO4FVJ30U","search_api_key":"77fc1102880e339380079bd82e763bdd","powered_by_enabled":false,"query":"","autocomplete":{"sources":[{"index_id":"searchable_posts","index_name":"wp_searchable_posts","label":"Noticias","admin_name":"All posts","position":10,"max_suggestions":5,"tmpl_suggestion":"autocomplete-post-suggestion","enabled":true},{"index_id":"posts_seccion","index_name":"wp_posts_seccion","label":"Secciones de CP","admin_name":"Secciones","position":10,"max_suggestions":5,"tmpl_suggestion":"autocomplete-post-suggestion","enabled":true},{"index_id":"posts_page","index_name":"wp_posts_page","label":"Gu\u00edas y juegos","admin_name":"P\u00e1ginas","position":10,"max_suggestions":5,"tmpl_suggestion":"autocomplete-post-suggestion","enabled":true},{"index_id":"terms_category","index_name":"wp_terms_category","label":"Categor\u00edas","admin_name":"Categor\u00edas","position":20,"max_suggestions":3,"tmpl_suggestion":"autocomplete-term-suggestion","enabled":true}],"input_selector":"input[name='s']:not('.no-autocomplete')"},"indices":{"searchable_posts":{"name":"wp_searchable_posts","id":"searchable_posts","enabled":true,"replicas":[]},"posts_page":{"name":"wp_posts_page","id":"posts_page","enabled":true,"replicas":[]},"posts_seccion":{"name":"wp_posts_seccion","id":"posts_seccion","enabled":true,"replicas":[]},"terms_category":{"name":"wp_terms_category","id":"terms_category","enabled":true,"replicas":[]}}};</script><style>.wp-block-gallery.is-cropped .blocks-gallery-item picture{height:100%;width:100%;}</style><link rel="preload" href="/wp-content/plugins/google-analytics-dashboard-for-wp/assets/js/frontend-gtag.min.js?ver=6.6.2" as="script"><link rel="preload" href="/wp-content/themes/nuevocp/css/print.css" as="style"><link rel="preload" href="/wp-content/themes/nuevocp/style.css?v=2.1.4&#038;ver=5.6.2" as="style"><link rel="preload" href="/labs/pokesprite/output/pokesprite.css?ver=5.6.2" as="style"><link rel="preload" href="/wp-includes/css/dist/block-library/style.min.css?ver=5.6.2" as="style"><link rel="preload" href="/wp-content/plugins/ajaxy-search-form/themes/common.css?ver=5.6.2" as="style"><link rel="preload" href="/wp-content/plugins/ajaxy-search-form/themes/selective.css?ver=5.6.2" as="style"><link rel="preload" href="/wp-content/plugins/ajaxy-search-form/themes/dark/style.css?ver=5.6.2" as="style"><link rel="preload" href="/wp-content/plugins/table-of-contents-plus/screen.min.css?ver=2002" as="style"><link rel="preload" href="/wp-content/plugins/youtube-embed/css/main.min.css?ver=5.2" as="style"><link rel="preload" href="/wp-content/plugins/google-analytics-dashboard-for-wp/assets/css/frontend.min.css?ver=6.6.2" as="style"><link rel="preload" href="/wp-content/tablepress-combined.min.css?ver=9" as="style"><link rel="preload" href="/wp-content/plugins/jetpack/css/jetpack.css?ver=9.5" as="style"><link as='script' href='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js' rel='preload' />
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-5146509566368759",
+          enable_page_level_ads: true,
+          overlays: {bottom: true}
+     });
+</script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/lightgallery/1.3.9/css/lightgallery.min.css">
+<script>
+var CPOKE = new Object({});
+CPOKE.movil = false;
+CPOKE.viewport_movil = 980;
+CPOKE.categoria = "todo";
+CPOKE.cargando = 0;
+CPOKE.url_theme = "/wp-content/themes/nuevocp";
+CPOKE.paged = 1;
+CPOKE.ajax = "https://www.cpokemon.com/wp-admin/admin-ajax.php";
+CPOKE.nonce = "8e1c753b6e";
+CPOKE.startn = "1";
+</script>
+<script>
+jQuery(document).ready(function() {
+  if (jQuery(window).width() <= window.CPOKE.viewport_movil) {
+
+        window.CPOKE.movil = true;
+      }
+      });
+
+</script>
+<script charset="utf-8" src="https://www.cpokemon.com/labs/pokesprite/output/pokesprite.js"></script>
+
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '874736529313563');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=874736529313563&ev=PageView&noscript=1"
+/></noscript>
+
+
+
+<script type="text/javascript">
+  window._taboola = window._taboola || [];
+  _taboola.push({article:'auto'});
+  !function (e, f, u, i) {
+    if (!document.getElementById(i)){
+      e.async = 1;
+      e.src = u;
+      e.id = i;
+      f.parentNode.insertBefore(e, f);
+    }
+  }(document.createElement('script'),
+  document.getElementsByTagName('script')[0],
+  '//cdn.taboola.com/libtrc/centropokemon-network/loader.js',
+  'tb_loader_script');
+  if(window.performance && typeof window.performance.mark == 'function')
+    {window.performance.mark('tbl_ic');}
+</script>
+
+</head>
+<body class="error404 wp-embed-responsive">
+<div id="todo">
+<div id="fb-root"></div>
+<div class="overlay-login"></div>
+<nav id="menu_cont" role="navigation">
+<div id="menu_subcont">
+<div id="menu">
+<a href="#" class="no-pc" id="abre-nav-movil"><i class="fa fa-bars"></i></a>
+<a href="#" class="no-pc" id="abre-busq-movil"><i class="fa fa-search"></i></a>
+<a id="logo_area" href="//www.cpokemon.com/">
+<img src="//www.cpokemon.com/wp-content/themes/nuevocp/images/cplogo-hdpi.png" alt="Centro Pokémon">
+</a>
+<div id="busqueda">
+<form method="get" id="searchform" action="//www.cpokemon.com/">
+<input type="text" name="s" id="s" class="buscar-forma" placeholder="Buscar..." value="" autocomplete="off"><button id="enviar">
+<i class="fa fa-search"></i>
+</button>
+</form>
+</div>
+<div class="clear"></div>
+</div>
+</div>
+<div id="menu_links_cont">
+<div id="menu_links">
+<a class="menu_link supermenu_activa sid-supermenu_noticias" data-sid="supermenu_noticias" href="//www.cpokemon.com/seccion/cp/archivo/">
+<i class="fa fa-newspaper-o"></i> Noticias <i class="caret fa fa-caret-down"></i>
+</a>
+<a class="menu_link supermenu_activa sid-supermenu_articulos" data-sid="supermenu_articulos" href="//www.cpokemon.com/cat/articulos/">
+<i class="fa fa-folder-open"></i> Artículos <i class="caret fa fa-caret-down"></i>
+</a>
+<a class="menu_link supermenu_activa sid-supermenu1" data-sid="supermenu1" href="//www.cpokemon.com/juegos/">
+<i class="fa fa-gamepad"></i> Juegos y guías <i class="caret fa fa-caret-down"></i>
+</a>
+<a class="menu_link supermenu_activa sid-supermenu_herramientas" data-sid="supermenu_herramientas" href="//www.cpokemon.com/seccion/herramientas/">
+<i class="fa fa-wrench"></i> Herramientas <i class="caret fa fa-caret-down"></i>
+</a>
+<a class="menu_link supermenu_activa sid-supermenu_comunidad" data-sid="supermenu_comunidad" href="//www.cpokemon.com/foro/">
+<i class="fa fa-users"></i> Comunidad <i class="caret fa fa-caret-down"></i>
+</a>
+<a class="menu_link" href="//www.cpokemon.com/seccion/" id="nav-activador">
+<i class="fa fa-bars"></i> Secciones <i class="caret fa fa-caret-down"></i>
+</a>
+<div id="supermenu_cont">
+<section id="supermenu_noticias" class="supermenu" style="display: none;">
+<div class="secciones_sub">
+<div class="divisor">
+<div class="titulo">Últimas noticias</div>
+<a href="//www.cpokemon.com/seccion/cp/archivo/" class="ncp2_boton">Archivo&nbsp;<i class="fa fa-arrow-circle-right"></i></a>
+<div class="post_v5" id="post-47356" data-pag="">
+<div class="miniatura">
+<a href="https://www.cpokemon.com/2021/02/26/todos-los-detalles-sobre-leyendas-pokemon-arceus-la-proxima-evolucion-de-pokemon/">
+<img src="https://i2.wp.com/www.cpokemon.com/wp-content/uploads/2021/02/leyendas-pokemon-arceus-portada.jpg?ssl=1&resize=300%2C170" data-srcset="https://i2.wp.com/www.cpokemon.com/wp-content/uploads/2021/02/leyendas-pokemon-arceus-portada.jpg?ssl=1&resize=300%2C170&zoom=2 2x, https://i2.wp.com/www.cpokemon.com/wp-content/uploads/2021/02/leyendas-pokemon-arceus-portada.jpg?ssl=1&resize=300%2C170&zoom=3 3x" alt="Todos los detalles sobre Leyendas Pokémon: Arceus, la próxima evolución de Pokémon" title="Todos los detalles sobre Leyendas Pokémon: Arceus, la próxima evolución de Pokémon" width="300" height="170">
+<div class="miniatura_meta hint--bottom" data-hint="Número de comentarios" style="background: ">Noticia&nbsp;&nbsp;<i class="fa fa-comments"></i> 2</div>
+</a>
+</div>
+<div class="informacion">
+<div class="titulo title">
+<a href="https://www.cpokemon.com/2021/02/26/todos-los-detalles-sobre-leyendas-pokemon-arceus-la-proxima-evolucion-de-pokemon/">Todos los detalles sobre Leyendas Pokémon: Arceus, la próxima evolución de Pokémon</a>
+</div>
+</div>
+<div style="clear:both;"></div>
+<div class="info_bar"></div>
+</div>
+<div class="post_v5" id="post-47313" data-pag="">
+<div class="miniatura">
+<a href="https://www.cpokemon.com/2021/02/26/todos-los-detalles-de-los-remakes-diamante-brillante-y-perla-reluciente-para-nintendo-switch/">
+<img src="https://i2.wp.com/www.cpokemon.com/wp-content/uploads/2021/02/diamante-brillante-perla-reluciente-portada.jpg?ssl=1&resize=300%2C170" data-srcset="https://i2.wp.com/www.cpokemon.com/wp-content/uploads/2021/02/diamante-brillante-perla-reluciente-portada.jpg?ssl=1&resize=300%2C170&zoom=2 2x, https://i2.wp.com/www.cpokemon.com/wp-content/uploads/2021/02/diamante-brillante-perla-reluciente-portada.jpg?ssl=1&resize=300%2C170&zoom=3 3x" alt="Todos los detalles de los Remakes Diamante Brillante y Perla Reluciente para Nintendo Switch" title="Todos los detalles de los Remakes Diamante Brillante y Perla Reluciente para Nintendo Switch" width="300" height="170">
+<div class="miniatura_meta hint--bottom" data-hint="Número de comentarios" style="background: ">Noticia&nbsp;&nbsp;<i class="fa fa-comments"></i> 14</div>
+</a>
+</div>
+<div class="informacion">
+<div class="titulo title">
+<a href="https://www.cpokemon.com/2021/02/26/todos-los-detalles-de-los-remakes-diamante-brillante-y-perla-reluciente-para-nintendo-switch/">Todos los detalles de los Remakes Diamante Brillante y Perla Reluciente para Nintendo Switch</a>
+</div>
+</div>
+<div style="clear:both;"></div>
+<div class="info_bar"></div>
+</div>
+<div class="post_v5" id="post-47302" data-pag="">
+<div class="miniatura">
+<a href="https://www.cpokemon.com/2021/02/25/anunciado-pokemon-presents-para-manana/">
+<img src="https://i0.wp.com/www.cpokemon.com/wp-content/uploads/2021/02/pokemon-presents-26-febrero-2021.jpg?ssl=1&resize=300%2C170" data-srcset="https://i0.wp.com/www.cpokemon.com/wp-content/uploads/2021/02/pokemon-presents-26-febrero-2021.jpg?ssl=1&resize=300%2C170&zoom=2 2x, https://i0.wp.com/www.cpokemon.com/wp-content/uploads/2021/02/pokemon-presents-26-febrero-2021.jpg?ssl=1&resize=300%2C170&zoom=3 3x" alt="¡Anunciado Pokémon Presents para mañana!" title="¡Anunciado Pokémon Presents para mañana!" width="300" height="170">
+<div class="miniatura_meta hint--bottom" data-hint="Número de comentarios" style="background: ">Noticia&nbsp;&nbsp;<i class="fa fa-comments"></i> 0</div>
+</a>
+</div>
+<div class="informacion">
+<div class="titulo title">
+<a href="https://www.cpokemon.com/2021/02/25/anunciado-pokemon-presents-para-manana/">¡Anunciado Pokémon Presents para mañana!</a>
+</div>
+</div>
+<div style="clear:both;"></div>
+<div class="info_bar"></div>
+</div>
+<div class="post_v5" id="post-47246" data-pag="">
+<div class="miniatura">
+<a href="https://www.cpokemon.com/2021/01/14/remakes-diamante-perla-exclusivo/">
+<img src="https://i2.wp.com/www.cpokemon.com/wp-content/uploads/2021/01/pokemon-diamond-pearl.jpg?ssl=1&resize=300%2C170" data-srcset="https://i2.wp.com/www.cpokemon.com/wp-content/uploads/2021/01/pokemon-diamond-pearl.jpg?ssl=1&resize=300%2C170&zoom=2 2x, https://i2.wp.com/www.cpokemon.com/wp-content/uploads/2021/01/pokemon-diamond-pearl.jpg?ssl=1&resize=300%2C170&zoom=3 3x" alt="Exclusiva: Remakes de Pokemon Diamante y Perla llegarán este año a Nintendo Switch" title="Exclusiva: Remakes de Pokemon Diamante y Perla llegarán este año a Nintendo Switch" width="300" height="170">
+<div class="miniatura_meta hint--bottom" data-hint="Número de comentarios" style="background: ">Noticia&nbsp;&nbsp;<i class="fa fa-comments"></i> 20</div>
+</a>
+</div>
+<div class="informacion">
+<div class="titulo title">
+<a href="https://www.cpokemon.com/2021/01/14/remakes-diamante-perla-exclusivo/">Exclusiva: Remakes de Pokemon Diamante y Perla llegarán este año a Nintendo Switch</a>
+</div>
+</div>
+<div style="clear:both;"></div>
+<div class="info_bar"></div>
+</div>
+<div class="post_v5" id="post-47208" data-pag="">
+<div class="miniatura">
+<a href="https://www.cpokemon.com/2020/12/29/fracaso-pokemon-koko-japon/">
+<img src="https://i2.wp.com/www.cpokemon.com/wp-content/uploads/2020/12/pokemon-eiga-koko-syosyuu-kousyuu-zennen-hanbun-1.jpg?ssl=1&resize=300%2C170" data-srcset="https://i2.wp.com/www.cpokemon.com/wp-content/uploads/2020/12/pokemon-eiga-koko-syosyuu-kousyuu-zennen-hanbun-1.jpg?ssl=1&resize=300%2C170&zoom=2 2x, https://i2.wp.com/www.cpokemon.com/wp-content/uploads/2020/12/pokemon-eiga-koko-syosyuu-kousyuu-zennen-hanbun-1.jpg?ssl=1&resize=300%2C170&zoom=3 3x" alt="Estreno de Pokémon Koko en Japón: menos de la mitad de ganancias respecto a la última película, en camino a ser la menos taquillera de la franquicia" title="Estreno de Pokémon Koko en Japón: menos de la mitad de ganancias respecto a la última película, en camino a ser la menos taquillera de la franquicia" width="300" height="170">
+<div class="miniatura_meta hint--bottom" data-hint="Número de comentarios" style="background: ">Noticia&nbsp;&nbsp;<i class="fa fa-comments"></i> 0</div>
+</a>
+</div>
+<div class="informacion">
+<div class="titulo title">
+<a href="https://www.cpokemon.com/2020/12/29/fracaso-pokemon-koko-japon/">Estreno de Pokémon Koko en Japón: menos de la mitad de ganancias respecto a la última película, en camino a ser la menos taquillera de la franquicia</a>
+</div>
+</div>
+<div style="clear:both;"></div>
+<div class="info_bar"></div>
+</div>
+</div>
+</div>
+</section>
+<section id="supermenu_articulos" class="supermenu" style="display: none;">
+<div class="secciones_sub">
+<div class="divisor">
+<div class="titulo">Últimos artículos</div>
+<a href="//www.cpokemon.com/cat/articulos/" class="ncp2_boton">Ver más&nbsp;<i class="fa fa-arrow-circle-right"></i></a>
+<div class="post_v5" id="post-46479" data-pag="">
+<div class="miniatura">
+<a href="https://www.cpokemon.com/2020/09/22/las-promesas-que-nos-dejo-el-primer-trailer-de-pokemon-go-se-cumplieron/">
+<img src="https://i1.wp.com/www.cpokemon.com/wp-content/uploads/2020/09/pokemon-go-trailer-presentacion.jpg?ssl=1&resize=300%2C170" data-srcset="https://i1.wp.com/www.cpokemon.com/wp-content/uploads/2020/09/pokemon-go-trailer-presentacion.jpg?ssl=1&resize=300%2C170&zoom=2 2x, https://i1.wp.com/www.cpokemon.com/wp-content/uploads/2020/09/pokemon-go-trailer-presentacion.jpg?ssl=1&resize=300%2C170&zoom=3 3x" alt="Las promesas que nos dejó el primer tráiler de Pokémon GO: ¿se cumplieron?" title="Las promesas que nos dejó el primer tráiler de Pokémon GO: ¿se cumplieron?" width="300" height="170">
+<div class="miniatura_meta hint--bottom" data-hint="Número de comentarios" style="background: #7B0D88">Artículo&nbsp;&nbsp;<i class="fa fa-comments"></i> 1</div>
+</a>
+</div>
+<div class="informacion">
+<div class="titulo title">
+<a href="https://www.cpokemon.com/2020/09/22/las-promesas-que-nos-dejo-el-primer-trailer-de-pokemon-go-se-cumplieron/">Las promesas que nos dejó el primer tráiler de Pokémon GO: ¿se cumplieron?</a>
+</div>
+</div>
+<div style="clear:both;"></div>
+<div class="info_bar"></div>
+</div>
+<div class="post_v5" id="post-37863" data-pag="">
+<div class="miniatura">
+<a href="https://www.cpokemon.com/2018/05/30/pokemon-lets-go-pikachu-eevee-te-aclaramos-tus-dudas-respecto-al-futuro-de-pokemon/">
+<img src="https://i1.wp.com/www.cpokemon.com/wp-content/uploads/2018/05/DeaLp6fVMAEzguS-830x415.jpg?ssl=1&resize=300%2C170" data-srcset="https://i1.wp.com/www.cpokemon.com/wp-content/uploads/2018/05/DeaLp6fVMAEzguS-830x415.jpg?ssl=1&resize=300%2C170&zoom=2 2x, https://i1.wp.com/www.cpokemon.com/wp-content/uploads/2018/05/DeaLp6fVMAEzguS-830x415.jpg?ssl=1&resize=300%2C170&zoom=3 3x" alt="Pokémon Let&#8217;s Go Pikachu / Eevee: te aclaramos todas tus dudas" title="Pokémon Let&#8217;s Go Pikachu / Eevee: te aclaramos todas tus dudas" width="300" height="170">
+<div class="miniatura_meta hint--bottom" data-hint="Número de comentarios" style="background: #7B0D88">Artículo&nbsp;&nbsp;<i class="fa fa-comments"></i> 3</div>
+</a>
+</div>
+<div class="informacion">
+<div class="titulo title">
+<a href="https://www.cpokemon.com/2018/05/30/pokemon-lets-go-pikachu-eevee-te-aclaramos-tus-dudas-respecto-al-futuro-de-pokemon/">Pokémon Let&#8217;s Go Pikachu / Eevee: te aclaramos todas tus dudas</a>
+</div>
+</div>
+<div style="clear:both;"></div>
+<div class="info_bar"></div>
+</div>
+<div class="post_v5" id="post-35697" data-pag="">
+<div class="miniatura">
+<a href="https://www.cpokemon.com/2017/09/03/articulo-el-curioso-caso-del-juego-principal-de-pokemon-para-nintendo-64/">
+<img src="https://i0.wp.com/www.cpokemon.com/wp-content/uploads/2017/09/KgPCPfMh.jpeg?ssl=1&resize=300%2C170" data-srcset="https://i0.wp.com/www.cpokemon.com/wp-content/uploads/2017/09/KgPCPfMh.jpeg?ssl=1&resize=300%2C170&zoom=2 2x, https://i0.wp.com/www.cpokemon.com/wp-content/uploads/2017/09/KgPCPfMh.jpeg?ssl=1&resize=300%2C170&zoom=3 3x" alt="Artículo: El curioso caso del juego principal de Pokémon para Nintendo 64" title="Artículo: El curioso caso del juego principal de Pokémon para Nintendo 64" width="300" height="170">
+<div class="miniatura_meta hint--bottom" data-hint="Número de comentarios" style="background: #7B0D88">Artículo&nbsp;&nbsp;<i class="fa fa-comments"></i> 9</div>
+</a>
+</div>
+<div class="informacion">
+<div class="titulo title">
+<a href="https://www.cpokemon.com/2017/09/03/articulo-el-curioso-caso-del-juego-principal-de-pokemon-para-nintendo-64/">Artículo: El curioso caso del juego principal de Pokémon para Nintendo 64</a>
+</div>
+</div>
+<div style="clear:both;"></div>
+<div class="info_bar"></div>
+</div>
+<div class="post_v5" id="post-35295" data-pag="">
+<div class="miniatura">
+<a href="https://www.cpokemon.com/2017/08/06/radiografia-comunidad-chilena/">
+<img src="https://i0.wp.com/www.cpokemon.com/wp-content/uploads/2017/08/Foto-2-Regionales-TCG.jpg?ssl=1&resize=300%2C170" data-srcset="https://i0.wp.com/www.cpokemon.com/wp-content/uploads/2017/08/Foto-2-Regionales-TCG.jpg?ssl=1&resize=300%2C170&zoom=2 2x, https://i0.wp.com/www.cpokemon.com/wp-content/uploads/2017/08/Foto-2-Regionales-TCG.jpg?ssl=1&resize=300%2C170&zoom=3 3x" alt="Radiografía: Comunidad chilena" title="Radiografía: Comunidad chilena" width="300" height="170">
+<div class="miniatura_meta hint--bottom" data-hint="Número de comentarios" style="background: #7B0D88">Artículo&nbsp;&nbsp;<i class="fa fa-comments"></i> 8</div>
+</a>
+</div>
+<div class="informacion">
+<div class="titulo title">
+<a href="https://www.cpokemon.com/2017/08/06/radiografia-comunidad-chilena/">Radiografía: Comunidad chilena</a>
+</div>
+</div>
+<div style="clear:both;"></div>
+<div class="info_bar"></div>
+</div>
+<div class="post_v5" id="post-35078" data-pag="">
+<div class="miniatura">
+<a href="https://www.cpokemon.com/2017/07/04/pokememories-el-album-homenaje-a-pokemon-que-simplemente-no-te-puedes-perder/">
+<img src="https://i1.wp.com/www.cpokemon.com/wp-content/uploads/2017/07/Album.jpg?ssl=1&resize=300%2C170" data-srcset="https://i1.wp.com/www.cpokemon.com/wp-content/uploads/2017/07/Album.jpg?ssl=1&resize=300%2C170&zoom=2 2x, https://i1.wp.com/www.cpokemon.com/wp-content/uploads/2017/07/Album.jpg?ssl=1&resize=300%2C170&zoom=3 3x" alt="PokéMemories: el álbum homenaje a Pokémon que simplemente no te puedes perder" title="PokéMemories: el álbum homenaje a Pokémon que simplemente no te puedes perder" width="300" height="170">
+<div class="miniatura_meta hint--bottom" data-hint="Número de comentarios" style="background: #7B0D88">Artículo&nbsp;&nbsp;<i class="fa fa-comments"></i> 2</div>
+</a>
+</div>
+<div class="informacion">
+<div class="titulo title">
+<a href="https://www.cpokemon.com/2017/07/04/pokememories-el-album-homenaje-a-pokemon-que-simplemente-no-te-puedes-perder/">PokéMemories: el álbum homenaje a Pokémon que simplemente no te puedes perder</a>
+</div>
+</div>
+<div style="clear:both;"></div>
+<div class="info_bar"></div>
+</div>
+</div>
+</div>
+</section>
+<section id="supermenu1" class="supermenu" style="display: none;">
+<div class="secciones_sub">
+<div class="divisor">
+<div class="titulo">Octava Generación</div>
+<div class="tiled">
+<a href="https://www.cpokemon.com/juegos/pokemon-espada-escudo/" class="item guia_subjuego" style="background-image:url('https://i2.wp.com/www.cpokemon.com/wp-content/uploads/2020/06/main-art-1280-x-720.jpg?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Pokémon Espada y Escudo</div>
+</a>
+<a href="https://www.cpokemon.com/juegos/pokemon-masters/" class="item guia_subjuego" style="background-image:url('https://i0.wp.com/www.cpokemon.com/wp-content/uploads/2019/05/Masters.jpg?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Pokémon Masters</div>
+</a>
+<a href="https://www.cpokemon.com/juegos/pokemon-mundo-misterioso-equipo-de-rescate-dx/" class="item guia_subjuego" style="background-image:url('https://i0.wp.com/www.cpokemon.com/wp-content/uploads/2020/01/portada-2-pokemon-mundo-misterioso-equipo-de-rescate-dx-switch.jpg?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Pokémon Mundo misterioso: equipo de rescate DX</div>
+</a>
+<a href="https://www.cpokemon.com/juegos/pokemon-unite/" class="item guia_subjuego" style="background-image:url('https://i0.wp.com/www.cpokemon.com/wp-content/uploads/2020/06/pokemon_unite_logo.png?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Pokémon UNITE</div>
+</a>
+<a href="https://www.cpokemon.com/juegos/bdsp/" class="item guia_subjuego" style="background-image:url('https://i2.wp.com/www.cpokemon.com/wp-content/uploads/2021/02/diamante-brillante-perla-reluciente-portada.jpg?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Pokémon Diamante Brillante y Perla Reluciente</div>
+</a>
+<a href="https://www.cpokemon.com/juegos/leyendas-arceus/" class="item guia_subjuego" style="background-image:url('https://i2.wp.com/www.cpokemon.com/wp-content/uploads/2021/02/pokemon-legends-arceus-screenhot-01.jpg?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Leyendas Pokémon: Arceus</div>
+</a>
+<a href="https://www.cpokemon.com/juegos/pokemon-go/" class="item guia_subjuego" style="background-image:url('https://i0.wp.com/www.cpokemon.com/wp-content/uploads/2015/09/img_20150911_124217.jpg?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Pokémon GO</div>
+</a>
+</div>
+</div>
+<div class="clear"></div><div class="divisor">
+<div class="titulo">Séptima Generación</div>
+<div class="tiled">
+<a href="https://www.cpokemon.com/juegos/letsgo/" class="item guia_subjuego" style="background-image:url('https://i0.wp.com/www.cpokemon.com/wp-content/uploads/2018/05/letsgo.jpg?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Pokémon Let&#8217;s Go, Pikachu! y Let&#8217;s Go, Eevee!</div>
+</a>
+<a href="https://www.cpokemon.com/juegos/pokemon-ultrasol-y-ultraluna/" class="item guia_subjuego" style="background-image:url('https://i2.wp.com/www.cpokemon.com/wp-content/uploads/2017/06/UltraMain.jpg?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Pokémon Ultrasol y Ultraluna</div>
+</a>
+<a href="https://www.cpokemon.com/juegos/pokemon-sm/" class="item guia_subjuego" style="background-image:url('https://i2.wp.com/www.cpokemon.com/wp-content/uploads/2016/05/cpokemon.com_sun-moon-sol-luna.jpg?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Pokémon Sol y Luna</div>
+</a>
+<a href="https://www.cpokemon.com/juegos/pokken-tournament-dx/" class="item guia_subjuego" style="background-image:url('https://i2.wp.com/www.cpokemon.com/wp-content/uploads/2017/07/Pokken-Tournament-DX.jpg?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Pokkén Tournament DX</div>
+</a>
+<a href="https://www.cpokemon.com/juegos/magikarp-jump/" class="item guia_subjuego" style="background-image:url('https://i2.wp.com/www.cpokemon.com/wp-content/uploads/2017/05/Magikarp.jpg?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Magikarp Jump</div>
+</a>
+<a href="https://www.cpokemon.com/juegos/pokemon-go/" class="item guia_subjuego" style="background-image:url('https://i0.wp.com/www.cpokemon.com/wp-content/uploads/2015/09/img_20150911_124217.jpg?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Pokémon GO</div>
+</a>
+<a href="https://www.cpokemon.com/juegos/detective-pikachu-birth-of-a-new-duo/" class="item guia_subjuego" style="background-image:url('https://i2.wp.com/www.cpokemon.com/wp-content/uploads/2016/01/cpokemon.com_detective-pikachu.jpg?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Detective Pikachu: Birth of a New Duo</div>
+</a>
+</div>
+</div>
+<div class="clear"></div><div class="divisor">
+<div class="titulo">Sexta Generación</div>
+<div class="tiled">
+<a href="https://www.cpokemon.com/juegos/pokemon-xy/" class="item guia_subjuego" style="background-image:url('https://i2.wp.com/www.cpokemon.com/wp-content/uploads/2013/10/xerneas_yveltal.jpg?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Pokémon X / Pokémon Y</div>
+</a>
+<a href="https://www.cpokemon.com/juegos/pokemon-omega-rubi-y-alfa-zafiro/" class="item guia_subjuego" style="background-image:url('https://i1.wp.com/www.cpokemon.com/wp-content/uploads/2015/09/pokemon_alpha_sapphire_and_omega_ruby_wallpaper_v3_by_patofilio-d7i9rcq-pokemon-omega-ruby-and-alpha-sapphire-catch-one-or-them-all.png?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Pokémon Rubí Omega y Zafiro Alfa</div>
+</a>
+<a href="https://www.cpokemon.com/juegos/pokemon-go/" class="item guia_subjuego" style="background-image:url('https://i0.wp.com/www.cpokemon.com/wp-content/uploads/2015/09/img_20150911_124217.jpg?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Pokémon GO</div>
+</a>
+<a href="https://www.cpokemon.com/juegos/pokemon-tretta/" class="item guia_subjuego" style="background-image:url('https://i0.wp.com/www.cpokemon.com/wp-content/uploads/2014/12/tretta2.jpg?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Pokémon Tretta</div>
+</a>
+<a href="https://www.cpokemon.com/juegos/pokemon-tretta-lab/" class="item guia_subjuego" style="background-image:url('https://i1.wp.com/www.cpokemon.com/wp-content/uploads/2014/12/trettalab4.jpg?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Pokémon Tretta Lab</div>
+</a>
+<a href="https://www.cpokemon.com/juegos/the-band-of-thieves-1000-pokemon/" class="item guia_subjuego" style="background-image:url('https://i1.wp.com/www.cpokemon.com/wp-content/uploads/2014/08/The_Band_of_Thieves_and_1000_Pokemon_18.jpg?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">The Band of Thieves &#038; 1000 Pokémon</div>
+</a>
+<a href="https://www.cpokemon.com/juegos/detective-pikachu-birth-of-a-new-duo/" class="item guia_subjuego" style="background-image:url('https://i2.wp.com/www.cpokemon.com/wp-content/uploads/2016/01/cpokemon.com_detective-pikachu.jpg?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Detective Pikachu: Birth of a New Duo</div>
+</a>
+<a href="https://www.cpokemon.com/juegos/pokemon-duel/" class="item guia_subjuego" style="background-image:url('https://i1.wp.com/www.cpokemon.com/wp-content/uploads/2017/01/cpokemon.com_pokemon-duel.jpg?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Pokémon Duel</div>
+</a>
+<a href="https://www.cpokemon.com/juegos/camp-pokemon/" class="item guia_subjuego" style="background-image:url('https://i0.wp.com/www.cpokemon.com/wp-content/uploads/2014/12/camp-pokemon-gallery-1.jpg?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Camp Pokémon</div>
+</a>
+<a href="https://www.cpokemon.com/juegos/trading-card-game-cartas/" class="item guia_subjuego" style="background-image:url('https://i2.wp.com/www.cpokemon.com/wp-content/uploads/2015/02/tumblr_static_af1z7zf6fkwk48844s40k0kcc.jpg?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Trading Card Game (Cartas)</div>
+</a>
+<a href="https://www.cpokemon.com/juegos/pokemon-trading-card-game-online/" class="item guia_subjuego" style="background-image:url('https://i1.wp.com/www.cpokemon.com/wp-content/uploads/2014/12/tcgo-about-02-en.jpg?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Pokémon Trading Card Game Online</div>
+</a>
+<a href="https://www.cpokemon.com/juegos/pokken-tournament/" class="item guia_subjuego" style="background-image:url('https://i0.wp.com/www.cpokemon.com/wp-content/uploads/2014/12/pokkentournament.jpg?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Pokkén Tournament</div>
+</a>
+<a href="https://www.cpokemon.com/juegos/banco-de-pokemon/" class="item guia_subjuego" style="background-image:url('https://i2.wp.com/www.cpokemon.com/wp-content/uploads/2014/12/banco_de_pokemon_portada.jpg?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Banco de Pokémon</div>
+</a>
+<a href="https://www.cpokemon.com/juegos/pokemon-art-academy/" class="item guia_subjuego" style="background-image:url('https://i1.wp.com/www.cpokemon.com/wp-content/uploads/2014/12/pokemon-art-academy-ann-3ds.jpg?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Pokémon Art Academy</div>
+</a>
+<a href="https://www.cpokemon.com/juegos/pokemon-link-battle/" class="item guia_subjuego" style="background-image:url('https://i2.wp.com/www.cpokemon.com/wp-content/uploads/2014/12/pokemonlinkhero.jpg?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Pokémon Link Battle!</div>
+</a>
+<a href="https://www.cpokemon.com/juegos/pokemon-mundo-megamisterioso/" class="item guia_subjuego" style="background-image:url('https://i1.wp.com/www.cpokemon.com/wp-content/uploads/2015/07/maxresdefault.jpg?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Pokémon Super Mystery Dungeon</div>
+</a>
+<a href="https://www.cpokemon.com/juegos/pokemon-rumble-world/" class="item guia_subjuego" style="background-image:url('https://i1.wp.com/www.cpokemon.com/wp-content/uploads/2015/04/pokemon-rumble-world-169.jpg?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Pokémon Rumble World</div>
+</a>
+<a href="https://www.cpokemon.com/juegos/pokemon-shuffle/" class="item guia_subjuego" style="background-image:url('https://i2.wp.com/www.cpokemon.com/wp-content/uploads/2015/02/800px-pokemon_shuffle_artwork.png?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Pokémon Shuffle</div>
+</a>
+</div>
+</div>
+<div class="clear"></div><div class="divisor">
+<div class="titulo">Quinta Generación</div>
+<div class="tiled">
+<a href="https://www.cpokemon.com/juegos/pokemon-edicion-negra-edicion-blanca/" class="item guia_subjuego" style="background-image:url('https://i0.wp.com/www.cpokemon.com/wp-content/uploads/2014/12/zekrom-and-reshiram-legendary-pokemon-black-and-white-artwork-lets-play.jpg?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Pokémon Edición Negra / Edición Blanca</div>
+</a>
+<a href="https://www.cpokemon.com/juegos/pokemon-edicion-blanca-2-negra-2/" class="item guia_subjuego" style="background-image:url('https://i1.wp.com/www.cpokemon.com/wp-content/uploads/2012/03/Captura-de-pantalla-2012-03-15-a-las-13.49.16.png?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Pokémon Edición Blanca 2 / Negra 2</div>
+</a>
+<a href="https://www.cpokemon.com/juegos/trading-card-game-cartas/" class="item guia_subjuego" style="background-image:url('https://i2.wp.com/www.cpokemon.com/wp-content/uploads/2015/02/tumblr_static_af1z7zf6fkwk48844s40k0kcc.jpg?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Trading Card Game (Cartas)</div>
+</a>
+<a href="https://www.cpokemon.com/juegos/pokemon-card-game-how-to-play-ds/" class="item guia_subjuego" style="background-image:url('https://i0.wp.com/www.cpokemon.com/wp-content/uploads/2014/12/cardgame3.jpg?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Pokémon Card Game: How To Play DS</div>
+</a>
+<a href="https://www.cpokemon.com/juegos/pokemon-battrio/" class="item guia_subjuego" style="background-image:url('https://i1.wp.com/www.cpokemon.com/wp-content/uploads/2014/12/battrio4.jpg?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Pokémon Battrio</div>
+</a>
+<a href="https://www.cpokemon.com/juegos/aprende-con-pokemon-aventura-entre-las-teclas/" class="item guia_subjuego" style="background-image:url('https://i2.wp.com/www.cpokemon.com/wp-content/uploads/2014/12/pokemon_aventura_entre_las_teclas_2.png?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Aprende con Pokémon: Aventura entre las teclas</div>
+</a>
+<a href="https://www.cpokemon.com/juegos/pokemon-say-tap/" class="item guia_subjuego" style="background-image:url('https://i2.wp.com/www.cpokemon.com/wp-content/uploads/2014/12/pokemon_say_tap_portada.jpg?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Pokémon Say Tap?</div>
+</a>
+<a href="https://www.cpokemon.com/juegos/pokedex-para-ios/" class="item guia_subjuego" style="background-image:url('https://i1.wp.com/www.cpokemon.com/wp-content/uploads/2014/12/portada_pokedex_ios.jpg?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Pokédex para iOS</div>
+</a>
+<a href="https://www.cpokemon.com/juegos/pokedex-3d/" class="item guia_subjuego" style="background-image:url('https://i0.wp.com/www.cpokemon.com/wp-content/uploads/2014/12/pokedex.jpg?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Pokédex 3D</div>
+</a>
+<a href="https://www.cpokemon.com/juegos/pokemon-conquest/" class="item guia_subjuego" style="background-image:url('https://i1.wp.com/www.cpokemon.com/wp-content/uploads/2014/12/conquest1.jpg?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Pokémon Conquest</div>
+</a>
+<a href="https://www.cpokemon.com/juegos/pokemon-rumble-blast/" class="item guia_subjuego" style="background-image:url('https://i0.wp.com/www.cpokemon.com/wp-content/uploads/2014/12/1xcojrj.jpg?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Pokémon Rumble Blast</div>
+</a>
+<a href="https://www.cpokemon.com/juegos/pokepark-2-un-mundo-de-ilusiones/" class="item guia_subjuego" style="background-image:url('https://i0.wp.com/www.cpokemon.com/wp-content/uploads/2014/12/pokepark2.jpg?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">PokéPark 2: Un Mundo de Ilusiones</div>
+</a>
+<a href="https://www.cpokemon.com/juegos/mundo-misterioso-portales-al-infinito/" class="item guia_subjuego" style="background-image:url('https://i2.wp.com/www.cpokemon.com/wp-content/uploads/2014/12/mmip.jpeg?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Mundo Misterioso: Portales al Infinito</div>
+</a>
+</div>
+</div>
+<div class="clear"></div><div class="divisor">
+<div class="titulo">Cuarta Generación</div>
+<div class="tiled">
+<a href="https://www.cpokemon.com/juegos/pokemon-diamante-y-pokemon-perla/" class="item guia_subjuego" style="background-image:url('https://i1.wp.com/www.cpokemon.com/wp-content/uploads/2014/12/980148__pokemon-diamond-pearl-dialga-palkia-it_p.jpg?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Pokémon Diamante y Pokémon Perla</div>
+</a>
+<a href="https://www.cpokemon.com/juegos/pokemon-platino/" class="item guia_subjuego" style="background-image:url('https://i0.wp.com/www.cpokemon.com/wp-content/uploads/2014/12/3968076-dialga-palkia-giratina.jpg?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Pokémon Platino</div>
+</a>
+<a href="https://www.cpokemon.com/juegos/pokemon-heartgold-soulsilver/" class="item guia_subjuego" style="background-image:url('https://i2.wp.com/www.cpokemon.com/wp-content/uploads/2014/12/the-launch-date-for-pokemon-heartgold-and-soulsilver-approaches.jpg?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Pokémon HeartGold / SoulSilver</div>
+</a>
+<a href="https://www.cpokemon.com/juegos/trading-card-game-cartas/" class="item guia_subjuego" style="background-image:url('https://i2.wp.com/www.cpokemon.com/wp-content/uploads/2015/02/tumblr_static_af1z7zf6fkwk48844s40k0kcc.jpg?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Trading Card Game (Cartas)</div>
+</a>
+<a href="https://www.cpokemon.com/juegos/my-pokemon-ranch/" class="item guia_subjuego" style="background-image:url('https://i2.wp.com/www.cpokemon.com/wp-content/uploads/2014/12/ranch.jpg?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">My Pokémon Ranch</div>
+</a>
+<a href="https://www.cpokemon.com/juegos/pokemon-ranger/" class="item guia_subjuego" style="background-image:url('https://i2.wp.com/www.cpokemon.com/wp-content/uploads/2014/12/ranger1.jpg?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Pokémon Ranger</div>
+</a>
+<a href="https://www.cpokemon.com/juegos/pokemon-ranger-sombras-de-almia/" class="item guia_subjuego" style="background-image:url('https://i0.wp.com/www.cpokemon.com/wp-content/uploads/2014/12/rangeramia.png?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Pokémon Ranger: Sombras de Almia</div>
+</a>
+<a href="https://www.cpokemon.com/juegos/mundo-misterioso-exploradores-del-cielo/" class="item guia_subjuego" style="background-image:url('https://i1.wp.com/www.cpokemon.com/wp-content/uploads/2014/12/pokemon-mystery-dungeon-16426-1920x1200.jpg?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Mundo Misterioso: Exploradores del Cielo</div>
+</a>
+<a href="https://www.cpokemon.com/juegos/pokemon-mundo-misterioso-exploradores-del-tiempo-y-exploradores-de-la-oscuridad/" class="item guia_subjuego" style="background-image:url('https://i1.wp.com/www.cpokemon.com/wp-content/uploads/2014/12/pokemon_mystery_dungeon_time_darkness_main_169.jpg?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Pokémon Mundo Misterioso: Exploradores del Tiempo y Exploradores de la Oscuridad</div>
+</a>
+<a href="https://www.cpokemon.com/juegos/pokemon-mundo-misterioso-escuadron-de-aventura-wii/" class="item guia_subjuego" style="background-image:url('https://i0.wp.com/www.cpokemon.com/wp-content/uploads/2014/12/mmsquad.png?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Pokémon Mundo Misterioso: Escuadrón de Aventura Wii</div>
+</a>
+<a href="https://www.cpokemon.com/juegos/pokemon-battle-revolution/" class="item guia_subjuego" style="background-image:url('https://i0.wp.com/www.cpokemon.com/wp-content/uploads/2014/12/battlerevolution.jpg?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Pokémon Battle Revolution</div>
+</a>
+<a href="https://www.cpokemon.com/juegos/pokemon-rumble/" class="item guia_subjuego" style="background-image:url('https://i2.wp.com/www.cpokemon.com/wp-content/uploads/2014/12/rumble1-e1419079518978.jpg?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Pokémon Rumble</div>
+</a>
+<a href="https://www.cpokemon.com/juegos/pokemon-link/" class="item guia_subjuego" style="background-image:url('https://i2.wp.com/www.cpokemon.com/wp-content/uploads/2014/12/pokemon_trozei_region.png?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Pokémon Link!</div>
+</a>
+</div>
+</div>
+<div class="clear"></div><div class="divisor">
+<div class="titulo">Tercera Generación</div>
+<div class="tiled">
+<a href="https://www.cpokemon.com/juegos/trading-card-game-cartas/" class="item guia_subjuego" style="background-image:url('https://i2.wp.com/www.cpokemon.com/wp-content/uploads/2015/02/tumblr_static_af1z7zf6fkwk48844s40k0kcc.jpg?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Trading Card Game (Cartas)</div>
+</a>
+<a href="https://www.cpokemon.com/juegos/pokemon-channel/" class="item guia_subjuego" style="background-image:url('https://i1.wp.com/www.cpokemon.com/wp-content/uploads/2014/12/pokemon-channel.jpg?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Pokémon Channel</div>
+</a>
+<a href="https://www.cpokemon.com/juegos/pokemon-box-rubi-zafiro/" class="item guia_subjuego" style="background-image:url('https://i0.wp.com/www.cpokemon.com/wp-content/uploads/2014/12/box3.jpg?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Pokémon Box: Rubí &#038; Zafiro</div>
+</a>
+<a href="https://www.cpokemon.com/juegos/pokemate-2/" class="item guia_subjuego" style="background-image:url('https://i1.wp.com/www.cpokemon.com/wp-content/uploads/2014/12/pokemate5.jpg?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Pokémate</div>
+</a>
+<a href="https://www.cpokemon.com/juegos/pokepark-fishing-rally-ds/" class="item guia_subjuego" style="background-image:url('https://i1.wp.com/www.cpokemon.com/wp-content/uploads/2014/12/logo_pokepark_fishing_rally_ds1.png?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">PokéPark: Fishing Rally DS</div>
+</a>
+<a href="https://www.cpokemon.com/juegos/pokemon-ranger/" class="item guia_subjuego" style="background-image:url('https://i2.wp.com/www.cpokemon.com/wp-content/uploads/2014/12/ranger1.jpg?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Pokémon Ranger</div>
+</a>
+<a href="https://www.cpokemon.com/juegos/pokemon-rojo-fuego-y-pokemon-verde-hoja/" class="item guia_subjuego" style="background-image:url('https://i1.wp.com/www.cpokemon.com/wp-content/uploads/2014/12/fireredleafgreen_maindetail.jpg?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Pokémon Rojo Fuego y Pokemon Verde Hoja</div>
+</a>
+<a href="https://www.cpokemon.com/juegos/pokemon-rubi-pokemon-zafiro-y-pokemon-esmeralda/" class="item guia_subjuego" style="background-image:url('https://i0.wp.com/www.cpokemon.com/wp-content/uploads/2014/12/hoenntrinity.jpg?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Pokémon Rubí, Pokémon Zafiro y Pokémon Esmeralda</div>
+</a>
+<a href="https://www.cpokemon.com/juegos/pokemon-xd-tempestad-oscura/" class="item guia_subjuego" style="background-image:url('https://i1.wp.com/www.cpokemon.com/wp-content/uploads/2014/12/xd1-copia.png?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Pokémon XD: Tempestad Oscura</div>
+</a>
+<a href="https://www.cpokemon.com/juegos/pokemon-colosseum/" class="item guia_subjuego" style="background-image:url('https://i1.wp.com/www.cpokemon.com/wp-content/uploads/2014/12/col2.png?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Pokémon Colosseum</div>
+</a>
+<a href="https://www.cpokemon.com/juegos/pokemon-pinball-rubi-y-zafiro/" class="item guia_subjuego" style="background-image:url('https://i1.wp.com/www.cpokemon.com/wp-content/uploads/2013/12/Pinball_Ruby_Sapphire_Screen3.png?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Pokémon Pinball: Rubí y Zafiro</div>
+</a>
+<a href="https://www.cpokemon.com/juegos/pokemon-mundo-misterioso-equipo-de-rescate-rojo-y-equipo-de-rescate-azul/" class="item guia_subjuego" style="background-image:url('https://i0.wp.com/www.cpokemon.com/wp-content/uploads/2014/12/mm1.jpg?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Pokémon Mundo Misterioso: Equipo de Rescate Rojo y Equipo de Rescate Azul</div>
+</a>
+<a href="https://www.cpokemon.com/juegos/pokemon-dash/" class="item guia_subjuego" style="background-image:url('https://i1.wp.com/www.cpokemon.com/wp-content/uploads/2014/12/dash1.png?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Pokémon Dash</div>
+</a>
+</div>
+</div>
+<div class="clear"></div><div class="divisor">
+<div class="titulo">Segunda Generación</div>
+<div class="tiled">
+<a href="https://www.cpokemon.com/juegos/trading-card-game-cartas/" class="item guia_subjuego" style="background-image:url('https://i2.wp.com/www.cpokemon.com/wp-content/uploads/2015/02/tumblr_static_af1z7zf6fkwk48844s40k0kcc.jpg?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Trading Card Game (Cartas)</div>
+</a>
+<a href="https://www.cpokemon.com/juegos/pokemon-cristal/" class="item guia_subjuego" style="background-image:url('https://i1.wp.com/www.cpokemon.com/wp-content/uploads/2014/12/cristal1.png?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Pokémon Cristal</div>
+</a>
+<a href="https://www.cpokemon.com/juegos/pokemon-oro-y-pokemon-plata/" class="item guia_subjuego" style="background-image:url('https://i2.wp.com/www.cpokemon.com/wp-content/uploads/2014/12/op1.png?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Pokémon Oro y Pokémon Plata</div>
+</a>
+<a href="https://www.cpokemon.com/juegos/pokemon-stadium-2/" class="item guia_subjuego" style="background-image:url('https://i2.wp.com/www.cpokemon.com/wp-content/uploads/2014/12/stadium21.jpg?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Pokémon Stadium 2</div>
+</a>
+<a href="https://www.cpokemon.com/juegos/pokemon-puzzle-challenge/" class="item guia_subjuego" style="background-image:url('https://i2.wp.com/www.cpokemon.com/wp-content/uploads/2014/07/pokemon_puzzle_challenge_screen4.png?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Pokémon Puzzle Challenge</div>
+</a>
+</div>
+</div>
+<div class="clear"></div><div class="divisor">
+<div class="titulo">Primera Generación</div>
+<div class="tiled">
+<a href="https://www.cpokemon.com/juegos/trading-card-game-cartas/" class="item guia_subjuego" style="background-image:url('https://i2.wp.com/www.cpokemon.com/wp-content/uploads/2015/02/tumblr_static_af1z7zf6fkwk48844s40k0kcc.jpg?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Trading Card Game (Cartas)</div>
+</a>
+<a href="https://www.cpokemon.com/juegos/pokemon-amarillo/" class="item guia_subjuego" style="background-image:url('https://i2.wp.com/www.cpokemon.com/wp-content/uploads/2014/12/02.jpg?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Pokémon Amarillo</div>
+</a>
+<a href="https://www.cpokemon.com/juegos/pokemon-rojo-y-pokemon-azul/" class="item guia_subjuego" style="background-image:url('https://i0.wp.com/www.cpokemon.com/wp-content/uploads/2014/12/rgb2.png?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Pokémon Rojo y Pokémon Azul</div>
+</a>
+<a href="https://www.cpokemon.com/juegos/pokemon-stadium/" class="item guia_subjuego" style="background-image:url('https://i1.wp.com/www.cpokemon.com/wp-content/uploads/2014/12/stadium1.jpg?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Pokémon Stadium</div>
+</a>
+<a href="https://www.cpokemon.com/juegos/pokemon-pinball/" class="item guia_subjuego" style="background-image:url('https://i2.wp.com/www.cpokemon.com/wp-content/uploads/2014/12/tableros.png?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Pokémon Pinball</div>
+</a>
+<a href="https://www.cpokemon.com/juegos/pokemon-snap/" class="item guia_subjuego" style="background-image:url('https://i1.wp.com/www.cpokemon.com/wp-content/uploads/2014/12/snap1.jpg?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Pokémon Snap</div>
+</a>
+<a href="https://www.cpokemon.com/juegos/pokemon-puzzle-league/" class="item guia_subjuego" style="background-image:url('https://i2.wp.com/www.cpokemon.com/wp-content/uploads/2014/12/league1.jpg?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Pokémon Puzzle League</div>
+</a>
+<a href="https://www.cpokemon.com/juegos/pokemon-hey-you-pikachu/" class="item guia_subjuego" style="background-image:url('https://i0.wp.com/www.cpokemon.com/wp-content/uploads/2014/12/pikachu1.jpg?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Pokémon Hey You Pikachu!</div>
+</a>
+<a href="https://www.cpokemon.com/juegos/pokemon-trading-card-game/" class="item guia_subjuego" style="background-image:url('https://i2.wp.com/www.cpokemon.com/wp-content/uploads/2014/12/tcg1.png?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Pokémon Trading Card Game</div>
+</a>
+<a href="https://www.cpokemon.com/juegos/pokemon-trading-card-game-2/" class="item guia_subjuego" style="background-image:url('https://i0.wp.com/www.cpokemon.com/wp-content/uploads/2014/12/tcg2.jpg?resize=181%2C70&ssl=1&amp;zoom=2'); background-size: contain;">
+<div class="titulo">Pokémon Trading Card Game 2</div>
+</a>
+</div>
+</div>
+<div class="clear"></div>
+</div>
+</section>
+<section id="supermenu_comunidad" class="supermenu" style="display: none;">
+<div class="secciones_sub">
+<div class="divisor">
+<div class="tiled">
+<a href="https://www.cpokemon.com/foro/" class="item guia_subjuego" style="background-image:url(https://i0.wp.com/www.cpokemon.com/imagen.png?resize=180%2C70)">
+<div class="titulo">Foros</div>
+</a>
+<a href="https://www.facebook.com/groups/comunidad.cpokemon/" class="item guia_subjuego" style="background-image:url(https://i1.wp.com/www.cpokemon.com/wp-content/uploads/2017/02/cpokemon.com_facebook-groups.jpg?resize=180%2C70)">
+<div class="titulo">Grupo de Facebook</div>
+</a>
+<a href="https://discord.gg/cpokemon" class="item guia_subjuego" style="background-image:url(https://i2.wp.com/www.cpokemon.com/wp-content/uploads/2017/02/cpokemon.com_2016-12-30-cubekrowd-launches-official-discord-server.png?resize=180%2C70)">
+<div class="titulo">Chat Discord</div>
+</a>
+</div>
+</div>
+<div class="clear"></div>
+</div>
+</section>
+<section id="supermenu_herramientas" class="supermenu" style="display: none;">
+<div class="secciones_sub">
+<div class="divisor">
+<div class="tiled">
+<a href="//www.cpokemon.com/seccion/herramientas/tipos/" class="item guia_subjuego" style="background-image:url(https://i0.wp.com/www.cpokemon.com/wp-content/uploads/2017/08/favoritos.png?resize=180%2C70)">
+<div class="titulo">Generador de Pokémon favoritos</div>
+</a>
+<a href="//www.cpokemon.com/eventos/" class="item guia_subjuego" style="background-image:url(https://i1.wp.com/www.cpokemon.com/wp-content/uploads/2017/08/Mythical-Singulares.jpg?resize=180%2C70)">
+<div class="titulo">Calendario de eventos Pokémon</div>
+</a>
+<a href="//www.cpokemon.com/pokes/" class="item guia_subjuego" style="background-image:url(https://i2.wp.com/www.cpokemon.com/wp-content/uploads/2018/08/wallpaper-2793086.jpg?resize=180%2C70)">
+<div class="titulo">Repositorio de artworks y sprites</div>
+</a>
+</div>
+</div>
+<div class="clear"></div>
+</div>
+</section>
+</div>
+</div>
+</div>
+</nav>
+<div id="secciones_container">
+<a href="#" class="boton-cerrar"><i class="fa fa-close"></i></a>
+<nav id="menu-secciones">
+<ul>
+<li class="page_item page-item-30015"><a href="https://www.cpokemon.com/seccion/eventos/">Lista de eventos Pokémon</a></li>
+<li class="page_item page-item-35535 page_item_has_children"><a href="https://www.cpokemon.com/seccion/herramientas/">Herramientas</a>
+<ul class='children'>
+<li class="page_item page-item-35537 page_item_has_children"><a href="https://www.cpokemon.com/seccion/herramientas/tipos/">Generador de tus Pokémon favoritos de cada tipo</a>
+<ul class='children'>
+<li class="page_item page-item-46370"><a href="https://www.cpokemon.com/seccion/herramientas/tipos/fr/">Votre Pokémon préféré de chaque type</a></li>
+<li class="page_item page-item-46381"><a href="https://www.cpokemon.com/seccion/herramientas/tipos/it/">Il tuo Pokémon preferito di ogni tipo</a></li>
+<li class="page_item page-item-46389"><a href="https://www.cpokemon.com/seccion/herramientas/tipos/ger/">Dein Lieblingspokémon jeder Art</a></li>
+<li class="page_item page-item-35608"><a href="https://www.cpokemon.com/seccion/herramientas/tipos/en/">Favorite Pokémon of each type image generator</a></li>
+<li class="page_item page-item-35611"><a href="https://www.cpokemon.com/seccion/herramientas/tipos/ja/">あなたのお気に入りのポケモン</a></li>
+</ul>
+</li>
+<li class="page_item page-item-35555"><a href="https://www.cpokemon.com/seccion/herramientas/calendario-de-eventos-pokemon/">Calendario de eventos Pokémon</a></li>
+<li class="page_item page-item-38829"><a href="https://www.cpokemon.com/seccion/herramientas/repo/">Repositorio de artworks y sprites</a></li>
+</ul>
+</li>
+<li class="page_item page-item-28836"><a href="https://www.cpokemon.com/seccion/nuevos-pokemon/">Lista de Pokémon de séptima generación &#8211; Nuevos Pokémon</a></li>
+<li class="page_item page-item-19661"><a href="https://www.cpokemon.com/seccion/pokedex/">Pokédex</a></li>
+<li class="page_item page-item-15537 page_item_has_children"><a href="https://www.cpokemon.com/seccion/cp/">Centro Pokémon</a>
+<ul class='children'>
+<li class="page_item page-item-19018 page_item_has_children"><a href="https://www.cpokemon.com/seccion/cp/archivo/">Archivo de noticias</a>
+<ul class='children'>
+<li class="page_item page-item-29242"><a href="https://www.cpokemon.com/seccion/cp/archivo/categorias/">Lista de categorías</a></li>
+</ul>
+</li>
+<li class="page_item page-item-15599"><a href="https://www.cpokemon.com/seccion/cp/staff/">Staff (equipo) de Centro Pokémon</a></li>
+<li class="page_item page-item-15602"><a href="https://www.cpokemon.com/seccion/cp/enlazanos/">Enlázanos</a></li>
+<li class="page_item page-item-15604"><a href="https://www.cpokemon.com/seccion/cp/cpokeventos/">CPokéventos</a></li>
+<li class="page_item page-item-18029"><a href="https://www.cpokemon.com/seccion/cp/contacto/">Contacto</a></li>
+<li class="page_item page-item-18035"><a href="https://www.cpokemon.com/seccion/cp/acerca-de/">Acerca del sitio</a></li>
+<li class="page_item page-item-19802"><a href="https://www.cpokemon.com/seccion/cp/legal/">Aviso legal</a></li>
+<li class="page_item page-item-19805"><a href="https://www.cpokemon.com/seccion/cp/chat/">Chat Discord</a></li>
+<li class="page_item page-item-25280"><a href="https://www.cpokemon.com/seccion/cp/manual-de-estilo/">Manual de estilo de Centro Pokémon</a></li>
+<li class="page_item page-item-35711"><a href="https://www.cpokemon.com/seccion/cp/grupo-fb/">Comunidad Pokémon en español más grande del mundo</a></li>
+</ul>
+</li>
+<li class="page_item page-item-15534 page_item_has_children"><a href="https://www.cpokemon.com/seccion/entrenamiento/">Entrenamiento Pokémon</a>
+<ul class='children'>
+<li class="page_item page-item-15550"><a href="https://www.cpokemon.com/seccion/entrenamiento/effort-value-points/">Effort Value Points</a></li>
+<li class="page_item page-item-15554"><a href="https://www.cpokemon.com/seccion/entrenamiento/listado-de-naturalezas-pokemon/">Naturalezas Pokémon</a></li>
+<li class="page_item page-item-15560"><a href="https://www.cpokemon.com/seccion/entrenamiento/crianza-pokemon/">Crianza Pokémon</a></li>
+<li class="page_item page-item-15584 page_item_has_children"><a href="https://www.cpokemon.com/seccion/entrenamiento/evolucion-pokemon/">Evolución Pokémon</a>
+<ul class='children'>
+<li class="page_item page-item-15586"><a href="https://www.cpokemon.com/seccion/entrenamiento/evolucion-pokemon/primer-generacion/">Primer Generación</a></li>
+<li class="page_item page-item-15590"><a href="https://www.cpokemon.com/seccion/entrenamiento/evolucion-pokemon/segunda-generacion/">Segunda Generación</a></li>
+<li class="page_item page-item-15592"><a href="https://www.cpokemon.com/seccion/entrenamiento/evolucion-pokemon/tercer-generacion/">Tercer Generación</a></li>
+<li class="page_item page-item-15594"><a href="https://www.cpokemon.com/seccion/entrenamiento/evolucion-pokemon/cuarta-generacion/">Cuarta Generación</a></li>
+</ul>
+</li>
+<li class="page_item page-item-15596"><a href="https://www.cpokemon.com/seccion/entrenamiento/formas-alternativas-pokemon/">Formas Alternativas Pokémon</a></li>
+</ul>
+</li>
+<li class="page_item page-item-19678 page_item_has_children"><a href="https://www.cpokemon.com/seccion/competitivo/">Pokémon Competitivo</a>
+<ul class='children'>
+<li class="page_item page-item-19784 page_item_has_children"><a href="https://www.cpokemon.com/seccion/competitivo/general/">Conocimientos generales</a>
+<ul class='children'>
+<li class="page_item page-item-19779"><a href="https://www.cpokemon.com/seccion/competitivo/general/movimientos/">Clases de movimientos Pokémon</a></li>
+<li class="page_item page-item-19786"><a href="https://www.cpokemon.com/seccion/competitivo/general/habilidades/">Habilidades</a></li>
+<li class="page_item page-item-19787"><a href="https://www.cpokemon.com/seccion/competitivo/general/stats/">Los 6 stats</a></li>
+<li class="page_item page-item-19788"><a href="https://www.cpokemon.com/seccion/competitivo/general/estados/">Estados en combate</a></li>
+<li class="page_item page-item-19789"><a href="https://www.cpokemon.com/seccion/competitivo/general/naturalezas/">Naturalezas</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="page_item page-item-15528 page_item_has_children"><a href="https://www.cpokemon.com/seccion/anime/">Anime</a>
+<ul class='children'>
+<li class="page_item page-item-15532"><a href="https://www.cpokemon.com/seccion/anime/temporadas/">Temporadas</a></li>
+<li class="page_item page-item-22397"><a href="https://www.cpokemon.com/seccion/anime/especiales/">Especiales</a></li>
+<li class="page_item page-item-15530 page_item_has_children"><a href="https://www.cpokemon.com/seccion/anime/peliculas/">Películas</a>
+<ul class='children'>
+<li class="page_item page-item-22896 page_item_has_children"><a href="https://www.cpokemon.com/seccion/anime/peliculas/serie-original/">Serie Original</a>
+<ul class='children'>
+<li class="page_item page-item-15611"><a href="https://www.cpokemon.com/seccion/anime/peliculas/serie-original/pokemon-2000/">Pokémon 2000: El Poder de Uno</a></li>
+<li class="page_item page-item-15613"><a href="https://www.cpokemon.com/seccion/anime/peliculas/serie-original/pokemon-el-hechizo-de-los-unows/">El Hechizo de los Unown</a></li>
+<li class="page_item page-item-15619"><a href="https://www.cpokemon.com/seccion/anime/peliculas/serie-original/pokemon-heroes/">Héroes Pokémon: Latios y Latias</a></li>
+<li class="page_item page-item-15617"><a href="https://www.cpokemon.com/seccion/anime/peliculas/serie-original/pokemon-4ever/">Pokémon 4Ever: Celebi, la Voz del Bosque</a></li>
+<li class="page_item page-item-15608"><a href="https://www.cpokemon.com/seccion/anime/peliculas/serie-original/mewtwo-contraataca/">Mewtwo Contraataca</a></li>
+</ul>
+</li>
+<li class="page_item page-item-22898 page_item_has_children"><a href="https://www.cpokemon.com/seccion/anime/peliculas/serie-generacion-avanzada/">Serie Generación Avanzada</a>
+<ul class='children'>
+<li class="page_item page-item-15621"><a href="https://www.cpokemon.com/seccion/anime/peliculas/serie-generacion-avanzada/pokemon-destino-deoxys/">El Destino de Deoxys</a></li>
+<li class="page_item page-item-15623"><a href="https://www.cpokemon.com/seccion/anime/peliculas/serie-generacion-avanzada/pokemon-jirachi-wish-maker/">Jirachi y los Deseos</a></li>
+<li class="page_item page-item-15625"><a href="https://www.cpokemon.com/seccion/anime/peliculas/serie-generacion-avanzada/pokemon-lucario-y-el-misterio-de-mew/">Lucario y el Misterio de Mew</a></li>
+<li class="page_item page-item-15627"><a href="https://www.cpokemon.com/seccion/anime/peliculas/serie-generacion-avanzada/pokemon-ranger-y-el-templo-del-oceano/">Pokémon Ranger y el Templo del Mar</a></li>
+</ul>
+</li>
+<li class="page_item page-item-22900 page_item_has_children"><a href="https://www.cpokemon.com/seccion/anime/peliculas/serie-diamante-perla/">Serie Diamante &#038; Perla</a>
+<ul class='children'>
+<li class="page_item page-item-15629"><a href="https://www.cpokemon.com/seccion/anime/peliculas/serie-diamante-perla/el-desafio-darkrai/">El Desafío de Darkrai</a></li>
+<li class="page_item page-item-15631"><a href="https://www.cpokemon.com/seccion/anime/peliculas/serie-diamante-perla/arceus-y-la-joya-de-la-vida/">Arceus y la Joya de la Vida</a></li>
+<li class="page_item page-item-15633"><a href="https://www.cpokemon.com/seccion/anime/peliculas/serie-diamante-perla/zoroark-el-maestro-de-ilusiones/">Zoroark: El Maestro de Ilusiones</a></li>
+<li class="page_item page-item-22464"><a href="https://www.cpokemon.com/seccion/anime/peliculas/serie-diamante-perla/giratina-y-el-guerrero-celestial/">Giratina y el Guerrero Celestial</a></li>
+</ul>
+</li>
+<li class="page_item page-item-22902 page_item_has_children"><a href="https://www.cpokemon.com/seccion/anime/peliculas/serie-negro-blanco/">Serie Negro &#038; Blanco</a>
+<ul class='children'>
+<li class="page_item page-item-15638"><a href="https://www.cpokemon.com/seccion/anime/peliculas/serie-negro-blanco/blanco-victini-y-zekromnegro-victini-y-reshiram/">Blanco &#8211; Victini y Zekrom/Negro &#8211; Victini y Reshiram</a></li>
+<li class="page_item page-item-15640"><a href="https://www.cpokemon.com/seccion/anime/peliculas/serie-negro-blanco/kyurem-vs-el-espadachin-mistico/">Kyurem VS El Espadachín Místico</a></li>
+<li class="page_item page-item-15642"><a href="https://www.cpokemon.com/seccion/anime/peliculas/serie-negro-blanco/genesect-y-el-despertar-de-una-leyenda/">Genesect y el Despertar de una Leyenda</a></li>
+</ul>
+</li>
+<li class="page_item page-item-22904 page_item_has_children"><a href="https://www.cpokemon.com/seccion/anime/peliculas/serie-xy/">Serie XY</a>
+<ul class='children'>
+<li class="page_item page-item-19558"><a href="https://www.cpokemon.com/seccion/anime/peliculas/serie-xy/diancie-y-la-crisalida-de-la-destruccion/">Diancie y la Crisálida de la Destrucción</a></li>
+<li class="page_item page-item-22466"><a href="https://www.cpokemon.com/seccion/anime/peliculas/serie-xy/el-gran-genio-de-los-anillos-hoopa/">El Gran Genio de los Anillos: Hoopa</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="page_item page-item-22377 page_item_has_children"><a href="https://www.cpokemon.com/seccion/anime/cortos-de-pikachu-2/">Cortos de Pikachu</a>
+<ul class='children'>
+<li class="page_item page-item-22983 page_item_has_children"><a href="https://www.cpokemon.com/seccion/anime/cortos-de-pikachu-2/acompanantes/">Anuales</a>
+<ul class='children'>
+<li class="page_item page-item-22383"><a href="https://www.cpokemon.com/seccion/anime/cortos-de-pikachu-2/acompanantes/las-vacaciones-de-pikachu/">Las Vacaciones de Pikachu</a></li>
+<li class="page_item page-item-22804"><a href="https://www.cpokemon.com/seccion/anime/cortos-de-pikachu-2/acompanantes/pikachu-al-rescate/">Pikachu Al Rescate</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="page_item page-item-22855 page_item_has_children"><a href="https://www.cpokemon.com/seccion/anime/programas/">Programas</a>
+<ul class='children'>
+<li class="page_item page-item-22861"><a href="https://www.cpokemon.com/seccion/anime/programas/pokemon-sunday/">Pokemon Sunday</a></li>
+<li class="page_item page-item-22865"><a href="https://www.cpokemon.com/seccion/anime/programas/pokemon-smash/">Pokémon Smash!</a></li>
+<li class="page_item page-item-22857"><a href="https://www.cpokemon.com/seccion/anime/programas/gettv/">Pokémon Get☆TV</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="page_item page-item-15539 page_item_has_children"><a href="https://www.cpokemon.com/seccion/descargas/">Descargas</a>
+<ul class='children'>
+<li class="page_item page-item-44564"><a href="https://www.cpokemon.com/seccion/descargas/citra-3ds-emulador-para-android/">Descarga Citra 3DS el emulador para Android</a></li>
+<li class="page_item page-item-23144"><a href="https://www.cpokemon.com/seccion/descargas/musica/">Música</a></li>
+<li class="page_item page-item-40869"><a href="https://www.cpokemon.com/seccion/descargas/wallpapers-pokemon-250-fondos-de-pantalla/">Wallpaper de Pokémon, MÁS de 250 fondos de pantalla</a></li>
+</ul>
+</li>
+<li class="page_item page-item-15543 page_item_has_children"><a href="https://www.cpokemon.com/seccion/trucos/">Trucos</a>
+<ul class='children'>
+<li class="page_item page-item-15691"><a href="https://www.cpokemon.com/seccion/trucos/trucos-pokemon-emerald-gamesharks/">Trucos Pokémon Emerald en ingles (Gamesharks)</a></li>
+<li class="page_item page-item-15693"><a href="https://www.cpokemon.com/seccion/trucos/trucos-pokemon-esmeralda/">Trucos Pokémon Esmeralda en español (Gamesharks)</a></li>
+<li class="page_item page-item-15695"><a href="https://www.cpokemon.com/seccion/trucos/trucos-pokemon-ruby-sapphire-gamesharks/">Trucos Pokémon Ruby y Sapphire en ingles (Gamesharks)</a></li>
+<li class="page_item page-item-15697"><a href="https://www.cpokemon.com/seccion/trucos/trucos-pokemon-rubi-zafiro/">Trucos Pokémon Rubí y Zafiro en español</a></li>
+<li class="page_item page-item-15699"><a href="https://www.cpokemon.com/seccion/trucos/trucos-pokemon-firered-leafgreen/">Trucos Pokémon Fire Red &#038; Leaf Green en ingles (Gamesharks)</a></li>
+<li class="page_item page-item-15701"><a href="https://www.cpokemon.com/seccion/trucos/trucos-pokemon-rojofuego-verdehoja/">Trucos de Pokémon Rojo Fuego y Verde Hoja en español</a></li>
+<li class="page_item page-item-43241"><a href="https://www.cpokemon.com/seccion/trucos/trucos-pokemon-heart-gold-y-soul-silver/">Trucos Pokémon Heart Gold y Soul Silver en Español</a></li>
+<li class="page_item page-item-15704"><a href="https://www.cpokemon.com/seccion/trucos/trucos-pokemon-diamante-y-perla/">Trucos Pokémon Diamante y Perla</a></li>
+<li class="page_item page-item-15706"><a href="https://www.cpokemon.com/seccion/trucos/trucos-pokemon-black-white/">Trucos Pokémon Edición Negra y Blanca</a></li>
+</ul>
+</li>
+<li class="page_item page-item-26865"><a href="https://www.cpokemon.com/seccion/worlds2015/">Cobertura Pokémon World Championships 2015</a></li>
+<li class="page_item page-item-23637 page_item_has_children"><a href="https://www.cpokemon.com/seccion/guias-de-uso/">Guías de Uso</a>
+<ul class='children'>
+<li class="page_item page-item-23642"><a href="https://www.cpokemon.com/seccion/guias-de-uso/emular-diamante-perla-en-nogba/">Emular Diamante &#038; Perla en No$GBA</a></li>
+<li class="page_item page-item-24633"><a href="https://www.cpokemon.com/seccion/guias-de-uso/como-grabar-video-con-vba/">Cómo grabar vídeo con VBA</a></li>
+<li class="page_item page-item-23200"><a href="https://www.cpokemon.com/seccion/guias-de-uso/tutorial-vbalink-gba/">Tutorial VBALink (GBA)</a></li>
+<li class="page_item page-item-23276"><a href="https://www.cpokemon.com/seccion/guias-de-uso/tutorial-project64-kaillera-n64/">Tutorial Project64 + Kaillera (N64)</a></li>
+<li class="page_item page-item-23373"><a href="https://www.cpokemon.com/seccion/guias-de-uso/tutorial-conexion-wi-fi-alternativa-ds/">Tutorial conexión Wi-Fi alternativa (DS)</a></li>
+<li class="page_item page-item-23631"><a href="https://www.cpokemon.com/seccion/guias-de-uso/transfer-pak-en-project64-n64/">Transfer Pak en Project64 (N64)</a></li>
+</ul>
+</li>
+<li class="page_item page-item-34748"><a href="https://www.cpokemon.com/seccion/prueba-anime/">Prueba Anime</a></li>
+</ul>
+</nav>
+</div>
+<noscript>
+					<div style='border: 1px solid #F7941D; background: #FEEFDA;margin-left:auto;margin-right:auto; text-align: center; clear: both; height: 75px; position: relative;width:90%;max-width:970px;margin-top: 15px;'>
+					<div style='font-size: 14px; font-weight: bold; margin-top: 12px;'>Necesitas activar JavaScript para poder navegar por esta p&aacute;gina!</div>
+					</div>
+				</noscript>
+<script>
+          var $buoop = {vs: {c:2}, l: 'es'};
+          function $buo_f(){
+           var e = document.createElement("script");
+           e.src = "//browser-update.org/update.js";
+           document.body.appendChild(e);
+          };
+          try {document.addEventListener("DOMContentLoaded", $buo_f,false)}
+          catch(e){window.attachEvent("onload", $buo_f)}
+        </script>
+<style>
+				.buorg {
+				top:0px !important;
+				position: fixed !important;
+        z-index: 99999999999999999999999999999999999999999999999999999999999999999999999999;
+				}
+				</style>
+
+<ins class="adsbygoogle ads ad-cabecera aligncenter" data-full-width-responsive="true" data-ad-client="ca-pub-5146509566368759" data-ad-slot="5096960397" data-ad-format="horizontal"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<div id="container" class="container"><div class="span-24" id="contentwrap" style="background:none !important;">
+<div id="content" style="padding:0 !important">
+<img src="/wp-content/themes/nuevocp/images/404.jpg" alt="Errror 404" title="Error 404" style="width:100%;padding: 0;display: block;" />
+</div>
+</div>
+</div>
+</div>
+<div id="curiosidad_cp" class="aligncenter">
+<div class="titulo">Curiosidad Pokémon<div class="curio_refresher" title="Cargar otra curiosidad"><i class="fa fa-refresh"></i></div></div>
+<div class="contenido"><img src="https://i0.wp.com/www.cpokemon.com/pokes/global-link/490.png"><div class="dentro_cont">Manaphy es el único Pokémon singular que puede criar con un Ditto.</div></div>
+</div>
+<footer class="footer-ncp2">
+<div class="contenedor-footer">
+<div class="span-24-foot">
+<div class="span-14">
+<div class="titulo"><img src="//www.cpokemon.com/wp-content/themes/nuevocp/images/cplogo-hdpi.png" alt="Centro Pokémon" title="Centro Pokémon" height="50" /></div>
+<div id="otros_social"><div>Síguenos</div>
+<div class="cont_social">
+<a target="_blank" href="https://www.facebook.com/CPokemon/" class="fa fa-facebook material-shadow" title="Centro Pokémon en Facebook" style="background-color: #3b5998;"></a>
+<a target="_blank" href="https://twitter.com/CentroPokemon" class="fa fa-twitter material-shadow" title="Centro Pokémon en Twitter" style="background-color: #55acee;"></a>
+<a target="_blank" href="https://www.youtube.com/user/CPokemonCom" class="fa fa-youtube-play material-shadow" title="Centro Pokémon en YouTube" style="background-color: #CD201F;margin-right: 0;"></a>
+</div>
+<div class="clear"></div>
+</div>
+<p>En Centro Pokémon podrás encontrar la más reciente información y noticias sobre Pokémon, así como guías, eventos, descargas, foros y mucho más. Pokémon y el resto de nombres relacionados son propiedad de Nintendo, Creatures Inc y Game Freak © 1996-2021.</p>
+<p class="afiliados">
+<a href="http://www.pokemonalpha.xyz/" target="_blank" rel="nofollow"><img class="lazy-hidden" data-src="//www.cpokemon.com/images/afiliados/pokemonalpha.png" alt="Pokémon Alpha" width="88" height="31" border="0" /></a>
+<a href="http://www.pokeyplay.com/" target="_blank" rel="nofollow"><img class="lazy-hidden" data-src="//www.cpokemon.com/images/afiliados/poke-play.gif" alt="Pok&eacute;&amp;Play" width="88" height="31" border="0" /></a>
+<a href="http://www.pokemony.com" target="_blank" rel="nofollow"><img class="lazy-hidden" width="88" height="31" data-src="//www.cpokemon.com/images/afiliados/pokemony.gif" style="border: none;" alt="Pokemon Valhalla" /></a>
+<a href="http://www.pokemon-project.com" target="_blank" rel="nofollow" class="last"><img class="lazy-hidden" data-src="//www.cpokemon.com/images/afiliados/pokemonproject.gif" alt="Pok&eacute;mon Project" width="88" height="31" border="0" /></a>
+<a href="https://www.pokemoneros.com/" target="_blank" rel="nofollow" class="last"><img class="lazy-hidden" data-src="https://i.imgur.com/d4iq7GS.gif" alt="Pokemoneros" width="88" height="31" border="0" /></a>
+<br />
+<a href="http://www.pokemew.com" target="_blank" rel="nofollow"><img class="lazy-hidden" data-src="//i1218.photobucket.com/albums/dd408/pokemyu/th_pokemew.gif" alt="Pokémew" width="88" height="31" border="0" /></a>
+<a href="http://pokecompany.com" target="_blank" rel="nofollow"><img class="lazy-hidden" width="88" height="31" data-src="//i.imgur.com/dzCP3uo.gif" border="0" alt="" /></a>
+<a href="http://www.pkparaiso.com" target="_blank" rel="nofollow"><img width="88" height="31" class="lazy-hidden" data-src="//www.cpokemon.com/images/afiliados/pkparaiso.png" border="0" /></a>
+<a href="http://www.poke-blast-news.net/" target="_blank" rel="nofollow"><img border="0" class="lazy-hidden" data-src="//i.imgur.com/19WoR.gif" width="88" height="31" /></a>
+</p>
+</div>
+<div class="span-3 prepend-1">
+<div class="titulo">Sitio</div>
+<ul>
+<li><a href="//www.cpokemon.com/seccion/cp/acerca-de/">Acerca de</a></li>
+<li><a href="//www.cpokemon.com/foro/">Foros</a></li>
+<li><a href="https://www.facebook.com/groups/comunidad.cpokemon/">Grupo de Facebook</a></li>
+<li><a href="https://discord.gg/cpokemon">Chat en Discord</a></li>
+<li><a href="//www.cpokemon.com/seccion/cp/staff/">Equipo</a></li>
+<li><a href="//www.cpokemon.com/seccion/cp/legal/">Aviso legal</a></li>
+<li><a href="//www.cpokemon.com/seccion/cp/contacto/">Contacto</a></li>
+<li><a href="//www.cpokemon.com/dmca.php">DMCA</a></li>
+</ul>
+</div>
+<div class="span-3">
+<div class="titulo">Noticias</div>
+<ul>
+<li><a href="//www.cpokemon.com/cat/juegos/">Videojuegos</a></li>
+<li><a href="//www.cpokemon.com/cat/anime/">Anime</a></li>
+<li><a href="//www.cpokemon.com/cat/tcg/">TCG</a></li>
+<li><a href="//www.cpokemon.com/cat/eventos-oficiales/">Eventos</a></li>
+<li><a href="//www.cpokemon.com/cat/articulos/">Artículos</a></li>
+</ul>
+</div>
+<div class="span-3 last">
+<div class="titulo">Guías</div>
+<ul>
+<li><a href="//www.cpokemon.com/pokemon-espada-escudo/">Pokémon Espada y Escudo</a></li>
+<li><a href="//www.cpokemon.com/letsgo/">Pokémon Let's GO</a></li>
+<li><a href="//www.cpokemon.com/ultrasunmoon/">Pokémon Ultrasol y Ultraluna</a></li>
+<li><a href="//www.cpokemon.com/sunmoon/">Pokémon Sol y Luna</a></li>
+<li><a href="//www.cpokemon.com/pokemon-oras/">Rubí Omega y Zafiro Alfa</a></li>
+<li><a href="//www.cpokemon.com/pokemon-xy/">X y Y</a></li>
+<li><a href="//www.cpokemon.com/go/trucos/los-mejores-trucos-y-consejos-de-pokemon-go/">Trucos Pokemon GO</a></li>
+<li><a href="//www.cpokemon.com/seccion/trucos/trucos-pokemon-esmeralda/">Trucos Pokémon Esmeralda</a></li>
+<li><a href="//www.cpokemon.com/seccion/trucos/trucos-pokemon-rojofuego-verdehoja/">Trucos Pokémon Rojo Fuego y Verde Hoja</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="footer-copyright">
+<div class="contenedor-footer span-24-foot">
+© Centro Pokémon 2005-2021. Todos los derechos reservados del contenido original.
+<a href="//www.cpokemon.com/seccion/cp/staff/" class="right">
+<img src="//www.cpokemon.com/wp-content/themes/nuevocp/images/cri.png" style="vertical-align: middle;margin-right: 7px;">Desarrollado en Costa Rica
+<img src="//www.cpokemon.com/wp-content/themes/nuevocp/images/arg.png" style="margin-left: 10px; vertical-align: middle;margin-right: 7px;">Creado en Argentina
+</a>
+</div>
+</div>
+</footer>
+<script type='text/javascript' src='https://www.cpokemon.com/wp-content/plugins/ajaxy-search-form/js/sf_selective.js?ver=1.0.0' id='ajaxy-sf-selective-js'></script>
+<script type='module' src='https://www.cpokemon.com/wp-content/plugins/instant-page/instantpage.js?ver=5.1.0' id='instantpage-js'></script>
+<script type='text/javascript' id='toc-front-js-extra'>
+/* <![CDATA[ */
+var tocplus = {"smooth_scroll":"1","visibility_show":"mostrar","visibility_hide":"ocultar","visibility_hide_by_default":"1","width":"Auto"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.cpokemon.com/wp-content/plugins/table-of-contents-plus/front.min.js?ver=2002' id='toc-front-js'></script>
+<script type='text/javascript' src='https://www.cpokemon.com/wp-includes/js/wp-embed.min.js?ver=5.6.2' id='wp-embed-js'></script>
+<script type='text/javascript' src='https://cdn.onesignal.com/sdks/OneSignalSDK.js?ver=5.6.2' async='async' id='remote_sdk-js'></script>
+<script src='https://stats.wp.com/e-202110.js' defer></script>
+<script>
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:9.5',blog:'56967068',post:'0',tz:'-6',srv:'www.cpokemon.com'} ]);
+	_stq.push([ 'clickTrackerInit', '56967068', '0' ]);
+</script>
+<script type='text/javascript' src='https://www.cpokemon.com/wp-content/plugins/ajaxy-search-form/js/sf.js'></script>
+<div style="display:none;">
+<img src="//pixel.quantserve.com/pixel/p-bMmxwPBBx7ysL.gif" border="0" height="1" width="1" alt="Quantcast" />
+</div>
+<script src="https://cdn.jsdelivr.net/combine/npm/lightgallery,npm/lg-hash,npm/lg-share,npm/lg-thumbnail,npm/lg-zoom,npm/rrssb"></script>
+<script src="/wp-content/themes/nuevocp/js/ncp/cp.js?v1.1"></script>
+<script src="/wp-content/themes/nuevocp/js/ncp/menu.js?v1"></script>
+<script>
+    amzn_assoc_ad_type = "link_enhancement_widget";
+    amzn_assoc_tracking_id = "cpokemon-20";
+    amzn_assoc_linkid = "68ce6ac826fbbe331ec3c50eb3ea9aec";
+    amzn_assoc_placement = "";
+    amzn_assoc_marketplace = "amazon";
+    amzn_assoc_region = "US";
+</script>
+<script src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&Operation=GetScript&ID=OneJS&WS=1&MarketPlace=US"></script>
+<style>
+html, body {
+  -webkit-overflow-scrolling: touch;
+}
+</style>
+</div>
+
+<script type="text/javascript">
+  window._taboola = window._taboola || [];
+  _taboola.push({flush: true});
+</script>
+
+</body>
+</html>

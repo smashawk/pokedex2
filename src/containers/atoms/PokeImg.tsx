@@ -18,9 +18,9 @@ export const EnhancedPokeImg: VFC<Props> = ({ no }) => {
 	let url = "";
 
 	if (no > 0 && no < 650)
-		url = `https://www.cpokemon.com/pokes/animated/ds/${no}.gif`;
-	else if (no > 649 && no < 793)
-		url = `https://www.cpokemon.com/pokes/animated/3ds/${no}.gif`;
+		url = `${process.env.PUBLIC_URL}/images/dot_gif/${no}.gif`;
+	else if (no > 649 && no < 808)
+		url = `${process.env.PUBLIC_URL}/images/3ds_gif/${no}.gif`;
 	else url = `https://www.cpokemon.com/pokes/home/${no}.png`;
 
 	return <PokeImg {...{ no, url, loading, imageLoaded }} />;

@@ -13,11 +13,11 @@ export const Chespin = Template.bind({});
 
 Bulbasaur.args = {
 	no: 1,
-	url: "https://www.cpokemon.com/pokes/animated/ds/1.gif",
+	url: `${process.env.PUBLIC_URL}/images/dot_gif/1.gif`,
 	loading: false
 };
 Chespin.args = {
 	no: 650,
-	url: "https://www.cpokemon.com/pokes/animated/3ds/650.gif",
+	url: `${process.env.PUBLIC_URL}/images/3ds_gif/650.gif`,
 	loading: false
 };

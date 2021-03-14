@@ -43,13 +43,11 @@ const useStyles = makeStyles(() =>
 	})
 );
 
-type StateProps = {
+type Props = {
 	partnerInfo: setPartnerInfoState;
 	pokeData: normalizedPokeDataType;
 	pokeSpecies: normalizedPokeSpeciesType;
 };
-
-type Props = StateProps;
 
 export const OutputArea: VFC<Props> = ({
 	partnerInfo,
@@ -73,7 +71,10 @@ export const OutputArea: VFC<Props> = ({
 					</Typography>
 					<Typography className={classes.subTitle} variant="subtitle2">
 						<p className={classes.pokeInfo}>
-							{`${partnerInfo.natureNo.ja}な性格\n${partnerInfo.charNo.ja}`}
+							{partnerInfo.natureNo.ja === "おとなしい" ||
+							partnerInfo.natureNo.ja === "ずぶとい"
+								? `${partnerInfo.natureNo.ja}性格\n${partnerInfo.charNo.ja}`
+								: `${partnerInfo.natureNo.ja}な性格\n${partnerInfo.charNo.ja}`}
 						</p>
 					</Typography>
 				</>
