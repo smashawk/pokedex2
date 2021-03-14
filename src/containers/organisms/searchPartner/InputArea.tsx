@@ -65,7 +65,7 @@ const WrappedInputArea: VFC<Props> = ({
 	};
 
 	const formik = useFormik({
-		initialValues: { inputText: "" },
+		initialValues: { inputText: `${partnerInfoState.inputName}` },
 		validationSchema: null,
 		onSubmit: searchPartner
 	});
@@ -102,7 +102,7 @@ const WrappedInputArea: VFC<Props> = ({
 		});
 	};
 
-	const [disabled, setDisabled] = useState(true);
+	const [DLBtnDisabled, setDisabled] = useState(true);
 
 	useEffect(() => {
 		if (partnerInfoState.inputName) {
@@ -112,7 +112,7 @@ const WrappedInputArea: VFC<Props> = ({
 		}
 	}, [partnerInfoState]);
 
-	return <InputArea {...{ searchPartner, formik, exportPng, disabled }} />;
+	return <InputArea {...{ searchPartner, formik, exportPng, DLBtnDisabled }} />;
 };
 
 /** container */

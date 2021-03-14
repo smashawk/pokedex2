@@ -12,6 +12,7 @@ export type Props = {
 	label: string;
 	text: string;
 	formik: FormikProps<FormikValue>;
+	formikBtnDisabled: boolean;
 	fieldTestId?: string;
 	buttonTestId?: string;
 };
@@ -21,6 +22,7 @@ export const FormikTextField: VFC<Props> = ({
 	label,
 	text,
 	formik,
+	formikBtnDisabled,
 	fieldTestId,
 	buttonTestId
 }) => {
@@ -41,6 +43,7 @@ export const FormikTextField: VFC<Props> = ({
 				text={text}
 				variant="contained"
 				type="submit"
+				disabled={formikBtnDisabled}
 				testId={buttonTestId}
 			/>
 		</form>

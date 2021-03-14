@@ -23,10 +23,10 @@ const useStyles = makeStyles(() =>
 type Props = {
 	exportPng: () => void;
 	formik: FormikProps<FormikValue>;
-	disabled: boolean;
+	DLBtnDisabled: boolean;
 };
 
-export const InputArea: VFC<Props> = ({ exportPng, formik, disabled }) => {
+export const InputArea: VFC<Props> = ({ exportPng, formik, DLBtnDisabled }) => {
 	const classes = useStyles();
 	return (
 		<>
@@ -39,12 +39,13 @@ export const InputArea: VFC<Props> = ({ exportPng, formik, disabled }) => {
 					fieldTestId="searchPartner-input"
 					buttonTestId="searchPartner-button"
 					formik={formik}
+					formikBtnDisabled={!formik.values.inputText}
 				/>
 				<Box className={classes.dlButton}>
 					<FixButton
 						type="submit"
 						text="ダウンロード"
-						disabled={disabled}
+						disabled={DLBtnDisabled}
 						onClick={exportPng}
 					/>
 				</Box>
