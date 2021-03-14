@@ -35,7 +35,7 @@ export const FormikTextField: VFC<Props> = ({
 				size="small"
 				variant="filled"
 				onChange={formik.handleChange}
-				inputProps={{ minLength: 1, maxLength: 16 }}
+				inputProps={{ minLength: 1, maxLength: 12 }}
 				testId={fieldTestId}
 			/>
 			<FixButton

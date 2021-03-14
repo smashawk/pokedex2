@@ -21,9 +21,13 @@ export const decidePartnerInfo = (inputName: string): partnerInfoType => {
 	);
 
 	// 計算
-	const basePokeNo = charNumArray.reduce((acc, cur) => acc + cur);
-	const baseNatureNo = charNumArray.reduce((acc, cur) => (acc + cur) * 3);
-	const baseCharNo = charNumArray.reduce((acc, cur) => acc + cur * 3);
+	const basePokeNo = charNumArray.reduce((acc, cur) => acc + cur * cur);
+	const baseNatureNo = charNumArray.reduce(
+		(acc, cur, index) => acc + cur * cur + index
+	);
+	const baseCharNo = charNumArray.reduce(
+		(acc, cur, index) => acc + cur * cur + index * 3
+	);
 	return {
 		pokeNo: basePokeNo % 792 || 792,
 		natureNo: NatureList[baseNatureNo % 25],
