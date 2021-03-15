@@ -10,16 +10,16 @@ import { connect } from "react-redux";
 import { useHistory, useLocation } from "react-router-dom";
 import { AppState } from "@store/reducer";
 import { dispatches } from "@store/dispatches";
-import { normalizedPokeDataType } from "@store/getPokeData/reducers";
-import { getPokeTypeDataType } from "@store/getPokeTypeData/reducers";
+import { NormalizedPokeDataType } from "@store/getPokeData/reducers";
+import { GetPokeTypeDataType } from "@store/getPokeTypeData/reducers";
 import { createAndPokeArray } from "@utils/createAndPokeArray";
 import { createOrPokeArray } from "@utils/createOrPokeArray";
 import { IconListArea } from "@components/organisms/searchType/IconListArea";
 
 type StateProps = {
 	switchState: boolean;
-	pokeTypeData: getPokeTypeDataType;
-	pokeData: normalizedPokeDataType;
+	pokeTypeData: GetPokeTypeDataType;
+	pokeData: NormalizedPokeDataType;
 };
 
 type DispatchProps = {

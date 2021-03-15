@@ -1,6 +1,6 @@
 import { MouseEvent as ReactMouseEvent, VFC } from "react";
-import { normalizedPokeDataType } from "@store/getPokeData/reducers";
-import { getPokeTypeDataType } from "@store/getPokeTypeData/reducers";
+import { NormalizedPokeDataType } from "@store/getPokeData/reducers";
+import { GetPokeTypeDataType } from "@store/getPokeTypeData/reducers";
 import { PokeIconList } from "@components/atoms/PokeIconList";
 import { createStyles, makeStyles, Paper } from "@material-ui/core";
 import { theme } from "@styles/theme";
@@ -29,8 +29,8 @@ type Props = {
 	orPokeList: { name: { ja: string; en: string }; no: number }[];
 	andPokeList: { name: { ja: string; en: string }; no: number }[];
 	switchState: boolean;
-	pokeTypeData: getPokeTypeDataType;
-	pokeData: normalizedPokeDataType;
+	pokeTypeData: GetPokeTypeDataType;
+	pokeData: NormalizedPokeDataType;
 	showPokeData: (event: ReactMouseEvent<HTMLInputElement, MouseEvent>) => void;
 };
 

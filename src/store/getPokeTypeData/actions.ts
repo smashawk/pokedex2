@@ -1,17 +1,17 @@
-import { formattedPokeTypeDataType } from "./reducers";
+import { NormalizedPokeTypeDataType } from "./reducers";
 import * as types from "./types";
 
 // type1
 export const type1FetchStarted = (typeNo: number) =>
 	({ type: types.POKE_TYPE1_STARTED, payload: typeNo } as const);
-export const type1FetchSuccess = (res: formattedPokeTypeDataType) =>
+export const type1FetchSuccess = (res: NormalizedPokeTypeDataType) =>
 	({ type: types.POKE_TYPE1_SUCCESS, payload: res } as const);
 export const type1FetchFailed = (err: Record<string, unknown>) =>
 	({ type: types.POKE_TYPE1_FAILED, error: err } as const);
 // type2
 export const type2FetchStarted = (typeNo: number) =>
 	({ type: types.POKE_TYPE2_STARTED, payload: typeNo } as const);
-export const type2FetchSuccess = (res: formattedPokeTypeDataType) =>
+export const type2FetchSuccess = (res: NormalizedPokeTypeDataType) =>
 	({ type: types.POKE_TYPE2_SUCCESS, payload: res } as const);
 export const type2FetchFailed = (err: Record<string, unknown>) =>
 	({ type: types.POKE_TYPE2_FAILED, error: err } as const);

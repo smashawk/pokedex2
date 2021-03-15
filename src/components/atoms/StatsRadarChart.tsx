@@ -16,7 +16,7 @@ export type Props = {
 	data: number[];
 };
 
-type tooltipItemTypes = {
+type TooltipItemTypes = {
 	xLabel: string;
 	yLabel: string;
 	datasetIndex: number;
@@ -68,7 +68,7 @@ export const StatsRadarChart: VFC<Props> = ({ data }) => {
 		tooltips: {
 			callbacks: {
 				title(
-					tooltipItem: tooltipItemTypes,
+					tooltipItem: TooltipItemTypes,
 					dataObj: typeof graphData
 				): string {
 					return dataObj.labels[tooltipItem[0].index];

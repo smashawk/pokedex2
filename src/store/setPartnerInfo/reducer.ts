@@ -1,7 +1,7 @@
 import * as types from "./types";
 import * as actions from "./actions";
 
-export type setPartnerInfoState = {
+export type SetPartnerInfoState = {
 	inputName: string;
 	pokeNo: number;
 	natureNo: { ja: string; en: string };
@@ -18,7 +18,7 @@ const initialState = {
 export const setPartnerInfoReducer = (
 	state = initialState,
 	action: actions.ActionTypes
-): setPartnerInfoState => {
+): SetPartnerInfoState => {
 	switch (action.type) {
 		case types.SET_INPUT_NAME:
 			return {

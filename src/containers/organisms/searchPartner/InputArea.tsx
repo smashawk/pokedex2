@@ -4,18 +4,18 @@ import { Dispatch } from "redux";
 import { useHistory, useLocation } from "react-router-dom";
 import { AppState } from "@store/reducer";
 import { dispatches } from "@store/dispatches";
-import { setPartnerInfoState } from "@store/setPartnerInfo/reducer";
-import { decidePartnerInfo, partnerInfoType } from "@utils/decidePartnerInfo";
+import { SetPartnerInfoState } from "@store/setPartnerInfo/reducer";
+import { decidePartnerInfo, PartnerInfoType } from "@utils/decidePartnerInfo";
 import { InputArea } from "@components/organisms/searchPartner/InputArea";
 import { useFormik } from "formik";
 import html2canvas from "html2canvas";
 
 type StateProps = {
-	partnerInfoState: setPartnerInfoState;
+	partnerInfoState: SetPartnerInfoState;
 };
 
 type DispatchProps = {
-	setPartnerInfo: (inputName: string, partnerInfo: partnerInfoType) => void;
+	setPartnerInfo: (inputName: string, partnerInfo: PartnerInfoType) => void;
 	fetchPokeData: (partnerNo: number) => void;
 	fetchPartnerPokeSpecies: (partnerNo: number) => void;
 };
@@ -124,7 +124,7 @@ const mapDispatchToProps = (dispatch: Dispatch): DispatchProps => {
 	const { searchPartner } = dispatches;
 
 	return {
-		setPartnerInfo: (inputName: string, partnerInfo: partnerInfoType): void => {
+		setPartnerInfo: (inputName: string, partnerInfo: PartnerInfoType): void => {
 			searchPartner.setPartnerInfoDispatcher(dispatch)(inputName, partnerInfo);
 		},
 		fetchPokeData: (partnerNo: number): void => {

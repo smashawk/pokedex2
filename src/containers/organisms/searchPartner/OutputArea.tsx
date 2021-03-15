@@ -1,15 +1,15 @@
 import { VFC } from "react";
 import { connect } from "react-redux";
 import { AppState } from "@store/reducer";
-import { setPartnerInfoState } from "@store/setPartnerInfo/reducer";
-import { normalizedPokeDataType } from "@store/getPokeData/reducers";
-import { normalizedPokeSpeciesType } from "@store/getPokeSpecies/reducers";
+import { SetPartnerInfoState } from "@store/setPartnerInfo/reducer";
+import { NormalizedPokeDataType } from "@store/getPokeData/reducers";
+import { NormalizedPokeSpeciesType } from "@store/getPokeSpecies/reducers";
 import { OutputArea } from "@components/organisms/searchPartner/OutputArea";
 
 type Props = {
-	partnerInfo: setPartnerInfoState;
-	pokeData: normalizedPokeDataType;
-	pokeSpecies: normalizedPokeSpeciesType;
+	partnerInfo: SetPartnerInfoState;
+	pokeData: NormalizedPokeDataType;
+	pokeSpecies: NormalizedPokeSpeciesType;
 };
 
 const WrappedOutputArea: VFC<Props> = ({

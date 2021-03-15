@@ -1,11 +1,11 @@
 import { VFC } from "react";
 import { AppBar, Tab, Tabs } from "@material-ui/core";
 import { Link } from "react-router-dom";
-import { menuListType } from "@constants/variables";
+import { MenuListType } from "@constants/variables";
 
 export type Props = {
 	currentTab: string;
-	menuList: menuListType;
+	menuList: MenuListType;
 };
 
 /**

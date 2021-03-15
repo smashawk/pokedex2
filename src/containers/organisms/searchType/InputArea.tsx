@@ -5,8 +5,8 @@ import { useHistory, useLocation } from "react-router-dom";
 import { AppState } from "@store/reducer";
 import { dispatches } from "@store/dispatches";
 import { OptionType } from "@store/setSelectedOption/reducer";
-import { getPokeTypeDataType } from "@store/getPokeTypeData/reducers";
-import { normalizedPokeDataType } from "@store/getPokeData/reducers";
+import { GetPokeTypeDataType } from "@store/getPokeTypeData/reducers";
+import { NormalizedPokeDataType } from "@store/getPokeData/reducers";
 import { InputArea } from "@components/organisms/searchType/InputArea";
 import { typeList } from "@constants/variables";
 import { createSuggestArray } from "@utils/createSuggestArray";
@@ -14,8 +14,8 @@ import { createSuggestArray } from "@utils/createSuggestArray";
 type StateProps = {
 	switchState: boolean;
 	optionArray: { option: OptionType[] };
-	pokeTypeData: getPokeTypeDataType;
-	pokeData: normalizedPokeDataType;
+	pokeTypeData: GetPokeTypeDataType;
+	pokeData: NormalizedPokeDataType;
 };
 
 type DispatchProps = {

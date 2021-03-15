@@ -1,17 +1,15 @@
 import { useMemo, VFC } from "react";
 import { connect } from "react-redux";
 import { AppState } from "@store/reducer";
-import { normalizedPokeDataType } from "@store/getPokeData/reducers";
-import { normalizedPokeSpeciesType } from "@store/getPokeSpecies/reducers";
+import { NormalizedPokeDataType } from "@store/getPokeData/reducers";
+import { NormalizedPokeSpeciesType } from "@store/getPokeSpecies/reducers";
 import { createDescArray } from "@utils/createDescArray";
 import { OutputArea } from "@components/organisms/searchType/OutputArea";
 
-type StateProps = {
-	pokeData: normalizedPokeDataType;
-	pokeSpecies: normalizedPokeSpeciesType;
+type Props = {
+	pokeData: NormalizedPokeDataType;
+	pokeSpecies: NormalizedPokeSpeciesType;
 };
-
-type Props = StateProps;
 
 const WrappedOutputArea: VFC<Props> = ({ pokeData, pokeSpecies }) => {
 	const DescArray = useMemo(() => createDescArray(pokeData, pokeSpecies), [
@@ -23,7 +21,7 @@ const WrappedOutputArea: VFC<Props> = ({ pokeData, pokeSpecies }) => {
 };
 
 /** container */
-const mapStateToProps = (state: AppState): StateProps => ({
+const mapStateToProps = (state: AppState): Props => ({
 	pokeData: state.searchType.pokeData,
 	pokeSpecies: state.searchType.pokeSpecies
 });

@@ -1,5 +1,5 @@
 import { PokeSpeciesType } from "@api/requests/getPokeSpecies";
-import { normalizedPokeSpeciesType } from "./reducers";
+import { NormalizedPokeSpeciesType } from "./reducers";
 
 /**
  * @param pokeSpeciesData gotten from PokeAPI
@@ -7,7 +7,7 @@ import { normalizedPokeSpeciesType } from "./reducers";
  */
 export const normalizePokeData = (
 	pokeSpeciesData: PokeSpeciesType
-): normalizedPokeSpeciesType => {
+): NormalizedPokeSpeciesType => {
 	const nameJa = pokeSpeciesData.names.find(
 		(item) => item.language.name === "ja"
 	);

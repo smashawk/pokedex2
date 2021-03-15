@@ -1,6 +1,6 @@
 import { PokeTypeDataType } from "@api/requests/getPokeTypeData";
 import pokeData from "@constants/pokemon_data.json";
-import { formattedPokeTypeDataType } from "./reducers";
+import { NormalizedPokeTypeDataType } from "./reducers";
 
 /**
  * @param typeData gotten from PokeAPI
@@ -8,7 +8,7 @@ import { formattedPokeTypeDataType } from "./reducers";
  */
 export const normalizePokeData = (
 	typeData: PokeTypeDataType
-): formattedPokeTypeDataType => {
+): NormalizedPokeTypeDataType => {
 	const typePokeArray = typeData.pokemon
 		/** Pokemon range is between 1.bulbasaur and 2.lunala */
 		.filter((data) => {

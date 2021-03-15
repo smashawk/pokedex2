@@ -9,7 +9,7 @@ export type OptionType = {
 
 const searchNameInitialState = { value: "", label: "", no: 0 };
 
-type searchTypeSetSelectedOptionType = {
+type SearchTypeSetSelectedOptionType = {
 	option: OptionType[];
 };
 
@@ -19,7 +19,7 @@ const searchTypeInitialState = {
 
 export const searchNameSetSelectedOptionReducer = (
 	state = searchNameInitialState,
-	action: actions.searchNameActionTypes
+	action: actions.SearchNameActionTypes
 ): OptionType => {
 	switch (action.type) {
 		case types.SEARCH_NAME_SET:
@@ -35,8 +35,8 @@ export const searchNameSetSelectedOptionReducer = (
 
 export const searchTypeSetSelectedOptionReducer = (
 	state = searchTypeInitialState,
-	action: actions.searchTypeActionTypes
-): searchTypeSetSelectedOptionType => {
+	action: actions.SearchTypeActionTypes
+): SearchTypeSetSelectedOptionType => {
 	switch (action.type) {
 		case types.SEARCH_TYPE_SET:
 			return {

@@ -1,12 +1,12 @@
 import { useMemo, VFC } from "react";
-import { normalizedPokeSpeciesType } from "@store/getPokeSpecies/reducers";
-import { normalizedPokeDataType } from "@store/getPokeData/reducers";
+import { NormalizedPokeSpeciesType } from "@store/getPokeSpecies/reducers";
+import { NormalizedPokeDataType } from "@store/getPokeData/reducers";
 import { DataCard } from "@components/molecules/DataCard";
 import { createDescArray } from "@utils/createDescArray";
 
 type Props = {
-	pokeData: normalizedPokeDataType;
-	pokeSpecies: normalizedPokeSpeciesType;
+	pokeData: NormalizedPokeDataType;
+	pokeSpecies: NormalizedPokeSpeciesType;
 	graph?: boolean;
 	simple?: boolean;
 	children?: JSX.Element;

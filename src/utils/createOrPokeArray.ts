@@ -1,13 +1,13 @@
-import { getPokeTypeDataType } from "@store/getPokeTypeData/reducers";
+import { GetPokeTypeDataType } from "@store/getPokeTypeData/reducers";
 
 /**
  * OR検索で表示するポケモン配列を作成する
- * @param {getPokeTypeDataType} pokeTypeData タイプstate
+ * @param {GetPokeTypeDataType} pokeTypeData タイプstate
  * @return {getPokeTypeDataType["type1"]["pokemon"]} タイプ情報を排除したポケモン配列
  */
 export const createOrPokeArray = (
-	pokeTypeData: getPokeTypeDataType
-): getPokeTypeDataType["type1"]["pokemon"] => {
+	pokeTypeData: GetPokeTypeDataType
+): GetPokeTypeDataType["type1"]["pokemon"] => {
 	const purePokemonList = [
 		...pokeTypeData.type1.pokemon,
 		...pokeTypeData.type2.pokemon

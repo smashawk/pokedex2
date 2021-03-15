@@ -1,14 +1,14 @@
-import { normalizedPokeDataType } from "@store/getPokeData/reducers";
-import { normalizedPokeSpeciesType } from "@store/getPokeSpecies/reducers";
+import { NormalizedPokeDataType } from "@store/getPokeData/reducers";
+import { NormalizedPokeSpeciesType } from "@store/getPokeSpecies/reducers";
 
-export type descType = {
+export type DescType = {
 	term: string;
 	description: string | number;
 };
 
 export const createDescArray = (
-	pokeData: normalizedPokeDataType,
-	pokeSpecies: normalizedPokeSpeciesType
+	pokeData: NormalizedPokeDataType,
+	pokeSpecies: NormalizedPokeSpeciesType
 ) => {
 	return [
 		{

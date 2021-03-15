@@ -1,14 +1,14 @@
 import * as types from "./types";
 import * as actions from "./actions";
 
-export type normalizedPokeDataType = {
+export type NormalizedPokeDataType = {
 	id: number;
 	name: string;
 	stats: { base_stat: number }[];
 	types: { ja: string; en: string }[];
 };
 
-export const initialState: normalizedPokeDataType = {
+export const initialState: NormalizedPokeDataType = {
 	id: 0,
 	name: "",
 	stats: [
@@ -28,8 +28,8 @@ export const initialState: normalizedPokeDataType = {
 /** searchName */
 export const searchNameGetPokeDataReducer = (
 	state = initialState,
-	action: actions.searchNameActionTypes
-): normalizedPokeDataType => {
+	action: actions.SearchNameActionTypes
+): NormalizedPokeDataType => {
 	switch (action.type) {
 		case types.SEARCH_NAME_STARTED:
 			return { ...state, ...action.payload };
@@ -45,8 +45,8 @@ export const searchNameGetPokeDataReducer = (
 /** searchType */
 export const searchTypeGetPokeDataReducer = (
 	state = initialState,
-	action: actions.searchTypeActionTypes
-): normalizedPokeDataType => {
+	action: actions.SearchTypeActionTypes
+): NormalizedPokeDataType => {
 	switch (action.type) {
 		case types.SEARCH_TYPE_STARTED:
 			return { ...state, ...action.payload };
@@ -64,8 +64,8 @@ export const searchTypeGetPokeDataReducer = (
 /** searchPartner */
 export const searchPartnerGetPokeDataReducer = (
 	state = initialState,
-	action: actions.searchPartnerActionTypes
-): normalizedPokeDataType => {
+	action: actions.SearchPartnerActionTypes
+): NormalizedPokeDataType => {
 	switch (action.type) {
 		case types.SEARCH_PARTNER_STARTED:
 			return { ...state, ...action.payload };

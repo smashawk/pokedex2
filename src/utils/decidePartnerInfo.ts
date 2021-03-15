@@ -1,6 +1,6 @@
 import { NatureList, CharacteristicList } from "@constants/variables";
 
-export type partnerInfoType = {
+export type PartnerInfoType = {
 	pokeNo: number;
 	natureNo: { ja: string; en: string };
 	charNo: { ja: string; en: string };
@@ -11,7 +11,7 @@ export type partnerInfoType = {
  * @param inputName input value
  * @return partner pokemon's Info
  */
-export const decidePartnerInfo = (inputName: string): partnerInfoType => {
+export const decidePartnerInfo = (inputName: string): PartnerInfoType => {
 	// 入力された名前を一文字ずつ配列に入れる
 	const inputNameArray = inputName.split("");
 

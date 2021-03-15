@@ -1,7 +1,7 @@
 import * as types from "./types";
 import * as actions from "./actions";
 
-export type setSwitchStateType = {
+export type SetSwitchStateType = {
 	switchState: boolean;
 };
 
@@ -12,7 +12,7 @@ const initialState = {
 export const setSwitchStateReducer = (
 	state = initialState,
 	action: actions.ActionTypes
-): setSwitchStateType => {
+): SetSwitchStateType => {
 	switch (action.type) {
 		case types.SET_SWITCH_STATE:
 			return {

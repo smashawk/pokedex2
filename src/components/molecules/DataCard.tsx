@@ -1,6 +1,6 @@
 import { VFC } from "react";
-import { normalizedPokeDataType } from "@store/getPokeData/reducers";
-import { descType } from "@utils/createDescArray";
+import { NormalizedPokeDataType } from "@store/getPokeData/reducers";
+import { DescType } from "@utils/createDescArray";
 import { DescriptionList } from "@components/atoms/DescriptionList";
 import { StatsRadarChart } from "@components/atoms/StatsRadarChart";
 import { EnhancedPokeImg } from "@containers/atoms/PokeImg";
@@ -46,8 +46,8 @@ const useStyles = makeStyles(() =>
 );
 
 export type Props = {
-	pokeData: normalizedPokeDataType;
-	DescArray: descType[];
+	pokeData: NormalizedPokeDataType;
+	DescArray: DescType[];
 	statsArray: number[];
 	graph: boolean;
 	simple: boolean;

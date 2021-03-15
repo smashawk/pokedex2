@@ -1,15 +1,15 @@
-import { normalizedPokeSpeciesType } from "@store/getPokeSpecies/reducers";
+import { NormalizedPokeSpeciesType } from "@store/getPokeSpecies/reducers";
 import * as types from "./types";
 
 /** searchName */
 export const searchNameFetchStarted = (no: number) =>
 	({ type: types.SEARCH_NAME_STARTED, payload: { id: no } } as const);
-export const searchNameFetchSuccess = (res: normalizedPokeSpeciesType) =>
+export const searchNameFetchSuccess = (res: NormalizedPokeSpeciesType) =>
 	({ type: types.SEARCH_NAME_SUCCESS, payload: res } as const);
 export const searchNameFetchFailed = (err: Record<string, unknown>) =>
 	({ type: types.SEARCH_NAME_FAILED, error: err.response } as const);
 
-export type searchNameActionTypes =
+export type SearchNameActionTypes =
 	| ReturnType<typeof searchNameFetchStarted>
 	| ReturnType<typeof searchNameFetchSuccess>
 	| ReturnType<typeof searchNameFetchFailed>;
@@ -17,14 +17,14 @@ export type searchNameActionTypes =
 /** searchType */
 export const searchTypeFetchStarted = (no: number) =>
 	({ type: types.SEARCH_TYPE_STARTED, payload: { id: no } } as const);
-export const searchTypeFetchSuccess = (res: normalizedPokeSpeciesType) =>
+export const searchTypeFetchSuccess = (res: NormalizedPokeSpeciesType) =>
 	({ type: types.SEARCH_TYPE_SUCCESS, payload: res } as const);
 export const searchTypeFetchFailed = (err: Record<string, unknown>) =>
 	({ type: types.SEARCH_TYPE_FAILED, error: err.response } as const);
 export const searchTypeDataReset = () =>
 	({ type: types.SEARCH_TYPE_RESET } as const);
 
-export type searchTypeActionTypes =
+export type SearchTypeActionTypes =
 	| ReturnType<typeof searchTypeFetchStarted>
 	| ReturnType<typeof searchTypeFetchSuccess>
 	| ReturnType<typeof searchTypeFetchFailed>
@@ -33,12 +33,12 @@ export type searchTypeActionTypes =
 /** searchPartner */
 export const searchPartnerFetchStarted = (no: number) =>
 	({ type: types.SEARCH_PARTNER_STARTED, payload: { id: no } } as const);
-export const searchPartnerFetchSuccess = (res: normalizedPokeSpeciesType) =>
+export const searchPartnerFetchSuccess = (res: NormalizedPokeSpeciesType) =>
 	({ type: types.SEARCH_PARTNER_SUCCESS, payload: res } as const);
 export const searchPartnerFetchFailed = (err: Record<string, unknown>) =>
 	({ type: types.SEARCH_PARTNER_FAILED, error: err.response } as const);
 
-export type searchPartnerActionTypes =
+export type SearchPartnerActionTypes =
 	| ReturnType<typeof searchPartnerFetchStarted>
 	| ReturnType<typeof searchPartnerFetchSuccess>
 	| ReturnType<typeof searchPartnerFetchFailed>;
