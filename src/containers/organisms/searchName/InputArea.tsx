@@ -1,6 +1,5 @@
-import { useEffect, useMemo, useCallback, VFC } from "react";
-import { connect } from "react-redux";
-import { Dispatch } from "redux";
+import { useEffect, useMemo, VFC } from "react";
+import { useSelector, useDispatch, shallowEqual } from "react-redux";
 import { useHistory, useLocation } from "react-router-dom";
 import { AppState } from "@store/reducer";
 import { dispatches } from "@store/dispatches";
@@ -9,24 +8,25 @@ import { createSuggestArray } from "@utils/createSuggestArray";
 import { InputArea } from "@components/organisms/searchName/InputArea";
 import pokeDataArray from "@constants/pokemon_data.json";
 
-type StateProps = {
-	option: OptionType;
-};
+export const EnhancedInputArea: VFC = () => {
+	/** state */
+	const option = useSelector<AppState, OptionType>(
+		(state) => state.searchName.selectedOption,
+		shallowEqual
+	);
+	/** dispatchers */
+	const dispatch = useDispatch();
+	const { searchName } = dispatches;
+	const setSelectedOption = (optionArg: OptionType): void => {
+		searchName.setSelectedOptionDispatcher(dispatch)(optionArg);
+	};
+	const fetchPokeData = (no: number): void => {
+		searchName.getPokeDataDispatcher(dispatch)(no);
+	};
+	const fetchPokeSpecies = (no: number): void => {
+		searchName.getPokeSpeciesDispatcher(dispatch)(no);
+	};
 
-type DispatchProps = {
-	setSelectedOption: (option: OptionType) => void;
-	fetchPokeData: (no: number) => void;
-	fetchPokeSpecies: (no: number) => void;
-};
-
-type Props = StateProps & DispatchProps;
-
-const WrappedInputArea: VFC<Props> = ({
-	option,
-	setSelectedOption,
-	fetchPokeData,
-	fetchPokeSpecies
-}) => {
 	/** create list for suggest */
 	const suggestArray = useMemo(() => {
 		return createSuggestArray(pokeDataArray.map((data) => data.name.japanese));
@@ -56,53 +56,29 @@ const WrappedInputArea: VFC<Props> = ({
 
 	/**
 	 * fire this function when you change inputValue
-	 * @param e event object don't use
+	 * @param event event object don't use
 	 * @param selectedOption OptionType you select
 	 */
-	const searchName = useCallback(
-		(event: unknown, selectedOption: OptionType | null): void => {
-			/** stop the processing if inputValue is empty */
-			if (selectedOption === null) return;
+	const searchNamePoke = (
+		event: unknown,
+		selectedOption: OptionType | null
+	): void => {
+		/** stop the processing if inputValue is empty */
+		if (selectedOption === null) return;
+		/** stop the processing if select same value */
+		if (option.value === selectedOption.value) return;
 
-			setSelectedOption(selectedOption);
-			fetchPokeData(selectedOption.no);
-			fetchPokeSpecies(selectedOption.no);
-			H.replace(`/pokemon?id=${selectedOption.no}`);
-		},
-		[setSelectedOption, fetchPokeData, fetchPokeSpecies]
-	);
+		setSelectedOption(selectedOption);
+		fetchPokeData(selectedOption.no);
+		fetchPokeSpecies(selectedOption.no);
+		H.replace(`/pokemon?id=${selectedOption.no}`);
+	};
 
 	return (
 		<InputArea
 			suggestList={suggestArray}
 			option={option}
-			searchName={searchName}
+			searchName={searchNamePoke}
 		/>
 	);
 };
-
-/** container */
-const mapStateToProps = (state: AppState): StateProps => ({
-	option: state.searchName.selectedOption
-});
-
-const mapDispatchToProps = (dispatch: Dispatch): DispatchProps => {
-	const { searchName } = dispatches;
-
-	return {
-		setSelectedOption: (option: OptionType): void => {
-			searchName.setSelectedOptionDispatcher(dispatch)(option);
-		},
-		fetchPokeData: (no: number): void => {
-			searchName.getPokeDataDispatcher(dispatch)(no);
-		},
-		fetchPokeSpecies: (no: number): void => {
-			searchName.getPokeSpeciesDispatcher(dispatch)(no);
-		}
-	};
-};
-
-export const EnhancedInputArea = connect(
-	mapStateToProps,
-	mapDispatchToProps
-)(WrappedInputArea);
