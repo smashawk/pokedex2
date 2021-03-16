@@ -14,6 +14,7 @@ export const EnhancedInputArea: VFC = () => {
 		(state) => state.searchName.selectedOption,
 		shallowEqual
 	);
+
 	/** dispatchers */
 	const dispatch = useDispatch();
 	const { searchName } = dispatches;
@@ -65,7 +66,7 @@ export const EnhancedInputArea: VFC = () => {
 	): void => {
 		/** stop the processing if inputValue is empty */
 		if (selectedOption === null) return;
-		/** stop the processing if select same value */
+		/** stop the processing if you select same value */
 		if (option.value === selectedOption.value) return;
 
 		setSelectedOption(selectedOption);

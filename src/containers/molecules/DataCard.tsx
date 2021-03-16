@@ -1,4 +1,4 @@
-import { useMemo, VFC } from "react";
+import { VFC } from "react";
 import { NormalizedPokeSpeciesType } from "@store/getPokeSpecies/reducers";
 import { NormalizedPokeDataType } from "@store/getPokeData/reducers";
 import { DataCard } from "@components/molecules/DataCard";
@@ -19,15 +19,11 @@ export const EnhancedDataCard: VFC<Props> = ({
 	simple = false,
 	children
 }) => {
-	const DescArray = useMemo(() => createDescArray(pokeData, pokeSpecies), [
-		pokeData,
-		pokeSpecies
-	]);
+	const DescArray = createDescArray(pokeData, pokeSpecies);
 
 	/** create base stats Array */
-	const statsArray = useMemo(
-		() => [...Array(6).keys()].map((num) => pokeData.stats[num].base_stat),
-		[pokeData]
+	const statsArray = [...Array(6).keys()].map(
+		(num) => pokeData.stats[num].base_stat
 	);
 
 	return (

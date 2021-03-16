@@ -1,17 +1,22 @@
 import { useMemo, VFC } from "react";
-import { connect } from "react-redux";
+import { useSelector, shallowEqual } from "react-redux";
 import { AppState } from "@store/reducer";
 import { NormalizedPokeDataType } from "@store/getPokeData/reducers";
 import { NormalizedPokeSpeciesType } from "@store/getPokeSpecies/reducers";
 import { createDescArray } from "@utils/createDescArray";
 import { OutputArea } from "@components/organisms/searchType/OutputArea";
 
-type Props = {
-	pokeData: NormalizedPokeDataType;
-	pokeSpecies: NormalizedPokeSpeciesType;
-};
+export const EnhancedOutputArea: VFC = () => {
+	/** state */
+	const pokeData = useSelector<AppState, NormalizedPokeDataType>(
+		(state) => state.searchType.pokeData,
+		shallowEqual
+	);
+	const pokeSpecies = useSelector<AppState, NormalizedPokeSpeciesType>(
+		(state) => state.searchType.pokeSpecies,
+		shallowEqual
+	);
 
-const WrappedOutputArea: VFC<Props> = ({ pokeData, pokeSpecies }) => {
 	const DescArray = useMemo(() => createDescArray(pokeData, pokeSpecies), [
 		pokeData,
 		pokeSpecies
@@ -19,11 +24,3 @@ const WrappedOutputArea: VFC<Props> = ({ pokeData, pokeSpecies }) => {
 
 	return <OutputArea {...{ pokeData, DescArray }} />;
 };
-
-/** container */
-const mapStateToProps = (state: AppState): Props => ({
-	pokeData: state.searchType.pokeData,
-	pokeSpecies: state.searchType.pokeSpecies
-});
-
-export const EnhancedOutputArea = connect(mapStateToProps)(WrappedOutputArea);
