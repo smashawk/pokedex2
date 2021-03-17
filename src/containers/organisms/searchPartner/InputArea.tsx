@@ -1,6 +1,5 @@
 import { useEffect, useState, VFC } from "react";
-import { connect } from "react-redux";
-import { Dispatch } from "redux";
+import { useSelector, useDispatch, shallowEqual } from "react-redux";
 import { useHistory, useLocation } from "react-router-dom";
 import { AppState } from "@store/reducer";
 import { dispatches } from "@store/dispatches";
@@ -10,24 +9,29 @@ import { InputArea } from "@components/organisms/searchPartner/InputArea";
 import { useFormik } from "formik";
 import html2canvas from "html2canvas";
 
-type StateProps = {
-	partnerInfoState: SetPartnerInfoState;
-};
+export const EnhancedInputArea: VFC = () => {
+	/** state */
+	const partnerInfoState = useSelector<AppState, SetPartnerInfoState>(
+		(state) => state.searchPartner.partnerInfo,
+		shallowEqual
+	);
 
-type DispatchProps = {
-	setPartnerInfo: (inputName: string, partnerInfo: PartnerInfoType) => void;
-	fetchPokeData: (partnerNo: number) => void;
-	fetchPartnerPokeSpecies: (partnerNo: number) => void;
-};
+	/** dispatchers */
+	const dispatch = useDispatch();
+	const { searchPartner } = dispatches;
+	const setPartnerInfo = (
+		inputName: string,
+		partnerInfo: PartnerInfoType
+	): void => {
+		searchPartner.setPartnerInfoDispatcher(dispatch)(inputName, partnerInfo);
+	};
+	const fetchPokeData = (partnerNo: number): void => {
+		searchPartner.searchPartnerGetPokeDataDispatcher(dispatch)(partnerNo);
+	};
+	const fetchPartnerPokeSpecies = (partnerNo: number): void => {
+		searchPartner.searchPartnerGetPokeSpeciesDispatcher(dispatch)(partnerNo);
+	};
 
-type Props = StateProps & DispatchProps;
-
-const WrappedInputArea: VFC<Props> = ({
-	partnerInfoState,
-	setPartnerInfo,
-	fetchPokeData,
-	fetchPartnerPokeSpecies
-}) => {
 	/** define for React Router Hooks */
 	const H = useHistory();
 	const useQuery = (): URLSearchParams =>
@@ -55,7 +59,7 @@ const WrappedInputArea: VFC<Props> = ({
 	/**
 	 * fire this function when you click Fix Button
 	 */
-	const searchPartner = (value: { inputText: string }): void => {
+	const searchPartnerPoke = (value: { inputText: string }): void => {
 		if (!value.inputText) return;
 		const partnerInfo = decidePartnerInfo(value.inputText);
 		setPartnerInfo(value.inputText, partnerInfo);
@@ -67,7 +71,7 @@ const WrappedInputArea: VFC<Props> = ({
 	const formik = useFormik({
 		initialValues: { inputText: `${partnerInfoState.inputName}` },
 		validationSchema: null,
-		onSubmit: searchPartner
+		onSubmit: searchPartnerPoke
 	});
 
 	// html2canvas で得られる URI を用いてダウンロードさせる関数
@@ -112,31 +116,14 @@ const WrappedInputArea: VFC<Props> = ({
 		}
 	}, [partnerInfoState]);
 
-	return <InputArea {...{ searchPartner, formik, exportPng, DLBtnDisabled }} />;
+	return (
+		<InputArea
+			{...{
+				searchPartner: searchPartnerPoke,
+				formik,
+				exportPng,
+				DLBtnDisabled
+			}}
+		/>
+	);
 };
-
-/** container */
-const mapStateToProps = (state: AppState): StateProps => ({
-	partnerInfoState: state.searchPartner.partnerInfo
-});
-
-const mapDispatchToProps = (dispatch: Dispatch): DispatchProps => {
-	const { searchPartner } = dispatches;
-
-	return {
-		setPartnerInfo: (inputName: string, partnerInfo: PartnerInfoType): void => {
-			searchPartner.setPartnerInfoDispatcher(dispatch)(inputName, partnerInfo);
-		},
-		fetchPokeData: (partnerNo: number): void => {
-			searchPartner.searchPartnerGetPokeDataDispatcher(dispatch)(partnerNo);
-		},
-		fetchPartnerPokeSpecies: (partnerNo: number): void => {
-			searchPartner.searchPartnerGetPokeSpeciesDispatcher(dispatch)(partnerNo);
-		}
-	};
-};
-
-export const EnhancedInputArea = connect(
-	mapStateToProps,
-	mapDispatchToProps
-)(WrappedInputArea);
