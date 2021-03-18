@@ -1,8 +1,8 @@
 import { MouseEvent as ReactMouseEvent, useEffect, useMemo, VFC } from "react";
 import { useSelector, useDispatch, shallowEqual } from "react-redux";
 import { useHistory, useLocation } from "react-router-dom";
-import { AppState } from "@store/reducer";
-import { dispatches } from "@store/dispatches";
+import { AppState } from "@store/reducers";
+import { dispatchers } from "@store/dispatchers";
 import { NormalizedPokeDataType } from "@store/getPokeData/reducers";
 import { GetPokeTypeDataType } from "@store/getPokeTypeData/reducers";
 import { createAndPokeArray } from "@utils/createAndPokeArray";
@@ -25,7 +25,7 @@ export const EnhancedIconListArea: VFC = () => {
 
 	/** dispatchers */
 	const dispatch = useDispatch();
-	const { searchType } = dispatches;
+	const { searchType } = dispatchers;
 	const fetchPokeData = (no: number): void => {
 		searchType.getPokeDataDispatcher(dispatch)(no);
 	};

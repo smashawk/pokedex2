@@ -1,6 +1,6 @@
 import { VFC } from "react";
 import { useSelector, shallowEqual } from "react-redux";
-import { AppState } from "@store/reducer";
+import { AppState } from "@store/reducers";
 import { SetPartnerInfoState } from "@store/setPartnerInfo/reducer";
 import { NormalizedPokeDataType } from "@store/getPokeData/reducers";
 import { NormalizedPokeSpeciesType } from "@store/getPokeSpecies/reducers";

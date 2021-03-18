@@ -16,7 +16,7 @@ import { setSwitchStateDispatcher } from "@store/setSwitchState/dispatcher";
 import { searchTypeGetPokeTypeDataDispatcher } from "@store/getPokeTypeData/dispatcher";
 import { setPartnerInfoDispatcher } from "@store/setPartnerInfo/dispatcher";
 
-export const dispatches = {
+export const dispatchers = {
 	searchName: {
 		setSelectedOptionDispatcher: searchNameSetSelectedOptionDispatcher,
 		getPokeDataDispatcher: searchNameGetPokeDataDispatcher,

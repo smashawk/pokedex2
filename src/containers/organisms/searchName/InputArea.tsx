@@ -1,8 +1,8 @@
 import { useEffect, useMemo, VFC } from "react";
 import { useSelector, useDispatch, shallowEqual } from "react-redux";
 import { useHistory, useLocation } from "react-router-dom";
-import { AppState } from "@store/reducer";
-import { dispatches } from "@store/dispatches";
+import { AppState } from "@store/reducers";
+import { dispatchers } from "@store/dispatchers";
 import { OptionType } from "@store/setSelectedOption/reducer";
 import { createSuggestArray } from "@utils/createSuggestArray";
 import { InputArea } from "@components/organisms/searchName/InputArea";
@@ -17,7 +17,7 @@ export const EnhancedInputArea: VFC = () => {
 
 	/** dispatchers */
 	const dispatch = useDispatch();
-	const { searchName } = dispatches;
+	const { searchName } = dispatchers;
 	const setSelectedOption = (optionArg: OptionType): void => {
 		searchName.setSelectedOptionDispatcher(dispatch)(optionArg);
 	};

@@ -1,8 +1,8 @@
 import { useEffect, useState, VFC } from "react";
 import { useSelector, useDispatch, shallowEqual } from "react-redux";
 import { useHistory, useLocation } from "react-router-dom";
-import { AppState } from "@store/reducer";
-import { dispatches } from "@store/dispatches";
+import { AppState } from "@store/reducers";
+import { dispatchers } from "@store/dispatchers";
 import { SetPartnerInfoState } from "@store/setPartnerInfo/reducer";
 import { decidePartnerInfo, PartnerInfoType } from "@utils/decidePartnerInfo";
 import { InputArea } from "@components/organisms/searchPartner/InputArea";
@@ -18,7 +18,7 @@ export const EnhancedInputArea: VFC = () => {
 
 	/** dispatchers */
 	const dispatch = useDispatch();
-	const { searchPartner } = dispatches;
+	const { searchPartner } = dispatchers;
 	const setPartnerInfo = (
 		inputName: string,
 		partnerInfo: PartnerInfoType
