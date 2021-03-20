@@ -13,7 +13,7 @@ describe("getPokeTypeSaga", () => {
 		const handler = jest.fn();
 
 		it("should succeeded", () => {
-			const type = "grass";
+			const typeNo = 12;
 			const normalizedPokeData = normalizePokeData(pokeTypeGrass);
 			handler.mockReturnValue(normalizedPokeData);
 
@@ -21,7 +21,7 @@ describe("getPokeTypeSaga", () => {
 				.withReducer(reducers.searchTypeGetPokeTypeDataReducer as never)
 				// 最終的に期待する結果
 				.put(actions.type1FetchSuccess(normalizedPokeData))
-				.dispatch(actions.type1FetchStarted(type))
+				.dispatch(actions.type1FetchStarted(typeNo))
 				.hasFinalState({
 					...reducers.initialState,
 					type1: { ...normalizedPokeData }
@@ -35,7 +35,7 @@ describe("getPokeTypeSaga", () => {
 					status: 404
 				}
 			};
-			const type = "error";
+			const type = 0;
 			handler.mockReturnValue(error);
 
 			expectSaga(watchGetPokeType1Data, handler)
@@ -52,7 +52,7 @@ describe("getPokeTypeSaga", () => {
 		const handler = jest.fn();
 
 		it("should succeeded", () => {
-			const type = "grass";
+			const type = 12;
 			const normalizedPokeData = normalizePokeData(pokeTypeGrass);
 			handler.mockReturnValue(normalizedPokeData);
 
@@ -74,7 +74,7 @@ describe("getPokeTypeSaga", () => {
 					status: 404
 				}
 			};
-			const type = "error";
+			const type = 0;
 			handler.mockReturnValue(error);
 
 			expectSaga(watchGetPokeType1Data, handler)

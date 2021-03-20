@@ -1,9 +1,9 @@
-import { partnerInfoType } from "@utils/decidePartnerInfo";
+import { PartnerInfoType } from "@utils/decidePartnerInfo";
 import * as types from "./types";
 
 export const setPartnerInfo = (
 	inputName: string,
-	partnerInfo: partnerInfoType
+	partnerInfo: PartnerInfoType
 ) =>
 	({
 		type: types.SET_INPUT_NAME,

@@ -4,14 +4,14 @@ import { OptionType } from "./reducer";
 
 // searchName
 export const searchNameSetSelectedOptionDispatcher = (
-	dispatch: Dispatch<actions.searchNameActionTypes>
+	dispatch: Dispatch<actions.SearchNameActionTypes>
 ) => (option: OptionType): void => {
 	dispatch(actions.searchNameSetSelectedOption(option));
 };
 
 // searchType
 export const searchTypeSetSelectedOptionDispatcher = (
-	dispatch: Dispatch<actions.searchTypeActionTypes>
+	dispatch: Dispatch<actions.SearchTypeActionTypes>
 ) => (optionArray: OptionType[]): void => {
 	dispatch(actions.searchTypeSetSelectedOption(optionArray));
 };

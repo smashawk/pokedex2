@@ -1,41 +1,38 @@
-import {
-	MouseEvent as ReactMouseEvent,
-	useCallback,
-	useEffect,
-	useMemo,
-	VFC
-} from "react";
-import { Dispatch } from "redux";
-import { connect } from "react-redux";
+import { MouseEvent as ReactMouseEvent, useEffect, useMemo, VFC } from "react";
+import { useSelector, useDispatch, shallowEqual } from "react-redux";
 import { useHistory, useLocation } from "react-router-dom";
-import { AppState } from "@store/reducer";
-import { dispatches } from "@store/dispatches";
-import { normalizedPokeDataType } from "@store/getPokeData/reducers";
-import { getPokeTypeDataType } from "@store/getPokeTypeData/reducers";
+import { AppState } from "@store/reducers";
+import { dispatchers } from "@store/dispatchers";
+import { NormalizedPokeDataType } from "@store/getPokeData/reducers";
+import { GetPokeTypeDataType } from "@store/getPokeTypeData/reducers";
 import { createAndPokeArray } from "@utils/createAndPokeArray";
 import { createOrPokeArray } from "@utils/createOrPokeArray";
 import { IconListArea } from "@components/organisms/searchType/IconListArea";
 
-type StateProps = {
-	switchState: boolean;
-	pokeTypeData: getPokeTypeDataType;
-	pokeData: normalizedPokeDataType;
-};
+export const EnhancedIconListArea: VFC = () => {
+	/** state */
+	const switchState = useSelector<AppState, boolean>(
+		(state) => state.searchType.switchState.switchState
+	);
+	const pokeTypeData = useSelector<AppState, GetPokeTypeDataType>(
+		(state) => state.searchType.pokeTypeData,
+		shallowEqual
+	);
+	const pokeData = useSelector<AppState, NormalizedPokeDataType>(
+		(state) => state.searchType.pokeData,
+		shallowEqual
+	);
 
-type DispatchProps = {
-	fetchPokeData: (no: number) => void;
-	fetchPokeSpecies: (no: number) => void;
-};
+	/** dispatchers */
+	const dispatch = useDispatch();
+	const { searchType } = dispatchers;
+	const fetchPokeData = (no: number): void => {
+		searchType.getPokeDataDispatcher(dispatch)(no);
+	};
+	const fetchPokeSpecies = (no: number): void => {
+		searchType.getPokeSpeciesDispatcher(dispatch)(no);
+	};
 
-type Props = StateProps & DispatchProps;
-
-const WrappedIconListArea: VFC<Props> = ({
-	switchState,
-	pokeTypeData,
-	pokeData,
-	fetchPokeData,
-	fetchPokeSpecies
-}) => {
 	/** define for React Router Hooks */
 	const H = useHistory();
 	const useQuery = (): URLSearchParams =>
@@ -56,20 +53,23 @@ const WrappedIconListArea: VFC<Props> = ({
 	 * fire this function when you click Pokemon Icon
 	 * @param event event object
 	 */
-	const showPokeData = useCallback(
-		(event: ReactMouseEvent<HTMLInputElement, MouseEvent>): void => {
-			const { value } = event.target as HTMLInputElement;
-			fetchPokeData(+value);
-			fetchPokeSpecies(+value);
+	const showPokeData = (
+		event: ReactMouseEvent<HTMLInputElement, MouseEvent>
+	): void => {
+		const { value } = event.target as HTMLInputElement;
 
-			H.replace(
-				`/type?switch=${switchState}&type1=${pokeTypeData.type1.no}&type2=${
-					pokeTypeData.type2.no
-				}&pokemon=${+value}`
-			);
-		},
-		[fetchPokeData, fetchPokeSpecies, switchState, pokeTypeData]
-	);
+		/** stop the processing if you select same pokemon */
+		if (+value === pokeData.id) return;
+
+		fetchPokeData(+value);
+		fetchPokeSpecies(+value);
+
+		H.replace(
+			`/type?switch=${switchState}&type1=${pokeTypeData.type1.no}&type2=${
+				pokeTypeData.type2.no
+			}&pokemon=${+value}`
+		);
+	};
 
 	/** create Pokemon list for AND Search */
 	const andPokeList = useMemo(() => createAndPokeArray(pokeTypeData), [
@@ -94,28 +94,3 @@ const WrappedIconListArea: VFC<Props> = ({
 		/>
 	);
 };
-
-/** container */
-const mapStateToProps = (state: AppState): StateProps => ({
-	switchState: state.searchType.switchState.switchState,
-	pokeTypeData: state.searchType.pokeTypeData,
-	pokeData: state.searchType.pokeData
-});
-
-const mapDispatchToProps = (dispatch: Dispatch): DispatchProps => {
-	const { searchType } = dispatches;
-
-	return {
-		fetchPokeData: (no: number): void => {
-			searchType.getPokeDataDispatcher(dispatch)(no);
-		},
-		fetchPokeSpecies: (no: number): void => {
-			searchType.getPokeSpeciesDispatcher(dispatch)(no);
-		}
-	};
-};
-
-export const EnhancedIconListArea = connect(
-	mapStateToProps,
-	mapDispatchToProps
-)(WrappedIconListArea);

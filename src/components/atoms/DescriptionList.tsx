@@ -1,5 +1,5 @@
 import { Fragment, VFC } from "react";
-import { descType } from "@utils/createDescArray";
+import { DescType } from "@utils/createDescArray";
 import { createStyles, makeStyles } from "@material-ui/core/styles";
 import classNames from "classnames";
 
@@ -28,7 +28,7 @@ const useStyles = makeStyles(() =>
 );
 
 export type Props = {
-	data: descType[];
+	data: DescType[];
 	testId?: string;
 };
 
@@ -36,7 +36,7 @@ export const DescriptionList: VFC<Props> = ({ data, testId }) => {
 	const classes = useStyles();
 	return (
 		<dl className={classes.dataList} data-testid={testId}>
-			{data.map((item: descType) => (
+			{data.map((item: DescType) => (
 				<Fragment key={item.term}>
 					<dt className={classes.dataTerm}>{item.term}</dt>
 					<dd

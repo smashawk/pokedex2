@@ -18,44 +18,91 @@ commands:
             - ./node_modules
 
 jobs:
+  set_up:
+    executor: node
+    steps:
+      - checkout
+      - restore_modules
+      - run:
+          name: Install npm dependencies
+          command: yarn
+      - save_modules
+  eslint:
+    executor: node
+    steps:
+      - checkout
+      - restore_modules
+      - run:
+          name: Run eslint
+          command: yarn eslint
+      - save_modules
+  type_check:
+    executor: node
+    steps:
+      - checkout
+      - restore_modules
+      - run:
+          name: Run type check
+          command: yarn type-check
+      - save_modules
   jest_run:
     executor: node
     steps:
       - checkout
       - restore_modules
-      - run: yarn
-      - run: yarn test
+      - run:
+          name: Run unit test
+          command: yarn test
       - save_modules
   build and deploy:
     executor: node
     steps:
       - checkout
       - restore_modules
-      - run: yarn
-      - run: yarn build:prod
-      - run: yarn netlify deploy -p -d build -a ${NETLIFY_AUTH_TOKEN} -s ${NETLIFY_POKEDEX2_ID}
+      - run:
+          name: build
+          command: yarn build:prod
+      - run:
+          name: deploy
+          command: yarn netlify deploy -p -d build -a ${NETLIFY_AUTH_TOKEN} -s ${NETLIFY_POKEDEX2_ID}
 
 workflows:
-  build-test-deploy:
+  test:
     jobs:
+      - set_up:
+          filters:
+            branches:
+              only: /.*/
+      - eslint:
+          filters:
+            branches:
+              only: /.*/
+          requires:
+            - set_up
+      - type_check:
+          filters:
+            branches:
+              only: /.*/
+          requires:
+            - set_up
       - jest_run:
           filters:
             branches:
-              ignore: /.*/
-            tags:
-              only: /^v.*/
+              only: /.*/
+          requires:
+            - set_up
       - cypress/run:
           yarn: true
           start: yarn start
           wait-on: 'http://localhost:3000'
           filters:
             branches:
-              ignore: /.*/
-            tags:
-              only: /^v.*/
+              only: /.*/
+          requires:
+            - set_up
+  build-and-deploy:
+    jobs:
       - build and deploy:
           filters:
             branches:
-              ignore: /.*/
-            tags:
-              only: /^v.*/
+              only: master

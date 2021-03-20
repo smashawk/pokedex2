@@ -8,7 +8,7 @@ export const searchNameSetSelectedOption = (option: OptionType) =>
 		payload: option
 	} as const);
 
-export type searchNameActionTypes = ReturnType<
+export type SearchNameActionTypes = ReturnType<
 	typeof searchNameSetSelectedOption
 >;
 
@@ -21,6 +21,6 @@ export const searchTypeSetSelectedOption = (option: OptionType[]) =>
 		}
 	} as const);
 
-export type searchTypeActionTypes = ReturnType<
+export type SearchTypeActionTypes = ReturnType<
 	typeof searchTypeSetSelectedOption
 >;

@@ -1,13 +1,13 @@
-import { getPokeTypeDataType } from "@store/getPokeTypeData/reducers";
+import { GetPokeTypeDataType } from "@store/getPokeTypeData/reducers";
 
 /**
  * AND検索で表示するポケモン配列を作成する
- * @param {getPokeTypeDataType} pokeTypeData タイプstate
+ * @param {GetPokeTypeDataType} pokeTypeData タイプstate
  * @return {getPokeTypeDataType["type1"]["pokemon"]} タイプ情報を排除したポケモン配列
  */
 export const createAndPokeArray = (
-	pokeTypeData: getPokeTypeDataType
-): getPokeTypeDataType["type1"]["pokemon"] => {
+	pokeTypeData: GetPokeTypeDataType
+): GetPokeTypeDataType["type1"]["pokemon"] => {
 	return pokeTypeData.type1.pokemon.filter((type1Pokemon) => {
 		// タイプ2が空のときはタイプ1のリストを全て配列に入れる、
 		// タイプ2のポケモンがタイプ1に存在するか確認し、存在するポケモンのみ配列に入れる

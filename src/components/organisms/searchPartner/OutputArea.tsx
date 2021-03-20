@@ -1,7 +1,7 @@
 import { VFC } from "react";
-import { setPartnerInfoState } from "@store/setPartnerInfo/reducer";
-import { normalizedPokeDataType } from "@store/getPokeData/reducers";
-import { normalizedPokeSpeciesType } from "@store/getPokeSpecies/reducers";
+import { SetPartnerInfoState } from "@store/setPartnerInfo/reducer";
+import { NormalizedPokeDataType } from "@store/getPokeData/reducers";
+import { NormalizedPokeSpeciesType } from "@store/getPokeSpecies/reducers";
 import { EnhancedDataCard } from "@containers/molecules/DataCard";
 import { Box, Typography, createStyles, makeStyles } from "@material-ui/core";
 import { theme } from "@styles/theme";
@@ -44,9 +44,9 @@ const useStyles = makeStyles(() =>
 );
 
 type Props = {
-	partnerInfo: setPartnerInfoState;
-	pokeData: normalizedPokeDataType;
-	pokeSpecies: normalizedPokeSpeciesType;
+	partnerInfo: SetPartnerInfoState;
+	pokeData: NormalizedPokeDataType;
+	pokeSpecies: NormalizedPokeSpeciesType;
 };
 
 export const OutputArea: VFC<Props> = ({

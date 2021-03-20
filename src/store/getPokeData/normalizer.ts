@@ -1,6 +1,6 @@
 import { PokeDataType } from "@api/requests/getPokeData";
 import { typeList } from "@constants/variables";
-import { normalizedPokeDataType } from "./reducers";
+import { NormalizedPokeDataType } from "./reducers";
 
 /**
  * @param pokeData gotten from PokeAPI
@@ -8,7 +8,7 @@ import { normalizedPokeDataType } from "./reducers";
  */
 export const normalizePokeData = (
 	pokeData: PokeDataType
-): normalizedPokeDataType => {
+): NormalizedPokeDataType => {
 	const matchedTypeArray = pokeData.types.map((type) =>
 		typeList.find((data) => type.type.name === data.en)
 	) as typeof typeList;

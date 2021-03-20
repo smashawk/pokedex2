@@ -1,4 +1,4 @@
-export type menuListType = { label: string; value: string; id: number }[];
+export type MenuListType = { label: string; value: string; id: number }[];
 
 export const menuList = [
 	{

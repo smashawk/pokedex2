@@ -3,14 +3,14 @@ import * as actions from "./actions";
 
 /** searchName */
 export const searchNameGetPokeDataDispatcher = (
-	dispatch: Dispatch<actions.searchNameActionTypes>
+	dispatch: Dispatch<actions.SearchNameActionTypes>
 ) => (no: number): void => {
 	dispatch(actions.searchNameFetchStarted(no));
 };
 
 /** searchType */
 export const searchTypeGetPokeDataDispatcher = (
-	dispatch: Dispatch<actions.searchTypeActionTypes>
+	dispatch: Dispatch<actions.SearchTypeActionTypes>
 ) => (no: number): void => {
 	if (!no) {
 		dispatch(actions.searchTypeDataReset());
@@ -21,7 +21,7 @@ export const searchTypeGetPokeDataDispatcher = (
 
 /** searchPartner */
 export const searchPartnerGetPokeDataDispatcher = (
-	dispatch: Dispatch<actions.searchPartnerActionTypes>
+	dispatch: Dispatch<actions.SearchPartnerActionTypes>
 ) => (no: number): void => {
 	dispatch(actions.searchPartnerFetchStarted(no));
 };

@@ -17,14 +17,12 @@ const useStyles = makeStyles(() =>
 	})
 );
 
-type OwnProps = {
+export type Props = {
 	suggestList: OptionType[];
 	option: OptionType;
 	onChange: (e: unknown, selectedOption: OptionType | null) => void;
 	testId?: string;
 };
-
-export type Props = OwnProps;
 
 export const SuggestTextField: VFC<Props> = ({
 	suggestList,

@@ -1,18 +1,18 @@
 import * as types from "./types";
 import * as actions from "./actions";
 
-export type formattedPokeTypeDataType = {
+export type NormalizedPokeTypeDataType = {
 	type: string;
 	no: number;
 	pokemon: { name: { ja: string; en: string }; no: number }[];
 };
 
-export type getPokeTypeDataType = {
-	type1: formattedPokeTypeDataType;
-	type2: formattedPokeTypeDataType;
+export type GetPokeTypeDataType = {
+	type1: NormalizedPokeTypeDataType;
+	type2: NormalizedPokeTypeDataType;
 };
 
-export const initialState: getPokeTypeDataType = {
+export const initialState: GetPokeTypeDataType = {
 	type1: {
 		type: "",
 		no: 0,
@@ -28,7 +28,7 @@ export const initialState: getPokeTypeDataType = {
 export const searchTypeGetPokeTypeDataReducer = (
 	state = initialState,
 	action: actions.TypeActionTypes
-): getPokeTypeDataType => {
+): GetPokeTypeDataType => {
 	switch (action.type) {
 		case types.POKE_TYPE1_STARTED:
 			return { ...state, type1: { type: "", no: action.payload, pokemon: [] } };
