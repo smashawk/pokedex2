@@ -73,31 +73,37 @@ workflows:
           filters:
             branches:
               only: /.*/
+              ignore: master
       - eslint:
           filters:
             branches:
               only: /.*/
+              ignore: master
           requires:
             - set_up
       - type_check:
           filters:
             branches:
               only: /.*/
+              ignore: master
           requires:
             - set_up
       - jest_run:
           filters:
             branches:
               only: /.*/
+              ignore: master
           requires:
             - set_up
       - cypress/run:
           yarn: true
+          cache-key: 'yarn-packages-{{ arch }}-{{ checksum "yarn.lock" }}'
           start: yarn start
           wait-on: 'http://localhost:3000'
           filters:
             branches:
               only: /.*/
+              ignore: master
           requires:
             - set_up
   build-and-deploy:
