@@ -12,6 +12,7 @@
 		"eject": "react-app-rewired eject",
 		"lint": "eslint './src/**/*.{js,jsx,ts,tsx}'",
 		"fix": "eslint --fix './src/**/*.{js,jsx,ts,tsx}'",
+		"type-check": "tsc --noEmit",
 		"storybook": "start-storybook -p 6006 -s public",
 		"build-storybook": "build-storybook -s public",
 		"postinstall": "npx typesync && yarn install --ignore-scripts"
