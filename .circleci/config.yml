@@ -104,8 +104,6 @@ workflows:
             branches:
               only: /.*/
               ignore: master
-          requires:
-            - set_up
   build-and-deploy:
     jobs:
       - build and deploy:
