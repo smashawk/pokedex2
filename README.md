@@ -1,6 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Flow
+![pokedex_flow (2)](https://user-images.githubusercontent.com/39367757/113135797-87081600-925d-11eb-9f1a-617243c38bb6.png)
 
 ## Directory Structure
 ┏	api<br>
