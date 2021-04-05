@@ -1,7 +1,38 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## App
+https://laughing-cray-9d5255.netlify.app/
+
 ## Flow
 ![pokedex_flow (2)](https://user-images.githubusercontent.com/39367757/113135797-87081600-925d-11eb-9f1a-617243c38bb6.png)
+
+## Node.js
+```shell
+14.15.1
+```
+
+## Scripts
+```shell
+# install
+yarn
+
+# start
+yarn start
+
+# unit test
+yarn test
+yarn test --coverage
+
+# e2e test
+yarn cypress
+
+# storybook
+yarn storybook
+
+# build
+yarn build:local
+yarn build:prod
+```
 
 ## Directory Structure
 ┏	api<br>
